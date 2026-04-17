@@ -30,13 +30,29 @@ function normalizeString(s) {
   return String(s || '').trim();
 }
 
+const STATE_ABBREV = {
+  AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'District of Columbia',
+};
+
 function normalizeLocation(city) {
-  // DFS requires no spaces around commas in location_name
+  // DFS requires "City,State Full Name,United States" (no spaces around commas, full state name)
   let c = String(city || '').trim().replace(/\s*,\s*/g, ',');
+  let parts = c.split(',').filter(Boolean);
+
+  // If first part is the state abbreviation/name only, assume user typo — just return as-is
+  if (parts.length < 2) return c + ',United States';
+
+  // Expand 2-letter state abbreviations (always case-insensitive)
+  parts = parts.map(p => {
+    const up = p.toUpperCase();
+    if (STATE_ABBREV[up]) return STATE_ABBREV[up];
+    return p;
+  });
+
   // If only "City,State" provided, append ",United States"
-  const parts = c.split(',').filter(Boolean);
-  if (parts.length === 2) c = c + ',United States';
-  return c;
+  if (parts.length === 2) parts.push('United States');
+
+  return parts.join(',');
 }
 
 function validEmail(e) {
