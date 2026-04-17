@@ -15,6 +15,7 @@ Practical tech, AI, and local SEO for blue-collar business owners. Hosted by Nic
 - [When leads dry up, is it the market, the agency, or you?](https://bluecollartechy.com/blog/market-agency-or-you.html): The three-bucket diagnostic. How to tell whether your marketing agency is failing, the market moved, or the owner side has leaks. Start here.
 - [10 things no marketing agency can fix for you](https://bluecollartechy.com/blog/ten-things-no-agency-can-fix.html): The full list of owner-side habits that kill contractor businesses. Grouped by speed, reputation, and sales. Ranked by damage.
 - [Audit your Google Business Profile in 15 minutes](https://bluecollartechy.com/blog/gbp-audit-15-minutes.html): Seven checks any contractor can do themselves. Covers ownership, categories, services, photos, posts, and review health.
+- [Your market is up but sales are down. What now?](https://bluecollartechy.com/blog/market-up-sales-down.html): What to do when the demand scan shows green but deals aren't closing. Covers price-aware markets, the two-pool model (SEO vs paid social), the right diagnostic order, and the two real ways through a tight market (better sales + wider net).
 
 ## Free Tools
 - [Market Demand Scan](https://bluecollartechy.com/market-scan/): Pulls 24 months of Google search demand data for your trade in your city. Year-over-year comparison. Tells you whether the market actually moved or something else is going on.
