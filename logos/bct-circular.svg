@@ -1,0 +1,15 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#f5f5f7" stroke-width="5"/>
+  <circle cx="100" cy="100" r="78" fill="none" stroke="#ff6a1a" stroke-width="1.5"/>
+  <defs>
+    <path id="circTop" d="M 30 100 A 70 70 0 0 0 170 100"/>
+    <path id="circBot" d="M 172 108 A 68 68 0 0 1 28 108"/>
+  </defs>
+  <text fill="#f5f5f7" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" letter-spacing="4">
+    <textPath href="#circTop" startOffset="50%" text-anchor="middle">BLUE COLLAR TECHY</textPath>
+  </text>
+  <text fill="#ff6a1a" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" letter-spacing="3">
+    <textPath href="#circBot" startOffset="50%" text-anchor="middle">· BUILT TO LAST ·</textPath>
+  </text>
+  <text x="100" y="114" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="44" fill="#ff6a1a" letter-spacing="-2">BCT</text>
+</svg>

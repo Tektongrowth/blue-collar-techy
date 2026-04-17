@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blue Collar Techy — Tech, AI, and local SEO for blue-collar business owners</title>
+<meta name="description" content="Practical tech, AI, and local SEO for blue-collar business owners. Built by a contractor who went full tech. No guru nonsense." />
+<meta name="author" content="Nick Conley" />
+<meta name="theme-color" content="#0d0d12" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://bluecollartechy.com/" />
+<meta property="og:title" content="Blue Collar Techy — Tech, AI, and local SEO for blue-collar business owners" />
+<meta property="og:description" content="Practical tech, AI, and local SEO for blue-collar business owners. Built by a contractor who went full tech." />
+<meta property="og:image" content="https://bluecollartechy.com/og-image.png" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Blue Collar Techy" />
+<meta name="twitter:description" content="Practical tech, AI, and local SEO for blue-collar business owners." />
+<meta name="twitter:image" content="https://bluecollartechy.com/og-image.png" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="logos/bct-favicon.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0d0d12;
+    --bg-elev: #15151d;
+    --bg-card: #1a1a24;
+    --border: #272733;
+    --text: #f5f5f7;
+    --text-dim: #a0a0ab;
+    --text-faint: #6b6b78;
+    --accent: #ff6a1a;
+    --accent-bright: #ff8530;
+    --hi-vis: #ffc61a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Archivo', system-ui, -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .display { font-family: 'Archivo Black', 'Archivo', sans-serif; letter-spacing: -0.01em; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  a { color: inherit; text-decoration: none; }
+  .accent { color: var(--accent); }
+  .hi-vis { color: var(--hi-vis); }
+
+  /* ============ PROTOTYPE HEADER ============ */
+  .proto-banner {
+    background: repeating-linear-gradient(45deg, #2a2a33, #2a2a33 12px, #1a1a22 12px, #1a1a22 24px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .proto-banner .dot {
+    display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent); vertical-align: middle; margin-right: 8px;
+    box-shadow: 0 0 12px var(--accent);
+  }
+
+  /* ============ LOGO LAB ============ */
+  .logo-lab {
+    background: var(--bg-elev);
+    border-bottom: 1px solid var(--border);
+    padding: 60px 0;
+  }
+  .lab-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .lab-heading {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+  .lab-sub {
+    color: var(--text-dim);
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+  }
+  .logo-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 48px 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    transition: border-color 0.2s;
+    min-height: 280px;
+    justify-content: space-between;
+  }
+  .logo-card:hover { border-color: var(--accent); }
+  .logo-card .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .logo-card .label strong { color: var(--text); }
+  .logo-preview { flex: 1; display: flex; align-items: center; justify-content: center; width: 100%; }
+
+  /* ============ NAV ============ */
+  nav.site-nav {
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(13, 13, 18, 0.85);
+  }
+  .nav-inner {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .nav-logo svg { height: 36px; width: auto; display: block; }
+  .nav-links {
+    display: flex; gap: 36px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .nav-links a { color: var(--text-dim); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    background: var(--accent);
+    color: #000;
+    padding: 10px 18px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    padding: 100px 0 120px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .eyebrow::before {
+    content: ''; width: 28px; height: 2px; background: var(--accent);
+  }
+  h1.hero-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(44px, 5.5vw, 76px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+  h1.hero-title .hi { color: var(--accent); }
+  .hero-sub {
+    font-size: 19px;
+    color: var(--text-dim);
+    margin-bottom: 40px;
+    line-height: 1.55;
+    max-width: 520px;
+  }
+  .cta-row {
+    display: flex; gap: 14px; flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 28px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: var(--accent); color: #000; }
+  .btn-primary:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+  .btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
+  .btn-secondary:hover { border-color: var(--text); }
+  .btn svg { width: 14px; height: 14px; }
+
+  /* Hero portrait area */
+  .hero-visual {
+    aspect-ratio: 4/5;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-visual::before {
+    content: 'NICK.JPG';
+    position: absolute; top: 16px; left: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.1em;
+    z-index: 2;
+  }
+  .hero-visual::after {
+    content: ''; position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(0deg, transparent 0 4px, rgba(255,255,255,0.015) 4px 5px),
+      linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+  }
+  .hero-visual .photo-placeholder {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--text-faint);
+    z-index: 3;
+  }
+  .hero-visual .badge {
+    position: absolute; bottom: 16px; left: 16px; z-index: 3;
+    background: var(--accent); color: #000;
+    padding: 8px 12px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .hero-visual .meta {
+    position: absolute; top: 16px; right: 16px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-faint);
+    text-align: right; letter-spacing: 0.1em; z-index: 3;
+  }
+
+  /* ============ MANIFESTO ============ */
+  .manifesto {
+    padding: 120px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .manifesto::before {
+    content: '// 01';
+    position: absolute; top: 40px; left: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+    letter-spacing: 0.1em;
+  }
+  .manifesto-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+  }
+  .manifesto-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .manifesto h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(36px, 4vw, 56px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+  .manifesto h2 .hi { color: var(--accent); }
+  .manifesto p {
+    font-size: 18px;
+    color: var(--text-dim);
+    margin-bottom: 20px;
+    line-height: 1.7;
+  }
+  .manifesto p strong { color: var(--text); }
+
+  /* ============ WHAT I COVER ============ */
+  .covers {
+    padding: 120px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .covers::before {
+    content: '// 02';
+    position: absolute; top: 40px; left: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+    letter-spacing: 0.1em;
+  }
+  .section-head {
+    display: flex; justify-content: space-between; align-items: end;
+    margin-bottom: 56px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 32px;
+  }
+  .section-head h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(32px, 3.5vw, 48px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .section-head .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .card {
+    background: var(--bg);
+    padding: 40px 32px 48px;
+    position: relative;
+    transition: background 0.2s;
+  }
+  .card:hover { background: var(--bg-card); }
+  .card .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    margin-bottom: 28px;
+  }
+  .card h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .card p {
+    color: var(--text-dim);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ============ FEATURED CONTENT ============ */
+  .featured {
+    padding: 120px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .featured::before {
+    content: '// 03';
+    position: absolute; top: 40px; left: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+    letter-spacing: 0.1em;
+  }
+  .vids {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .vid {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .vid:hover { border-color: var(--accent); }
+  .vid-thumb {
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #1a1a24 0%, #0d0d12 100%);
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .vid-thumb::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 70% 30%, rgba(255, 106, 26, 0.15), transparent 50%),
+      repeating-linear-gradient(0deg, transparent 0 3px, rgba(255,255,255,0.015) 3px 4px);
+  }
+  .vid-thumb .play {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; z-index: 2;
+  }
+  .vid-thumb .play::after {
+    content: ''; border-style: solid;
+    border-width: 9px 0 9px 14px;
+    border-color: transparent transparent transparent #000;
+    margin-left: 4px;
+  }
+  .vid-thumb .dur {
+    position: absolute; bottom: 12px; right: 12px; z-index: 3;
+    background: rgba(0,0,0,0.8); color: #fff;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    padding: 3px 6px; letter-spacing: 0.05em;
+  }
+  .vid-body { padding: 20px 20px 24px; }
+  .vid-cat {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .vid h3 {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  /* ============ NEWSLETTER ============ */
+  .newsletter {
+    padding: 120px 0;
+    border-bottom: 1px solid var(--border);
+    background:
+      linear-gradient(180deg, var(--bg) 0%, #0a0a10 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .newsletter::before {
+    content: '// 04';
+    position: absolute; top: 40px; left: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+    letter-spacing: 0.1em;
+  }
+  .newsletter::after {
+    content: ''; position: absolute;
+    top: 50%; right: -100px; transform: translateY(-50%);
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255, 106, 26, 0.12), transparent 70%);
+    pointer-events: none;
+  }
+  .nl-inner {
+    max-width: 720px;
+    position: relative; z-index: 2;
+  }
+  .nl-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .nl-inner h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(36px, 4.5vw, 60px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+  .nl-inner p {
+    font-size: 18px;
+    color: var(--text-dim);
+    margin-bottom: 40px;
+    max-width: 540px;
+  }
+  form.nl-form {
+    display: flex; gap: 0;
+    border: 2px solid var(--border);
+    background: var(--bg-card);
+    max-width: 540px;
+    transition: border-color 0.2s;
+  }
+  form.nl-form:focus-within { border-color: var(--accent); }
+  form.nl-form input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 18px 20px;
+    color: var(--text);
+    font-family: 'Archivo', sans-serif;
+    font-size: 15px;
+  }
+  form.nl-form input::placeholder { color: var(--text-faint); }
+  form.nl-form button {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 18px 28px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  form.nl-form button:hover { background: var(--accent-bright); }
+  .nl-note {
+    margin-top: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    padding: 80px 0 40px;
+    background: #0a0a10;
+  }
+  .foot-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--border);
+  }
+  .foot-brand .logo-mini { margin-bottom: 20px; }
+  .foot-brand .logo-mini svg { height: 60px; width: auto; }
+  .foot-brand p {
+    color: var(--text-dim);
+    font-size: 14px;
+    max-width: 300px;
+    line-height: 1.6;
+  }
+  .foot-col h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a { color: var(--text-dim); font-size: 14px; transition: color 0.2s; }
+  .foot-col a:hover { color: var(--accent); }
+  .foot-bottom {
+    padding-top: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+    letter-spacing: 0.08em;
+  }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 900px) {
+    .hero-grid, .manifesto-grid { grid-template-columns: 1fr; gap: 48px; }
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    .vids { grid-template-columns: 1fr; }
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .nav-links { display: none; }
+    .section-head { flex-direction: column; align-items: start; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =================== NAV =================== -->
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="#" aria-label="Blue Collar Techy">
+      <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+        <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
+        <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
+        <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
+        <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
+        <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
+        <text x="290" y="78" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">EST · 2026</text>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a>
+      <a href="under-construction.html?section=Resources">Resources</a>
+      <a href="under-construction.html?section=Blog">Blog</a>
+      <a href="work-with-me.html">Work with me</a>
+    </div>
+    <a class="nav-cta" href="#newsletter">Subscribe</a>
+  </div>
+</nav>
+
+<!-- =================== HERO =================== -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Practical tech for the trades</div>
+      <h1 class="hero-title">Tech, AI, and local SEO for <span class="hi">blue-collar</span> business owners.</h1>
+      <p class="hero-sub">I'm Nick Conley. I spent 10 years building a hardscape company before going all-in on marketing, AI, and tech. Now I share what actually works.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">
+          Watch on YouTube
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </a>
+        <a class="btn btn-secondary" href="#newsletter">Get the newsletter</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="meta">NICK CONLEY<br/>FOUNDER · TEKTON<br/>HARDSCAPE → TECH</div>
+      <div class="photo-placeholder">[ photo of Nick ]</div>
+      <div class="badge">Est. 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== MANIFESTO =================== -->
+<section class="manifesto">
+  <div class="container manifesto-grid">
+    <div>
+      <div class="manifesto-label">The Point</div>
+    </div>
+    <div>
+      <h2>Your marketing agency is <span class="hi">not the hero.</span> You are.</h2>
+      <p>I've been on both sides of this. I hired agencies as a contractor. Most of them overpromised and underdelivered. So I taught myself, got better results, and eventually made it my career.</p>
+      <p>Marketing plays a real part. But the business owner still owns pieces of the pie no agency can touch. <strong>Your reputation. Your follow-up. How you show up on the jobsite.</strong></p>
+      <p>Blue Collar Techy is for contractors who understand that.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================== WHAT I COVER =================== -->
+<section class="covers">
+  <div class="container">
+    <div class="section-head">
+      <h2>What I cover</h2>
+      <div class="tag">04 Pillars</div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="num">01 · AI</div>
+        <h3>AI that actually helps</h3>
+        <p>Real tools and workflows I test on real businesses. If it's hype, I'll tell you.</p>
+      </div>
+      <div class="card">
+        <div class="num">02 · SEO</div>
+        <h3>Local SEO that gets calls</h3>
+        <p>Google Maps, service pages, reviews. The stuff that makes your phone ring. Plain English.</p>
+      </div>
+      <div class="card">
+        <div class="num">03 · STACK</div>
+        <h3>Contractor tech stack</h3>
+        <p>CRMs, automations, follow-up. What to keep, what to drop, and how to stop paying for tools you barely use.</p>
+      </div>
+      <div class="card">
+        <div class="num">04 · BTS</div>
+        <h3>Behind the scenes</h3>
+        <p>What I'm building, testing, and learning. Wins, mistakes, and the stuff I'd tell a buddy after work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FEATURED =================== -->
+<section class="featured">
+  <div class="container">
+    <div class="section-head">
+      <h2>Start here</h2>
+      <div class="tag">Featured on YouTube</div>
+    </div>
+    <div class="vids">
+      <a class="vid" href="#">
+        <div class="vid-thumb">
+          <div class="play"></div>
+          <div class="dur">14:32</div>
+        </div>
+        <div class="vid-body">
+          <div class="vid-cat">AI · Contractors</div>
+          <h3>How contractors can actually use AI without wasting money</h3>
+        </div>
+      </a>
+      <a class="vid" href="#">
+        <div class="vid-thumb">
+          <div class="play"></div>
+          <div class="dur">09:47</div>
+        </div>
+        <div class="vid-body">
+          <div class="vid-cat">Local SEO</div>
+          <h3>Local SEO for contractors in plain English</h3>
+        </div>
+      </a>
+      <a class="vid" href="#">
+        <div class="vid-thumb">
+          <div class="play"></div>
+          <div class="dur">17:05</div>
+        </div>
+        <div class="vid-body">
+          <div class="vid-cat">Tech Stack</div>
+          <h3>My contractor tech stack — tools I keep, tools I'd drop</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== NEWSLETTER =================== -->
+<section class="newsletter" id="newsletter">
+  <div class="container nl-inner">
+    <div class="nl-eyebrow">The Newsletter</div>
+    <h2>Get the best stuff in your inbox.</h2>
+    <p>Practical ideas on AI, local SEO, and contractor marketing. Written like a normal person. No guru spam. No fake urgency.</p>
+    <form class="nl-form" onsubmit="event.preventDefault();">
+      <input type="email" placeholder="your@email.com" />
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="nl-note">// Free. Unsubscribe anytime. No BS.</div>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo-mini">
+          <svg viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="30" width="220" height="140" fill="none" stroke="#f5f5f7" stroke-width="5"/>
+            <text x="130" y="96" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="56" fill="#f5f5f7" letter-spacing="-2">BCT</text>
+            <line x1="50" y1="112" x2="210" y2="112" stroke="#ff6a1a" stroke-width="2"/>
+            <text x="130" y="132" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="10" fill="#f5f5f7" letter-spacing="3">BLUE COLLAR TECHY</text>
+            <text x="130" y="150" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">BUILT TO LAST · EST 2026</text>
+          </svg>
+        </div>
+        <p>Practical tech, AI, and local SEO for blue-collar business owners. Built by a contractor, for contractors.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="under-construction.html?section=Resources">Resources</a></li>
+          <li><a href="under-construction.html?section=Blog">Blog</a></li>
+          <li><a href="work-with-me.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Work with me</h4>
+        <ul>
+          <li><a href="work-with-me.html">Get in touch</a></li>
+          <li><a href="https://tektongrowth.com" target="_blank" rel="noopener">Tekton Growth</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="#" target="_blank" rel="noopener">X</a></li>
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Blue Collar Techy</div>
+      <div>Privacy · Terms</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

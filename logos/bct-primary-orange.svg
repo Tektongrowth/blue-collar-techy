@@ -1,0 +1,7 @@
+<svg width="260" height="200" viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20" y="30" width="220" height="140" fill="none" stroke="#ff6a1a" stroke-width="5"/>
+  <text x="130" y="96" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="56" fill="#ff6a1a" letter-spacing="-2">BCT</text>
+  <line x1="50" y1="112" x2="210" y2="112" stroke="#ff6a1a" stroke-width="2"/>
+  <text x="130" y="132" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="10" fill="#ff6a1a" letter-spacing="3">BLUE COLLAR TECHY</text>
+  <text x="130" y="150" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">BUILT TO LAST · EST 2026</text>
+</svg>

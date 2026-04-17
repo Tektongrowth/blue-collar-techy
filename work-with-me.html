@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Work with Nick — Blue Collar Techy</title>
+<meta name="description" content="Tell me about your business and what you're trying to do. AI, marketing, local SEO, systems. I read every message." />
+<meta name="theme-color" content="#0d0d12" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://bluecollartechy.com/work-with-me" />
+<meta property="og:title" content="Work with Nick — Blue Collar Techy" />
+<meta property="og:description" content="Tell me about your business and what you're trying to do. I read every message." />
+<meta property="og:image" content="https://bluecollartechy.com/og-image.png" />
+
+<link rel="icon" type="image/svg+xml" href="logos/bct-favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0d0d12;
+    --bg-elev: #15151d;
+    --bg-card: #1a1a24;
+    --border: #272733;
+    --text: #f5f5f7;
+    --text-dim: #a0a0ab;
+    --text-faint: #6b6b78;
+    --accent: #ff6a1a;
+    --accent-bright: #ff8530;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; width: 100%; }
+  .narrow { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+  a { color: inherit; text-decoration: none; }
+
+  /* NAV */
+  nav.site-nav {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(13, 13, 18, 0.85);
+  }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo { display: flex; align-items: center; gap: 12px; }
+  .nav-logo svg { height: 36px; width: auto; display: block; }
+  .nav-links { display: flex; gap: 36px; font-size: 14px; font-weight: 600; }
+  .nav-links a { color: var(--text-dim); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-links a.active { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: #000;
+    padding: 10px 18px; font-weight: 700; font-size: 13px;
+    letter-spacing: 0.02em; border-radius: 2px; text-transform: uppercase;
+  }
+  @media (max-width: 900px) { .nav-links { display: none; } }
+
+  /* HERO */
+  .hero {
+    padding: 80px 0 60px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .eyebrow::before {
+    content: ''; width: 28px; height: 2px; background: var(--accent);
+  }
+  h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(44px, 6vw, 72px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+  h1 .hi { color: var(--accent); }
+  .hero-sub {
+    font-size: 19px;
+    color: var(--text-dim);
+    max-width: 620px;
+    line-height: 1.55;
+  }
+
+  /* FORM */
+  .form-wrap {
+    padding: 72px 0 100px;
+  }
+  .form-panel {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    padding: 48px;
+  }
+  @media (max-width: 700px) { .form-panel { padding: 32px 24px; } }
+
+  .field { margin-bottom: 32px; }
+  .field label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .field .hint {
+    display: block;
+    font-family: 'Archivo', sans-serif;
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-top: 6px;
+    letter-spacing: 0;
+    text-transform: none;
+    font-weight: 400;
+  }
+  .field input[type="text"],
+  .field input[type="email"],
+  .field input[type="url"],
+  .field input[type="tel"],
+  .field select,
+  .field textarea {
+    width: 100%;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    color: var(--text);
+    padding: 14px 16px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 16px;
+    border-radius: 2px;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus { border-color: var(--accent); }
+  .field textarea { min-height: 140px; resize: vertical; }
+  .field input::placeholder,
+  .field textarea::placeholder { color: var(--text-faint); }
+
+  .checkboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  .checkbox-item {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    font-size: 15px;
+    user-select: none;
+  }
+  .checkbox-item:hover { border-color: var(--text-faint); }
+  .checkbox-item input { margin: 0; accent-color: var(--accent); width: 18px; height: 18px; }
+  .checkbox-item.checked {
+    border-color: var(--accent);
+    background: rgba(255, 106, 26, 0.08);
+  }
+
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 700px) { .row { grid-template-columns: 1fr; } }
+
+  .submit-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    padding-top: 16px; border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .submit-row .note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.12em;
+  }
+  .btn-submit {
+    background: var(--accent); color: #000;
+    border: none;
+    padding: 18px 36px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800; font-size: 14px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 2px;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .btn-submit:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+  .btn-submit svg { width: 14px; height: 14px; }
+
+  /* SIDE INFO (What to expect) */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 60px;
+  }
+  @media (max-width: 800px) { .info-grid { grid-template-columns: 1fr; } }
+  .info {
+    background: var(--bg);
+    padding: 32px 28px;
+  }
+  .info .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+  }
+  .info h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 18px;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .info p {
+    color: var(--text-dim);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+    background: #0a0a10;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+    letter-spacing: 0.08em;
+    text-align: center;
+  }
+
+  /* SUCCESS MESSAGE (hidden by default) */
+  .success {
+    display: none;
+    background: rgba(255, 106, 26, 0.08);
+    border: 2px solid var(--accent);
+    padding: 40px;
+    text-align: center;
+  }
+  .success.on { display: block; }
+  .success h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .success p { color: var(--text-dim); }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html" aria-label="Blue Collar Techy">
+      <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+        <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
+        <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
+        <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
+        <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
+        <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
+        <text x="290" y="78" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">EST · 2026</text>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a>
+      <a href="under-construction.html?section=Resources">Resources</a>
+      <a href="under-construction.html?section=Blog">Blog</a>
+      <a href="work-with-me.html" class="active">Work with me</a>
+    </div>
+    <a class="nav-cta" href="index.html#newsletter">Subscribe</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Work with Nick</div>
+    <h1>Tell me what you're <span class="hi">trying to do.</span></h1>
+    <p class="hero-sub">If you want help with AI, marketing, local SEO, automations, or just figuring out what to focus on, drop your details below. I read every message myself. If it's a fit, I'll reach out.</p>
+  </div>
+</section>
+
+<section class="form-wrap">
+  <div class="narrow">
+
+    <div class="info-grid">
+      <div class="info">
+        <div class="num">01</div>
+        <h3>Fill out the form</h3>
+        <p>Takes about two minutes. The more specific you are, the better I can help.</p>
+      </div>
+      <div class="info">
+        <div class="num">02</div>
+        <h3>I'll read it</h3>
+        <p>Every message comes straight to me. Not a VA. Not a bot. Me.</p>
+      </div>
+      <div class="info">
+        <div class="num">03</div>
+        <h3>We'll figure it out</h3>
+        <p>If it's a fit, we'll jump on a call. If it's not, I'll point you to someone who can help.</p>
+      </div>
+    </div>
+
+    <form class="form-panel" id="contact-form" action="#" method="POST">
+
+      <div class="row">
+        <div class="field">
+          <label for="name">Your name *</label>
+          <input type="text" id="name" name="name" required placeholder="Full name" />
+        </div>
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="you@yourbusiness.com" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="business">Business name</label>
+          <input type="text" id="business" name="business" placeholder="ABC Landscaping" />
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="trade">What do you do?</label>
+        <select id="trade" name="trade">
+          <option value="">Pick one</option>
+          <option>Landscaping / Lawn Care</option>
+          <option>Hardscape / Outdoor Living</option>
+          <option>Roofing</option>
+          <option>Plumbing</option>
+          <option>HVAC</option>
+          <option>Electrical</option>
+          <option>General Contracting / Remodeling</option>
+          <option>Painting</option>
+          <option>Other Trade</option>
+          <option>Marketing Agency</option>
+          <option>Something Else</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>What are you looking for help with? <span class="hint">(Check all that apply)</span></label>
+        <div class="checkboxes">
+          <label class="checkbox-item">
+            <input type="checkbox" name="interest" value="AI" />
+            <span>AI tools + implementation</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="interest" value="Local SEO" />
+            <span>Local SEO + Google Maps</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="interest" value="Marketing" />
+            <span>Marketing strategy</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="interest" value="Automations" />
+            <span>Automations + systems</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="interest" value="Website" />
+            <span>Website / site rebuild</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="interest" value="CRM" />
+            <span>CRM / follow-up</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="interest" value="Teardown" />
+            <span>Audit / teardown of my setup</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="interest" value="Not sure" />
+            <span>Not sure yet</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message">Tell me about your business and what you're trying to do *</label>
+        <textarea id="message" name="message" required placeholder="What's the business? What's working, what's not? What would success look like for you?"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="website">Website or Google listing <span class="hint">(Optional, but helps a lot)</span></label>
+        <input type="url" id="website" name="website" placeholder="https://yourbusiness.com" />
+      </div>
+
+      <div class="submit-row">
+        <div class="note">// I read every message personally.</div>
+        <button type="submit" class="btn-submit">
+          Send it
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+
+    </form>
+
+    <div class="success" id="success-msg">
+      <h3>Got it. Thanks for sending that.</h3>
+      <p>I'll read it and get back to you within a couple days. In the meantime, check out the YouTube channel or grab the newsletter.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 Blue Collar Techy · Built by a contractor who went full tech</div>
+</footer>
+
+<script>
+  // Visual feedback for checkbox selection
+  document.querySelectorAll('.checkbox-item input').forEach(cb => {
+    cb.addEventListener('change', e => {
+      e.target.closest('.checkbox-item').classList.toggle('checked', e.target.checked);
+    });
+  });
+
+  // Placeholder submit handler — swap with GHL form embed or real endpoint when ready
+  document.getElementById('contact-form').addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('success-msg').classList.add('on');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // TODO: wire to GHL form handler or fetch('<endpoint>', { method: 'POST', body: new FormData(e.target) })
+  });
+</script>
+
+</body>
+</html>
