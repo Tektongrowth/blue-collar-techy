@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>When leads dry up: is it the market, the agency, or you? — Blue Collar Techy</title>
+<meta name="description" content="Phone not ringing like it used to? Before you blame your marketing agency, check these three things. The first one tells you whether it's actually the market." />
+<meta name="author" content="Nick Conley" />
+<meta name="theme-color" content="#0d0d12" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bluecollartechy.com/blog/market-agency-or-you" />
+<meta property="og:title" content="When leads dry up: is it the market, the agency, or you?" />
+<meta property="og:description" content="Before you blame your marketing agency, check these three things. The first one tells you whether it's actually the market." />
+<meta property="og:image" content="https://bluecollartechy.com/og-image.png" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="When leads dry up: is it the market, the agency, or you?" />
+<meta name="twitter:description" content="Before you blame your marketing agency, check these three things." />
+<meta name="twitter:image" content="https://bluecollartechy.com/og-image.png" />
+
+<link rel="icon" type="image/svg+xml" href="../logos/bct-favicon.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0d0d12;
+    --bg-elev: #15151d;
+    --bg-card: #1a1a24;
+    --border: #272733;
+    --text: #f5f5f7;
+    --text-dim: #a0a0ab;
+    --text-faint: #6b6b78;
+    --accent: #ff6a1a;
+    --accent-bright: #ff8530;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .narrow { max-width: 780px; margin: 0 auto; padding: 0 32px; }
+  a { color: inherit; text-decoration: none; }
+  .accent { color: var(--accent); }
+
+  /* NAV */
+  nav.site-nav {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(13, 13, 18, 0.85);
+  }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo { display: flex; align-items: center; gap: 12px; }
+  .nav-logo svg { height: 36px; width: auto; display: block; }
+  .nav-links { display: flex; gap: 36px; font-size: 14px; font-weight: 600; }
+  .nav-links a { color: var(--text-dim); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-links a.active { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: #000;
+    padding: 10px 18px; font-weight: 700; font-size: 13px;
+    letter-spacing: 0.02em; border-radius: 2px; text-transform: uppercase;
+  }
+
+  /* ARTICLE META BAR */
+  .article-meta {
+    padding: 40px 0 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .article-meta-row {
+    display: flex; justify-content: space-between; gap: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .article-meta-row span.hl { color: var(--accent); }
+
+  /* HERO */
+  .hero-post {
+    padding: 80px 0 80px;
+  }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .kicker::before {
+    content: ''; width: 28px; height: 2px; background: var(--accent);
+  }
+  h1.post-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(40px, 5.6vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin-bottom: 36px;
+    max-width: 960px;
+  }
+  h1.post-title .hi { color: var(--accent); }
+  .hero-sub {
+    font-size: 22px;
+    color: var(--text-dim);
+    max-width: 680px;
+    line-height: 1.5;
+  }
+  .post-byline {
+    margin-top: 40px;
+    display: flex; gap: 24px; flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .post-byline span.v { color: var(--text); }
+
+  /* CHAPTERS / BODY */
+  .chapter {
+    padding: 48px 0;
+    border-top: 1px solid var(--border);
+  }
+  .chapter-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .chapter h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(30px, 3.5vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    max-width: 760px;
+  }
+  .chapter h2 .hi { color: var(--accent); }
+  .chapter h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin: 32px 0 14px;
+    color: var(--text);
+  }
+  .chapter p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+  .chapter p.lead {
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+  .chapter p.dim { color: var(--text-dim); }
+  .chapter p strong { color: var(--text); font-weight: 700; }
+  .chapter ul, .chapter ol {
+    margin: 14px 0 28px;
+    padding-left: 28px;
+  }
+  .chapter ul li, .chapter ol li {
+    font-size: 18px;
+    line-height: 1.65;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .chapter ul li::marker { color: var(--accent); }
+
+  /* CHECKLIST */
+  .checklist {
+    list-style: none !important;
+    padding: 32px 0 !important;
+    margin: 32px 0 !important;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .checklist li {
+    position: relative;
+    padding: 14px 0 14px 44px !important;
+    font-size: 18px;
+    color: var(--text);
+  }
+  .checklist li::before {
+    content: '';
+    position: absolute; left: 0; top: 22px;
+    width: 24px; height: 2px;
+    background: var(--accent);
+  }
+  .checklist li strong { color: var(--accent); font-weight: 800; }
+
+  /* DATA CALLOUT */
+  .data-callout {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 36px 40px;
+    margin: 40px 0;
+    position: relative;
+  }
+  .data-callout .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .data-callout h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+  .data-callout ul { padding-left: 22px !important; margin: 12px 0 !important; }
+  .data-callout ul li { font-size: 16px; margin-bottom: 6px; color: var(--text-dim); }
+  .data-callout ul li strong { color: var(--accent); font-weight: 700; }
+
+  /* PULL QUOTE */
+  .pullquote {
+    padding: 96px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--bg) 0%, #0a0a10 100%);
+    text-align: center;
+  }
+  .pullquote blockquote {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 3.6vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    max-width: 900px;
+    margin: 0 auto 24px;
+  }
+  .pullquote blockquote .hi { color: var(--accent); }
+  .pullquote cite {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  /* INLINE CTA CARD */
+  .inline-cta {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 40px;
+    margin: 48px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .inline-cta::before {
+    content: '';
+    position: absolute; top: 0; left: 0; bottom: 0;
+    width: 4px; background: var(--accent);
+  }
+  .inline-cta .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .inline-cta h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 26px;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+  .inline-cta p {
+    color: var(--text-dim);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .inline-cta a.btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #000;
+    padding: 14px 26px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 13px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .inline-cta a.btn:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+
+  /* END CTA */
+  .end-cta {
+    padding: 120px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .end-cta .kicker { margin-bottom: 24px; }
+  .end-cta h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    max-width: 820px; margin-left: auto; margin-right: auto;
+  }
+  .end-cta p {
+    color: var(--text-dim);
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 640px;
+    margin-left: auto; margin-right: auto;
+  }
+  .cta-row {
+    display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 18px 32px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 14px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    border: 2px solid transparent; border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: var(--accent); color: #000; }
+  .btn-primary:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+  .btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
+  .btn-secondary:hover { border-color: var(--text); }
+
+  /* FOOTER */
+  footer {
+    padding: 80px 0 40px;
+    background: #0a0a10;
+    border-top: 1px solid var(--border);
+  }
+  .foot-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--border);
+  }
+  .foot-brand .logo-mini { margin-bottom: 20px; }
+  .foot-brand .logo-mini svg { height: 60px; width: auto; }
+  .foot-brand p { color: var(--text-dim); font-size: 14px; max-width: 300px; line-height: 1.6; }
+  .foot-col h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a { color: var(--text-dim); font-size: 14px; transition: color 0.2s; }
+  .foot-col a:hover { color: var(--accent); }
+  .foot-bottom {
+    padding-top: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--text-faint); letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 900px) {
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .nav-links { display: none; }
+    .article-meta-row { flex-direction: column; gap: 8px; }
+    .data-callout { padding: 28px 24px; }
+    .inline-cta { padding: 28px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="../index.html" aria-label="Blue Collar Techy">
+      <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+        <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
+        <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
+        <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
+        <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
+        <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
+        <text x="290" y="78" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">EST · 2026</text>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="../about.html">About</a>
+      <a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a>
+      <a href="../market-scan/">Resources</a>
+      <a href="index.html" class="active">Blog</a>
+      <a href="../work-with-me.html">Work with me</a>
+    </div>
+    <a class="nav-cta" href="../index.html#newsletter">Subscribe</a>
+  </div>
+</nav>
+
+<!-- META BAR -->
+<div class="article-meta">
+  <div class="container">
+    <div class="article-meta-row">
+      <span><span class="hl">BLOG</span> / MARKETING &amp; DIAGNOSIS</span>
+      <span>Published · 2026-04-16</span>
+      <span>Read · 8 min</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero-post">
+  <div class="narrow">
+    <div class="kicker">The Real Question</div>
+    <h1 class="post-title">When leads dry up, is it the market, the agency, or <span class="hi">you</span>?</h1>
+    <p class="hero-sub">Phone's not ringing like it used to. Your first instinct is to call your marketing agency and chew somebody out. Sometimes you're right. A lot of the time you're not. Here's how to tell which one it actually is, in the order that saves you the most money.</p>
+    <div class="post-byline">
+      <span>BY <span class="v">NICK CONLEY</span></span>
+      <span>FOUNDER · BLUE COLLAR TECHY</span>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// The setup</div>
+    <p class="lead">Phone's not ringing like it used to. The estimates you're closing feel smaller. The crew's asking when the next job starts.</p>
+    <p>Your first instinct is to call your marketing agency and chew somebody out.</p>
+    <p>Sometimes you're right. A lot of the time you're not.</p>
+    <p>I've been on both sides of this. I ran a hardscape crew for ten years and hired marketing agencies along the way. Most of them left a lot to be desired. Big promises, weak follow-through, fancy words around average work. Then I became the guy running marketing for contractors, and I got to see the other side too. The times the owner was the bottleneck. The times the market shifted and nobody noticed. The times the agency actually was the problem.</p>
+    <p>Before you fire anyone, including yourself, you need to know which one it is.</p>
+  </div>
+</section>
+
+<!-- THE THREE BUCKETS -->
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// The three buckets</div>
+    <h2>When business slows down, the cause is in one of three places.</h2>
+    <ul class="checklist">
+      <li><strong>The market.</strong> Demand for your service actually dropped in your area.</li>
+      <li><strong>The agency.</strong> They're not doing the work, or they're doing the wrong work.</li>
+      <li><strong>You.</strong> The owner is bottlenecking the business in ways no marketing can fix.</li>
+    </ul>
+    <p>They can overlap. A soft market makes every agency look worse and every owner mistake hurt more. But before you blame any of them, you need to know which one is actually pulling your numbers down.</p>
+    <p>Here's how to check each. In order.</p>
+  </div>
+</section>
+
+<!-- BUCKET 1 -->
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 01 — The market</div>
+    <h2>The market might have moved without <span class="hi">you noticing</span>.</h2>
+    <p>This is the one most contractors never check. And it's the one that burns the most agencies unfairly.</p>
+    <p>Google search demand for your services changes month to month and year to year. Seasonality. Economy. Interest rates. Local housing market. When that demand drops, your phone drops with it. That's not your agency's fault and it's not your fault either.</p>
+    <p>Here's a real example from a couple weeks ago.</p>
+    <p>I ran a market demand scan for a contractor in Asheville, North Carolina. He does retaining walls and outdoor living. His business felt soft. His first thought was the agency.</p>
+    <p>I pulled 24 months of local Google Ads search data for his whole industry. Compared the last 90 days to the same 90 days one year earlier so seasonality couldn't distort it. Here's what came back:</p>
+
+    <div class="data-callout">
+      <div class="label">Asheville, NC · Year-Over-Year Search Demand</div>
+      <h3>Every construction category in the market was up.</h3>
+      <ul>
+        <li><strong>+12.5%</strong> outdoor living</li>
+        <li><strong>+9.8%</strong> hardscape (his category)</li>
+        <li><strong>+21.8%</strong> site work</li>
+        <li><strong>+6.4%</strong> roofing</li>
+        <li><strong>+8.5%</strong> interior remodel</li>
+      </ul>
+      <p style="font-size:15px; margin-top:16px; margin-bottom:0; color:var(--text-faint);">Every single category in his industry showed growing demand year over year. The market was not the problem.</p>
+    </div>
+
+    <p>His market wasn't soft. Demand was higher than last year across the board. So if his business was down, the answer wasn't in the market bucket. It was in one of the other two.</p>
+    <p>That's the point of this check. You run the demand scan first. If the market is flat or down in your category, you've got your answer and you stop blaming everyone else. If the market is up, you move on to the next bucket.</p>
+    <p class="dim">Most contractors skip this step entirely. They feel slow, they assume the market is slow, they make big decisions based on a gut feeling. Sometimes they're right. A lot of the time the market is fine and they just torched their relationship with a decent agency.</p>
+
+    <div class="inline-cta">
+      <div class="label">Free Tool</div>
+      <h3>Run the same scan for your market.</h3>
+      <p>Put in your city and your trade. I'll pull the actual Google search demand numbers for your industry in your area, compared year over year. No sales pitch, no signup wall beyond your email so I can send you the report.</p>
+      <a class="btn" href="../market-scan/">Run my market scan →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="pullquote">
+  <div class="container">
+    <blockquote>Market data is free. Run it first. It either ends the conversation or <span class="hi">points you to the next step.</span></blockquote>
+    <cite>Rule one of the diagnosis</cite>
+  </div>
+</section>
+
+<!-- BUCKET 2 -->
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 02 — The agency</div>
+    <h2>The agency might actually be <span class="hi">asleep at the wheel.</span></h2>
+    <p>If the market is up and your business is down, an agency problem is on the table.</p>
+    <p>Here's how to check without taking their word for it.</p>
+
+    <h3>Google Business Profile</h3>
+    <p>Log into it right now. When did they last post? When was the last photo uploaded? Are your services, attributes, and categories all filled out? If you haven't seen activity in 60 days, somebody isn't doing the work.</p>
+
+    <h3>Your map pack ranking</h3>
+    <p>Search your main service plus your city. Are you showing up in the map results? Where? Is it worse than it was six months ago? A good agency tracks this with a grid scan so you can see exactly where you rank across your whole service area, not just from your office.</p>
+
+    <h3>Website traffic</h3>
+    <p>Ask for a Google Analytics report. Pull the last 12 months. If traffic is falling off while demand is rising, somebody is missing the work. A good agency will show you this without you asking.</p>
+
+    <h3>Reviews</h3>
+    <p>Is your agency helping you collect them? Are they responding to them? Or are new ones trickling in without any help? Review volume and freshness move your rankings. If that pipeline is broken, it costs you calls.</p>
+
+    <h3>Leads vs closed deals</h3>
+    <p>Are you getting fewer leads, or fewer closed deals? Agencies get blamed for conversion problems that are actually sales problems. Tracking the difference is their job. Spotting it is yours.</p>
+
+    <p>If any of those signals are red and the market is up, you've got an agency problem. Not every contractor has a bad agency. But when you do, it usually shows up in two or three of these checks at once.</p>
+    <p class="dim">A good agency should be able to prove what they're doing. If they can't, they're probably not doing it.</p>
+  </div>
+</section>
+
+<!-- BUCKET 3 -->
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 03 — You</div>
+    <h2>This is the bucket nobody <span class="hi">wants to look in.</span></h2>
+    <p class="lead">Market is up. Agency checks out. The problem might be you.</p>
+    <p>I say this as somebody who spent a decade as the owner on the hook. No agency can fix what only the owner controls. And the stuff that only the owner controls is usually the stuff that actually moves the needle.</p>
+    <p>Here's the short list of things that kill contractor businesses and have nothing to do with marketing.</p>
+
+    <ul class="checklist">
+      <li><strong>Nobody answered the phone.</strong> Or the voicemail didn't get returned until the next day. Or the receptionist came off annoyed. That customer already called the next guy on the list.</li>
+      <li><strong>You took four days to send the estimate.</strong> The other two guys sent theirs the same day. The deal was done before you even hit send.</li>
+      <li><strong>You showed up 40 minutes late to the walkthrough.</strong> No call, no text. The customer decided right then they didn't want to hire you. The conversation was just politeness.</li>
+      <li><strong>You've got 11 Google reviews and your competitor has 230.</strong> Doesn't matter how good your work is. People shop with their eyes before they shop with their ears.</li>
+      <li><strong>You stopped asking for reviews six months ago because you got busy.</strong> The pipe starts drying up from the back end first. You just don't see it until leads are already down.</li>
+    </ul>
+
+    <p>That's five. I've got at least five more, and they're each worth their own breakdown. Following up with past customers. Tracking where your leads actually come from. Training a repeatable sales process instead of winging every estimate. Being present on your Google Business Profile. Doing what you said you'd do, when you said you'd do it.</p>
+    <p>These are the ones you can't outsource. And they're almost always the real difference between two companies in the same market with the same agency, where one is growing and the other is dying.</p>
+    <p class="dim">The full list of ten is the next post. If you want it when it drops, the newsletter's at the bottom of this page.</p>
+  </div>
+</section>
+
+<!-- DIAGNOSTIC ORDER -->
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// The order</div>
+    <h2>Do the checks in this order. It saves you the most money.</h2>
+    <ol>
+      <li><strong>Market first.</strong> If demand moved, your answer is there. Either pivot, wait, or adjust. Don't waste time blaming your agency or beating yourself up over something the whole industry is dealing with.</li>
+      <li><strong>Agency second.</strong> If the market is up and you're down, look at GBP, rankings, traffic, reviews, and leads. If those are moving the wrong way, you know what's going on.</li>
+      <li><strong>You third.</strong> If the market is up and the agency is doing the work, the gap is almost always something the owner controls. That's the hardest conversation to have with yourself. It's also the one that changes your business the fastest.</li>
+    </ol>
+    <p>You can also do all three at once if you've got the time. But if you only do one, make it the first one. Market data is free, it's fast, and it either ends the conversation or points you to the next step.</p>
+    <p>Most contractors skip straight to blaming the agency because it feels good. It's a shortcut. And shortcuts are expensive.</p>
+  </div>
+</section>
+
+<!-- END CTA -->
+<section class="end-cta">
+  <div class="container">
+    <div class="kicker">What's next</div>
+    <h2>Two things you can do right now.</h2>
+    <p>Run the demand scan for your trade and your city. It's free and it takes about a minute. Then subscribe so you don't miss the follow-up post on the ten things no agency can fix for you.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="../market-scan/">
+        Run my market scan
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" fill="none"/></svg>
+      </a>
+      <a class="btn btn-secondary" href="../index.html#newsletter">Get the newsletter</a>
+      <a class="btn btn-secondary" href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">Watch on YouTube</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo-mini">
+          <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
+            <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
+            <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
+            <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
+            <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
+          </svg>
+        </div>
+        <p>Practical tech, AI, and local SEO for blue-collar business owners. No guru nonsense.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="../market-scan/">Resources</a></li>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="../work-with-me.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Work</h4>
+        <ul>
+          <li><a href="../work-with-me.html">Get in touch</a></li>
+          <li><a href="https://tektongrowth.com" target="_blank" rel="noopener">Tekton Growth</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="#" target="_blank" rel="noopener">X</a></li>
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Blue Collar Techy · Nick Conley</span>
+      <span>Built for the trades</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Free Market Demand Scan — Blue Collar Techy</title>
+<meta name="description" content="Find out if your market is actually slow. Free scan of year-over-year Google search demand for your city and trade. Report emailed in minutes." />
+<meta name="author" content="Nick Conley" />
+<meta name="theme-color" content="#0d0d12" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://bluecollartechy.com/market-scan/" />
+<meta property="og:title" content="Free Market Demand Scan — Blue Collar Techy" />
+<meta property="og:description" content="Find out if your market is actually slow. Free year-over-year Google search demand report." />
+<meta property="og:image" content="https://bluecollartechy.com/og-image.png" />
+
+<link rel="icon" type="image/svg+xml" href="../logos/bct-favicon.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0d0d12; --bg-elev: #15151d; --bg-card: #1a1a24;
+    --border: #272733; --text: #f5f5f7; --text-dim: #a0a0ab; --text-faint: #6b6b78;
+    --accent: #ff6a1a; --accent-bright: #ff8530;
+    --success: #4ade80; --error: #f87171;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg); color: var(--text);
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 17px; line-height: 1.65;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .narrow { max-width: 820px; margin: 0 auto; padding: 0 32px; }
+  a { color: inherit; text-decoration: none; }
+
+  nav.site-nav {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0; position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(12px); background: rgba(13, 13, 18, 0.85);
+  }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo svg { height: 36px; width: auto; display: block; }
+  .nav-links { display: flex; gap: 36px; font-size: 14px; font-weight: 600; }
+  .nav-links a { color: var(--text-dim); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-links a.active { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: #000;
+    padding: 10px 18px; font-weight: 700; font-size: 13px;
+    letter-spacing: 0.02em; border-radius: 2px; text-transform: uppercase;
+  }
+
+  .article-meta { padding: 40px 0 24px; border-bottom: 1px solid var(--border); }
+  .article-meta-row {
+    display: flex; justify-content: space-between; gap: 32px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--text-faint); letter-spacing: 0.15em; text-transform: uppercase;
+  }
+  .article-meta-row span.hl { color: var(--accent); }
+
+  .hero-scan { padding: 72px 0 40px; }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--accent);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 24px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .kicker::before { content: ''; width: 28px; height: 2px; background: var(--accent); }
+  h1.scan-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 0.95; letter-spacing: -0.025em;
+    margin-bottom: 32px; max-width: 900px;
+  }
+  h1.scan-title .hi { color: var(--accent); }
+  .hero-sub {
+    font-size: 20px; color: var(--text-dim);
+    max-width: 640px; line-height: 1.55;
+  }
+  .hero-bullets {
+    margin-top: 36px; list-style: none;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 16px; max-width: 880px;
+  }
+  .hero-bullets li {
+    padding: 16px 20px; background: var(--bg-card);
+    border: 1px solid var(--border); font-size: 15px;
+    color: var(--text-dim);
+  }
+  .hero-bullets li strong { color: var(--accent); display: block; font-family: 'Archivo Black', sans-serif; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+
+  /* FORM SECTION */
+  .scan-form-section {
+    padding: 60px 0 120px;
+  }
+  .form-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    padding: 56px 56px; position: relative; overflow: hidden;
+  }
+  .form-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 4px; background: var(--accent);
+  }
+  .form-label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--accent);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .form-help {
+    font-size: 13px; color: var(--text-faint);
+    margin-top: 6px; line-height: 1.5;
+  }
+  .form-field { margin-bottom: 28px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  input[type="text"], input[type="email"], select {
+    width: 100%;
+    background: var(--bg); color: var(--text);
+    border: 1px solid var(--border);
+    padding: 16px 18px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 16px;
+    transition: border-color 0.2s;
+    border-radius: 0;
+  }
+  input[type="text"]:focus, input[type="email"]:focus, select:focus {
+    outline: none; border-color: var(--accent);
+  }
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='%23ff6a1a'%3E%3Cpath d='M6 8L2 4h8z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 12px;
+    padding-right: 42px;
+  }
+  .hp-field {
+    position: absolute; left: -9999px; width: 1px; height: 1px;
+    opacity: 0; pointer-events: none;
+  }
+  .submit-btn {
+    width: 100%;
+    background: var(--accent); color: #000;
+    border: none; cursor: pointer;
+    padding: 20px 32px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800; font-size: 15px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  }
+  .submit-btn:hover:not(:disabled) { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.35); }
+  .submit-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+  .form-footnote {
+    margin-top: 20px; font-size: 13px;
+    color: var(--text-faint); line-height: 1.5;
+  }
+
+  /* STATE PANELS */
+  .state-panel { display: none; }
+  .state-panel.active { display: block; }
+
+  .state-scanning, .state-success, .state-error {
+    text-align: center; padding: 40px 0 10px;
+  }
+  .spinner {
+    width: 64px; height: 64px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    margin: 0 auto 32px;
+    animation: spin 0.9s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .state-scanning h2, .state-success h2, .state-error h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 32px; letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+  .state-scanning p, .state-success p, .state-error p {
+    color: var(--text-dim); font-size: 17px;
+    max-width: 520px; margin: 0 auto 12px;
+  }
+  .state-success .checkmark {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--accent); color: #000;
+    margin: 0 auto 28px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px; font-weight: 900;
+  }
+  .state-error .x {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--error); color: #000;
+    margin: 0 auto 28px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px; font-weight: 900;
+  }
+  .scanning-stages {
+    margin-top: 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--text-faint);
+    letter-spacing: 0.15em; text-transform: uppercase;
+  }
+  .scanning-stages .stage {
+    opacity: 0.35;
+    padding: 6px 0; transition: opacity 0.3s, color 0.3s;
+  }
+  .scanning-stages .stage.done { opacity: 1; color: var(--accent); }
+  .scanning-stages .stage.active { opacity: 1; color: var(--text); }
+
+  .reset-btn {
+    margin-top: 24px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    padding: 12px 22px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .reset-btn:hover { border-color: var(--text); color: var(--text); }
+
+  /* FAQ / INFO */
+  .info-section {
+    padding: 80px 0; border-top: 1px solid var(--border);
+    background: #0a0a10;
+  }
+  .info-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .info-card {
+    padding: 32px;
+    background: var(--bg); border: 1px solid var(--border);
+  }
+  .info-card .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--accent);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .info-card h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 20px; letter-spacing: -0.01em;
+    margin-bottom: 14px;
+  }
+  .info-card p { color: var(--text-dim); font-size: 15px; line-height: 1.6; }
+
+  footer { padding: 80px 0 40px; background: #0a0a10; border-top: 1px solid var(--border); }
+  .foot-top {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px; padding-bottom: 60px; border-bottom: 1px solid var(--border);
+  }
+  .foot-brand .logo-mini { margin-bottom: 20px; }
+  .foot-brand .logo-mini svg { height: 60px; width: auto; }
+  .foot-brand p { color: var(--text-dim); font-size: 14px; max-width: 300px; line-height: 1.6; }
+  .foot-col h4 {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--text-faint); letter-spacing: 0.2em;
+    text-transform: uppercase; margin-bottom: 20px;
+  }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a { color: var(--text-dim); font-size: 14px; transition: color 0.2s; }
+  .foot-col a:hover { color: var(--accent); }
+  .foot-bottom {
+    padding-top: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--text-faint); letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 900px) {
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .nav-links { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero-bullets { grid-template-columns: 1fr; }
+    .info-grid { grid-template-columns: 1fr; }
+    .form-card { padding: 36px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="../index.html" aria-label="Blue Collar Techy">
+      <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+        <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
+        <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
+        <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
+        <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
+        <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
+        <text x="290" y="78" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">EST · 2026</text>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="../about.html">About</a>
+      <a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a>
+      <a href="index.html" class="active">Resources</a>
+      <a href="../blog/">Blog</a>
+      <a href="../work-with-me.html">Work with me</a>
+    </div>
+    <a class="nav-cta" href="../index.html#newsletter">Subscribe</a>
+  </div>
+</nav>
+
+<div class="article-meta">
+  <div class="container">
+    <div class="article-meta-row">
+      <span><span class="hl">FREE TOOL</span> / MARKET DEMAND SCAN</span>
+      <span>By Nick Conley</span>
+      <span>Runs in under 2 min</span>
+    </div>
+  </div>
+</div>
+
+<section class="hero-scan">
+  <div class="container">
+    <div class="kicker">Free Tool</div>
+    <h1 class="scan-title">Is your market actually slow, or is it just <span class="hi">feeling</span> that way?</h1>
+    <p class="hero-sub">Put in your city and your trade. I'll pull 24 months of real Google search demand data and show you where your market sits year over year. If it's down, you've got your answer. If it's up, you need to look somewhere else.</p>
+
+    <ul class="hero-bullets">
+      <li><strong>24-Month Data</strong>Real Google Ads keyword volume for your trade in your market, pulled live.</li>
+      <li><strong>YoY Comparison</strong>Last 90 days vs same 90 days a year ago. Cancels out seasonality.</li>
+      <li><strong>Honest Verdict</strong>Market up? Down? Category-level breakdown with confidence flags.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="scan-form-section">
+  <div class="narrow">
+    <div class="form-card">
+
+      <!-- FORM STATE -->
+      <div class="state-panel active" id="state-form">
+        <form id="scan-form" novalidate>
+          <div class="form-field">
+            <label class="form-label" for="name">Your Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" placeholder="Nick Conley" />
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="email">Where should I email the report?</label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+            <div class="form-help">No spam. You'll get the report and maybe a follow-up if you opt in.</div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="city">Your City</label>
+              <input type="text" id="city" name="city" required placeholder="Asheville, NC" />
+              <div class="form-help">City + state. Small towns work best when you use the nearest metro.</div>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="industry">Your Trade</label>
+              <select id="industry" name="industry" required>
+                <option value="">Select your trade…</option>
+                <option value="construction">Construction / home improvement (roofing, siding, decks, excavation, landscape)</option>
+                <option value="home_services">Home services (HVAC, plumbing, electrical, pest, cleaning, restoration)</option>
+                <option value="masonry">Masonry / hardscape / stone (walls, patios, chimneys, pavers, brick)</option>
+              </select>
+              <div class="form-help">More trades coming. Don't see yours? Pick the closest fit.</div>
+            </div>
+          </div>
+
+          <!-- honeypot -->
+          <div class="hp-field">
+            <label for="website">Website (leave empty)</label>
+            <input type="text" id="website" name="website" autocomplete="off" tabindex="-1" />
+          </div>
+
+          <button type="submit" class="submit-btn" id="submit-btn">
+            Run my market scan
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+
+          <div class="form-footnote">
+            Takes about 60-90 seconds to run. You'll get a full category-level demand report in your inbox. Report is based on live Google Ads search volume data.
+          </div>
+        </form>
+      </div>
+
+      <!-- SCANNING STATE -->
+      <div class="state-panel" id="state-scanning">
+        <div class="state-scanning">
+          <div class="spinner"></div>
+          <h2>Running your scan…</h2>
+          <p>Pulling 24 months of Google search data for your trade in your market. This takes 60-90 seconds. Don't close this tab.</p>
+          <div class="scanning-stages">
+            <div class="stage done" id="stage-1">▸ Input validated</div>
+            <div class="stage active" id="stage-2">▸ Pulling keyword expansions from Google Ads</div>
+            <div class="stage" id="stage-3">▸ Calculating year-over-year trends</div>
+            <div class="stage" id="stage-4">▸ Building your report</div>
+            <div class="stage" id="stage-5">▸ Sending to your inbox</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUCCESS STATE -->
+      <div class="state-panel" id="state-success">
+        <div class="state-success">
+          <div class="checkmark">✓</div>
+          <h2>Report sent to your inbox.</h2>
+          <p id="success-detail">Check your email. If you don't see it in the next few minutes, look in spam or promotions.</p>
+          <p id="success-verdict" style="color: var(--accent); font-weight: 600; margin-top: 14px;"></p>
+          <button class="reset-btn" onclick="resetForm()">Run another scan</button>
+        </div>
+      </div>
+
+      <!-- ERROR STATE -->
+      <div class="state-panel" id="state-error">
+        <div class="state-error">
+          <div class="x">!</div>
+          <h2>Something broke.</h2>
+          <p id="error-detail">The scan didn't complete. Try again in a minute, or email me at nick@bluecollartechy.com and I'll run it by hand.</p>
+          <button class="reset-btn" onclick="resetForm()">Try again</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="info-section">
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="num">01 — What you'll get</div>
+        <h3>Category-level demand</h3>
+        <p>Every major category in your trade, ranked by search volume in your area, with year-over-year trend. You'll see what's growing and what's softening.</p>
+      </div>
+      <div class="info-card">
+        <div class="num">02 — What it's not</div>
+        <h3>Not a crystal ball</h3>
+        <p>Search demand is one signal, not the whole picture. Conversion rate, competitor aggression, and your own sales process can still make you feel slow in a healthy market. The report flags those blind spots.</p>
+      </div>
+      <div class="info-card">
+        <div class="num">03 — Why it's free</div>
+        <h3>Because I built it for myself first</h3>
+        <p>I built this to help a client diagnose his market before blaming the agency. It worked. Figured other contractors could use the same honest answer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo-mini">
+          <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
+            <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
+            <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
+            <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
+            <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
+          </svg>
+        </div>
+        <p>Practical tech, AI, and local SEO for blue-collar business owners. No guru nonsense.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="../blog/">Blog</a></li>
+          <li><a href="../work-with-me.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Work</h4>
+        <ul>
+          <li><a href="../work-with-me.html">Get in touch</a></li>
+          <li><a href="https://tektongrowth.com" target="_blank" rel="noopener">Tekton Growth</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Blue Collar Techy · Nick Conley</span>
+      <span>Built for the trades</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('scan-form');
+  const panels = {
+    form: document.getElementById('state-form'),
+    scanning: document.getElementById('state-scanning'),
+    success: document.getElementById('state-success'),
+    error: document.getElementById('state-error'),
+  };
+  const stages = [
+    document.getElementById('stage-1'),
+    document.getElementById('stage-2'),
+    document.getElementById('stage-3'),
+    document.getElementById('stage-4'),
+    document.getElementById('stage-5'),
+  ];
+
+  function showState(name) {
+    Object.values(panels).forEach(p => p.classList.remove('active'));
+    panels[name].classList.add('active');
+    window.scrollTo({ top: document.querySelector('.scan-form-section').offsetTop - 100, behavior: 'smooth' });
+  }
+
+  function advanceStages() {
+    // Progress through stages while waiting for response. Capped so the animation
+    // never outruns reality — if the scan takes extra time the last stage lingers.
+    let i = 1;
+    return setInterval(() => {
+      if (i >= stages.length - 1) return;
+      stages[i].classList.remove('active');
+      stages[i].classList.add('done');
+      i++;
+      stages[i].classList.add('active');
+    }, 12000);
+  }
+
+  function resetForm() {
+    form.reset();
+    stages.forEach((s, i) => {
+      s.classList.remove('done', 'active');
+      if (i === 0) s.classList.add('done');
+      if (i === 1) s.classList.add('active');
+    });
+    showState('form');
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    const payload = {
+      name: (fd.get('name') || '').toString().trim(),
+      email: (fd.get('email') || '').toString().trim(),
+      city: (fd.get('city') || '').toString().trim(),
+      industry: (fd.get('industry') || '').toString().trim(),
+      website: (fd.get('website') || '').toString(),
+    };
+
+    if (!payload.name || !payload.email || !payload.city || !payload.industry) {
+      alert('Please fill out every field.');
+      return;
+    }
+
+    showState('scanning');
+    const timer = advanceStages();
+
+    try {
+      const res = await fetch('/api/scan', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      clearInterval(timer);
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        document.getElementById('error-detail').textContent =
+          data.error || 'The scan didn\'t complete. Try again, or email nick@bluecollartechy.com.';
+        showState('error');
+        return;
+      }
+
+      // success
+      if (data.verdict) {
+        document.getElementById('success-verdict').textContent = 'Quick read: ' + data.verdict;
+      }
+      showState('success');
+    } catch (err) {
+      clearInterval(timer);
+      document.getElementById('error-detail').textContent =
+        'Network error. Try again, or email nick@bluecollartechy.com.';
+      showState('error');
+    }
+  });
+</script>
+
+</body>
+</html>

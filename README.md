@@ -17,10 +17,20 @@ Personal brand site for Nick Conley. Practical tech, AI, and local SEO for blue-
 ├── index.html              Homepage
 ├── about.html              About Nick / founder story
 ├── work-with-me.html       Contact form
-├── under-construction.html Placeholder for Resources + Blog
+├── under-construction.html Placeholder (now unused in nav)
 ├── logos/                  Brand SVGs (TS7 system)
-└── youtube-scripts/        Scripts for BCT YouTube episodes
+├── youtube-scripts/        Scripts for BCT YouTube episodes
+├── blog/                   Blog
+│   ├── index.html          Post listing
+│   └── *.html              Individual posts
+├── market-scan/            Free market demand scan (lead magnet)
+│   └── index.html          Form page
+└── functions/
+    └── api/
+        └── scan.js         Cloudflare Pages Function — runs the scan
 ```
+
+See `DEPLOY.md` for environment variables and the Resend + DataForSEO + GHL setup required for the market scan tool.
 
 ## Dev
 
