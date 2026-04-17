@@ -148,7 +148,11 @@
   }
   .hero-video-frame:hover { border-color: var(--accent); }
   .hero-video-frame {
-    background: #0d0d12 center/cover no-repeat url('images/project-deck.jpg');
+    background-color: #0d0d12;
+    background-image: url('images/project-deck.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   .hero-video-frame::before {
     content: ''; position: absolute; inset: 0;
@@ -290,7 +294,10 @@
   /* INLINE IMAGE */
   .inline-image {
     height: clamp(280px, 40vw, 460px);
-    background: #0d0d12 center/cover no-repeat;
+    background-color: #0d0d12;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     border: 1px solid var(--border);
     margin: 16px 0 40px;
     position: relative;
