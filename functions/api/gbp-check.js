@@ -132,7 +132,8 @@ async function fetchLocalFinder(category, city, auth) {
   }];
   const data = await dfsPost(DFS_LOCAL_FINDER, body, auth);
   const items = data?.tasks?.[0]?.result?.[0]?.items || [];
-  return items.filter(i => i.type === 'local_finder' || i.rating || i.rating_count).slice(0, 10);
+  // DFS returns items with type='local_pack' for local finder results
+  return items.filter(i => (i.type === 'local_pack' || i.type === 'local_finder') && i.rating).slice(0, 10);
 }
 
 // ============================================================================
