@@ -147,6 +147,48 @@ async function fetchBusinessInfo(businessName, city, auth) {
   return bestScore >= 0.3 ? best : null;
 }
 
+// Fallback: use local_finder SERP result and normalize into business_listings shape.
+// Used when DFS business_listings index doesn't have the business (common for
+// service-area businesses without a storefront).
+async function fetchBusinessInfoFallback(businessName, city, auth) {
+  const body = [{
+    keyword: businessName,
+    location_name: city,
+    language_code: 'en',
+    depth: 5,
+  }];
+  const data = await dfsPost(DFS_LOCAL_FINDER, body, auth);
+  const items = data?.tasks?.[0]?.result?.[0]?.items || [];
+  if (!items.length) return null;
+  // Find best name match among local_pack results
+  let best = null;
+  let bestScore = 0;
+  for (const item of items) {
+    if (item.type !== 'local_pack' && item.type !== 'local_finder') continue;
+    const s = nameSimilar(businessName, item.title);
+    if (s > bestScore) { bestScore = s; best = item; }
+  }
+  if (!best || bestScore < 0.3) return null;
+
+  // Normalize local_finder shape to business_listings-ish shape.
+  // Local finder lacks: category, additional_categories, total_photos, work_time, is_claimed.
+  // We flag this as "partial" so scoring can skip N/A checks.
+  return {
+    _partial: true,
+    title: best.title,
+    phone: best.phone,
+    address: null, // not reliable in local_finder
+    url: best.url,
+    domain: best.domain,
+    category: null,
+    additional_categories: [],
+    total_photos: null,
+    rating: best.rating || null,
+    is_claimed: null, // unknown
+    work_time: null,
+  };
+}
+
 async function fetchLocalFinder(category, city, auth) {
   const body = [{
     keyword: category,
@@ -167,6 +209,7 @@ async function fetchLocalFinder(category, city, auth) {
 
 function scoreBusiness(biz, competitors) {
   if (!biz) return null;
+  const partial = biz._partial === true;
 
   const checks = [];
   let total = 0;
@@ -188,48 +231,74 @@ function scoreBusiness(biz, competitors) {
   const categories = Array.isArray(biz.additional_categories) ? biz.additional_categories : [];
 
   // === 1. CLAIMED & VERIFIED ===
-  const isClaimed = biz.is_claimed === true;
-  checks.push({
-    id: 'claimed',
-    label: 'Profile claimed and verified',
-    weight: 20,
-    ok: isClaimed,
-    score: isClaimed ? 100 : 0,
-    message: isClaimed
-      ? 'Your profile is claimed and verified. Good foundation.'
-      : 'This listing does not appear to be claimed. Claim it before anything else. Go to business.google.com and request ownership.',
-  });
+  if (biz.is_claimed === null || biz.is_claimed === undefined) {
+    checks.push({
+      id: 'claimed',
+      label: 'Profile claimed and verified',
+      weight: 0,
+      ok: null,
+      score: null,
+      message: 'Could not verify claim status from public data. Log into business.google.com to confirm you own the listing.',
+      na: true,
+    });
+  } else {
+    const isClaimed = biz.is_claimed === true;
+    checks.push({
+      id: 'claimed',
+      label: 'Profile claimed and verified',
+      weight: 20,
+      ok: isClaimed,
+      score: isClaimed ? 100 : 0,
+      message: isClaimed
+        ? 'Your profile is claimed and verified. Good foundation.'
+        : 'This listing does not appear to be claimed. Claim it before anything else. Go to business.google.com and request ownership.',
+    });
+  }
 
   // === 2. PRIMARY CATEGORY ===
-  const hasCategory = Boolean(yourCategory);
-  checks.push({
-    id: 'primary_category',
-    label: 'Primary category set',
-    weight: 15,
-    ok: hasCategory,
-    score: hasCategory ? 100 : 0,
-    detail: yourCategory,
-    message: hasCategory
-      ? `Primary category is "${yourCategory}". Make sure it is the most specific match for your main service.`
-      : 'No primary category detected. This is one of the biggest ranking factors. Pick the most specific category that matches your main service.',
-  });
+  if (partial) {
+    checks.push({
+      id: 'primary_category',
+      label: 'Primary category',
+      weight: 0, ok: null, score: null, na: true,
+      message: 'Category data not available in the public snapshot. Check business.google.com to confirm yours is set to the most specific match.',
+    });
+    checks.push({
+      id: 'secondary_categories',
+      label: 'Secondary categories',
+      weight: 0, ok: null, score: null, na: true,
+      message: 'Secondary categories not available in the public snapshot. You can add up to nine inside business.google.com.',
+    });
+  } else {
+    const hasCategory = Boolean(yourCategory);
+    checks.push({
+      id: 'primary_category',
+      label: 'Primary category set',
+      weight: 15,
+      ok: hasCategory,
+      score: hasCategory ? 100 : 0,
+      detail: yourCategory,
+      message: hasCategory
+        ? `Primary category is "${yourCategory}". Make sure it is the most specific match for your main service.`
+        : 'No primary category detected. This is one of the biggest ranking factors. Pick the most specific category that matches your main service.',
+    });
 
-  // === 3. SECONDARY CATEGORIES ===
-  const hasSecondary = categories.length >= 2;
-  const manySecondary = categories.length >= 4;
-  checks.push({
-    id: 'secondary_categories',
-    label: 'Secondary categories filled',
-    weight: 10,
-    ok: hasSecondary,
-    score: manySecondary ? 100 : hasSecondary ? 65 : 0,
-    detail: `${categories.length} secondary categor${categories.length === 1 ? 'y' : 'ies'}`,
-    message: manySecondary
-      ? `${categories.length} secondary categories look solid.`
-      : hasSecondary
-      ? `Only ${categories.length} secondary categories. Add two or three more to cover services you are missing out on.`
-      : 'No secondary categories. You can add up to nine. Each one is a chance to show up for searches you otherwise miss.',
-  });
+    const hasSecondary = categories.length >= 2;
+    const manySecondary = categories.length >= 4;
+    checks.push({
+      id: 'secondary_categories',
+      label: 'Secondary categories filled',
+      weight: 10,
+      ok: hasSecondary,
+      score: manySecondary ? 100 : hasSecondary ? 65 : 0,
+      detail: `${categories.length} secondary categor${categories.length === 1 ? 'y' : 'ies'}`,
+      message: manySecondary
+        ? `${categories.length} secondary categories look solid.`
+        : hasSecondary
+        ? `Only ${categories.length} secondary categories. Add two or three more to cover services you are missing out on.`
+        : 'No secondary categories. You can add up to nine. Each one is a chance to show up for searches you otherwise miss.',
+    });
+  }
 
   // === 4. PHONE NUMBER ===
   const hasPhone = Boolean(biz.phone);
@@ -260,37 +329,55 @@ function scoreBusiness(biz, competitors) {
   });
 
   // === 6. HOURS SET ===
-  const workHours = biz.work_time?.work_hours || biz.work_hours;
-  const hasHours = Boolean(workHours && (workHours.timetable || workHours.workday_timing || Object.keys(workHours).length > 0));
-  checks.push({
-    id: 'hours',
-    label: 'Business hours set',
-    weight: 5,
-    ok: hasHours,
-    score: hasHours ? 100 : 0,
-    message: hasHours
-      ? 'Hours are set.'
-      : 'No hours on the profile. Missing hours makes the profile look incomplete.',
-  });
+  if (partial) {
+    checks.push({
+      id: 'hours',
+      label: 'Business hours',
+      weight: 0, ok: null, score: null, na: true,
+      message: 'Hours not available in the public snapshot.',
+    });
+  } else {
+    const workHours = biz.work_time?.work_hours || biz.work_hours;
+    const hasHours = Boolean(workHours && (workHours.timetable || workHours.workday_timing || Object.keys(workHours).length > 0));
+    checks.push({
+      id: 'hours',
+      label: 'Business hours set',
+      weight: 5,
+      ok: hasHours,
+      score: hasHours ? 100 : 0,
+      message: hasHours
+        ? 'Hours are set.'
+        : 'No hours on the profile. Missing hours makes the profile look incomplete.',
+    });
+  }
 
   // === 6b. PHOTOS ===
-  const photoCount = Number(biz.total_photos || 0);
-  let photoScore = 0;
-  let photoMsg = '';
-  if (photoCount >= 30) { photoScore = 100; photoMsg = `${photoCount} photos on the profile. Solid coverage.`; }
-  else if (photoCount >= 15) { photoScore = 70; photoMsg = `${photoCount} photos. Decent, but top profiles usually have more.`; }
-  else if (photoCount >= 5) { photoScore = 40; photoMsg = `Only ${photoCount} photos. Upload real project photos this week.`; }
-  else if (photoCount > 0) { photoScore = 15; photoMsg = `${photoCount} photos total. The profile looks thin. Homeowners notice.`; }
-  else { photoScore = 0; photoMsg = 'No photos visible on the profile. Upload a batch of completed project photos as soon as possible.'; }
-  checks.push({
-    id: 'photos',
-    label: 'Photo coverage',
-    weight: 10,
-    ok: photoCount >= 15,
-    score: photoScore,
-    detail: `${photoCount} photo${photoCount === 1 ? '' : 's'} total`,
-    message: photoMsg,
-  });
+  if (partial || biz.total_photos === null || biz.total_photos === undefined) {
+    checks.push({
+      id: 'photos',
+      label: 'Photo coverage',
+      weight: 0, ok: null, score: null, na: true,
+      message: 'Photo count not available in the public snapshot. Open your profile and count photos manually. Top profiles have 30+ with recent uploads.',
+    });
+  } else {
+    const photoCount = Number(biz.total_photos || 0);
+    let photoScore = 0;
+    let photoMsg = '';
+    if (photoCount >= 30) { photoScore = 100; photoMsg = `${photoCount} photos on the profile. Solid coverage.`; }
+    else if (photoCount >= 15) { photoScore = 70; photoMsg = `${photoCount} photos. Decent, but top profiles usually have more.`; }
+    else if (photoCount >= 5) { photoScore = 40; photoMsg = `Only ${photoCount} photos. Upload real project photos this week.`; }
+    else if (photoCount > 0) { photoScore = 15; photoMsg = `${photoCount} photos total. The profile looks thin. Homeowners notice.`; }
+    else { photoScore = 0; photoMsg = 'No photos visible on the profile. Upload a batch of completed project photos as soon as possible.'; }
+    checks.push({
+      id: 'photos',
+      label: 'Photo coverage',
+      weight: 10,
+      ok: photoCount >= 15,
+      score: photoScore,
+      detail: `${photoCount} photo${photoCount === 1 ? '' : 's'} total`,
+      message: photoMsg,
+    });
+  }
 
   // === 7. REVIEW COUNT VS COMPETITORS ===
   const reviewTier = tierForCompetitorGap(yourReviews, compMedian);
@@ -330,12 +417,13 @@ function scoreBusiness(biz, competitors) {
         : 'Rating is hurting you. One or two bad reviews drag this hard when volume is low. Focus on volume of good reviews from happy customers.',
   });
 
-  // Total weighted score
+  // Total weighted score — skip N/A checks (weight 0)
   for (const c of checks) {
+    if (c.na || c.weight === 0) continue;
     total += c.score * c.weight;
     maxTotal += 100 * c.weight;
   }
-  const overallScore = Math.round((total / maxTotal) * 100);
+  const overallScore = maxTotal > 0 ? Math.round((total / maxTotal) * 100) : 0;
 
   // Verdict
   let verdict, verdictLabel;
@@ -350,13 +438,14 @@ function scoreBusiness(biz, competitors) {
     verdict = 'Your profile has real gaps that are almost certainly costing you calls. Start from the top of the action list. Every item compounds on the ones above it.';
   }
 
-  // Action list — top 5 lowest-scoring checks that aren't already at 100
+  // Action list — top 5 lowest-scoring checks that aren't already at 100 and aren't N/A
   const actions = checks
-    .filter(c => c.score < 100)
+    .filter(c => !c.na && c.score < 100)
     .sort((a, b) => (a.score * a.weight) - (b.score * b.weight))
     .slice(0, 5);
 
   return {
+    partial,
     business: {
       title: biz.title,
       address: biz.address,
@@ -394,10 +483,21 @@ function htmlEscape(s) {
 }
 
 function renderReportHtml(report, input) {
-  const { business, competitors, checks, overall_score, verdict, verdict_label, actions } = report;
+  const { partial, business, competitors, checks, overall_score, verdict, verdict_label, actions } = report;
   const verdictClass = overall_score >= 85 ? 'high' : overall_score >= 65 ? 'medium' : 'low';
 
   const checkRows = checks.map(c => {
+    if (c.na) {
+      return `
+      <div class="check-row tone-medium">
+        <div class="check-head">
+          <div class="check-label">${htmlEscape(c.label)}</div>
+          <div class="check-score">N/A</div>
+        </div>
+        <div class="check-msg">${htmlEscape(c.message)}</div>
+      </div>
+      `;
+    }
     const tone = c.score >= 85 ? 'high' : c.score >= 50 ? 'medium' : 'low';
     return `
       <div class="check-row tone-${tone}">
@@ -410,6 +510,13 @@ function renderReportHtml(report, input) {
       </div>
     `;
   }).join('');
+
+  const partialBanner = partial ? `
+    <div class="verdict-card" style="border-left-color: var(--warn, #fbbf24);">
+      <div class="v-label" style="color: var(--warn, #fbbf24);">Partial Data</div>
+      <div class="v-text">We found your business in Google's search results but not in the detailed listings index. That usually means the profile is a service-area business without a full storefront entry, or it's newer. A few checks below are marked N/A because the data isn't publicly available. Log into business.google.com to verify those manually.</div>
+    </div>
+  ` : '';
 
   const actionRows = actions.length
     ? actions.map((a, i) => `
@@ -425,6 +532,7 @@ function renderReportHtml(report, input) {
         <div class="report-meta">${htmlEscape(input.city)} · Ran on ${new Date().toISOString().slice(0,10)}</div>
       </div>
 
+      ${partialBanner}
       <div class="verdict-card">
         <div class="v-label">Verdict</div>
         <div class="v-text">${htmlEscape(verdict)}</div>
@@ -535,12 +643,21 @@ export async function onRequestPost({ request, env }) {
   }
   const auth = dfsAuth(env.DATAFORSEO_LOGIN, env.DATAFORSEO_PASSWORD);
 
-  // Fetch business
+  // Fetch business — try full business_listings first, fall back to local_finder
   let biz;
   try {
     biz = await fetchBusinessInfo(business_name, city, auth);
   } catch (e) {
-    return respond({ ok: false, error: `Could not find that business. Double-check the name and city. (${e.message})` }, 404);
+    return respond({ ok: false, error: `Could not search for that business. (${e.message})` }, 502);
+  }
+
+  if (!biz) {
+    // Fallback: many service-area businesses aren't in business_listings index
+    try {
+      biz = await fetchBusinessInfoFallback(business_name, city, auth);
+    } catch (e) {
+      // non-fatal — fall through to "not found"
+    }
   }
 
   if (!biz) {
