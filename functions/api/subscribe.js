@@ -36,8 +36,42 @@ async function addToResendAudience(email, env) {
   return res.json();
 }
 
-async function pushToGhl(email, env) {
+function slugTag(prefix, value) {
+  if (!value) return null;
+  const slug = String(value).toLowerCase()
+    .replace(/^https?:\/\//, '')
+    .replace(/^www\./, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 40);
+  return slug ? `${prefix}-${slug}` : null;
+}
+
+function buildAttributionTags(a) {
+  if (!a || typeof a !== 'object') return [];
+  const tags = [];
+  if (a.utm_source) tags.push(slugTag('src', a.utm_source));
+  if (a.utm_medium) tags.push(slugTag('medium', a.utm_medium));
+  if (a.utm_campaign) tags.push(slugTag('camp', a.utm_campaign));
+  if (a.utm_content) tags.push(slugTag('content', a.utm_content));
+  if (a.referrer) {
+    try {
+      const u = new URL(a.referrer.startsWith('http') ? a.referrer : 'https://' + a.referrer);
+      if (u.hostname && !u.hostname.endsWith('bluecollartechy.com')) {
+        tags.push(slugTag('ref', u.hostname));
+      }
+    } catch {}
+  }
+  if (a.submission_page) tags.push(slugTag('page', a.submission_page));
+  return tags.filter(Boolean);
+}
+
+async function pushToGhl(email, attribution, env) {
   if (!env.GHL_API_KEY || !env.GHL_LOCATION_ID) return null;
+  const tags = ['bct-newsletter', ...buildAttributionTags(attribution)];
+  const source = (attribution && attribution.utm_source)
+    ? `BCT Newsletter · ${attribution.utm_source}`
+    : 'Blue Collar Techy · Newsletter';
   try {
     const res = await fetch('https://services.leadconnectorhq.com/contacts/', {
       method: 'POST',
@@ -50,8 +84,8 @@ async function pushToGhl(email, env) {
       body: JSON.stringify({
         locationId: env.GHL_LOCATION_ID,
         email,
-        tags: ['bct-newsletter'],
-        source: 'Blue Collar Techy · Newsletter',
+        tags,
+        source,
       }),
     });
     if (!res.ok) {
@@ -89,10 +123,12 @@ export async function onRequestPost(context) {
     return json({ error: 'Newsletter service is not configured.' }, 500);
   }
 
+  const attribution = (body && body.attribution) || {};
+
   try {
     const result = await addToResendAudience(email, env);
     // Fire-and-forget GHL push
-    pushToGhl(email, env).catch(() => {});
+    pushToGhl(email, attribution, env).catch(() => {});
 
     return json({
       ok: true,

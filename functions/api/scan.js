@@ -632,15 +632,50 @@ async function sendEmail(to, name, subject, html, env) {
   return res.json();
 }
 
+function slugTag(prefix, value) {
+  if (!value) return null;
+  const slug = String(value).toLowerCase()
+    .replace(/^https?:\/\//, '')
+    .replace(/^www\./, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 40);
+  return slug ? `${prefix}-${slug}` : null;
+}
+
+function buildAttributionTags(a) {
+  if (!a || typeof a !== 'object') return [];
+  const tags = [];
+  if (a.utm_source) tags.push(slugTag('src', a.utm_source));
+  if (a.utm_medium) tags.push(slugTag('medium', a.utm_medium));
+  if (a.utm_campaign) tags.push(slugTag('camp', a.utm_campaign));
+  if (a.utm_content) tags.push(slugTag('content', a.utm_content));
+  if (a.referrer) {
+    try {
+      const u = new URL(a.referrer.startsWith('http') ? a.referrer : 'https://' + a.referrer);
+      if (u.hostname && !u.hostname.endsWith('bluecollartechy.com')) {
+        tags.push(slugTag('ref', u.hostname));
+      }
+    } catch {}
+  }
+  if (a.submission_page) tags.push(slugTag('page', a.submission_page));
+  return tags.filter(Boolean);
+}
+
 async function pushGhlContact(payload, env) {
   if (!env.GHL_API_KEY || !env.GHL_LOCATION_ID) return null;
+  const baseTags = ['bct-market-scan', `bct-${payload.industry}`];
+  const attrTags = buildAttributionTags(payload.attribution);
+  const source = (payload.attribution && payload.attribution.utm_source)
+    ? `BCT Market Scan · ${payload.attribution.utm_source}`
+    : 'Blue Collar Techy · Market Scan';
   const body = {
     locationId: env.GHL_LOCATION_ID,
     firstName: payload.name.split(' ')[0] || payload.name,
     lastName: payload.name.split(' ').slice(1).join(' ') || '',
     email: payload.email,
-    tags: ['bct-market-scan', `bct-${payload.industry}`],
-    source: 'Blue Collar Techy · Market Scan',
+    tags: [...baseTags, ...attrTags],
+    source,
     customFields: [],
   };
   try {
@@ -716,7 +751,8 @@ export async function onRequestPost(context) {
     const analysis = annotateAndSummarize(rows, seedsDoc, locationName);
 
     // 3. Push lead to GHL (non-blocking — scan still succeeds if GHL hiccups)
-    pushGhlContact({ name, email, industry, city }, env).catch(() => {});
+    const attribution = (body && body.attribution) || {};
+    pushGhlContact({ name, email, industry, city, attribution }, env).catch(() => {});
 
     // 4. Return structured report to the browser
     return json({

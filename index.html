@@ -842,10 +842,11 @@
     setMsg('');
 
     try {
+      const attribution = window.bctGetAttribution ? window.bctGetAttribution() : {};
       const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email, website: website }),
+        body: JSON.stringify({ email: email, website: website, attribution: attribution }),
       });
       const data = await res.json().catch(function () { return {}; });
 
@@ -872,5 +873,6 @@
 })();
 </script>
 
+<script src="/js/tracking.js"></script>
 </body>
 </html>

@@ -748,6 +748,7 @@
       city: (fd.get('city') || '').toString().trim(),
       industry: (fd.get('industry') || '').toString().trim(),
       website: (fd.get('website') || '').toString(),
+      attribution: window.bctGetAttribution ? window.bctGetAttribution() : {},
     };
 
     if (!payload.name || !payload.email || !payload.city || !payload.industry) {
@@ -959,5 +960,6 @@
   }
 </script>
 
+<script src="/js/tracking.js"></script>
 </body>
 </html>
