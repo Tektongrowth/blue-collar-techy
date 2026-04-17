@@ -483,6 +483,7 @@
   .nl-inner {
     max-width: 720px;
     position: relative; z-index: 2;
+    margin: 0;
   }
   .nl-eyebrow {
     font-family: 'JetBrains Mono', monospace;
@@ -755,17 +756,19 @@
 
 <!-- =================== NEWSLETTER =================== -->
 <section class="newsletter" id="newsletter">
-  <div class="container nl-inner">
-    <div class="nl-eyebrow">The Newsletter</div>
-    <h2>Get the best stuff in your inbox.</h2>
-    <p>Practical ideas on AI, local SEO, and contractor marketing. Written like a normal person. No guru spam. No fake urgency.</p>
-    <form id="nl-form" class="nl-form" novalidate>
-      <input type="email" id="nl-email" name="email" placeholder="your@email.com" required autocomplete="email" />
-      <input type="text" name="website" class="hp-nl" tabindex="-1" autocomplete="off" aria-hidden="true" />
-      <button type="submit" id="nl-btn">Subscribe</button>
-    </form>
-    <div id="nl-msg" class="nl-msg" role="status" aria-live="polite"></div>
-    <div class="nl-note">// Free. Unsubscribe anytime. No BS.</div>
+  <div class="container">
+    <div class="nl-inner">
+      <div class="nl-eyebrow">The Newsletter</div>
+      <h2>Get the best stuff in your inbox.</h2>
+      <p>Practical ideas on AI, local SEO, and contractor marketing. Written like a normal person. No guru spam. No fake urgency.</p>
+      <form id="nl-form" class="nl-form" novalidate>
+        <input type="email" id="nl-email" name="email" placeholder="your@email.com" required autocomplete="email" />
+        <input type="text" name="website" class="hp-nl" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <button type="submit" id="nl-btn">Subscribe</button>
+      </form>
+      <div id="nl-msg" class="nl-msg" role="status" aria-live="polite"></div>
+      <div class="nl-note">// Free. Unsubscribe anytime. No BS.</div>
+    </div>
   </div>
 </section>
 
