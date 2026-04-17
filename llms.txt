@@ -18,7 +18,7 @@ Practical tech, AI, and local SEO for blue-collar business owners. Hosted by Nic
 
 ## Free Tools
 - [Market Demand Scan](https://bluecollartechy.com/market-scan/): Pulls 24 months of Google search demand data for your trade in your city. Year-over-year comparison. Tells you whether the market actually moved or something else is going on.
-- [GBP Health Check](https://bluecollartechy.com/gbp-check/): Pulls your live Google Business Profile, compares you to the top contractors in your area, scores on seven dimensions, and returns a priority fix list.
+- [GBP Health Check](https://bluecollartechy.com/gbp-check/): Pulls your live Google Business Profile, compares you to the top contractors in your area, scores on nine dimensions (claim status, categories, phone, website, hours, photos, review count vs competitor median, star rating), and returns a priority fix list.
 
 ## Services
 - [Work with Nick](https://bluecollartechy.com/work-with-me.html): Direct contact. Submit what you're trying to do with AI, marketing, local SEO, or systems.
