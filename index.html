@@ -13,13 +13,13 @@
 <meta property="og:url" content="https://bluecollartechy.com/" />
 <meta property="og:title" content="Blue Collar Techy — Tech, AI, and local SEO for blue-collar business owners" />
 <meta property="og:description" content="Practical tech, AI, and local SEO for blue-collar business owners. Built by a contractor who went full tech." />
-<meta property="og:image" content="https://bluecollartechy.com/og-image.png" />
+<meta property="og:image" content="https://bluecollartechy.com/og-image.jpg" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Blue Collar Techy" />
 <meta name="twitter:description" content="Practical tech, AI, and local SEO for blue-collar business owners." />
-<meta name="twitter:image" content="https://bluecollartechy.com/og-image.png" />
+<meta name="twitter:image" content="https://bluecollartechy.com/og-image.jpg" />
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="logos/bct-favicon.svg" />
@@ -233,7 +233,7 @@
   /* Hero portrait area */
   .hero-visual {
     aspect-ratio: 4/5;
-    background: var(--bg-card);
+    background: #0d0d12 center/cover no-repeat url('images/nick-hero.jpg');
     border: 1px solid var(--border);
     position: relative;
     overflow: hidden;
@@ -243,20 +243,15 @@
     position: absolute; top: 16px; left: 16px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    color: var(--text-faint);
+    color: rgba(255,255,255,0.7);
     letter-spacing: 0.1em;
     z-index: 2;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.8);
   }
   .hero-visual::after {
     content: ''; position: absolute; inset: 0;
-    background:
-      repeating-linear-gradient(0deg, transparent 0 4px, rgba(255,255,255,0.015) 4px 5px),
-      linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
-  }
-  .hero-visual .photo-placeholder {
-    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-    font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--text-faint);
-    z-index: 3;
+    background: linear-gradient(180deg, rgba(13,13,18,0.1) 0%, rgba(13,13,18,0.55) 100%);
+    pointer-events: none;
   }
   .hero-visual .badge {
     position: absolute; bottom: 16px; left: 16px; z-index: 3;
@@ -269,8 +264,9 @@
   }
   .hero-visual .meta {
     position: absolute; top: 16px; right: 16px;
-    font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-faint);
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.85);
     text-align: right; letter-spacing: 0.1em; z-index: 3;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.8);
   }
 
   /* ============ MANIFESTO ============ */
@@ -613,8 +609,8 @@
     <div class="nav-links">
       <a href="about.html">About</a>
       <a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a>
-      <a href="under-construction.html?section=Resources">Resources</a>
-      <a href="under-construction.html?section=Blog">Blog</a>
+      <a href="market-scan/">Resources</a>
+      <a href="blog/">Blog</a>
       <a href="work-with-me.html">Work with me</a>
     </div>
     <a class="nav-cta" href="#newsletter">Subscribe</a>
@@ -639,7 +635,6 @@
 
     <div class="hero-visual">
       <div class="meta">NICK CONLEY<br/>FOUNDER · TEKTON<br/>HARDSCAPE → TECH</div>
-      <div class="photo-placeholder">[ photo of Nick ]</div>
       <div class="badge">Est. 2026</div>
     </div>
   </div>
@@ -769,8 +764,8 @@
         <ul>
           <li><a href="about.html">About</a></li>
           <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
-          <li><a href="under-construction.html?section=Resources">Resources</a></li>
-          <li><a href="under-construction.html?section=Blog">Blog</a></li>
+          <li><a href="market-scan/">Resources</a></li>
+          <li><a href="blog/">Blog</a></li>
           <li><a href="work-with-me.html">Contact</a></li>
         </ul>
       </div>

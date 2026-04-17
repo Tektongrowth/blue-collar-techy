@@ -12,12 +12,12 @@
 <meta property="og:url" content="https://bluecollartechy.com/about" />
 <meta property="og:title" content="About Nick Conley — Blue Collar Techy" />
 <meta property="og:description" content="The contractor-turned-tech story behind Blue Collar Techy." />
-<meta property="og:image" content="https://bluecollartechy.com/og-image.png" />
+<meta property="og:image" content="https://bluecollartechy.com/og-image.jpg" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="About Nick Conley — Blue Collar Techy" />
 <meta name="twitter:description" content="The contractor-turned-tech story behind Blue Collar Techy." />
-<meta name="twitter:image" content="https://bluecollartechy.com/og-image.png" />
+<meta name="twitter:image" content="https://bluecollartechy.com/og-image.jpg" />
 
 <link rel="icon" type="image/svg+xml" href="logos/bct-favicon.svg" />
 
@@ -147,12 +147,14 @@
     transition: border-color 0.2s;
   }
   .hero-video-frame:hover { border-color: var(--accent); }
+  .hero-video-frame {
+    background: #0d0d12 center/cover no-repeat url('images/project-deck.jpg');
+  }
   .hero-video-frame::before {
     content: ''; position: absolute; inset: 0;
     background:
       radial-gradient(circle at 70% 35%, rgba(255, 106, 26, 0.18), transparent 55%),
-      repeating-linear-gradient(0deg, transparent 0 4px, rgba(255,255,255,0.02) 4px 5px),
-      linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+      linear-gradient(180deg, rgba(13,13,18,0.3) 0%, rgba(13,13,18,0.75) 100%);
   }
   .hero-video-frame .play-btn {
     position: absolute; top: 50%; left: 50%;
@@ -288,25 +290,22 @@
   /* INLINE IMAGE */
   .inline-image {
     height: clamp(280px, 40vw, 460px);
-    background: var(--bg-card);
+    background: #0d0d12 center/cover no-repeat;
     border: 1px solid var(--border);
     margin: 16px 0 40px;
     position: relative;
+    overflow: hidden;
   }
-  .inline-image::before {
+  .inline-image::after {
     content: ''; position: absolute; inset: 0;
-    background:
-      repeating-linear-gradient(0deg, transparent 0 4px, rgba(255,255,255,0.015) 4px 5px),
-      linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+    background: linear-gradient(180deg, transparent 60%, rgba(13,13,18,0.35) 100%);
+    pointer-events: none;
   }
   .inline-image .file-label {
     position: absolute; top: 14px; left: 14px;
     font-family: 'JetBrains Mono', monospace; font-size: 10px;
-    color: var(--text-faint); letter-spacing: 0.1em; z-index: 2;
-  }
-  .inline-image .placeholder {
-    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-    font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--text-faint); z-index: 2;
+    color: rgba(255,255,255,0.85); letter-spacing: 0.1em; z-index: 2;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.7);
   }
 
   /* SPECS GRID (quick bio facts) */
@@ -475,8 +474,8 @@
     <div class="nav-links">
       <a href="about.html" class="active">About</a>
       <a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a>
-      <a href="under-construction.html?section=Resources">Resources</a>
-      <a href="under-construction.html?section=Blog">Blog</a>
+      <a href="market-scan/">Resources</a>
+      <a href="blog/">Blog</a>
       <a href="work-with-me.html">Work with me</a>
     </div>
     <a class="nav-cta" href="index.html#newsletter">Subscribe</a>
@@ -540,9 +539,8 @@
     <p>It started as Nicholas Landscaping. Maintenance paid the bills. Projects were the goal. Over time it grew into <strong>Tekton Design Build</strong>, a custom outdoor living company doing big design-build projects in stone, wood, and steel.</p>
     <p>The name Tekton mattered to me. It's a biblical word tied to craftsmen and builders. That fit. I wanted to build things well and build them with people who took pride in their work.</p>
 
-    <div class="inline-image">
-      <div class="file-label">IMG_0002.JPG</div>
-      <div class="placeholder">[ finished hardscape project ]</div>
+    <div class="inline-image" style="background-image: url('images/project-patio.jpg');">
+      <div class="file-label">PATIO.JPG · TEKTON DESIGN BUILD</div>
     </div>
 
     <p>A lot of those years were good. A lot of them were brutal too.</p>
@@ -573,9 +571,8 @@
     <p class="dim">That's where <strong>Tekton Growth</strong> came from. Same builder mindset, different trade.</p>
     <p>I saw a better future in the digital world than in the dirt world. But I chose to work with dirt-world people.</p>
 
-    <div class="inline-image">
-      <div class="file-label">IMG_0003.JPG</div>
-      <div class="placeholder">[ Nick at the desk, split-frame with jobsite ]</div>
+    <div class="inline-image" style="background-image: url('images/project-firepit.jpg');">
+      <div class="file-label">FIREPIT.JPG · FLAGSTONE PATIO</div>
     </div>
   </div>
 </section>
@@ -664,8 +661,8 @@
         <ul>
           <li><a href="about.html">About</a></li>
           <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
-          <li><a href="under-construction.html?section=Resources">Resources</a></li>
-          <li><a href="under-construction.html?section=Blog">Blog</a></li>
+          <li><a href="market-scan/">Resources</a></li>
+          <li><a href="blog/">Blog</a></li>
           <li><a href="work-with-me.html">Contact</a></li>
         </ul>
       </div>
