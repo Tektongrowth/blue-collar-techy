@@ -702,9 +702,6 @@ export async function onRequestPost(context) {
   if (!env.DATAFORSEO_LOGIN || !env.DATAFORSEO_PASSWORD) {
     return json({ error: 'Scan service is not configured. Please email nick@bluecollartechy.com.' }, 500);
   }
-  if (!env.RESEND_API_KEY) {
-    return json({ error: 'Email service is not configured. Please email nick@bluecollartechy.com.' }, 500);
-  }
 
   const locationName = normalizeLocation(city);
 
@@ -718,22 +715,27 @@ export async function onRequestPost(context) {
     // 2. Analyze
     const analysis = annotateAndSummarize(rows, seedsDoc, locationName);
 
-    // 3. Render email
-    const subject = `Your ${seedsDoc.industry} market scan for ${locationName.split(',')[0]} — ${analysis.confidence.level} confidence`;
-    const html = reportHtml(analysis, seedsDoc, locationName, name);
+    // 3. Push lead to GHL (non-blocking — scan still succeeds if GHL hiccups)
+    pushGhlContact({ name, email, industry, city }, env).catch(() => {});
 
-    // 4. Send email + push lead (parallel; don't fail scan if GHL hiccups)
-    const [emailResult] = await Promise.all([
-      sendEmail(email, name, subject, html, env),
-      pushGhlContact({ name, email, industry, city }, env),
-    ]);
-
+    // 4. Return structured report to the browser
     return json({
       ok: true,
-      verdict: analysis.verdict,
-      confidence: analysis.confidence.level,
       scan_cost_usd: Math.round(cost * 1000) / 1000,
-      email_id: emailResult?.id || null,
+      report: {
+        location: locationName,
+        industry: seedsDoc.industry,
+        industry_description: seedsDoc.description,
+        submitter: { name, email, city },
+        confidence: analysis.confidence,
+        verdict: analysis.verdict,
+        total_volume: analysis.totalVolume,
+        yoy_pct: Math.round(analysis.yoyPct * 10) / 10,
+        categories: analysis.catStats,
+        top_keywords: analysis.topKws,
+        rising: analysis.rising,
+        declining: analysis.declining,
+      },
     }, 200);
 
   } catch (e) {

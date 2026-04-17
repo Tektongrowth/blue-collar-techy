@@ -168,7 +168,7 @@
   .state-panel { display: none; }
   .state-panel.active { display: block; }
 
-  .state-scanning, .state-success, .state-error {
+  .state-scanning, .state-error {
     text-align: center; padding: 40px 0 10px;
   }
   .spinner {
@@ -180,21 +180,14 @@
     animation: spin 0.9s linear infinite;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
-  .state-scanning h2, .state-success h2, .state-error h2 {
+  .state-scanning h2, .state-error h2 {
     font-family: 'Archivo Black', sans-serif;
     font-size: 32px; letter-spacing: -0.01em;
     margin-bottom: 16px;
   }
-  .state-scanning p, .state-success p, .state-error p {
+  .state-scanning p, .state-error p {
     color: var(--text-dim); font-size: 17px;
     max-width: 520px; margin: 0 auto 12px;
-  }
-  .state-success .checkmark {
-    width: 72px; height: 72px; border-radius: 50%;
-    background: var(--accent); color: #000;
-    margin: 0 auto 28px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 36px; font-weight: 900;
   }
   .state-error .x {
     width: 72px; height: 72px; border-radius: 50%;
@@ -202,6 +195,210 @@
     margin: 0 auto 28px;
     display: flex; align-items: center; justify-content: center;
     font-size: 36px; font-weight: 900;
+  }
+
+  /* REPORT STYLES */
+  .report-view .report-header {
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .report-view .report-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .report-view .report-label::before {
+    content: ''; width: 20px; height: 2px; background: var(--accent);
+  }
+  .report-view h2.report-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(26px, 3.2vw, 36px);
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .report-view h2.report-title .hi { color: var(--accent); }
+  .report-view .report-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    margin-top: 8px;
+  }
+  .verdict-card {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 24px 26px;
+    margin-bottom: 24px;
+  }
+  .verdict-card .v-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--accent);
+    letter-spacing: 0.22em; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .verdict-card .v-text {
+    font-size: 18px; line-height: 1.5; color: var(--text);
+  }
+  .metrics-row {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .metric {
+    background: var(--bg-elev);
+    padding: 20px 22px;
+  }
+  .metric .m-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--text-faint);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .metric .m-value {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px; line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .metric.metric-high .m-value { color: #4ade80; }
+  .metric.metric-medium .m-value { color: #fbbf24; }
+  .metric.metric-low .m-value { color: var(--error); }
+  .conf-reasons {
+    margin: 12px 0 0; padding-left: 18px;
+    font-size: 13px; color: var(--text-dim);
+    list-style: none;
+  }
+  .conf-reasons li {
+    margin-bottom: 6px; position: relative; padding-left: 14px;
+  }
+  .conf-reasons li::before {
+    content: '▸'; position: absolute; left: 0; color: var(--accent);
+  }
+
+  .report-section {
+    margin-top: 40px;
+  }
+  .report-section h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px; letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+  .report-section h3.pos { color: #4ade80; }
+  .report-section h3.neg { color: var(--error); }
+  .report-section .section-note {
+    color: var(--text-dim); font-size: 14px;
+    margin-bottom: 14px; line-height: 1.5;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .data-table th {
+    background: var(--bg-card);
+    text-align: left;
+    padding: 12px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--text-faint);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+  }
+  .data-table th.r { text-align: right; }
+  .data-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  .data-table td.r { text-align: right; }
+  .data-table td.dim { color: var(--text-dim); font-size: 13px; }
+  .data-table td.pos { color: #4ade80; font-weight: 600; }
+  .data-table td.neg { color: var(--error); font-weight: 600; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  .empty-row {
+    padding: 18px 14px;
+    color: var(--text-dim);
+    font-style: italic;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .report-footer {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+  .report-footer .cta-block {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    padding: 28px;
+    margin-bottom: 24px;
+  }
+  .report-footer .cta-block h4 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 20px; margin-bottom: 10px;
+  }
+  .report-footer .cta-block p {
+    color: var(--text-dim); font-size: 15px;
+    margin-bottom: 16px; line-height: 1.55;
+  }
+  .report-footer .cta-block a {
+    display: inline-block;
+    background: var(--accent); color: #000;
+    padding: 12px 22px;
+    font-weight: 700; font-size: 13px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .report-footer .cta-block a:hover { background: var(--accent-bright); }
+  .report-footer .fine-print {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.05em; line-height: 1.7;
+    margin-top: 24px;
+  }
+  .report-actions {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .report-actions button {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    padding: 11px 18px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .report-actions button:hover { border-color: var(--text); color: var(--text); }
+
+  @media print {
+    nav.site-nav, .article-meta, .hero-scan, .info-section, footer,
+    .report-actions, #state-form, #state-scanning, #state-error {
+      display: none !important;
+    }
+    body { background: white !important; color: black !important; }
+    .form-card { border: none !important; padding: 0 !important; background: white !important; }
+    .data-table, .verdict-card, .metric, .report-footer .cta-block {
+      background: white !important; border-color: #ccc !important; color: black !important;
+    }
+    * { color: black !important; }
+    .data-table td.pos, .report-section h3.pos { color: #0a7c2d !important; }
+    .data-table td.neg, .report-section h3.neg { color: #b32020 !important; }
+    .verdict-card { border-left-color: #ff6a1a !important; }
   }
   .scanning-stages {
     margin-top: 28px;
@@ -407,14 +604,12 @@
         </div>
       </div>
 
-      <!-- SUCCESS STATE -->
-      <div class="state-panel" id="state-success">
-        <div class="state-success">
-          <div class="checkmark">✓</div>
-          <h2>Report sent to your inbox.</h2>
-          <p id="success-detail">Check your email. If you don't see it in the next few minutes, look in spam or promotions.</p>
-          <p id="success-verdict" style="color: var(--accent); font-weight: 600; margin-top: 14px;"></p>
-          <button class="reset-btn" onclick="resetForm()">Run another scan</button>
+      <!-- SUCCESS STATE (inline report render target) -->
+      <div class="state-panel report-view" id="state-success">
+        <div id="report-render"></div>
+        <div class="report-actions">
+          <button onclick="window.print()">Save as PDF</button>
+          <button onclick="resetForm()">Run another scan</button>
         </div>
       </div>
 
@@ -572,17 +767,14 @@
       clearInterval(timer);
       const data = await res.json().catch(() => ({}));
 
-      if (!res.ok) {
+      if (!res.ok || !data.report) {
         document.getElementById('error-detail').textContent =
           data.error || 'The scan didn\'t complete. Try again, or email nick@bluecollartechy.com.';
         showState('error');
         return;
       }
 
-      // success
-      if (data.verdict) {
-        document.getElementById('success-verdict').textContent = 'Quick read: ' + data.verdict;
-      }
+      renderReport(data.report);
       showState('success');
     } catch (err) {
       clearInterval(timer);
@@ -591,6 +783,180 @@
       showState('error');
     }
   });
+
+  // ========== REPORT RENDERER ==========
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+  function fmtNum(n) { return (n || 0).toLocaleString(); }
+  function fmtPct(n) {
+    const v = Math.round((n || 0) * 10) / 10;
+    return (v >= 0 ? '+' : '') + v.toFixed(1) + '%';
+  }
+  function trendIcon(pct) {
+    if (pct > 10) return '↑';
+    if (pct < -10) return '↓';
+    return '→';
+  }
+  function trendClass(pct) {
+    if (pct > 5) return 'pos';
+    if (pct < -5) return 'neg';
+    return '';
+  }
+
+  function renderReport(r) {
+    const trendLabel = r.yoy_pct >= 50 ? 'YoY Trend' : 'Trend';
+    const confClass = 'metric-' + (r.confidence.level || 'medium').toLowerCase();
+
+    const catRows = r.categories.map(c => `
+      <tr>
+        <td>${esc(c.category)}</td>
+        <td class="r">${fmtNum(c.total_volume)}</td>
+        <td class="r">${c.share_pct}%</td>
+        <td class="r ${trendClass(c.weighted_trend)}">${trendIcon(c.weighted_trend)} ${fmtPct(c.weighted_trend)}</td>
+        <td class="dim">${esc(c.top_keyword)}</td>
+      </tr>`).join('');
+
+    const topRows = r.top_keywords.map(k => `
+      <tr>
+        <td>${esc(k.keyword)}</td>
+        <td class="dim">${esc(k.category)}</td>
+        <td class="r">${fmtNum(k.search_volume)}</td>
+        <td class="r ${trendClass(k.trend_pct)}">${fmtPct(k.trend_pct)}</td>
+      </tr>`).join('');
+
+    const risingRows = r.rising.length
+      ? r.rising.map(k => `
+          <tr>
+            <td>${esc(k.keyword)}</td>
+            <td class="dim">${esc(k.category)}</td>
+            <td class="r">${fmtNum(k.search_volume)}</td>
+            <td class="r pos">${fmtPct(k.trend_pct)}</td>
+          </tr>`).join('')
+      : `<tr><td colspan="4" class="empty-row">None above the ≥50 volume, +25% trend threshold in this market.</td></tr>`;
+
+    const decliningRows = r.declining.length
+      ? r.declining.map(k => `
+          <tr>
+            <td>${esc(k.keyword)}</td>
+            <td class="dim">${esc(k.category)}</td>
+            <td class="r">${fmtNum(k.search_volume)}</td>
+            <td class="r neg">${fmtPct(k.trend_pct)}</td>
+          </tr>`).join('')
+      : `<tr><td colspan="4" class="empty-row">None below the ≥50 volume, −25% trend threshold in this market.</td></tr>`;
+
+    const reasonsHtml = r.confidence.reasons && r.confidence.reasons.length
+      ? `<ul class="conf-reasons">${r.confidence.reasons.map(x => `<li>${esc(x)}</li>`).join('')}</ul>`
+      : '';
+
+    const city = r.location.split(',')[0];
+
+    document.getElementById('report-render').innerHTML = `
+      <div class="report-header">
+        <div class="report-label">Your Market Scan</div>
+        <h2 class="report-title">${esc(city)} · <span class="hi">${esc(r.industry)}</span></h2>
+        <div class="report-meta">${esc(r.location)} · ${esc(r.industry_description)}</div>
+      </div>
+
+      <div class="verdict-card">
+        <div class="v-label">The Quick Read</div>
+        <div class="v-text">${esc(r.verdict)}</div>
+      </div>
+
+      <div class="metrics-row">
+        <div class="metric ${confClass}">
+          <div class="m-label">Confidence</div>
+          <div class="m-value">${esc(r.confidence.level)}</div>
+        </div>
+        <div class="metric">
+          <div class="m-label">Commercial Vol/mo</div>
+          <div class="m-value">${fmtNum(r.total_volume)}</div>
+        </div>
+        <div class="metric">
+          <div class="m-label">YoY Coverage</div>
+          <div class="m-value">${Math.round(r.yoy_pct)}%</div>
+        </div>
+      </div>
+
+      ${reasonsHtml ? `<div class="verdict-card" style="border-left-color:${r.confidence.level==='LOW'?'var(--error)':r.confidence.level==='MEDIUM'?'#fbbf24':'#4ade80'};"><div class="v-label">Data Quality</div>${reasonsHtml}</div>` : ''}
+
+      <div class="report-section">
+        <h3>Category Demand</h3>
+        <p class="section-note">Ranked by commercial search volume in your market. Weighted trend is volume-weighted year-over-year (where 15+ months of data is available).</p>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr>
+              <th>Category</th>
+              <th class="r">Vol/mo</th>
+              <th class="r">Share</th>
+              <th class="r">${trendLabel}</th>
+              <th>Top Keyword</th>
+            </tr></thead>
+            <tbody>${catRows}</tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="report-section">
+        <h3>Top 20 Commercial Keywords</h3>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr>
+              <th>Keyword</th>
+              <th>Category</th>
+              <th class="r">Vol</th>
+              <th class="r">${trendLabel}</th>
+            </tr></thead>
+            <tbody>${topRows}</tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="report-section">
+        <h3 class="pos">Rising Demand (≥ +25% trend)</h3>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr>
+              <th>Keyword</th>
+              <th>Category</th>
+              <th class="r">Vol</th>
+              <th class="r">Trend</th>
+            </tr></thead>
+            <tbody>${risingRows}</tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="report-section">
+        <h3 class="neg">Declining Demand (≤ −25% trend)</h3>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr>
+              <th>Keyword</th>
+              <th>Category</th>
+              <th class="r">Vol</th>
+              <th class="r">Trend</th>
+            </tr></thead>
+            <tbody>${decliningRows}</tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="report-footer">
+        <div class="cta-block">
+          <h4>If your market is up and your business is down, read this next.</h4>
+          <p>The blog post walks through how to tell whether the problem is your marketing agency, your own operations, or something else entirely. In the order that saves you the most money.</p>
+          <a href="/blog/market-agency-or-you" target="_blank" rel="noopener">Read the blog post →</a>
+        </div>
+        <div class="fine-print">
+          Source: Google Ads Keyword Planner via DataForSEO. Numbers are directional, not absolute. Trend: last 3 months vs same 3 months one year earlier where 15+ months of data is available; otherwise in-window slope. Small markets and sparse categories fall back to seasonal fallback. Always pair this scan with lead volume, conversion rate, and a competitive check before calling a verdict.
+        </div>
+      </div>
+    `;
+  }
 </script>
 
 </body>
