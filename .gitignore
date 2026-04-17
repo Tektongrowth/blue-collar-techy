@@ -7,3 +7,6 @@ node_modules/
 .vscode/
 .idea/
 .wrangler/
+
+# Working photo folders — only /images/ and /logos/ ship
+photos/
