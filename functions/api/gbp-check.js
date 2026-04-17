@@ -569,5 +569,15 @@ export async function onRequestPost({ request, env }) {
   const input = { name, email, business_name, city };
   pushToGHL(env, input, report).catch(() => {});
 
-  return respond({ ok: true, html, score: report.overall_score, verdict: report.verdict_label });
+  return respond({
+    ok: true,
+    html,
+    score: report.overall_score,
+    verdict: report.verdict_label,
+    _debug: {
+      competitor_count: competitors.length,
+      competitor_sample: competitors.slice(0, 3).map(c => ({ title: c.title, type: c.type, rating: c.rating })),
+      normalized_city: city,
+    },
+  });
 }
