@@ -539,6 +539,26 @@
     font-size: 12px;
     color: var(--text-faint);
   }
+  form.nl-form button:disabled { opacity: 0.65; cursor: not-allowed; }
+  .hp-nl {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px !important; height: 1px !important;
+    opacity: 0 !important; pointer-events: none !important;
+  }
+  .nl-msg {
+    margin-top: 18px;
+    font-size: 15px; line-height: 1.5;
+    max-width: 540px;
+    min-height: 1.5em;
+  }
+  .nl-msg.nl-ok {
+    color: var(--accent);
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+  }
+  .nl-msg.nl-err { color: #f87171; }
 
   /* ============ FOOTER ============ */
   footer {
@@ -735,10 +755,12 @@
     <div class="nl-eyebrow">The Newsletter</div>
     <h2>Get the best stuff in your inbox.</h2>
     <p>Practical ideas on AI, local SEO, and contractor marketing. Written like a normal person. No guru spam. No fake urgency.</p>
-    <form class="nl-form" onsubmit="event.preventDefault();">
-      <input type="email" placeholder="your@email.com" />
-      <button type="submit">Subscribe</button>
+    <form id="nl-form" class="nl-form" novalidate>
+      <input type="email" id="nl-email" name="email" placeholder="your@email.com" required autocomplete="email" />
+      <input type="text" name="website" class="hp-nl" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <button type="submit" id="nl-btn">Subscribe</button>
     </form>
+    <div id="nl-msg" class="nl-msg" role="status" aria-live="polite"></div>
     <div class="nl-note">// Free. Unsubscribe anytime. No BS.</div>
   </div>
 </section>
@@ -792,6 +814,59 @@
     </div>
   </div>
 </footer>
+
+<script>
+(function () {
+  const form = document.getElementById('nl-form');
+  if (!form) return;
+  const emailInput = document.getElementById('nl-email');
+  const btn = document.getElementById('nl-btn');
+  const msg = document.getElementById('nl-msg');
+
+  function setMsg(text, cls) {
+    msg.textContent = text;
+    msg.className = 'nl-msg' + (cls ? ' ' + cls : '');
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const email = (emailInput.value || '').trim();
+    const website = form.website.value;
+    if (!email) return;
+    btn.disabled = true;
+    btn.textContent = 'Subscribing…';
+    setMsg('');
+
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, website: website }),
+      });
+      const data = await res.json().catch(function () { return {}; });
+
+      if (!res.ok) {
+        setMsg(data.error || 'Something broke. Try again in a minute.', 'nl-err');
+        btn.disabled = false;
+        btn.textContent = 'Subscribe';
+        return;
+      }
+
+      form.style.display = 'none';
+      setMsg(
+        data.already_subscribed
+          ? "You're already on the list. Thanks for staying with me."
+          : "You're in. I'll send the good stuff.",
+        'nl-ok'
+      );
+    } catch (err) {
+      setMsg('Network error. Try again in a minute.', 'nl-err');
+      btn.disabled = false;
+      btn.textContent = 'Subscribe';
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
