@@ -661,21 +661,9 @@ export async function onRequestPost({ request, env }) {
   }
 
   if (!biz) {
-    // DEBUG: try fallback inline so we can see what's happening
-    let fallbackDebug = {};
-    try {
-      const body = [{ keyword: business_name, location_name: city, language_code: 'en', depth: 5 }];
-      const data = await dfsPost(DFS_LOCAL_FINDER, body, auth);
-      const items = data?.tasks?.[0]?.result?.[0]?.items || [];
-      fallbackDebug.items_count = items.length;
-      fallbackDebug.types = items.slice(0,3).map(i => ({type:i.type,title:i.title}));
-    } catch(e) {
-      fallbackDebug.error = e.message;
-    }
     return respond({
       ok: false,
       error: `We could not find "${business_name}" in ${city}. Try the exact business name as it appears in Google, or include the state (e.g. "Charlotte, NC").`,
-      _debug: fallbackDebug,
     }, 404);
   }
 
