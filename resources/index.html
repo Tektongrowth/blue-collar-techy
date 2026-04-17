@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Free Resources — Blue Collar Techy</title>
+<meta name="description" content="Free tools and guides for blue-collar business owners. Practical stuff that helps you diagnose your market, your marketing, and your business. No guru nonsense." />
+<meta name="author" content="Nick Conley" />
+<meta name="theme-color" content="#0d0d12" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://bluecollartechy.com/resources/" />
+<meta property="og:title" content="Free Resources — Blue Collar Techy" />
+<meta property="og:description" content="Free tools and guides for blue-collar business owners. No guru nonsense." />
+<meta property="og:image" content="https://bluecollartechy.com/og-image.jpg" />
+
+<link rel="icon" type="image/svg+xml" href="../logos/bct-favicon.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0d0d12; --bg-elev: #15151d; --bg-card: #1a1a24;
+    --border: #272733; --text: #f5f5f7; --text-dim: #a0a0ab; --text-faint: #6b6b78;
+    --accent: #ff6a1a; --accent-bright: #ff8530;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg); color: var(--text);
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 17px; line-height: 1.65;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  a { color: inherit; text-decoration: none; }
+
+  nav.site-nav {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0; position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(12px); background: rgba(13, 13, 18, 0.85);
+  }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo svg { height: 36px; width: auto; display: block; }
+  .nav-links { display: flex; gap: 36px; font-size: 14px; font-weight: 600; }
+  .nav-links a { color: var(--text-dim); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-links a.active { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: #000;
+    padding: 10px 18px; font-weight: 700; font-size: 13px;
+    letter-spacing: 0.02em; border-radius: 2px; text-transform: uppercase;
+  }
+
+  .article-meta { padding: 40px 0 24px; border-bottom: 1px solid var(--border); }
+  .article-meta-row {
+    display: flex; justify-content: space-between; gap: 32px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--text-faint); letter-spacing: 0.15em; text-transform: uppercase;
+  }
+  .article-meta-row span.hl { color: var(--accent); }
+
+  .hero-res { padding: 80px 0 48px; }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--accent);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 28px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .kicker::before { content: ''; width: 28px; height: 2px; background: var(--accent); }
+  h1.res-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 0.92; letter-spacing: -0.03em;
+    margin-bottom: 32px; max-width: 900px;
+  }
+  h1.res-title .hi { color: var(--accent); }
+  .hero-sub {
+    font-size: 20px; color: var(--text-dim);
+    max-width: 680px; line-height: 1.55;
+  }
+
+  .resources-grid-section { padding: 40px 0 120px; }
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+  .res-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 40px 36px 32px;
+    display: flex; flex-direction: column;
+    position: relative;
+    transition: border-color 0.2s, transform 0.2s;
+    min-height: 320px;
+  }
+  .res-card.live {
+    cursor: pointer;
+  }
+  .res-card.live:hover {
+    border-color: var(--accent);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.2);
+  }
+  .res-card.live::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+    background: var(--accent);
+  }
+  .res-card.soon {
+    opacity: 0.6;
+    border-style: dashed;
+  }
+  .res-card .badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    margin-bottom: 24px;
+    align-self: flex-start;
+  }
+  .res-card.live .badge {
+    background: var(--accent); color: #000; font-weight: 700;
+  }
+  .res-card.soon .badge {
+    background: transparent; border: 1px solid var(--text-faint); color: var(--text-faint);
+  }
+  .res-card .type {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .res-card h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 26px; line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin-bottom: 14px;
+  }
+  .res-card p {
+    color: var(--text-dim);
+    font-size: 15px; line-height: 1.55;
+    margin-bottom: 20px;
+    flex: 1;
+  }
+  .res-card .cta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--accent);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    font-weight: 700;
+  }
+  .res-card.soon .cta { color: var(--text-faint); }
+
+  .sub-callout {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    padding: 48px 40px;
+    text-align: center;
+    position: relative;
+  }
+  .sub-callout::before {
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 80px; height: 3px; background: var(--accent);
+  }
+  .sub-callout .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--accent);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .sub-callout h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.05; letter-spacing: -0.015em;
+    margin-bottom: 14px;
+    max-width: 640px; margin-left: auto; margin-right: auto;
+  }
+  .sub-callout p {
+    color: var(--text-dim); font-size: 16px;
+    max-width: 560px; margin: 0 auto 24px; line-height: 1.55;
+  }
+  .sub-callout a {
+    display: inline-block;
+    background: var(--accent); color: #000;
+    padding: 14px 26px;
+    font-weight: 700; font-size: 13px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .sub-callout a:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+
+  footer { padding: 80px 0 40px; background: #0a0a10; border-top: 1px solid var(--border); }
+  .foot-top {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px; padding-bottom: 60px; border-bottom: 1px solid var(--border);
+  }
+  .foot-brand .logo-mini { margin-bottom: 20px; }
+  .foot-brand .logo-mini svg { height: 60px; width: auto; }
+  .foot-brand p { color: var(--text-dim); font-size: 14px; max-width: 300px; line-height: 1.6; }
+  .foot-col h4 {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--text-faint); letter-spacing: 0.2em;
+    text-transform: uppercase; margin-bottom: 20px;
+  }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a { color: var(--text-dim); font-size: 14px; transition: color 0.2s; }
+  .foot-col a:hover { color: var(--accent); }
+  .foot-bottom {
+    padding-top: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--text-faint); letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 900px) {
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .nav-links { display: none; }
+    .resources-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="../index.html" aria-label="Blue Collar Techy">
+      <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+        <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
+        <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
+        <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
+        <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
+        <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
+        <text x="290" y="78" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">EST · 2026</text>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="../about.html">About</a>
+      <a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a>
+      <a href="index.html" class="active">Resources</a>
+      <a href="../blog/">Blog</a>
+      <a href="../work-with-me.html">Work with me</a>
+    </div>
+    <a class="nav-cta" href="../index.html#newsletter">Subscribe</a>
+  </div>
+</nav>
+
+<div class="article-meta">
+  <div class="container">
+    <div class="article-meta-row">
+      <span><span class="hl">RESOURCES</span> / FREE TOOLS</span>
+      <span>By Nick Conley</span>
+      <span>More Dropping Soon</span>
+    </div>
+  </div>
+</div>
+
+<section class="hero-res">
+  <div class="container">
+    <div class="kicker">Free Resources</div>
+    <h1 class="res-title">Tools and breakdowns for <span class="hi">blue-collar</span> owners.</h1>
+    <p class="hero-sub">Practical, free stuff you can actually use. Diagnose your market. Audit your own business. Figure out what's working and what's not. All built from the contractor side of the desk, not the guru side.</p>
+  </div>
+</section>
+
+<section class="resources-grid-section">
+  <div class="container">
+    <div class="resources-grid">
+
+      <a href="../market-scan/" class="res-card live">
+        <span class="badge">Live · Free</span>
+        <div class="type">Interactive Tool</div>
+        <h3>Market Demand Scan</h3>
+        <p>Is your market actually slow, or does it just feel that way? Pulls 24 months of live Google search data for your trade in your city, compares year-over-year, and tells you straight whether demand moved or something else is going on.</p>
+        <span class="cta">Run your scan →</span>
+      </a>
+
+      <div class="res-card soon">
+        <span class="badge">Coming Soon</span>
+        <div class="type">Guide</div>
+        <h3>10 Things No Marketing Agency Can Fix For You</h3>
+        <p>The owner-side habits that kill contractor businesses. Follow-up speed, review collection, showing up on time, training a real sales process. The stuff you can't outsource, ranked by how much damage each one does.</p>
+        <span class="cta">Subscribe to get notified</span>
+      </div>
+
+      <div class="res-card soon">
+        <span class="badge">Coming Soon</span>
+        <div class="type">Checklist</div>
+        <h3>Google Business Profile Audit</h3>
+        <p>The 30-point checklist I use when auditing a contractor's GBP. Categories, services, attributes, photos, posts, Q&amp;A, review velocity. What's wired up, what's missing, and what's actively hurting your ranking.</p>
+        <span class="cta">Subscribe to get notified</span>
+      </div>
+
+    </div>
+
+    <div class="sub-callout">
+      <div class="label">Get notified</div>
+      <h3>New resources drop when I build them.</h3>
+      <p>Join the newsletter. You'll get practical stuff for your business and early access when new free tools go live. No filler, no guru nonsense.</p>
+      <a href="../index.html#newsletter">Join the newsletter</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo-mini">
+          <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
+            <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
+            <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
+            <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
+            <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
+          </svg>
+        </div>
+        <p>Practical tech, AI, and local SEO for blue-collar business owners. No guru nonsense.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="index.html">Resources</a></li>
+          <li><a href="../blog/">Blog</a></li>
+          <li><a href="../work-with-me.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Work</h4>
+        <ul>
+          <li><a href="../work-with-me.html">Get in touch</a></li>
+          <li><a href="https://tektongrowth.com" target="_blank" rel="noopener">Tekton Growth</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Blue Collar Techy · Nick Conley</span>
+      <span>Built for the trades</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
