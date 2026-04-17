@@ -30,6 +30,15 @@ function normalizeString(s) {
   return String(s || '').trim();
 }
 
+function normalizeLocation(city) {
+  // DFS requires no spaces around commas in location_name
+  let c = String(city || '').trim().replace(/\s*,\s*/g, ',');
+  // If only "City,State" provided, append ",United States"
+  const parts = c.split(',').filter(Boolean);
+  if (parts.length === 2) c = c + ',United States';
+  return c;
+}
+
 function validEmail(e) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
 }
@@ -491,7 +500,7 @@ export async function onRequestPost({ request, env }) {
   const name = normalizeString(body.name);
   const email = normalizeString(body.email).toLowerCase();
   const business_name = normalizeString(body.business_name);
-  const city = normalizeString(body.city);
+  const city = normalizeLocation(body.city);
   const hp = normalizeString(body.website);
 
   // Honeypot
