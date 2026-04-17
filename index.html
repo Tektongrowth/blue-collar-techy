@@ -23,6 +23,56 @@
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="logos/bct-favicon.svg" />
+<link rel="canonical" href="https://bluecollartechy.com/" />
+
+<!-- JSON-LD: Organization + Person + WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://bluecollartechy.com/#organization",
+      "name": "Blue Collar Techy",
+      "url": "https://bluecollartechy.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://bluecollartechy.com/logos/bct-primary.svg",
+        "contentUrl": "https://bluecollartechy.com/logos/bct-primary.svg"
+      },
+      "sameAs": [
+        "https://www.youtube.com/@nicklausconley"
+      ],
+      "description": "Practical tech, AI, and local SEO for blue-collar business owners. Built by a contractor who went full tech."
+    },
+    {
+      "@type": "Person",
+      "@id": "https://bluecollartechy.com/about#nick",
+      "name": "Nick Conley",
+      "url": "https://bluecollartechy.com/about.html",
+      "jobTitle": "Founder",
+      "description": "Former hardscape contractor turned marketing and tech operator. Founder of Blue Collar Techy and Tekton Growth.",
+      "sameAs": [
+        "https://www.youtube.com/@nicklausconley",
+        "https://tektongrowth.com"
+      ],
+      "worksFor": {
+        "@id": "https://bluecollartechy.com/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://bluecollartechy.com/#website",
+      "url": "https://bluecollartechy.com/",
+      "name": "Blue Collar Techy",
+      "description": "Tech, AI, and local SEO for blue-collar business owners.",
+      "publisher": {
+        "@id": "https://bluecollartechy.com/#organization"
+      }
+    }
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

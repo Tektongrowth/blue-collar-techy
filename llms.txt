@@ -1,0 +1,30 @@
+# Blue Collar Techy
+
+Practical tech, AI, and local SEO for blue-collar business owners. Hosted by Nick Conley, a former hardscape contractor who now runs a marketing and tech company for the trades (Tekton Growth).
+
+> Blue Collar Techy exists to cut through the noise of marketing, AI, and tech for contractors and trades owners. Honest diagnostic frameworks, practical how-tos, and free tools that use real data.
+
+## About
+- [About Nick Conley](https://bluecollartechy.com/about.html): Ten years running Tekton Design Build (custom hardscape, outdoor living, stone work) before pivoting into marketing. Now helps blue-collar businesses grow with AI, local SEO, and practical systems.
+
+## Core Perspective
+- The "market, agency, you" framework: when leads slow down, the cause is almost always in one of three buckets. Diagnose in order. Don't blame the agency before checking whether the market moved or the owner-side fundamentals are leaking calls.
+- No guru content. No "transform your business in 30 days." Just working tools and breakdowns.
+
+## Blog Posts
+- [When leads dry up, is it the market, the agency, or you?](https://bluecollartechy.com/blog/market-agency-or-you.html): The three-bucket diagnostic. How to tell whether your marketing agency is failing, the market moved, or the owner side has leaks. Start here.
+- [10 things no marketing agency can fix for you](https://bluecollartechy.com/blog/ten-things-no-agency-can-fix.html): The full list of owner-side habits that kill contractor businesses. Grouped by speed, reputation, and sales. Ranked by damage.
+- [Audit your Google Business Profile in 15 minutes](https://bluecollartechy.com/blog/gbp-audit-15-minutes.html): Seven checks any contractor can do themselves. Covers ownership, categories, services, photos, posts, and review health.
+
+## Free Tools
+- [Market Demand Scan](https://bluecollartechy.com/market-scan/): Pulls 24 months of Google search demand data for your trade in your city. Year-over-year comparison. Tells you whether the market actually moved or something else is going on.
+- [GBP Health Check](https://bluecollartechy.com/gbp-check/): Pulls your live Google Business Profile, compares you to the top contractors in your area, scores on seven dimensions, and returns a priority fix list.
+
+## Services
+- [Work with Nick](https://bluecollartechy.com/work-with-me.html): Direct contact. Submit what you're trying to do with AI, marketing, local SEO, or systems.
+- [Tekton Growth](https://tektongrowth.com): Done-for-you SEO and marketing agency for contractors. Runs in parallel with Blue Collar Techy.
+
+## Contact
+- Email: nick@tektongrowth.com
+- YouTube: https://www.youtube.com/@nicklausconley
+- Website: https://bluecollartechy.com
