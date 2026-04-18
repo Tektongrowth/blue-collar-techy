@@ -75,13 +75,14 @@ jobs:
           POST_SLUG=$(git log --name-only --diff-filter=A --pretty=format: origin/main..HEAD -- 'blog/*.html' 2>/dev/null | grep -v '^$' | head -1 | xargs -I {} basename {} .html)
           if [ -n "$POST_SLUG" ]; then POST_PATH="/blog/$POST_SLUG"; else POST_PATH=""; fi
           PR_NUM=$(gh pr list --head "$PR_REF" --json number --jq '.[0].number' 2>/dev/null || echo "")
-          MSG=$(printf '🟠 BCT Preview ready for review\nPreview: %s%s\nPR: https://github.com/%s/pull/%s\n\nTo request changes from Claude Code mobile, copy this:\nRevise BCT draft %s: <your feedback>' \
-            "$PREVIEW_URL" "$POST_PATH" "$GITHUB_REPOSITORY" "${PR_NUM:-?}" "${POST_SLUG:-unknown}")
 
-          # If we have a PR number, include an Approve inline button.
+          # Message 1: preview + PR link + Approve button
+          MSG1=$(printf '🟠 BCT Preview ready for review\nPreview: %s%s\nPR: https://github.com/%s/pull/%s\n\nTap the button below to approve, or copy the next message into Claude Code mobile to request changes.' \
+            "$PREVIEW_URL" "$POST_PATH" "$GITHUB_REPOSITORY" "${PR_NUM:-?}")
+
           if [ -n "$PR_NUM" ]; then
             KEYBOARD=$(printf '{"inline_keyboard":[[{"text":"✅ Approve & Ship","callback_data":"approve:%s"}]]}' "$PR_NUM")
-            PAYLOAD=$(jq -n --arg chat "$TELEGRAM_CHAT_ID" --arg text "$MSG" --argjson kb "$KEYBOARD" \
+            PAYLOAD=$(jq -n --arg chat "$TELEGRAM_CHAT_ID" --arg text "$MSG1" --argjson kb "$KEYBOARD" \
               '{chat_id:$chat, text:$text, reply_markup:$kb}')
             curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
               -H "Content-Type: application/json" \
@@ -89,5 +90,11 @@ jobs:
           else
             curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
               -d "chat_id=${TELEGRAM_CHAT_ID}" \
-              --data-urlencode "text=${MSG}" > /dev/null
+              --data-urlencode "text=${MSG1}" > /dev/null
           fi
+
+          # Message 2: standalone revise prompt (tap-hold-copy the whole message)
+          MSG2="Revise BCT draft ${POST_SLUG:-unknown}: <describe the change>"
+          curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${MSG2}" > /dev/null
