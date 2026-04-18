@@ -1,0 +1,93 @@
+name: Post-merge — mark slot published + regen sitemap
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'blog/*.html'
+
+permissions:
+  contents: write
+
+jobs:
+  post-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Determine if a new post was added
+        id: check
+        run: |
+          new_posts=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'blog/*.html' || true)
+          echo "new_posts<<EOF" >> $GITHUB_OUTPUT
+          echo "$new_posts" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Mark calendar slot as published
+        if: steps.check.outputs.new_posts != ''
+        run: |
+          python3 <<'PY'
+          import json, os, pathlib
+          new_posts = os.environ.get("NEW_POSTS", "").strip().splitlines()
+          slugs = [pathlib.Path(p).stem for p in new_posts if p]
+          cal_path = pathlib.Path("content-ops/content-calendar.json")
+          if not cal_path.exists():
+              raise SystemExit(0)
+          cal = json.loads(cal_path.read_text())
+          changed = False
+          for post in cal.get("posts", []):
+              if post["slug"] in slugs and not post.get("published"):
+                  post["published"] = True
+                  changed = True
+          if changed:
+              cal_path.write_text(json.dumps(cal, indent=2) + "\n")
+          PY
+        env:
+          NEW_POSTS: ${{ steps.check.outputs.new_posts }}
+
+      - name: Regenerate sitemap.xml
+        run: |
+          python3 <<'PY'
+          import pathlib, datetime
+          root = pathlib.Path(".")
+          base = "https://bluecollartechy.com"
+          today = datetime.date.today().isoformat()
+          urls = []
+
+          # Top-level pages
+          for name in ["index.html", "about.html", "work-with-me.html",
+                       "blog/index.html", "resources/index.html",
+                       "market-scan/index.html", "gbp-check/index.html"]:
+              if (root / name).exists():
+                  loc = base + "/" + name.replace("index.html", "").rstrip("/")
+                  if not loc.endswith("/") and "." not in loc.split("/")[-1]:
+                      loc += "/"
+                  urls.append((loc if loc != base + "/" else base + "/", today))
+
+          # Blog posts
+          for post in sorted((root / "blog").glob("*.html")):
+              if post.name == "index.html":
+                  continue
+              urls.append((f"{base}/blog/{post.stem}.html", today))
+
+          body = ['<?xml version="1.0" encoding="UTF-8"?>',
+                  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+          for loc, lastmod in urls:
+              body.append(f"  <url><loc>{loc}</loc><lastmod>{lastmod}</lastmod></url>")
+          body.append("</urlset>")
+          (root / "sitemap.xml").write_text("\n".join(body) + "\n")
+          PY
+
+      - name: Commit calendar + sitemap changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "bct-bot"
+            git config user.email "bot@bluecollartechy.com"
+            git add content-ops/content-calendar.json sitemap.xml 2>/dev/null || true
+            git commit -m "chore: mark slot published + refresh sitemap [skip ci]" || exit 0
+            git push
+          fi
