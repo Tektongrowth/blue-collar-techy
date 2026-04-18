@@ -2,7 +2,9 @@ name: Deploy to Cloudflare Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - 'draft/**'
   workflow_dispatch:
 
 jobs:
@@ -15,9 +17,48 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Compute CF Pages branch name
+        id: branch
+        run: |
+          # CF Pages branch names can't contain slashes.
+          # For main: --branch=main (production).
+          # For draft/<slug>: --branch=draft-<slug> (preview).
+          if [ "${GITHUB_REF_NAME}" = "main" ]; then
+            echo "cf_branch=main" >> "$GITHUB_OUTPUT"
+            echo "is_preview=false" >> "$GITHUB_OUTPUT"
+          else
+            SAFE=$(echo "${GITHUB_REF_NAME}" | sed 's|/|-|g')
+            echo "cf_branch=${SAFE}" >> "$GITHUB_OUTPUT"
+            echo "is_preview=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Deploy
+        id: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name=blue-collar-techy --branch=main --commit-dirty=true
+          command: pages deploy . --project-name=blue-collar-techy --branch=${{ steps.branch.outputs.cf_branch }} --commit-dirty=true
+
+      - name: Notify Telegram with preview URL
+        if: steps.branch.outputs.is_preview == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          CF_BRANCH: ${{ steps.branch.outputs.cf_branch }}
+          DEPLOY_URL: ${{ steps.deploy.outputs.deployment-url }}
+          PR_REF: ${{ github.ref_name }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ]; then
+            echo "No Telegram secrets, skipping"
+            exit 0
+          fi
+          # The alias URL is stable across redeploys to the same branch.
+          ALIAS_URL="https://${CF_BRANCH}.blue-collar-techy.pages.dev"
+          MSG="🟠 BCT Preview deployed
+Branch: ${PR_REF}
+Preview: ${ALIAS_URL}
+Deployment: ${DEPLOY_URL}"
+          curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${MSG}" > /dev/null
