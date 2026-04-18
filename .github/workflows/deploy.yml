@@ -53,12 +53,8 @@ jobs:
             echo "No Telegram secrets, skipping"
             exit 0
           fi
-          # The alias URL is stable across redeploys to the same branch.
           ALIAS_URL="https://${CF_BRANCH}.blue-collar-techy.pages.dev"
-          MSG="🟠 BCT Preview deployed
-Branch: ${PR_REF}
-Preview: ${ALIAS_URL}
-Deployment: ${DEPLOY_URL}"
+          MSG=$(printf '🟠 BCT Preview deployed\nBranch: %s\nPreview: %s\nDeployment: %s' "$PR_REF" "$ALIAS_URL" "$DEPLOY_URL")
           curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d "chat_id=${TELEGRAM_CHAT_ID}" \
             --data-urlencode "text=${MSG}" > /dev/null
