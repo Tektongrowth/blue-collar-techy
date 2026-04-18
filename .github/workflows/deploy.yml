@@ -40,12 +40,30 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy . --project-name=blue-collar-techy --branch=${{ steps.branch.outputs.cf_branch }} --commit-dirty=true
 
+      - name: Fetch CF Pages alias URL
+        if: steps.branch.outputs.is_preview == 'true'
+        id: alias
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CF_BRANCH: ${{ steps.branch.outputs.cf_branch }}
+          DEPLOY_URL: ${{ steps.deploy.outputs.deployment-url }}
+        run: |
+          # CF truncates branch aliases to 28 chars. Query the API for the
+          # actual alias URL of the most recent deployment on this branch.
+          ALIAS=$(curl -sS -H "Authorization: Bearer $CF_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT_ID/pages/projects/blue-collar-techy/deployments?per_page=20" \
+            | jq -r --arg b "$CF_BRANCH" '.result[] | select(.deployment_trigger.metadata.branch == $b) | .aliases[0]' | grep -v '^null$' | head -1)
+          if [ -z "$ALIAS" ]; then ALIAS="$DEPLOY_URL"; fi
+          echo "preview_url=$ALIAS" >> "$GITHUB_OUTPUT"
+
       - name: Notify Telegram with preview URL
         if: steps.branch.outputs.is_preview == 'true'
         env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          CF_BRANCH: ${{ steps.branch.outputs.cf_branch }}
+          PREVIEW_URL: ${{ steps.alias.outputs.preview_url }}
           DEPLOY_URL: ${{ steps.deploy.outputs.deployment-url }}
           PR_REF: ${{ github.ref_name }}
         run: |
@@ -53,8 +71,12 @@ jobs:
             echo "No Telegram secrets, skipping"
             exit 0
           fi
-          ALIAS_URL="https://${CF_BRANCH}.blue-collar-techy.pages.dev"
-          MSG=$(printf '🟠 BCT Preview deployed\nBranch: %s\nPreview: %s\nDeployment: %s' "$PR_REF" "$ALIAS_URL" "$DEPLOY_URL")
+          git fetch origin main --depth=50 || true
+          POST_SLUG=$(git log --name-only --diff-filter=A --pretty=format: origin/main..HEAD -- 'blog/*.html' 2>/dev/null | grep -v '^$' | head -1 | xargs -I {} basename {} .html)
+          if [ -n "$POST_SLUG" ]; then POST_PATH="/blog/$POST_SLUG"; else POST_PATH=""; fi
+          PR_NUM=$(gh pr list --head "$PR_REF" --json number --jq '.[0].number' 2>/dev/null || echo "?")
+          MSG=$(printf '🟠 BCT Preview ready for review\nBranch: %s\nPreview: %s%s\nPR: https://github.com/%s/pull/%s' \
+            "$PR_REF" "$PREVIEW_URL" "$POST_PATH" "$GITHUB_REPOSITORY" "$PR_NUM")
           curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d "chat_id=${TELEGRAM_CHAT_ID}" \
             --data-urlencode "text=${MSG}" > /dev/null
