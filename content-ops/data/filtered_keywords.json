@@ -1,0 +1,2440 @@
+[
+  {
+    "keyword": "local service ads",
+    "group": "ads",
+    "volume": 40500,
+    "cpc": 3.17,
+    "competition": 30,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google local service ads",
+    "group": "ads",
+    "volume": 27100,
+    "cpc": 4.84,
+    "competition": 26,
+    "intent_tags": []
+  },
+  {
+    "keyword": "my business profile",
+    "group": "local_seo_gbp",
+    "volume": 22200,
+    "cpc": 12.71,
+    "competition": 10,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google business account",
+    "group": "local_seo_gbp",
+    "volume": 18100,
+    "cpc": 12.19,
+    "competition": 34,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google lsa",
+    "group": "ads",
+    "volume": 18100,
+    "cpc": 3.46,
+    "competition": 26,
+    "intent_tags": []
+  },
+  {
+    "keyword": "lsa google",
+    "group": "ads",
+    "volume": 18100,
+    "cpc": 3.46,
+    "competition": 26,
+    "intent_tags": []
+  },
+  {
+    "keyword": "googlelsa",
+    "group": "ads",
+    "volume": 18100,
+    "cpc": 3.46,
+    "competition": 26,
+    "intent_tags": []
+  },
+  {
+    "keyword": "businessprofile",
+    "group": "local_seo_gbp",
+    "volume": 14800,
+    "cpc": 10.59,
+    "competition": 17,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google business page",
+    "group": "local_seo_gbp",
+    "volume": 12100,
+    "cpc": 14.58,
+    "competition": 20,
+    "intent_tags": []
+  },
+  {
+    "keyword": "my google business",
+    "group": "local_seo_gbp",
+    "volume": 9900,
+    "cpc": 12.55,
+    "competition": 6,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google business listing",
+    "group": "local_seo_gbp",
+    "volume": 8100,
+    "cpc": 26.12,
+    "competition": 31,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google listing for my business",
+    "group": "local_seo_gbp",
+    "volume": 8100,
+    "cpc": 26.12,
+    "competition": 31,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google listing my business",
+    "group": "local_seo_gbp",
+    "volume": 8100,
+    "cpc": 26.12,
+    "competition": 31,
+    "intent_tags": []
+  },
+  {
+    "keyword": "my business google listing",
+    "group": "local_seo_gbp",
+    "volume": 8100,
+    "cpc": 26.12,
+    "competition": 31,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google biz listing",
+    "group": "local_seo_gbp",
+    "volume": 8100,
+    "cpc": 26.12,
+    "competition": 31,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google local services",
+    "group": "ads",
+    "volume": 8100,
+    "cpc": 4.53,
+    "competition": 26,
+    "intent_tags": []
+  },
+  {
+    "keyword": "local services by google",
+    "group": "ads",
+    "volume": 8100,
+    "cpc": 4.53,
+    "competition": 26,
+    "intent_tags": []
+  },
+  {
+    "keyword": "my google business profile",
+    "group": "local_seo_gbp",
+    "volume": 6600,
+    "cpc": 9.55,
+    "competition": 6,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google com for business",
+    "group": "local_seo_gbp",
+    "volume": 6600,
+    "cpc": 13.7,
+    "competition": 20,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google guaranteed",
+    "group": "ads",
+    "volume": 6600,
+    "cpc": 7.78,
+    "competition": 25,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google local ads",
+    "group": "ads",
+    "volume": 6600,
+    "cpc": 6.15,
+    "competition": 29,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google local advertising",
+    "group": "ads",
+    "volume": 6600,
+    "cpc": 6.15,
+    "competition": 29,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google my business account",
+    "group": "local_seo_gbp",
+    "volume": 5400,
+    "cpc": 15.27,
+    "competition": 17,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google business profile website",
+    "group": "local_seo_gbp",
+    "volume": 5400,
+    "cpc": 21.24,
+    "competition": 18,
+    "intent_tags": []
+  },
+  {
+    "keyword": "business profiles google",
+    "group": "local_seo_gbp",
+    "volume": 3600,
+    "cpc": 11.69,
+    "competition": 17,
+    "intent_tags": []
+  },
+  {
+    "keyword": "local advertising",
+    "group": "ads",
+    "volume": 3600,
+    "cpc": 14.05,
+    "competition": 41,
+    "intent_tags": []
+  },
+  {
+    "keyword": "ads local",
+    "group": "ads",
+    "volume": 3600,
+    "cpc": 14.05,
+    "competition": 41,
+    "intent_tags": []
+  },
+  {
+    "keyword": "local service ads login",
+    "group": "ads",
+    "volume": 3600,
+    "cpc": 1.15,
+    "competition": 12,
+    "intent_tags": []
+  },
+  {
+    "keyword": "lead abatement company",
+    "group": "leads",
+    "volume": 2900,
+    "cpc": 12.32,
+    "competition": 9,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google lsa login",
+    "group": "ads",
+    "volume": 2900,
+    "cpc": 0.55,
+    "competition": 12,
+    "intent_tags": []
+  },
+  {
+    "keyword": "seo for roofers",
+    "group": "marketing_agency",
+    "volume": 2400,
+    "cpc": 44.23,
+    "competition": 8,
+    "intent_tags": []
+  },
+  {
+    "keyword": "create a google my business account",
+    "group": "local_seo_gbp",
+    "volume": 2400,
+    "cpc": 16.2,
+    "competition": 53,
+    "intent_tags": []
+  },
+  {
+    "keyword": "my google business page",
+    "group": "local_seo_gbp",
+    "volume": 2400,
+    "cpc": 13.33,
+    "competition": 11,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google local service ads login",
+    "group": "ads",
+    "volume": 1900,
+    "cpc": 1.63,
+    "competition": 12,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google locals",
+    "group": "ads",
+    "volume": 1900,
+    "cpc": 3.04,
+    "competition": 22,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google local local",
+    "group": "ads",
+    "volume": 1900,
+    "cpc": 3.04,
+    "competition": 22,
+    "intent_tags": []
+  },
+  {
+    "keyword": "leads for roofers",
+    "group": "leads",
+    "volume": 1600,
+    "cpc": 41.05,
+    "competition": 54,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google business add",
+    "group": "local_seo_gbp",
+    "volume": 1600,
+    "cpc": 29.91,
+    "competition": 51,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google business page create",
+    "group": "local_seo_gbp",
+    "volume": 1600,
+    "cpc": 24.74,
+    "competition": 47,
+    "intent_tags": []
+  },
+  {
+    "keyword": "add to google business",
+    "group": "local_seo_gbp",
+    "volume": 1600,
+    "cpc": 29.91,
+    "competition": 51,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google ads local",
+    "group": "ads",
+    "volume": 1600,
+    "cpc": 6.67,
+    "competition": 35,
+    "intent_tags": []
+  },
+  {
+    "keyword": "lsa ads",
+    "group": "ads",
+    "volume": 1600,
+    "cpc": 7.16,
+    "competition": 37,
+    "intent_tags": []
+  },
+  {
+    "keyword": "local advertising google",
+    "group": "ads",
+    "volume": 1600,
+    "cpc": 6.67,
+    "competition": 35,
+    "intent_tags": []
+  },
+  {
+    "keyword": "ai for small business",
+    "group": "ai_tech",
+    "volume": 1600,
+    "cpc": 19.94,
+    "competition": 23,
+    "intent_tags": []
+  },
+  {
+    "keyword": "ai for small businesses",
+    "group": "ai_tech",
+    "volume": 1600,
+    "cpc": 19.94,
+    "competition": 23,
+    "intent_tags": []
+  },
+  {
+    "keyword": "roofing seo company",
+    "group": "marketing_agency",
+    "volume": 1300,
+    "cpc": 43.01,
+    "competition": 5,
+    "intent_tags": []
+  },
+  {
+    "keyword": "roofing company seo",
+    "group": "marketing_agency",
+    "volume": 1300,
+    "cpc": 43.01,
+    "competition": 5,
+    "intent_tags": []
+  },
+  {
+    "keyword": "lead roofer",
+    "group": "leads",
+    "volume": 1300,
+    "cpc": 36.99,
+    "competition": 40,
+    "intent_tags": []
+  },
+  {
+    "keyword": "create a google business profile",
+    "group": "local_seo_gbp",
+    "volume": 1300,
+    "cpc": 27.8,
+    "competition": 39,
+    "intent_tags": []
+  },
+  {
+    "keyword": "create google business profile",
+    "group": "local_seo_gbp",
+    "volume": 1300,
+    "cpc": 16.99,
+    "competition": 36,
+    "intent_tags": []
+  },
+  {
+    "keyword": "create google my business profile",
+    "group": "local_seo_gbp",
+    "volume": 1300,
+    "cpc": 27.8,
+    "competition": 39,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google business local",
+    "group": "local_seo_gbp",
+    "volume": 1300,
+    "cpc": 13.96,
+    "competition": 8,
+    "intent_tags": []
+  },
+  {
+    "keyword": "search engine optimization for roofing companies",
+    "group": "local_seo_gbp",
+    "volume": 1300,
+    "cpc": 43.01,
+    "competition": 5,
+    "intent_tags": []
+  },
+  {
+    "keyword": "sign in to google my business account",
+    "group": "local_seo_gbp",
+    "volume": 1300,
+    "cpc": 5.68,
+    "competition": 5,
+    "intent_tags": []
+  },
+  {
+    "keyword": "local services ads google",
+    "group": "ads",
+    "volume": 1300,
+    "cpc": 3.85,
+    "competition": 29,
+    "intent_tags": []
+  },
+  {
+    "keyword": "local service ads by google",
+    "group": "ads",
+    "volume": 1300,
+    "cpc": 3.85,
+    "competition": 29,
+    "intent_tags": []
+  },
+  {
+    "keyword": "cslb website",
+    "group": "website",
+    "volume": 1300,
+    "cpc": 12.52,
+    "competition": 2,
+    "intent_tags": []
+  },
+  {
+    "keyword": "construction marketing",
+    "group": "marketing_agency",
+    "volume": 1000,
+    "cpc": 31.54,
+    "competition": 23,
+    "intent_tags": []
+  },
+  {
+    "keyword": "seo contractor",
+    "group": "marketing_agency",
+    "volume": 1000,
+    "cpc": 10.21,
+    "competition": 5,
+    "intent_tags": []
+  },
+  {
+    "keyword": "seo for construction companies",
+    "group": "marketing_agency",
+    "volume": 1000,
+    "cpc": 91.37,
+    "competition": 6,
+    "intent_tags": []
+  },
+  {
+    "keyword": "hvac seo services",
+    "group": "marketing_agency",
+    "volume": 1000,
+    "cpc": 143.43,
+    "competition": 6,
+    "intent_tags": []
+  },
+  {
+    "keyword": "marketing and construction",
+    "group": "marketing_agency",
+    "volume": 1000,
+    "cpc": 31.54,
+    "competition": 23,
+    "intent_tags": []
+  },
+  {
+    "keyword": "mkt construction",
+    "group": "marketing_agency",
+    "volume": 1000,
+    "cpc": 31.54,
+    "competition": 23,
+    "intent_tags": []
+  },
+  {
+    "keyword": "construction leads",
+    "group": "leads",
+    "volume": 1000,
+    "cpc": 32.76,
+    "competition": 40,
+    "intent_tags": []
+  },
+  {
+    "keyword": "certified lead abatement contractor",
+    "group": "leads",
+    "volume": 1000,
+    "cpc": 0.9,
+    "competition": 1,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google services ads",
+    "group": "ads",
+    "volume": 1000,
+    "cpc": 18.65,
+    "competition": 44,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google lsa ads",
+    "group": "ads",
+    "volume": 1000,
+    "cpc": 7.69,
+    "competition": 42,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google local service login",
+    "group": "ads",
+    "volume": 1000,
+    "cpc": 1.13,
+    "competition": 12,
+    "intent_tags": []
+  },
+  {
+    "keyword": "how to generate google reviews",
+    "group": "reviews_reputation",
+    "volume": 1000,
+    "cpc": 20.78,
+    "competition": 36,
+    "intent_tags": [
+      "question"
+    ]
+  },
+  {
+    "keyword": "construction bidding websites",
+    "group": "website",
+    "volume": 1000,
+    "cpc": 15.98,
+    "competition": 55,
+    "intent_tags": []
+  },
+  {
+    "keyword": "construction bid sites",
+    "group": "website",
+    "volume": 1000,
+    "cpc": 15.98,
+    "competition": 55,
+    "intent_tags": []
+  },
+  {
+    "keyword": "contractor website design",
+    "group": "website",
+    "volume": 1000,
+    "cpc": 32.63,
+    "competition": 9,
+    "intent_tags": []
+  },
+  {
+    "keyword": "web design contractor",
+    "group": "website",
+    "volume": 1000,
+    "cpc": 32.63,
+    "competition": 9,
+    "intent_tags": []
+  },
+  {
+    "keyword": "site work contractors",
+    "group": "website",
+    "volume": 1000,
+    "cpc": 6.43,
+    "competition": 17,
+    "intent_tags": []
+  },
+  {
+    "keyword": "website design contractor",
+    "group": "website",
+    "volume": 1000,
+    "cpc": 32.63,
+    "competition": 9,
+    "intent_tags": []
+  },
+  {
+    "keyword": "general contractor website design",
+    "group": "website",
+    "volume": 1000,
+    "cpc": 32.63,
+    "competition": 9,
+    "intent_tags": []
+  },
+  {
+    "keyword": "web design for contractors",
+    "group": "website",
+    "volume": 1000,
+    "cpc": 32.63,
+    "competition": 9,
+    "intent_tags": []
+  },
+  {
+    "keyword": "general contractor web design",
+    "group": "website",
+    "volume": 1000,
+    "cpc": 32.63,
+    "competition": 9,
+    "intent_tags": []
+  },
+  {
+    "keyword": "marketing for construction company",
+    "group": "marketing_agency",
+    "volume": 880,
+    "cpc": 31.19,
+    "competition": 16,
+    "intent_tags": []
+  },
+  {
+    "keyword": "roofer marketers",
+    "group": "marketing_agency",
+    "volume": 880,
+    "cpc": 47.64,
+    "competition": 31,
+    "intent_tags": []
+  },
+  {
+    "keyword": "marketing for roofers",
+    "group": "marketing_agency",
+    "volume": 880,
+    "cpc": 47.64,
+    "competition": 31,
+    "intent_tags": []
+  },
+  {
+    "keyword": "roofer seo service",
+    "group": "marketing_agency",
+    "volume": 880,
+    "cpc": 62.22,
+    "competition": 5,
+    "intent_tags": []
+  },
+  {
+    "keyword": "set up google business profile",
+    "group": "local_seo_gbp",
+    "volume": 880,
+    "cpc": 20.08,
+    "competition": 41,
+    "intent_tags": []
+  },
+  {
+    "keyword": "optimizing google my business",
+    "group": "local_seo_gbp",
+    "volume": 880,
+    "cpc": 17.41,
+    "competition": 14,
+    "intent_tags": []
+  },
+  {
+    "keyword": "roofing seo services",
+    "group": "local_seo_gbp",
+    "volume": 880,
+    "cpc": 62.22,
+    "competition": 5,
+    "intent_tags": []
+  },
+  {
+    "keyword": "contractor website",
+    "group": "website",
+    "volume": 880,
+    "cpc": 20.31,
+    "competition": 40,
+    "intent_tags": []
+  },
+  {
+    "keyword": "website for contractors",
+    "group": "website",
+    "volume": 880,
+    "cpc": 20.31,
+    "competition": 40,
+    "intent_tags": []
+  },
+  {
+    "keyword": "contractor sites",
+    "group": "website",
+    "volume": 880,
+    "cpc": 20.31,
+    "competition": 40,
+    "intent_tags": []
+  },
+  {
+    "keyword": "contractor web",
+    "group": "website",
+    "volume": 880,
+    "cpc": 20.31,
+    "competition": 40,
+    "intent_tags": []
+  },
+  {
+    "keyword": "construction advertising",
+    "group": "marketing_agency",
+    "volume": 720,
+    "cpc": 36.94,
+    "competition": 21,
+    "intent_tags": []
+  },
+  {
+    "keyword": "marketing for hvac companies",
+    "group": "marketing_agency",
+    "volume": 720,
+    "cpc": 62.52,
+    "competition": 19,
+    "intent_tags": []
+  },
+  {
+    "keyword": "seo for hvac company",
+    "group": "marketing_agency",
+    "volume": 720,
+    "cpc": 207.96,
+    "competition": 2,
+    "intent_tags": []
+  },
+  {
+    "keyword": "backlink building companies",
+    "group": "marketing_agency",
+    "volume": 720,
+    "cpc": 33.15,
+    "competition": 5,
+    "intent_tags": []
+  },
+  {
+    "keyword": "hvac contractor seo",
+    "group": "marketing_agency",
+    "volume": 720,
+    "cpc": 207.96,
+    "competition": 2,
+    "intent_tags": []
+  },
+  {
+    "keyword": "contractor leads",
+    "group": "leads",
+    "volume": 720,
+    "cpc": 38.16,
+    "competition": 56,
+    "intent_tags": []
+  },
+  {
+    "keyword": "seo for contractors",
+    "group": "local_seo_gbp",
+    "volume": 720,
+    "cpc": 51.77,
+    "competition": 5,
+    "intent_tags": []
+  },
+  {
+    "keyword": "set up google business",
+    "group": "local_seo_gbp",
+    "volume": 720,
+    "cpc": 23.88,
+    "competition": 39,
+    "intent_tags": []
+  },
+  {
+    "keyword": "seo for plumbing company",
+    "group": "local_seo_gbp",
+    "volume": 720,
+    "cpc": 0,
+    "competition": 3,
+    "intent_tags": []
+  },
+  {
+    "keyword": "deleting google business profile",
+    "group": "local_seo_gbp",
+    "volume": 720,
+    "cpc": 8.18,
+    "competition": 4,
+    "intent_tags": []
+  },
+  {
+    "keyword": "plumbing company seo",
+    "group": "local_seo_gbp",
+    "volume": 720,
+    "cpc": 0,
+    "competition": 3,
+    "intent_tags": []
+  },
+  {
+    "keyword": "site contractors",
+    "group": "website",
+    "volume": 720,
+    "cpc": 7.68,
+    "competition": 14,
+    "intent_tags": []
+  },
+  {
+    "keyword": "digital marketing for contractors",
+    "group": "marketing_agency",
+    "volume": 590,
+    "cpc": 35.54,
+    "competition": 8,
+    "intent_tags": []
+  },
+  {
+    "keyword": "construction marketing agencies",
+    "group": "marketing_agency",
+    "volume": 590,
+    "cpc": 36.54,
+    "competition": 20,
+    "intent_tags": []
+  },
+  {
+    "keyword": "local seo for contractors",
+    "group": "marketing_agency",
+    "volume": 590,
+    "cpc": 0,
+    "competition": 1,
+    "intent_tags": []
+  },
+  {
+    "keyword": "create a google business",
+    "group": "local_seo_gbp",
+    "volume": 590,
+    "cpc": 21.1,
+    "competition": 42,
+    "intent_tags": []
+  },
+  {
+    "keyword": "gmb profile",
+    "group": "local_seo_gbp",
+    "volume": 590,
+    "cpc": 17.18,
+    "competition": 17,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google for local",
+    "group": "ads",
+    "volume": 590,
+    "cpc": 4.87,
+    "competition": 13,
+    "intent_tags": []
+  },
+  {
+    "keyword": "how to get more google reviews",
+    "group": "reviews_reputation",
+    "volume": 590,
+    "cpc": 16.96,
+    "competition": 47,
+    "intent_tags": [
+      "question"
+    ]
+  },
+  {
+    "keyword": "how do i get more google reviews",
+    "group": "reviews_reputation",
+    "volume": 590,
+    "cpc": 16.96,
+    "competition": 47,
+    "intent_tags": [
+      "question"
+    ]
+  },
+  {
+    "keyword": "ai software for small business",
+    "group": "ai_tech",
+    "volume": 590,
+    "cpc": 52.95,
+    "competition": 13,
+    "intent_tags": []
+  },
+  {
+    "keyword": "building construction company website",
+    "group": "website",
+    "volume": 590,
+    "cpc": 5.43,
+    "competition": 37,
+    "intent_tags": []
+  },
+  {
+    "keyword": "construction firm website",
+    "group": "website",
+    "volume": 590,
+    "cpc": 5.43,
+    "competition": 37,
+    "intent_tags": []
+  },
+  {
+    "keyword": "contractor marketing",
+    "group": "marketing_agency",
+    "volume": 480,
+    "cpc": 32.51,
+    "competition": 18,
+    "intent_tags": []
+  },
+  {
+    "keyword": "marketing for contractors",
+    "group": "marketing_agency",
+    "volume": 480,
+    "cpc": 32.51,
+    "competition": 18,
+    "intent_tags": []
+  },
+  {
+    "keyword": "marketing contractor",
+    "group": "marketing_agency",
+    "volume": 480,
+    "cpc": 17.71,
+    "competition": 27,
+    "intent_tags": []
+  },
+  {
+    "keyword": "roofing marketing companies",
+    "group": "marketing_agency",
+    "volume": 480,
+    "cpc": 78.17,
+    "competition": 16,
+    "intent_tags": []
+  },
+  {
+    "keyword": "home builder marketing",
+    "group": "marketing_agency",
+    "volume": 480,
+    "cpc": 16.37,
+    "competition": 30,
+    "intent_tags": []
+  },
+  {
+    "keyword": "marketing for roofing contractors",
+    "group": "marketing_agency",
+    "volume": 480,
+    "cpc": 78.17,
+    "competition": 16,
+    "intent_tags": []
+  },
+  {
+    "keyword": "marketing for home builders",
+    "group": "marketing_agency",
+    "volume": 480,
+    "cpc": 16.37,
+    "competition": 30,
+    "intent_tags": []
+  },
+  {
+    "keyword": "contractor seo services",
+    "group": "marketing_agency",
+    "volume": 480,
+    "cpc": 0,
+    "competition": 2,
+    "intent_tags": []
+  },
+  {
+    "keyword": "seo services for contractors",
+    "group": "marketing_agency",
+    "volume": 480,
+    "cpc": 0,
+    "competition": 2,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google business sign up",
+    "group": "local_seo_gbp",
+    "volume": 480,
+    "cpc": 17.22,
+    "competition": 42,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google business com",
+    "group": "local_seo_gbp",
+    "volume": 480,
+    "cpc": 15.01,
+    "competition": 32,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google biz",
+    "group": "local_seo_gbp",
+    "volume": 480,
+    "cpc": 8.13,
+    "competition": 19,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google local business listing",
+    "group": "local_seo_gbp",
+    "volume": 480,
+    "cpc": 21.09,
+    "competition": 25,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google maps business profile",
+    "group": "local_seo_gbp",
+    "volume": 480,
+    "cpc": 24.35,
+    "competition": 25,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google business profile setup",
+    "group": "local_seo_gbp",
+    "volume": 480,
+    "cpc": 22.53,
+    "competition": 30,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google maps listing business",
+    "group": "local_seo_gbp",
+    "volume": 480,
+    "cpc": 21.09,
+    "competition": 25,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google business profile seo",
+    "group": "local_seo_gbp",
+    "volume": 480,
+    "cpc": 11.63,
+    "competition": 9,
+    "intent_tags": []
+  },
+  {
+    "keyword": "sign up google business",
+    "group": "local_seo_gbp",
+    "volume": 480,
+    "cpc": 17.22,
+    "competition": 42,
+    "intent_tags": []
+  },
+  {
+    "keyword": "creating a google business listing",
+    "group": "local_seo_gbp",
+    "volume": 480,
+    "cpc": 27.65,
+    "competition": 42,
+    "intent_tags": []
+  },
+  {
+    "keyword": "managing google business profile",
+    "group": "local_seo_gbp",
+    "volume": 480,
+    "cpc": 10.97,
+    "competition": 6,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google guaranteed ads",
+    "group": "ads",
+    "volume": 480,
+    "cpc": 23.72,
+    "competition": 40,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google guaranteed local service ads",
+    "group": "ads",
+    "volume": 480,
+    "cpc": 9.05,
+    "competition": 18,
+    "intent_tags": []
+  },
+  {
+    "keyword": "local service ad",
+    "group": "ads",
+    "volume": 480,
+    "cpc": 3.24,
+    "competition": 31,
+    "intent_tags": []
+  },
+  {
+    "keyword": "local search ads",
+    "group": "ads",
+    "volume": 480,
+    "cpc": 4.91,
+    "competition": 32,
+    "intent_tags": []
+  },
+  {
+    "keyword": "electrician websites",
+    "group": "website",
+    "volume": 480,
+    "cpc": 11.27,
+    "competition": 30,
+    "intent_tags": []
+  },
+  {
+    "keyword": "advertising for contractors",
+    "group": "marketing_agency",
+    "volume": 390,
+    "cpc": 39.15,
+    "competition": 14,
+    "intent_tags": []
+  },
+  {
+    "keyword": "plumbing seo companies",
+    "group": "marketing_agency",
+    "volume": 390,
+    "cpc": 126.69,
+    "competition": 5,
+    "intent_tags": []
+  },
+  {
+    "keyword": "hvac seo company",
+    "group": "marketing_agency",
+    "volume": 390,
+    "cpc": 129.53,
+    "competition": 8,
+    "intent_tags": []
+  },
+  {
+    "keyword": "seo for hvac contractors",
+    "group": "marketing_agency",
+    "volume": 390,
+    "cpc": 0,
+    "competition": 5,
+    "intent_tags": []
+  },
+  {
+    "keyword": "lead generation for contractors",
+    "group": "leads",
+    "volume": 390,
+    "cpc": 39.97,
+    "competition": 20,
+    "intent_tags": []
+  },
+  {
+    "keyword": "lead services for contractors",
+    "group": "leads",
+    "volume": 390,
+    "cpc": 44.25,
+    "competition": 23,
+    "intent_tags": []
+  },
+  {
+    "keyword": "contractor lead generation services",
+    "group": "leads",
+    "volume": 390,
+    "cpc": 44.25,
+    "competition": 23,
+    "intent_tags": []
+  },
+  {
+    "keyword": "contractor lead gen",
+    "group": "leads",
+    "volume": 390,
+    "cpc": 39.97,
+    "competition": 20,
+    "intent_tags": []
+  },
+  {
+    "keyword": "set up google business page",
+    "group": "local_seo_gbp",
+    "volume": 390,
+    "cpc": 18.74,
+    "competition": 46,
+    "intent_tags": []
+  },
+  {
+    "keyword": "gbp google",
+    "group": "local_seo_gbp",
+    "volume": 390,
+    "cpc": 4.06,
+    "competition": 5,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google map profile",
+    "group": "local_seo_gbp",
+    "volume": 390,
+    "cpc": 23.03,
+    "competition": 5,
+    "intent_tags": []
+  },
+  {
+    "keyword": "local seo for roofing companies",
+    "group": "local_seo_gbp",
+    "volume": 390,
+    "cpc": 22.12,
+    "competition": 2,
+    "intent_tags": []
+  },
+  {
+    "keyword": "local ad services",
+    "group": "ads",
+    "volume": 390,
+    "cpc": 7.34,
+    "competition": 31,
+    "intent_tags": []
+  },
+  {
+    "keyword": "local advertising near me",
+    "group": "ads",
+    "volume": 390,
+    "cpc": 36.36,
+    "competition": 57,
+    "intent_tags": []
+  },
+  {
+    "keyword": "lsa google ads",
+    "group": "ads",
+    "volume": 390,
+    "cpc": 8.69,
+    "competition": 35,
+    "intent_tags": []
+  },
+  {
+    "keyword": "services ads",
+    "group": "ads",
+    "volume": 390,
+    "cpc": 27.32,
+    "competition": 23,
+    "intent_tags": []
+  },
+  {
+    "keyword": "free construction bid sites",
+    "group": "website",
+    "volume": 390,
+    "cpc": 16.54,
+    "competition": 76,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "site contractors near me",
+    "group": "website",
+    "volume": 390,
+    "cpc": 4.67,
+    "competition": 63,
+    "intent_tags": []
+  },
+  {
+    "keyword": "plumbing marketing companies",
+    "group": "marketing_agency",
+    "volume": 320,
+    "cpc": 107.66,
+    "competition": 10,
+    "intent_tags": []
+  },
+  {
+    "keyword": "contractor marketing services",
+    "group": "marketing_agency",
+    "volume": 320,
+    "cpc": 27.34,
+    "competition": 6,
+    "intent_tags": []
+  },
+  {
+    "keyword": "marketing for plumbing company",
+    "group": "marketing_agency",
+    "volume": 320,
+    "cpc": 76,
+    "competition": 17,
+    "intent_tags": []
+  },
+  {
+    "keyword": "contractors marketing services",
+    "group": "marketing_agency",
+    "volume": 320,
+    "cpc": 27.34,
+    "competition": 6,
+    "intent_tags": []
+  },
+  {
+    "keyword": "china construction",
+    "group": "marketing_agency",
+    "volume": 320,
+    "cpc": 0,
+    "competition": 1,
+    "intent_tags": []
+  },
+  {
+    "keyword": "marketing for remodelers",
+    "group": "marketing_agency",
+    "volume": 320,
+    "cpc": 69.69,
+    "competition": 13,
+    "intent_tags": []
+  },
+  {
+    "keyword": "seo for roofing contractors",
+    "group": "marketing_agency",
+    "volume": 320,
+    "cpc": 0,
+    "competition": 5,
+    "intent_tags": []
+  },
+  {
+    "keyword": "roofing contractor seo",
+    "group": "marketing_agency",
+    "volume": 320,
+    "cpc": 0,
+    "competition": 5,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google business profile create",
+    "group": "local_seo_gbp",
+    "volume": 320,
+    "cpc": 29,
+    "competition": 47,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google business profile sign in",
+    "group": "local_seo_gbp",
+    "volume": 320,
+    "cpc": 3.47,
+    "competition": 2,
+    "intent_tags": []
+  },
+  {
+    "keyword": "seo for general contractors",
+    "group": "local_seo_gbp",
+    "volume": 320,
+    "cpc": 7.9,
+    "competition": 2,
+    "intent_tags": []
+  },
+  {
+    "keyword": "contractor seo agency",
+    "group": "local_seo_gbp",
+    "volume": 320,
+    "cpc": 0,
+    "competition": 4,
+    "intent_tags": []
+  },
+  {
+    "keyword": "general contractor seo",
+    "group": "local_seo_gbp",
+    "volume": 320,
+    "cpc": 7.9,
+    "competition": 2,
+    "intent_tags": []
+  },
+  {
+    "keyword": "www google com business",
+    "group": "local_seo_gbp",
+    "volume": 320,
+    "cpc": 19.01,
+    "competition": 44,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google local search ads",
+    "group": "ads",
+    "volume": 320,
+    "cpc": 8.73,
+    "competition": 20,
+    "intent_tags": []
+  },
+  {
+    "keyword": "ads local services",
+    "group": "ads",
+    "volume": 320,
+    "cpc": 6.54,
+    "competition": 55,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google ads for plumbers",
+    "group": "ads",
+    "volume": 320,
+    "cpc": 37.64,
+    "competition": 6,
+    "intent_tags": []
+  },
+  {
+    "keyword": "local search ads on google maps",
+    "group": "ads",
+    "volume": 320,
+    "cpc": 8.73,
+    "competition": 20,
+    "intent_tags": []
+  },
+  {
+    "keyword": "ads google com localservices",
+    "group": "ads",
+    "volume": 320,
+    "cpc": 6.85,
+    "competition": 35,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google maps local search ads",
+    "group": "ads",
+    "volume": 320,
+    "cpc": 8.73,
+    "competition": 20,
+    "intent_tags": []
+  },
+  {
+    "keyword": "ai solutions for small business",
+    "group": "ai_tech",
+    "volume": 320,
+    "cpc": 15.91,
+    "competition": 20,
+    "intent_tags": []
+  },
+  {
+    "keyword": "small artificial intelligence companies",
+    "group": "ai_tech",
+    "volume": 320,
+    "cpc": 5.52,
+    "competition": 37,
+    "intent_tags": []
+  },
+  {
+    "keyword": "digital marketing for roofers",
+    "group": "marketing_agency",
+    "volume": 260,
+    "cpc": 48.66,
+    "competition": 12,
+    "intent_tags": []
+  },
+  {
+    "keyword": "marketing for painting contractors",
+    "group": "marketing_agency",
+    "volume": 260,
+    "cpc": 6.14,
+    "competition": 12,
+    "intent_tags": []
+  },
+  {
+    "keyword": "marketing for general contractors",
+    "group": "marketing_agency",
+    "volume": 260,
+    "cpc": 21.81,
+    "competition": 14,
+    "intent_tags": []
+  },
+  {
+    "keyword": "construction digital marketing",
+    "group": "marketing_agency",
+    "volume": 260,
+    "cpc": 18.38,
+    "competition": 7,
+    "intent_tags": []
+  },
+  {
+    "keyword": "marketing for electrical contractors",
+    "group": "marketing_agency",
+    "volume": 260,
+    "cpc": 19.41,
+    "competition": 9,
+    "intent_tags": []
+  },
+  {
+    "keyword": "roofer digital marketing",
+    "group": "marketing_agency",
+    "volume": 260,
+    "cpc": 48.66,
+    "competition": 12,
+    "intent_tags": []
+  },
+  {
+    "keyword": "marketing for remodeling contractors",
+    "group": "marketing_agency",
+    "volume": 260,
+    "cpc": 0,
+    "competition": 2,
+    "intent_tags": []
+  },
+  {
+    "keyword": "digital marketing roofer",
+    "group": "marketing_agency",
+    "volume": 260,
+    "cpc": 48.66,
+    "competition": 12,
+    "intent_tags": []
+  },
+  {
+    "keyword": "home remodeler marketing",
+    "group": "marketing_agency",
+    "volume": 260,
+    "cpc": 40.61,
+    "competition": 8,
+    "intent_tags": []
+  },
+  {
+    "keyword": "home remodeler seo",
+    "group": "marketing_agency",
+    "volume": 260,
+    "cpc": 108.43,
+    "competition": 8,
+    "intent_tags": []
+  },
+  {
+    "keyword": "hvac service marketing",
+    "group": "marketing_agency",
+    "volume": 260,
+    "cpc": 35.45,
+    "competition": 10,
+    "intent_tags": []
+  },
+  {
+    "keyword": "ppc for roofers",
+    "group": "marketing_agency",
+    "volume": 260,
+    "cpc": 23.75,
+    "competition": 7,
+    "intent_tags": []
+  },
+  {
+    "keyword": "remodeling contractor marketing",
+    "group": "marketing_agency",
+    "volume": 260,
+    "cpc": 0,
+    "competition": 2,
+    "intent_tags": []
+  },
+  {
+    "keyword": "free leads for contractors",
+    "group": "leads",
+    "volume": 260,
+    "cpc": 24.8,
+    "competition": 71,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "roofing lead generation companies",
+    "group": "leads",
+    "volume": 260,
+    "cpc": 50.74,
+    "competition": 50,
+    "intent_tags": []
+  },
+  {
+    "keyword": "construction lead generation",
+    "group": "leads",
+    "volume": 260,
+    "cpc": 37.86,
+    "competition": 25,
+    "intent_tags": []
+  },
+  {
+    "keyword": "leads for roofing contractors",
+    "group": "leads",
+    "volume": 260,
+    "cpc": 55.38,
+    "competition": 24,
+    "intent_tags": []
+  },
+  {
+    "keyword": "roofing company leads",
+    "group": "leads",
+    "volume": 260,
+    "cpc": 55.38,
+    "competition": 24,
+    "intent_tags": []
+  },
+  {
+    "keyword": "contractor roofing leads",
+    "group": "leads",
+    "volume": 260,
+    "cpc": 55.38,
+    "competition": 24,
+    "intent_tags": []
+  },
+  {
+    "keyword": "lead roofing contractors",
+    "group": "leads",
+    "volume": 260,
+    "cpc": 55.38,
+    "competition": 24,
+    "intent_tags": []
+  },
+  {
+    "keyword": "lead roofing companies",
+    "group": "leads",
+    "volume": 260,
+    "cpc": 55.38,
+    "competition": 24,
+    "intent_tags": []
+  },
+  {
+    "keyword": "how to rank higher on google maps",
+    "group": "local_seo_gbp",
+    "volume": 260,
+    "cpc": 15.62,
+    "competition": 20,
+    "intent_tags": [
+      "question"
+    ]
+  },
+  {
+    "keyword": "set up a google business profile",
+    "group": "local_seo_gbp",
+    "volume": 260,
+    "cpc": 20.11,
+    "competition": 49,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google company profile",
+    "group": "local_seo_gbp",
+    "volume": 260,
+    "cpc": 16.9,
+    "competition": 7,
+    "intent_tags": []
+  },
+  {
+    "keyword": "search google business",
+    "group": "local_seo_gbp",
+    "volume": 260,
+    "cpc": 22.75,
+    "competition": 27,
+    "intent_tags": []
+  },
+  {
+    "keyword": "how to rank higher in google maps",
+    "group": "local_seo_gbp",
+    "volume": 260,
+    "cpc": 15.62,
+    "competition": 20,
+    "intent_tags": [
+      "question"
+    ]
+  },
+  {
+    "keyword": "google business profile posting",
+    "group": "local_seo_gbp",
+    "volume": 260,
+    "cpc": 15.97,
+    "competition": 4,
+    "intent_tags": []
+  },
+  {
+    "keyword": "how do i rank higher on google maps",
+    "group": "local_seo_gbp",
+    "volume": 260,
+    "cpc": 15.62,
+    "competition": 20,
+    "intent_tags": [
+      "question"
+    ]
+  },
+  {
+    "keyword": "google local ads services",
+    "group": "ads",
+    "volume": 260,
+    "cpc": 7.56,
+    "competition": 37,
+    "intent_tags": []
+  },
+  {
+    "keyword": "local ads services",
+    "group": "ads",
+    "volume": 260,
+    "cpc": 15.1,
+    "competition": 34,
+    "intent_tags": []
+  },
+  {
+    "keyword": "local services google",
+    "group": "ads",
+    "volume": 260,
+    "cpc": 2.83,
+    "competition": 24,
+    "intent_tags": []
+  },
+  {
+    "keyword": "ads google com local services",
+    "group": "ads",
+    "volume": 260,
+    "cpc": 7.91,
+    "competition": 22,
+    "intent_tags": []
+  },
+  {
+    "keyword": "home service ads",
+    "group": "ads",
+    "volume": 260,
+    "cpc": 14.66,
+    "competition": 11,
+    "intent_tags": []
+  },
+  {
+    "keyword": "general contractor websites",
+    "group": "website",
+    "volume": 260,
+    "cpc": 8.19,
+    "competition": 40,
+    "intent_tags": []
+  },
+  {
+    "keyword": "websites for general contractors",
+    "group": "website",
+    "volume": 260,
+    "cpc": 8.19,
+    "competition": 40,
+    "intent_tags": []
+  },
+  {
+    "keyword": "home builders website design",
+    "group": "website",
+    "volume": 260,
+    "cpc": 10.99,
+    "competition": 8,
+    "intent_tags": []
+  },
+  {
+    "keyword": "digital marketing for construction companies",
+    "group": "marketing_agency",
+    "volume": 210,
+    "cpc": 19.83,
+    "competition": 11,
+    "intent_tags": []
+  },
+  {
+    "keyword": "seo for roofing company",
+    "group": "marketing_agency",
+    "volume": 210,
+    "cpc": 200.65,
+    "competition": 3,
+    "intent_tags": []
+  },
+  {
+    "keyword": "contractor internet marketing",
+    "group": "marketing_agency",
+    "volume": 210,
+    "cpc": 0,
+    "competition": 0,
+    "intent_tags": []
+  },
+  {
+    "keyword": "roofing marketing services",
+    "group": "marketing_agency",
+    "volume": 210,
+    "cpc": 50.16,
+    "competition": 7,
+    "intent_tags": []
+  },
+  {
+    "keyword": "online marketing for contractors",
+    "group": "marketing_agency",
+    "volume": 210,
+    "cpc": 0,
+    "competition": 0,
+    "intent_tags": []
+  },
+  {
+    "keyword": "home builder advertising",
+    "group": "marketing_agency",
+    "volume": 210,
+    "cpc": 0,
+    "competition": 2,
+    "intent_tags": []
+  },
+  {
+    "keyword": "internet marketing for contractors",
+    "group": "marketing_agency",
+    "volume": 210,
+    "cpc": 0,
+    "competition": 0,
+    "intent_tags": []
+  },
+  {
+    "keyword": "local seo for hvac contractors",
+    "group": "marketing_agency",
+    "volume": 210,
+    "cpc": 0,
+    "competition": 2,
+    "intent_tags": []
+  },
+  {
+    "keyword": "remodeler seo",
+    "group": "marketing_agency",
+    "volume": 210,
+    "cpc": 35.78,
+    "competition": 3,
+    "intent_tags": []
+  },
+  {
+    "keyword": "roofers marketing services",
+    "group": "marketing_agency",
+    "volume": 210,
+    "cpc": 50.16,
+    "competition": 7,
+    "intent_tags": []
+  },
+  {
+    "keyword": "seo for remodelers",
+    "group": "marketing_agency",
+    "volume": 210,
+    "cpc": 35.78,
+    "competition": 3,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google business page set up",
+    "group": "local_seo_gbp",
+    "volume": 210,
+    "cpc": 21.22,
+    "competition": 50,
+    "intent_tags": []
+  },
+  {
+    "keyword": "free google business profile",
+    "group": "local_seo_gbp",
+    "volume": 210,
+    "cpc": 43.74,
+    "competition": 42,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "google my business set up",
+    "group": "local_seo_gbp",
+    "volume": 210,
+    "cpc": 17.85,
+    "competition": 32,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google business profile page",
+    "group": "local_seo_gbp",
+    "volume": 210,
+    "cpc": 10.74,
+    "competition": 17,
+    "intent_tags": []
+  },
+  {
+    "keyword": "seo for painting company",
+    "group": "local_seo_gbp",
+    "volume": 210,
+    "cpc": 0,
+    "competition": 3,
+    "intent_tags": []
+  },
+  {
+    "keyword": "contractor seo company",
+    "group": "local_seo_gbp",
+    "volume": 210,
+    "cpc": 0,
+    "competition": 0,
+    "intent_tags": []
+  },
+  {
+    "keyword": "painting company seo",
+    "group": "local_seo_gbp",
+    "volume": 210,
+    "cpc": 0,
+    "competition": 3,
+    "intent_tags": []
+  },
+  {
+    "keyword": "painting contractor seo",
+    "group": "local_seo_gbp",
+    "volume": 210,
+    "cpc": 0,
+    "competition": 3,
+    "intent_tags": []
+  },
+  {
+    "keyword": "seo for painting contractors",
+    "group": "local_seo_gbp",
+    "volume": 210,
+    "cpc": 0,
+    "competition": 0,
+    "intent_tags": []
+  },
+  {
+    "keyword": "facebook ads for contractors",
+    "group": "ads",
+    "volume": 210,
+    "cpc": 34.44,
+    "competition": 4,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google local leads",
+    "group": "ads",
+    "volume": 210,
+    "cpc": 7.51,
+    "competition": 39,
+    "intent_tags": []
+  },
+  {
+    "keyword": "google guaranteed badge",
+    "group": "ads",
+    "volume": 210,
+    "cpc": 8.39,
+    "competition": 6,
+    "intent_tags": []
+  },
+  {
+    "keyword": "contractor facebook ads",
+    "group": "ads",
+    "volume": 210,
+    "cpc": 34.44,
+    "competition": 4,
+    "intent_tags": []
+  },
+  {
+    "keyword": "ppc local",
+    "group": "ads",
+    "volume": 210,
+    "cpc": 84.06,
+    "competition": 4,
+    "intent_tags": []
+  },
+  {
+    "keyword": "best ai for small business",
+    "group": "ai_tech",
+    "volume": 210,
+    "cpc": 15.18,
+    "competition": 62,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "roofing website",
+    "group": "website",
+    "volume": 210,
+    "cpc": 17.17,
+    "competition": 40,
+    "intent_tags": []
+  },
+  {
+    "keyword": "remodeler websites",
+    "group": "website",
+    "volume": 210,
+    "cpc": 5.84,
+    "competition": 36,
+    "intent_tags": []
+  },
+  {
+    "keyword": "free construction leads",
+    "group": "leads",
+    "volume": 170,
+    "cpc": 22.94,
+    "competition": 65,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "how to increase google reviews",
+    "group": "reviews_reputation",
+    "volume": 170,
+    "cpc": 12.63,
+    "competition": 46,
+    "intent_tags": [
+      "question"
+    ]
+  },
+  {
+    "keyword": "best leads for contractors",
+    "group": "leads",
+    "volume": 140,
+    "cpc": 40.38,
+    "competition": 50,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "how to rank in google maps",
+    "group": "local_seo_gbp",
+    "volume": 140,
+    "cpc": 30.59,
+    "competition": 13,
+    "intent_tags": [
+      "question"
+    ]
+  },
+  {
+    "keyword": "google business profile free",
+    "group": "local_seo_gbp",
+    "volume": 140,
+    "cpc": 28.5,
+    "competition": 51,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best hvac seo company",
+    "group": "local_seo_gbp",
+    "volume": 140,
+    "cpc": 103.17,
+    "competition": 4,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best roofing seo",
+    "group": "local_seo_gbp",
+    "volume": 140,
+    "cpc": 0,
+    "competition": 2,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best contractor websites",
+    "group": "website",
+    "volume": 140,
+    "cpc": 7.93,
+    "competition": 32,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best general contractor websites",
+    "group": "website",
+    "volume": 140,
+    "cpc": 7.93,
+    "competition": 32,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best marketing for contractors",
+    "group": "marketing_agency",
+    "volume": 110,
+    "cpc": 54.44,
+    "competition": 12,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best seo for hvac contractors",
+    "group": "marketing_agency",
+    "volume": 110,
+    "cpc": 0,
+    "competition": 4,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best lead generation companies for contractors",
+    "group": "leads",
+    "volume": 110,
+    "cpc": 35.4,
+    "competition": 41,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best roofing websites",
+    "group": "website",
+    "volume": 110,
+    "cpc": 13.52,
+    "competition": 43,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best lead generation for contractors",
+    "group": "leads",
+    "volume": 90,
+    "cpc": 43.43,
+    "competition": 62,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best roofing leads",
+    "group": "leads",
+    "volume": 90,
+    "cpc": 36.93,
+    "competition": 58,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best lead services for contractors",
+    "group": "leads",
+    "volume": 90,
+    "cpc": 41.27,
+    "competition": 49,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best roofing seo companies",
+    "group": "local_seo_gbp",
+    "volume": 90,
+    "cpc": 20.92,
+    "competition": 7,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "bad contractors website",
+    "group": "website",
+    "volume": 90,
+    "cpc": 0,
+    "competition": 3,
+    "intent_tags": [
+      "problem"
+    ]
+  },
+  {
+    "keyword": "best contractor lead generation companies",
+    "group": "marketing_agency",
+    "volume": 70,
+    "cpc": 42.5,
+    "competition": 20,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best marketing for roofing companies",
+    "group": "marketing_agency",
+    "volume": 70,
+    "cpc": 0,
+    "competition": 35,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best lead generation for roofing company",
+    "group": "leads",
+    "volume": 70,
+    "cpc": 73.38,
+    "competition": 11,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "free business profile",
+    "group": "local_seo_gbp",
+    "volume": 70,
+    "cpc": 21.72,
+    "competition": 46,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "business profile free",
+    "group": "local_seo_gbp",
+    "volume": 70,
+    "cpc": 21.72,
+    "competition": 46,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best advertising for contractors",
+    "group": "marketing_agency",
+    "volume": 50,
+    "cpc": 26.08,
+    "competition": 11,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best marketing for painting company",
+    "group": "marketing_agency",
+    "volume": 50,
+    "cpc": 0,
+    "competition": 6,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best seo for contractors",
+    "group": "local_seo_gbp",
+    "volume": 50,
+    "cpc": 0,
+    "competition": 0,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "how to get good google reviews",
+    "group": "reviews_reputation",
+    "volume": 50,
+    "cpc": 13.2,
+    "competition": 65,
+    "intent_tags": [
+      "question"
+    ]
+  },
+  {
+    "keyword": "best way to get construction leads",
+    "group": "leads",
+    "volume": 40,
+    "cpc": 25.44,
+    "competition": 39,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "how to get leads as a contractor",
+    "group": "leads",
+    "volume": 40,
+    "cpc": 28.84,
+    "competition": 51,
+    "intent_tags": [
+      "question"
+    ]
+  },
+  {
+    "keyword": "google free business profile",
+    "group": "local_seo_gbp",
+    "volume": 40,
+    "cpc": 32.36,
+    "competition": 38,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "top seo companies for contractors",
+    "group": "local_seo_gbp",
+    "volume": 40,
+    "cpc": 0,
+    "competition": 0,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "how to get more google reviews for my business",
+    "group": "reviews_reputation",
+    "volume": 40,
+    "cpc": 26.31,
+    "competition": 40,
+    "intent_tags": [
+      "question"
+    ]
+  },
+  {
+    "keyword": "how to get customers to leave google reviews",
+    "group": "reviews_reputation",
+    "volume": 40,
+    "cpc": 9.29,
+    "competition": 29,
+    "intent_tags": [
+      "question"
+    ]
+  },
+  {
+    "keyword": "how to get customers to leave reviews on google",
+    "group": "reviews_reputation",
+    "volume": 40,
+    "cpc": 9.29,
+    "competition": 29,
+    "intent_tags": [
+      "question"
+    ]
+  },
+  {
+    "keyword": "best roofing website design",
+    "group": "website",
+    "volume": 40,
+    "cpc": 17.17,
+    "competition": 34,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best advertising for construction companies",
+    "group": "marketing_agency",
+    "volume": 30,
+    "cpc": 24.55,
+    "competition": 23,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best marketing for construction companies",
+    "group": "marketing_agency",
+    "volume": 30,
+    "cpc": 28.03,
+    "competition": 14,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best marketing strategies for contractors",
+    "group": "marketing_agency",
+    "volume": 30,
+    "cpc": 0,
+    "competition": 4,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "remodeling leads free",
+    "group": "leads",
+    "volume": 30,
+    "cpc": 61.8,
+    "competition": 11,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best construction leads",
+    "group": "leads",
+    "volume": 30,
+    "cpc": 27.13,
+    "competition": 41,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "free commercial construction leads",
+    "group": "leads",
+    "volume": 30,
+    "cpc": 18.37,
+    "competition": 35,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best construction lead service",
+    "group": "leads",
+    "volume": 30,
+    "cpc": 59.75,
+    "competition": 55,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "how to rank in google map pack",
+    "group": "local_seo_gbp",
+    "volume": 30,
+    "cpc": 0,
+    "competition": 2,
+    "intent_tags": [
+      "question"
+    ]
+  },
+  {
+    "keyword": "best local advertising",
+    "group": "ads",
+    "volume": 30,
+    "cpc": 32.42,
+    "competition": 30,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "how to get more google reviews for your business",
+    "group": "reviews_reputation",
+    "volume": 30,
+    "cpc": 16.75,
+    "competition": 42,
+    "intent_tags": [
+      "question"
+    ]
+  },
+  {
+    "keyword": "best site to find contractors",
+    "group": "website",
+    "volume": 30,
+    "cpc": 13.22,
+    "competition": 67,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best website builder for contractors",
+    "group": "website",
+    "volume": 30,
+    "cpc": 36.02,
+    "competition": 42,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best construction bid sites",
+    "group": "website",
+    "volume": 30,
+    "cpc": 0,
+    "competition": 57,
+    "intent_tags": [
+      "comparison"
+    ]
+  },
+  {
+    "keyword": "best website to find contractors",
+    "group": "website",
+    "volume": 30,
+    "cpc": 13.22,
+    "competition": 67,
+    "intent_tags": [
+      "comparison"
+    ]
+  }
+]

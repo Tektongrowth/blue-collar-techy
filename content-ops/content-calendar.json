@@ -1,0 +1,253 @@
+{
+  "meta": {
+    "cadence": "biweekly",
+    "publish_day": "Thursday",
+    "voice": "blue-collar contractor talking to peers, no guru language, no em dashes",
+    "source": "DataForSEO keywords_for_keywords pull 2026-04-18",
+    "length_target_words": 1800,
+    "must_include": [
+      "current events hook (per feedback_current_events_research.md)",
+      "one internal link to existing BCT post",
+      "one CTA to a BCT tool or newsletter",
+      "one hardscape-era story or analogy where natural"
+    ]
+  },
+  "existing_internal_link_targets": {
+    "market-agency-or-you": "diagnostic three-bucket (market/agency/you)",
+    "ten-things-no-agency-can-fix": "owner-side leaks, ranked by damage",
+    "gbp-audit-15-minutes": "GBP DIY seven-check",
+    "market-up-sales-down": "four-pool lead model, price-aware buyer"
+  },
+  "tools": {
+    "market-scan": "24-month demand scan by trade+city",
+    "gbp-check": "nine-dimension GBP score vs competitor median"
+  },
+  "posts": [
+    {
+      "slot": 1,
+      "publish_date": "2026-04-30",
+      "slug": "how-to-get-more-google-reviews",
+      "h1_working": "How to get more Google reviews as a contractor (without sounding desperate)",
+      "primary_keyword": "how to get more google reviews",
+      "primary_volume": 590,
+      "secondary_keywords": ["how to generate google reviews", "how do i get more google reviews", "how to increase google reviews", "how to get good google reviews"],
+      "theme": "reviews_reputation",
+      "angle": "Most contractors ask once. The ones winning are asking at three moments, with the right wording, and they track who followed through.",
+      "internal_link": "gbp-audit-15-minutes",
+      "tool_cta": "gbp-check",
+      "resource_spinoff": "Review request template pack (3 SMS, 3 email)"
+    },
+    {
+      "slot": 2,
+      "publish_date": "2026-05-14",
+      "slug": "how-to-rank-higher-on-google-maps",
+      "h1_working": "How to rank higher on Google Maps as a contractor (7 moves that still work in 2026)",
+      "primary_keyword": "how to rank higher on google maps",
+      "primary_volume": 260,
+      "secondary_keywords": ["how to rank in google maps", "how do i rank higher on google maps", "how to rank higher in google maps"],
+      "theme": "local_seo_gbp",
+      "angle": "Proximity is the biggest signal most contractors can't change. Here's what you can change, in order of impact.",
+      "internal_link": "gbp-audit-15-minutes",
+      "tool_cta": "gbp-check",
+      "resource_spinoff": null
+    },
+    {
+      "slot": 3,
+      "publish_date": "2026-05-28",
+      "slug": "best-lead-generation-companies-for-contractors",
+      "h1_working": "Best lead generation companies for contractors: honest 2026 breakdown",
+      "primary_keyword": "best lead generation companies for contractors",
+      "primary_volume": 110,
+      "secondary_keywords": ["best lead generation for contractors", "best lead services for contractors", "best contractor lead generation companies"],
+      "theme": "leads",
+      "angle": "Rank and review the real options. What each costs, what you actually get, who should skip each one.",
+      "internal_link": "market-up-sales-down",
+      "tool_cta": "market-scan",
+      "resource_spinoff": "Lead source tracker spreadsheet"
+    },
+    {
+      "slot": 4,
+      "publish_date": "2026-06-11",
+      "slug": "local-service-ads-for-contractors",
+      "h1_working": "Local Service Ads for contractors: what they cost, how to get badged, when to turn them off",
+      "primary_keyword": "local service ads",
+      "primary_volume": 40500,
+      "secondary_keywords": ["google local service ads", "google lsa", "local services by google", "google guaranteed"],
+      "theme": "ads",
+      "angle": "Biggest keyword in this space. Deep-dive pillar post. Walk through setup, badging, pricing mechanics, and the two failure modes that burn contractors fast.",
+      "internal_link": "ten-things-no-agency-can-fix",
+      "tool_cta": "newsletter",
+      "resource_spinoff": "LSA readiness checklist"
+    },
+    {
+      "slot": 5,
+      "publish_date": "2026-06-25",
+      "slug": "best-ai-tools-for-contractors",
+      "h1_working": "Best AI tools for contractors in 2026 (what we actually use at Tekton Growth)",
+      "primary_keyword": "best ai for small business",
+      "primary_volume": 210,
+      "secondary_keywords": ["ai for small business", "ai for small businesses", "small artificial intelligence companies"],
+      "theme": "ai_tech",
+      "angle": "Not a listicle of 100 tools. The 8 we actually run day-to-day — what each replaces, what it costs, what it breaks.",
+      "internal_link": "market-up-sales-down",
+      "tool_cta": "newsletter",
+      "resource_spinoff": null
+    },
+    {
+      "slot": 6,
+      "publish_date": "2026-07-09",
+      "slug": "how-to-get-leads-as-a-contractor",
+      "h1_working": "How to get leads as a contractor without paying Angi or HomeAdvisor a dime",
+      "primary_keyword": "how to get leads as a contractor",
+      "primary_volume": 40,
+      "secondary_keywords": ["free leads for contractors", "free construction leads", "best way to get construction leads"],
+      "theme": "leads",
+      "angle": "Four pools of leads. Three you own, one you rent. Rank them by cost, speed, and quality.",
+      "internal_link": "market-up-sales-down",
+      "tool_cta": "market-scan",
+      "resource_spinoff": null
+    },
+    {
+      "slot": 7,
+      "publish_date": "2026-07-23",
+      "slug": "free-google-business-profile-guide",
+      "h1_working": "The free Google Business Profile (everything you get without paying anyone)",
+      "primary_keyword": "free google business profile",
+      "primary_volume": 210,
+      "secondary_keywords": ["google business profile free", "free business profile", "business profile free", "google free business profile"],
+      "theme": "local_seo_gbp",
+      "angle": "Contractors pay agencies $500+ for what GBP gives away. Show the full free toolkit, then say clearly what's worth paying for.",
+      "internal_link": "gbp-audit-15-minutes",
+      "tool_cta": "gbp-check",
+      "resource_spinoff": null
+    },
+    {
+      "slot": 8,
+      "publish_date": "2026-08-06",
+      "slug": "best-contractor-websites",
+      "h1_working": "Best contractor websites of 2026 (and what makes them actually convert)",
+      "primary_keyword": "best contractor websites",
+      "primary_volume": 140,
+      "secondary_keywords": ["best general contractor websites", "best roofing websites", "contractor website examples"],
+      "theme": "website",
+      "angle": "Pick 7 real contractor sites. Break down what works and why. Nothing is 'beautiful' — only 'converts or doesn't.'",
+      "internal_link": "ten-things-no-agency-can-fix",
+      "tool_cta": "newsletter",
+      "resource_spinoff": "Website audit checklist"
+    },
+    {
+      "slot": 9,
+      "publish_date": "2026-08-20",
+      "slug": "best-marketing-for-contractors-by-trade",
+      "h1_working": "Best marketing for contractors by trade (what works for hardscape isn't what works for HVAC)",
+      "primary_keyword": "best marketing for contractors",
+      "primary_volume": 110,
+      "secondary_keywords": ["best advertising for contractors", "best marketing for roofing companies", "best marketing for painting company"],
+      "theme": "marketing_agency",
+      "angle": "Break out the big trades (hardscape, HVAC, roofing, plumbing, electrical, landscaping, painting). For each, rank what moves the needle and what's a waste.",
+      "internal_link": "market-agency-or-you",
+      "tool_cta": "market-scan",
+      "resource_spinoff": null
+    },
+    {
+      "slot": 10,
+      "publish_date": "2026-09-03",
+      "slug": "bad-contractor-websites",
+      "h1_working": "7 things bad contractor websites all do (and lose trust for)",
+      "primary_keyword": "bad contractors website",
+      "primary_volume": 90,
+      "secondary_keywords": ["contractor website examples", "worst contractor websites"],
+      "theme": "website",
+      "angle": "Mirror of post 8. Seven patterns you'll see on sites that don't convert. No naming names, just screenshots of the moves.",
+      "internal_link": "ten-things-no-agency-can-fix",
+      "tool_cta": "newsletter",
+      "resource_spinoff": null
+    },
+    {
+      "slot": 11,
+      "publish_date": "2026-09-17",
+      "slug": "best-seo-for-contractors",
+      "h1_working": "Best SEO for contractors (what to look for in a real agency, what to run from)",
+      "primary_keyword": "best seo for contractors",
+      "primary_volume": 50,
+      "secondary_keywords": ["best hvac seo company", "best roofing seo", "best roofing seo companies"],
+      "theme": "local_seo_gbp",
+      "angle": "Buyer's guide: questions to ask a real SEO agency, red flags that say run, and the three things any SEO package for a contractor must include.",
+      "internal_link": "market-agency-or-you",
+      "tool_cta": "gbp-check",
+      "resource_spinoff": "SEO agency evaluation checklist"
+    },
+    {
+      "slot": 12,
+      "publish_date": "2026-10-01",
+      "slug": "free-leads-for-contractors",
+      "h1_working": "Free leads for contractors: where they really come from (and what they actually cost you)",
+      "primary_keyword": "free leads for contractors",
+      "primary_volume": 260,
+      "secondary_keywords": ["free construction leads", "free construction bid sites"],
+      "theme": "leads",
+      "angle": "Nothing is free. The four sources that look free and what each one actually costs in time, quality, or margin.",
+      "internal_link": "market-up-sales-down",
+      "tool_cta": "market-scan",
+      "resource_spinoff": null
+    },
+    {
+      "slot": 13,
+      "publish_date": "2026-10-15",
+      "slug": "ai-for-small-business-contractors",
+      "h1_working": "AI for small business contractors: 10 real uses that actually save hours",
+      "primary_keyword": "ai for small business",
+      "primary_volume": 1600,
+      "secondary_keywords": ["ai for small businesses", "best ai for small business", "small artificial intelligence companies"],
+      "theme": "ai_tech",
+      "angle": "Ten specific uses with the actual prompts and tools. Not 'AI will transform your business.' Each one saves a real hour.",
+      "internal_link": "market-up-sales-down",
+      "tool_cta": "newsletter",
+      "resource_spinoff": "Contractor AI prompt pack"
+    }
+  ],
+  "resources_roadmap": [
+    {
+      "name": "Review request template pack",
+      "tied_to_post": 1,
+      "target_date": "2026-05-07",
+      "format": "PDF + HTML page",
+      "lead_capture": true
+    },
+    {
+      "name": "Lead source tracker spreadsheet",
+      "tied_to_post": 3,
+      "target_date": "2026-06-04",
+      "format": "Google Sheets template",
+      "lead_capture": true
+    },
+    {
+      "name": "LSA readiness checklist",
+      "tied_to_post": 4,
+      "target_date": "2026-06-18",
+      "format": "Interactive HTML checklist",
+      "lead_capture": true
+    },
+    {
+      "name": "Website audit checklist",
+      "tied_to_post": 8,
+      "target_date": "2026-08-13",
+      "format": "Interactive HTML tool (score-based)",
+      "lead_capture": true
+    },
+    {
+      "name": "SEO agency evaluation checklist",
+      "tied_to_post": 11,
+      "target_date": "2026-09-24",
+      "format": "PDF",
+      "lead_capture": true
+    },
+    {
+      "name": "Contractor AI prompt pack",
+      "tied_to_post": 13,
+      "target_date": "2026-10-22",
+      "format": "PDF + HTML",
+      "lead_capture": true
+    }
+  ]
+}
