@@ -1,0 +1,56 @@
+name: Stale draft PR reminder
+
+# Every hour. Scans open draft/* PRs and pings Telegram once per PR that
+# has been waiting > 24 hours. Uses a PR label as a "reminded" marker so
+# Nick only gets nagged once per PR, not every hour forever.
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Find stale draft PRs and ping Telegram
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          # List open PRs whose head branch starts with draft/
+          PRS=$(gh pr list --repo "$GITHUB_REPOSITORY" --state open \
+            --json number,headRefName,createdAt,labels,title,url)
+          echo "$PRS" | jq -r '.[] | select(.headRefName | startswith("draft/")) | @json' | while read -r pr; do
+            NUM=$(echo "$pr" | jq -r '.number')
+            CREATED=$(echo "$pr" | jq -r '.createdAt')
+            TITLE=$(echo "$pr" | jq -r '.title')
+            URL=$(echo "$pr" | jq -r '.url')
+            LABELS=$(echo "$pr" | jq -r '.labels[]?.name' | tr '\n' ' ')
+
+            # Age in seconds
+            NOW=$(date -u +%s)
+            CREATED_TS=$(date -u -d "$CREATED" +%s 2>/dev/null || python3 -c "import datetime,sys; print(int(datetime.datetime.fromisoformat('$CREATED'.replace('Z','+00:00')).timestamp()))")
+            AGE=$(( NOW - CREATED_TS ))
+            HOURS=$(( AGE / 3600 ))
+
+            # Only fire once we're past 24h and haven't already reminded
+            if [ "$HOURS" -ge 24 ] && ! echo "$LABELS" | grep -q "reminded-stale"; then
+              MSG=$(printf '⏰ Draft PR waiting for approval\nTitle: %s\nWaiting: %dh\n%s' \
+                "$TITLE" "$HOURS" "$URL")
+              KEYBOARD=$(printf '{"inline_keyboard":[[{"text":"✅ Approve & Ship","callback_data":"approve:%s"}]]}' "$NUM")
+              PAYLOAD=$(jq -n --arg chat "$TELEGRAM_CHAT_ID" --arg text "$MSG" --argjson kb "$KEYBOARD" \
+                '{chat_id:$chat, text:$text, reply_markup:$kb}')
+              curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+                -H "Content-Type: application/json" \
+                --data "$PAYLOAD" > /dev/null
+
+              # Mark as reminded so we don't nag again (once/PR by default)
+              gh pr edit "$NUM" --repo "$GITHUB_REPOSITORY" --add-label "reminded-stale" 2>&1 || true
+            fi
+          done

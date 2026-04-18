@@ -74,9 +74,20 @@ jobs:
           git fetch origin main --depth=50 || true
           POST_SLUG=$(git log --name-only --diff-filter=A --pretty=format: origin/main..HEAD -- 'blog/*.html' 2>/dev/null | grep -v '^$' | head -1 | xargs -I {} basename {} .html)
           if [ -n "$POST_SLUG" ]; then POST_PATH="/blog/$POST_SLUG"; else POST_PATH=""; fi
-          PR_NUM=$(gh pr list --head "$PR_REF" --json number --jq '.[0].number' 2>/dev/null || echo "?")
-          MSG=$(printf '🟠 BCT Preview ready for review\nBranch: %s\nPreview: %s%s\nPR: https://github.com/%s/pull/%s' \
-            "$PR_REF" "$PREVIEW_URL" "$POST_PATH" "$GITHUB_REPOSITORY" "$PR_NUM")
-          curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-            -d "chat_id=${TELEGRAM_CHAT_ID}" \
-            --data-urlencode "text=${MSG}" > /dev/null
+          PR_NUM=$(gh pr list --head "$PR_REF" --json number --jq '.[0].number' 2>/dev/null || echo "")
+          MSG=$(printf '🟠 BCT Preview ready for review\nPreview: %s%s\nPR: https://github.com/%s/pull/%s\n\nTo request changes from Claude Code mobile, copy this:\nRevise BCT draft %s: <your feedback>' \
+            "$PREVIEW_URL" "$POST_PATH" "$GITHUB_REPOSITORY" "${PR_NUM:-?}" "${POST_SLUG:-unknown}")
+
+          # If we have a PR number, include an Approve inline button.
+          if [ -n "$PR_NUM" ]; then
+            KEYBOARD=$(printf '{"inline_keyboard":[[{"text":"✅ Approve & Ship","callback_data":"approve:%s"}]]}' "$PR_NUM")
+            PAYLOAD=$(jq -n --arg chat "$TELEGRAM_CHAT_ID" --arg text "$MSG" --argjson kb "$KEYBOARD" \
+              '{chat_id:$chat, text:$text, reply_markup:$kb}')
+            curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+              -H "Content-Type: application/json" \
+              --data "$PAYLOAD" > /dev/null
+          else
+            curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+              -d "chat_id=${TELEGRAM_CHAT_ID}" \
+              --data-urlencode "text=${MSG}" > /dev/null
+          fi
