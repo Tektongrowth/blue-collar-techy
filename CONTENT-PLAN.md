@@ -88,7 +88,7 @@ Each entry: title · target keyword · theme · week · rough word count · pair
 **Theme:** Reputation
 **Word count:** 2,000-2,500
 **Paired tool:** GBP Health Check
-**Angle:** Volume + recency + response rate. Real scripts for asking at different job phases. Bad review response templates (with and without apology). QR code workflow.
+**Angle:** Volume + recency + response rate. Lifecycle-based review ask for project contractors (landscape, hardscape, remodel, pool builds, outdoor living): three points in every job — contract signing (set expectation), mid-project milestone, final walkthrough. Service-trade section for shorter plumbing/electrical/HVAC visits where the ask lands on the invoice. Bad review response templates (with and without apology). QR code workflow. Tracking recommendation: a CRM (GoHighLevel is what we run with clients), not a Google Sheet. Links to the GHL review tracking walkthrough video + blog.
 
 ### Week 7 — AI + Tech Stack
 **Title:** AI tools for contractors: what's worth using, what's a waste (2026 edition)
@@ -115,12 +115,12 @@ Each entry: title · target keyword · theme · week · rough word count · pair
 **Angle:** Extended treatment of post 2, item 8. Simple spreadsheet, 3 columns, 30-day habit. Explains why "word of mouth" is a lie 70% of the time.
 
 ### Week 10 — CRM comparison
-**Title:** Jobber vs ServiceTitan vs Housecall Pro: which CRM actually fits your contracting business
+**Title:** Jobber vs ServiceTitan vs Housecall Pro vs GoHighLevel: which CRM actually fits your contracting business
 **Target:** `crm for contractors` (480, $59 CPC) + `jobber vs servicetitan` (110)
 **Theme:** Tech stack
 **Word count:** 2,000
 **Paired tool:** None — high affiliate potential
-**Angle:** Comparison matrix. Price, features, what fits at different revenue/crew sizes. Honest pros/cons. Nick's take.
+**Angle:** Comparison matrix. Price, features, what fits at different revenue/crew sizes. Honest pros/cons. Nick's take. Includes GoHighLevel (what Tekton Growth runs with client contractors) alongside the usual field-service CRMs, with a section on why GHL is the pick for contractors who want review automation, pipeline, and SMS/email in one place. Links back to the standalone GHL review tracking walkthrough.
 
 ### Week 11 — Paid ads reality check
 **Title:** Facebook ads, Google ads, and LSAs for contractors: what works at what stage

@@ -32,10 +32,10 @@
       "primary_volume": 590,
       "secondary_keywords": ["how to generate google reviews", "how do i get more google reviews", "how to increase google reviews", "how to get good google reviews"],
       "theme": "reviews_reputation",
-      "angle": "Most contractors ask once. The ones winning are asking at three moments, with the right wording, and they track who followed through.",
+      "angle": "Most contractors ask once. The ones winning build the ask into the project itself. Three points in every job (contract signing to set expectation, a mid-project milestone, and final walkthrough as the formal ask). Framed for landscape, hardscape, remodel, and pool-build contractors first, with lighter-weight scripts for plumbing/electrical/HVAC service calls. Every ask tracked in a CRM like GoHighLevel, not a Google Sheet.",
       "internal_link": "gbp-audit-15-minutes",
       "tool_cta": "gbp-check",
-      "resource_spinoff": "Review request template pack (3 SMS, 3 email)"
+      "resource_spinoff": "Review request template pack (SMS + email scripts organized by project phase: kickoff, midpoint, walkthrough)"
     },
     {
       "slot": 2,
@@ -212,7 +212,16 @@
       "tied_to_post": 1,
       "target_date": "2026-05-07",
       "format": "PDF + HTML page",
-      "lead_capture": true
+      "lead_capture": true,
+      "notes": "Organized by the three project ask points: contract signing, mid-project milestone, final walkthrough. Primary scripts for project contractors (landscape/hardscape/remodel/pool). Secondary short scripts for single-visit service trades."
+    },
+    {
+      "name": "GoHighLevel review tracking walkthrough",
+      "tied_to_post": 1,
+      "target_date": "2026-05-21",
+      "format": "YouTube video + companion blog post",
+      "lead_capture": false,
+      "notes": "Video + blog showing how we set up the three-point review ask inside GoHighLevel: pipeline stages for contract signed / mid-project / walkthrough, and the automations that fire the SMS + email at each stage. Blog cross-links from post 1 and from gbp-audit-15-minutes Step 07. Supports the Week 10 CRM comparison post."
     },
     {
       "name": "Lead source tracker spreadsheet",

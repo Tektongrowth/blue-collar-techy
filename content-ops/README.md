@@ -4,7 +4,7 @@ Automated content pipeline for bluecollartechy.com.
 
 ## Files
 
-- `content-calendar.json` — 13-post biweekly calendar (Apr 2026 → Oct 2026) + 6 resource spinoffs
+- `content-calendar.json` — 13-post biweekly calendar (Apr 2026 → Oct 2026) + 7 resource spinoffs
 - `mine_keywords.py` — DataForSEO keyword miner. Re-run quarterly to refresh candidates.
 - `data/raw_keywords.json` — all 1,254 keywords returned
 - `data/filtered_keywords.json` — 290 content candidates (volume ≥ 30, intent-tagged)
@@ -36,10 +36,11 @@ Automated content pipeline for bluecollartechy.com.
 
 ## Resources pipeline
 
-6 lead-capture resources scheduled alongside relevant posts:
-1. Review request template pack (after post 1)
-2. Lead source tracker spreadsheet (after post 3)
-3. LSA readiness checklist (after post 4)
-4. Website audit checklist (after post 8)
-5. SEO agency evaluation checklist (after post 11)
-6. Contractor AI prompt pack (after post 13)
+7 resources scheduled alongside relevant posts:
+1. Review request template pack (after post 1) — organized by the three project ask points (contract signing, mid-project milestone, final walkthrough)
+2. GoHighLevel review tracking walkthrough (companion video + blog, tied to post 1) — how to wire the three-point ask into a CRM pipeline
+3. Lead source tracker spreadsheet (after post 3)
+4. LSA readiness checklist (after post 4)
+5. Website audit checklist (after post 8)
+6. SEO agency evaluation checklist (after post 11)
+7. Contractor AI prompt pack (after post 13)
