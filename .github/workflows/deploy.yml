@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - 'draft/**'
+      - 'claude/**'
   workflow_dispatch:
 
 jobs:
@@ -13,6 +14,7 @@ jobs:
     permissions:
       contents: read
       deployments: write
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -72,13 +74,37 @@ jobs:
             exit 0
           fi
           git fetch origin main --depth=50 || true
-          POST_SLUG=$(git log --name-only --diff-filter=A --pretty=format: origin/main..HEAD -- 'blog/*.html' 2>/dev/null | grep -v '^$' | head -1 | xargs -I {} basename {} .html)
+          # draft/** branches ship a newly added blog file; claude/** revision
+          # branches modify an existing one. -AM covers both cases.
+          POST_SLUG=$(git log --name-only --diff-filter=AM --pretty=format: origin/main..HEAD -- 'blog/*.html' 2>/dev/null | grep -v '^$' | head -1 | xargs -I {} basename {} .html)
           if [ -n "$POST_SLUG" ]; then POST_PATH="/blog/$POST_SLUG"; else POST_PATH=""; fi
           PR_NUM=$(gh pr list --head "$PR_REF" --json number --jq '.[0].number' 2>/dev/null || echo "")
 
+          # On claude/** revision branches the /bct-draft skill didn't create
+          # a PR, so auto-open a draft PR here so the Approve button wires up.
+          if [ -z "$PR_NUM" ] && [[ "$PR_REF" == claude/* ]]; then
+            PR_TITLE="Revise: ${POST_SLUG:-$PR_REF}"
+            PR_BODY=$(printf 'Automated revision preview for branch `%s`.\n\nPreview: %s%s\n\nMerging will publish the revised post.' \
+              "$PR_REF" "$PREVIEW_URL" "$POST_PATH")
+            gh pr create \
+              --repo "$GITHUB_REPOSITORY" \
+              --base main \
+              --head "$PR_REF" \
+              --title "$PR_TITLE" \
+              --body "$PR_BODY" 2>&1 || true
+            PR_NUM=$(gh pr list --head "$PR_REF" --json number --jq '.[0].number' 2>/dev/null || echo "")
+          fi
+
+          # Header varies for new drafts vs revisions so the Telegram ping is self-explanatory.
+          if [[ "$PR_REF" == claude/* ]]; then
+            HEADER="🟠 BCT Revision ready for review"
+          else
+            HEADER="🟠 BCT Preview ready for review"
+          fi
+
           # Message 1: preview + PR link + Approve button
-          MSG1=$(printf '🟠 BCT Preview ready for review\nPreview: %s%s\nPR: https://github.com/%s/pull/%s\n\nTap the button below to approve, or copy the next message into Claude Code mobile to request changes.' \
-            "$PREVIEW_URL" "$POST_PATH" "$GITHUB_REPOSITORY" "${PR_NUM:-?}")
+          MSG1=$(printf '%s\nPreview: %s%s\nPR: https://github.com/%s/pull/%s\n\nTap the button below to approve, or copy the next message into Claude Code mobile to request changes.' \
+            "$HEADER" "$PREVIEW_URL" "$POST_PATH" "$GITHUB_REPOSITORY" "${PR_NUM:-?}")
 
           if [ -n "$PR_NUM" ]; then
             KEYBOARD=$(printf '{"inline_keyboard":[[{"text":"✅ Approve & Ship","callback_data":"approve:%s"}]]}' "$PR_NUM")

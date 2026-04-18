@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   auto-merge:
-    if: github.event.review.state == 'approved' && startsWith(github.event.pull_request.head.ref, 'draft/')
+    if: github.event.review.state == 'approved' && (startsWith(github.event.pull_request.head.ref, 'draft/') || startsWith(github.event.pull_request.head.ref, 'claude/'))
     runs-on: ubuntu-latest
     steps:
       - name: Enable auto-merge (squash) on approved draft PR

@@ -26,7 +26,7 @@ jobs:
           # List open PRs whose head branch starts with draft/
           PRS=$(gh pr list --repo "$GITHUB_REPOSITORY" --state open \
             --json number,headRefName,createdAt,labels,title,url)
-          echo "$PRS" | jq -r '.[] | select(.headRefName | startswith("draft/")) | @json' | while read -r pr; do
+          echo "$PRS" | jq -r '.[] | select(.headRefName | startswith("draft/") or startswith("claude/")) | @json' | while read -r pr; do
             NUM=$(echo "$pr" | jq -r '.number')
             CREATED=$(echo "$pr" | jq -r '.createdAt')
             TITLE=$(echo "$pr" | jq -r '.title')
