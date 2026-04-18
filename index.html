@@ -88,6 +88,7 @@
     --text-faint: #6b6b78;
     --accent: #ff6a1a;
     --accent-bright: #ff8530;
+    --accent-hover: #47c8f5;   /* Tekton cyan — the accent glow mirror */
     --hi-vis: #ffc61a;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -163,11 +164,18 @@
     flex-direction: column;
     align-items: center;
     gap: 28px;
-    transition: border-color 0.2s;
+    transition: all 0.25s ease;
     min-height: 280px;
     justify-content: space-between;
+    position: relative;
   }
-  .logo-card:hover { border-color: var(--accent); }
+  .logo-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 24px rgba(71, 200, 245, 0.35),
+                0 0 48px rgba(71, 200, 245, 0.18);
+    z-index: 2;
+  }
   .logo-card .label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -200,8 +208,11 @@
     font-size: 14px;
     font-weight: 600;
   }
-  .nav-links a { color: var(--text-dim); transition: color 0.2s; }
-  .nav-links a:hover { color: var(--text); }
+  .nav-links a { color: var(--text-dim); transition: all 0.25s ease; }
+  .nav-links a:hover {
+    color: var(--accent-hover);
+    text-shadow: 0 0 12px rgba(71, 200, 245, 0.6);
+  }
   .nav-cta {
     background: var(--accent);
     color: #000;
@@ -211,6 +222,13 @@
     letter-spacing: 0.02em;
     border-radius: 2px;
     text-transform: uppercase;
+    transition: all 0.25s ease;
+  }
+  .nav-cta:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 0 0 1px rgba(71, 200, 245, 0.5),
+                0 0 24px rgba(71, 200, 245, 0.55),
+                0 0 48px rgba(71, 200, 245, 0.3);
   }
 
   /* ============ HERO ============ */
@@ -272,12 +290,23 @@
     border: 2px solid transparent;
     border-radius: 2px;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.25s ease;
   }
   .btn-primary { background: var(--accent); color: #000; }
-  .btn-primary:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
-  .btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
-  .btn-secondary:hover { border-color: var(--text); }
+  .btn-primary:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 0 0 1px rgba(71, 200, 245, 0.5),
+                0 0 24px rgba(71, 200, 245, 0.55),
+                0 0 48px rgba(71, 200, 245, 0.3);
+  }
+  .btn-secondary { background: transparent; color: var(--text); border-color: var(--border); transition: all 0.25s ease; }
+  .btn-secondary:hover {
+    border-color: var(--text);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 0 0 1px rgba(71, 200, 245, 0.5),
+                0 0 24px rgba(71, 200, 245, 0.55),
+                0 0 48px rgba(71, 200, 245, 0.3);
+  }
   .btn svg { width: 14px; height: 14px; }
 
   /* Hero portrait area */
@@ -334,7 +363,7 @@
     position: absolute; top: 40px; left: 32px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
-    color: var(--text-faint);
+    color: var(--accent-hover);
     letter-spacing: 0.1em;
   }
   .manifesto-grid {
@@ -376,7 +405,7 @@
     position: absolute; top: 40px; left: 32px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
-    color: var(--text-faint);
+    color: var(--accent-hover);
     letter-spacing: 0.1em;
   }
   .section-head {
@@ -394,7 +423,7 @@
   .section-head .tag {
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
-    color: var(--text-faint);
+    color: var(--accent-hover);
     letter-spacing: 0.15em;
     text-transform: uppercase;
   }
@@ -409,9 +438,15 @@
     background: var(--bg);
     padding: 40px 32px 48px;
     position: relative;
-    transition: background 0.2s;
+    transition: all 0.25s ease;
   }
-  .card:hover { background: var(--bg-card); }
+  .card:hover {
+    background: var(--bg-card);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 24px rgba(71, 200, 245, 0.35),
+                0 0 48px rgba(71, 200, 245, 0.18);
+    z-index: 2;
+  }
   .card .num {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -443,7 +478,7 @@
     position: absolute; top: 40px; left: 32px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
-    color: var(--text-faint);
+    color: var(--accent-hover);
     letter-spacing: 0.1em;
   }
   .vids {
@@ -455,9 +490,16 @@
     background: var(--bg-card);
     border: 1px solid var(--border);
     overflow: hidden;
-    transition: border-color 0.2s;
+    transition: all 0.25s ease;
+    position: relative;
   }
-  .vid:hover { border-color: var(--accent); }
+  .vid:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 24px rgba(71, 200, 245, 0.35),
+                0 0 48px rgba(71, 200, 245, 0.18);
+    z-index: 2;
+  }
   .vid-thumb {
     aspect-ratio: 16/9;
     background: linear-gradient(135deg, #1a1a24 0%, #0d0d12 100%);
@@ -520,7 +562,7 @@
     position: absolute; top: 40px; left: 32px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
-    color: var(--text-faint);
+    color: var(--accent-hover);
     letter-spacing: 0.1em;
   }
   .newsletter::after {
@@ -586,13 +628,19 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     cursor: pointer;
+    transition: all 0.25s ease;
   }
-  form.nl-form button:hover { background: var(--accent-bright); }
+  form.nl-form button:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 0 0 1px rgba(71, 200, 245, 0.5),
+                0 0 24px rgba(71, 200, 245, 0.55),
+                0 0 48px rgba(71, 200, 245, 0.3);
+  }
   .nl-note {
     margin-top: 20px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
-    color: var(--text-faint);
+    color: var(--accent-hover);
   }
   form.nl-form button:disabled { opacity: 0.65; cursor: not-allowed; }
   .hp-nl {
@@ -638,20 +686,23 @@
   .foot-col h4 {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    color: var(--text-faint);
+    color: var(--accent-hover);
     letter-spacing: 0.2em;
     text-transform: uppercase;
     margin-bottom: 20px;
   }
   .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-  .foot-col a { color: var(--text-dim); font-size: 14px; transition: color 0.2s; }
-  .foot-col a:hover { color: var(--accent); }
+  .foot-col a { color: var(--text-dim); font-size: 14px; transition: all 0.25s ease; }
+  .foot-col a:hover {
+    color: var(--accent-hover);
+    text-shadow: 0 0 12px rgba(71, 200, 245, 0.6);
+  }
   .foot-bottom {
     padding-top: 32px;
     display: flex; justify-content: space-between; align-items: center;
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
-    color: var(--text-faint);
+    color: var(--accent-hover);
     letter-spacing: 0.08em;
   }
 
