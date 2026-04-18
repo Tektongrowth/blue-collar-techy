@@ -418,6 +418,132 @@ function buildVerdict(catStats, confidence, rising, declining) {
   return `Mixed market. ${upCats.length} categories up, ${downCats.length} down. Check whether your specific service mix falls into the rising or declining group.`;
 }
 
+// Determine which scenario the scan result falls into.
+// Returns one of: 'low-confidence', 'healthy', 'soft', 'mixed'.
+function classifyScenario(catStats, confidence) {
+  if (confidence.level === 'LOW') return 'low-confidence';
+  const upCats = catStats.filter(c => c.weighted_trend > 3);
+  const downCats = catStats.filter(c => c.weighted_trend < -3);
+  if (downCats.length === 0 && upCats.length >= catStats.length / 2) return 'healthy';
+  if (upCats.length === 0) return 'soft';
+  return 'mixed';
+}
+
+// Conditional next-steps module. Reads the scenario and returns an HTML block
+// that routes the reader toward the right blog + tool + action path.
+function buildNextStepsHtml(catStats, confidence) {
+  const scenario = classifyScenario(catStats, confidence);
+  const base = 'https://bluecollartechy.com';
+
+  // Reusable action card renderer
+  const card = (label, title, body, ctaText, ctaUrl) => `
+    <tr><td style="padding:20px 22px;background:#15151d;border:1px solid #272733;border-left:3px solid #ff6a1a;">
+      <div style="font-family:'Courier New',monospace;font-size:10px;color:#ff6a1a;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:8px;">${label}</div>
+      <div style="font-family:Arial Black,Arial,sans-serif;font-size:17px;color:#f5f5f7;margin-bottom:8px;line-height:1.2;">${title}</div>
+      <p style="margin:0 0 14px;color:#a0a0ab;font-size:14px;line-height:1.55;">${body}</p>
+      <a href="${ctaUrl}" style="display:inline-block;color:#ff6a1a;text-decoration:none;font-family:'Courier New',monospace;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">${ctaText} →</a>
+    </td></tr>
+    <tr><td style="height:10px;"></td></tr>
+  `;
+
+  let intro, cards;
+
+  if (scenario === 'low-confidence') {
+    intro = `The data confidence was low for this scan, usually because the city is small or the industry has light search history. Before making decisions, re-run the scan using your nearest metro area. That gives the numbers enough volume to actually trend.`;
+    cards = card(
+      'Step 01',
+      'Re-run from a bigger market anchor',
+      'Pick the closest metro you service and re-run the scan. The categories you actually sell should show up with stronger signal.',
+      'Scan again',
+      `${base}/market-scan/`
+    );
+  } else if (scenario === 'healthy') {
+    intro = `Your market is not the problem. The gap is on the other side of the plate. Here is the diagnostic order from biggest impact down.`;
+    cards =
+      card(
+        'Bucket 02',
+        'Check whether your Google Business Profile is leaking calls',
+        'Free audit scores your profile on nine dimensions and benchmarks you against the top contractors in your area. Takes about a minute.',
+        'Run the GBP check',
+        `${base}/gbp-check/`
+      ) +
+      card(
+        'Bucket 03 · Read next',
+        'Your market is up but sales are down. What now?',
+        'Most contractors blame the agency when leads stop closing. The real answer is a more price-aware market and a sales process that has not kept up. Here is the full breakdown.',
+        'Read the post',
+        `${base}/blog/market-up-sales-down`
+      ) +
+      card(
+        'The owner side',
+        '10 things no marketing agency can fix for you',
+        'Speed of response, review pipeline, past customer follow-up, sales process. The stuff no agency can do for you, ranked by damage.',
+        'Read the list',
+        `${base}/blog/ten-things-no-agency-can-fix`
+      );
+  } else if (scenario === 'soft') {
+    intro = `Your market is genuinely softening. Cutting marketing right now would be the wrong move. The fix is adapting the business so you can still produce enough contracts when fewer people in every pool are ready to buy.`;
+    cards =
+      card(
+        'Read first',
+        'What to do when the market tightens',
+        'Covers the two ways through any soft market: sharper sales + wider marketing net. Also explains the four pools of leads and why contractors who only draw from Pool 1 feel tight markets the hardest.',
+        'Read the post',
+        `${base}/blog/market-up-sales-down`
+      ) +
+      card(
+        'Shift the mix',
+        'Look at your rising vs declining categories above',
+        'Services in the declining list are where your current pain is coming from. Services in the rising list are where to push. Most contractors can lean into an adjacent category without rebuilding the business.',
+        'See full breakdown',
+        `${base}/blog/market-agency-or-you`
+      ) +
+      card(
+        'Long game',
+        'Build the pools that hold up in soft markets',
+        'Past-customer outreach, referral partners, local presence. These take the longest to build and pay the most when the market tightens.',
+        'Subscribe for the playbook',
+        `${base}/#newsletter`
+      );
+  } else {
+    // mixed
+    intro = `Mixed market. Your specific service mix is the deciding factor. Match your main services to the categories above and act differently based on where you land.`;
+    cards =
+      card(
+        'If your services are in the rising list',
+        'Treat your market like it is healthy',
+        'Your agency should have you visible for those searches. Audit your profile and see if your sales process is keeping up with the price-aware buyer.',
+        'Run the GBP check',
+        `${base}/gbp-check/`
+      ) +
+      card(
+        'Read next',
+        'Your market is up but sales are down. What now?',
+        'Covers the four pools of leads, the price-aware buyer, and the two real ways through a tight market.',
+        'Read the post',
+        `${base}/blog/market-up-sales-down`
+      ) +
+      card(
+        'If your services are in the declining list',
+        'Add an adjacent service or widen your area',
+        'Most contractors can add an adjacent category without rebuilding the business. The rising categories above are your candidates.',
+        'Read the diagnosis post',
+        `${base}/blog/market-agency-or-you`
+      );
+  }
+
+  return `
+    <tr><td>
+      <h2 style="margin:0 0 8px;font-family:Arial Black,Arial,sans-serif;font-size:22px;color:#f5f5f7;">So what now?</h2>
+      <p style="margin:0 0 20px;color:#a0a0ab;font-size:14px;line-height:1.55;">${intro}</p>
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        ${cards}
+      </table>
+    </td></tr>
+    <tr><td style="height:32px;"></td></tr>
+  `;
+}
+
 // ============================================================================
 // HTML REPORT (for email body)
 // ============================================================================
@@ -570,15 +696,9 @@ function reportHtml(data, seedsDoc, locationName, submitterName) {
 
       <tr><td style="height:48px;"></td></tr>
 
-      <tr><td style="padding:28px 24px;background:#1a1a24;border:1px solid #272733;">
-        <div style="font-family:'Courier New',monospace;font-size:11px;color:#ff6a1a;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:14px;">What to do next</div>
-        <p style="margin:0 0 14px;color:#f5f5f7;font-size:16px;">If your market is up and your business still feels slow, it's not the market. The blog post below walks through how to check your agency and your own operations next.</p>
-        <p style="margin:0;">
-          <a href="https://bluecollartechy.com/blog/market-agency-or-you" style="display:inline-block;background:#ff6a1a;color:#000;padding:12px 22px;text-decoration:none;font-weight:700;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;">Read the full breakdown →</a>
-        </p>
-      </td></tr>
+      ${buildNextStepsHtml(catStats, confidence)}
 
-      <tr><td style="height:40px;"></td></tr>
+      <tr><td style="height:8px;"></td></tr>
 
       <tr><td style="border-top:1px solid #272733;padding-top:24px;">
         <p style="margin:0;color:#6b6b78;font-size:12px;line-height:1.6;">

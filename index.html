@@ -252,14 +252,14 @@
   .eyebrow {
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
-    color: var(--accent);
+    color: var(--accent-hover);
     letter-spacing: 0.2em;
     text-transform: uppercase;
     margin-bottom: 24px;
     display: inline-flex; align-items: center; gap: 10px;
   }
   .eyebrow::before {
-    content: ''; width: 28px; height: 2px; background: var(--accent);
+    content: ''; width: 28px; height: 2px; background: var(--accent-hover);
   }
   h1.hero-title {
     font-family: 'Archivo Black', sans-serif;
@@ -683,6 +683,10 @@
     max-width: 300px;
     line-height: 1.6;
   }
+  .brand-tag {
+    color: var(--accent-hover);
+    font-weight: 600;
+  }
   .foot-col h4 {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -887,7 +891,7 @@
             <text x="130" y="150" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">BUILT TO LAST · EST 2026</text>
           </svg>
         </div>
-        <p>Practical tech, AI, and local SEO for blue-collar business owners. Built by a contractor, for contractors.</p>
+        <p><span class="brand-tag">Practical tech for the trades.</span> AI, local SEO, and real systems. Built by a contractor, for contractors.</p>
       </div>
       <div class="foot-col">
         <h4>Explore</h4>
