@@ -18,9 +18,6 @@ Practical tech, AI, and local SEO for blue-collar business owners. Hosted by Nic
 - [Audit your Google Business Profile in 15 minutes](https://bluecollartechy.com/blog/gbp-audit-15-minutes.html): Seven checks any contractor can do themselves. Covers ownership, categories, services, photos, posts, and review health.
 - [Your market is up but sales are down. What now?](https://bluecollartechy.com/blog/market-up-sales-down.html): What to do when the demand scan shows green but deals aren't closing. Covers price-aware markets, the two-pool model (SEO vs paid social), the right diagnostic order, and the two real ways through a tight market (better sales + wider net).
 
-## Free Resources
-- [Review Request Scripts](https://bluecollartechy.com/resources/review-templates/): Five copy-paste contractor scripts for the three project moments (contract signing, milestone, walkthrough) plus same-day text and day-3 fallback email. Trade-specific variations for hardscape, remodel, HVAC, plumbing, and roofing.
-
 ## Free Tools
 - [Market Demand Scan](https://bluecollartechy.com/market-scan/): Pulls 24 months of Google search demand data for your trade in your city. Year-over-year comparison. Tells you whether the market actually moved or something else is going on.
 - [GBP Health Check](https://bluecollartechy.com/gbp-check/): Pulls your live Google Business Profile, compares you to the top contractors in your area, scores on nine dimensions (claim status, categories, phone, website, hours, photos, review count vs competitor median, star rating), and returns a priority fix list.

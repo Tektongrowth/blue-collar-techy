@@ -40,8 +40,9 @@
       "angle": "Most contractors ask once. The ones winning are asking at three moments, with the right wording, and they track who followed through.",
       "internal_link": "gbp-audit-15-minutes",
       "tool_cta": "gbp-check",
-      "resource_spinoff": "Review request template pack (3 SMS, 3 email)",
-      "published": true
+      "resource_spinoff": null,
+      "published": true,
+      "notes": "Originally planned a Review Request Template Pack. Scrapped 2026-04-19 — was just a duplicate of the post's tap-to-copy scripts. The GHL review-automation walkthrough video (slot 3 lead magnet) is the real value-add."
     },
     {
       "slot": 2,
@@ -261,13 +262,6 @@
     }
   ],
   "resources_roadmap": [
-    {
-      "name": "Review request template pack",
-      "tied_to_post": 1,
-      "target_date": "2026-05-07",
-      "format": "PDF + HTML page",
-      "lead_capture": true
-    },
     {
       "name": "GoHighLevel walkthrough video series",
       "tied_to_post": 3,
