@@ -343,7 +343,7 @@ form.addEventListener('submit', async (e) => {
     const data = await res.json().catch(() => ({}));
     if (res.ok && data.ok) {
       status.className = 'status success';
-      status.innerHTML = "You're on the list. <a href=\"sheet.html\" target=\"_blank\">Open the cheat sheet →</a> (tap the Save as PDF button at the top to save it.)";
+      status.innerHTML = "You're on the list. <a href=\"sheet\" target=\"_blank\">Open the cheat sheet →</a> (tap the Save as PDF button at the top to save it.)";
       form.reset();
     } else {
       status.className = 'status error';
