@@ -96,8 +96,15 @@ Blue Collar Techy's whole positioning is "practical tech for the trades." A vide
 - `/youtube seo` — generate title/description/tags
 - `/youtube shorts` — repurpose each video into 2-3 Shorts
 
-## Open questions for Nick
+## Decisions locked (2026-04-18)
 
-- Do you want these under @nicklausconley or a dedicated BCT channel?
-- Real production, hardscape client data anonymized — OK to use? Or build a fresh demo account?
-- Affiliate ID on your GHL link? If not, create one.
+- **Channel:** videos post to `@nicklausconley`. Distribution + framing run under Blue Collar Techy.
+- **Demo account:** Nick spins up a fake GHL sub-account ("Stonebridge Hardscape" or similar) and sets up the full workflow stack. All videos shoot from this account. No anonymized client data.
+- **Affiliate link:** Nick creates the GHL affiliate ID. Link goes in every video description, every companion blog post, and all mentions of GoHighLevel across BCT.
+
+## Nick's to-do before video 1 ships
+
+1. Create GHL affiliate link and save it somewhere accessible (add to `content-ops/affiliate-links.md` when ready)
+2. Spin up a demo sub-account with a fake contractor name
+3. Populate with 20-30 fake contacts at various pipeline stages
+4. Install test phone number for missed-call demos
