@@ -247,6 +247,20 @@
   .qr-preview canvas, .qr-preview svg {
     max-width: 100%; max-height: 100%; height: auto;
   }
+  .qr-preview .loading {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 14px; color: #444;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+  }
+  .qr-preview .spinner {
+    width: 42px; height: 42px;
+    border: 3px solid rgba(255, 106, 26, 0.2);
+    border-top-color: #ff6a1a;
+    border-radius: 50%;
+    animation: qr-spin 0.8s linear infinite;
+  }
+  @keyframes qr-spin { to { transform: rotate(360deg); } }
 
   .output-col h3 {
     font-family: 'Archivo Black', sans-serif;
@@ -656,6 +670,7 @@
     return opts;
   }
 
+  let renderToken = 0;
   function render() {
     const opts = buildOptions();
     if (!opts) {
@@ -664,16 +679,33 @@
       svgBtn.disabled = true;
       return;
     }
-    preview.innerHTML = '';
-    qr = new QRCodeStyling(opts);
-    qr.append(preview);
-    pngBtn.disabled = false;
-    svgBtn.disabled = false;
+    const token = ++renderToken;
+    preview.innerHTML = '<div class="loading"><div class="spinner"></div><div>Generating QR code…</div></div>';
+    pngBtn.disabled = true;
+    svgBtn.disabled = true;
+
+    // Yield to browser so the spinner paints, then draw on the next frame.
+    requestAnimationFrame(() => {
+      if (token !== renderToken) return; // a newer render took over
+      qr = new QRCodeStyling(opts);
+      const renderContainer = document.createElement('div');
+      renderContainer.style.width = '100%'; renderContainer.style.height = '100%';
+      qr.append(renderContainer);
+      preview.innerHTML = '';
+      preview.appendChild(renderContainer);
+      pngBtn.disabled = false;
+      svgBtn.disabled = false;
+    });
   }
 
-  // Live preview as user types / changes options
+  // Debounce live preview so typing doesn't flicker
+  let liveTimer = null;
+  function scheduleRender() {
+    clearTimeout(liveTimer);
+    liveTimer = setTimeout(render, 180);
+  }
   [urlInput, ...document.querySelectorAll('input[name="color"], input[name="size"]')]
-    .forEach(el => el.addEventListener('input', render));
+    .forEach(el => el.addEventListener('input', scheduleRender));
 
   // Logo upload
   logoInput.addEventListener('change', () => {
