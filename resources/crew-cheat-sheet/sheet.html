@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Crew Review Cheat Sheet — Blue Collar Techy</title>
+<meta name="robots" content="noindex" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  /* Letter-sized, 2-page printable. One-page-per-side. */
+  @page { size: Letter; margin: 0.4in; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: #fff; color: #0d0d12;
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 10pt; line-height: 1.4;
+  }
+  body { padding: 0.25in 0.25in 0.15in; }
+
+  .page { page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  /* Web preview controls */
+  .toolbar {
+    position: sticky; top: 0;
+    background: #0d0d12; color: #fff;
+    padding: 12px 20px; margin: -0.25in -0.25in 20px;
+    display: flex; gap: 12px; justify-content: space-between;
+    align-items: center;
+  }
+  .toolbar h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+  }
+  .toolbar button {
+    background: #ff6a1a; color: #000; border: none;
+    padding: 10px 18px; font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 11px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px;
+  }
+  @media print {
+    .toolbar { display: none !important; }
+    body { padding: 0 !important; }
+  }
+
+  /* Headings */
+  h1.sheet-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 20pt; line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin-bottom: 4pt;
+  }
+  h1.sheet-title .hi { color: #ff6a1a; }
+  .deck {
+    font-size: 10pt; color: #555;
+    margin-bottom: 10pt;
+  }
+  h2.section-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 12pt; margin: 10pt 0 6pt;
+    padding-bottom: 3pt;
+    border-bottom: 2px solid #ff6a1a;
+  }
+  h2.section-title .num {
+    display: inline-block;
+    background: #ff6a1a; color: #fff;
+    font-size: 9pt; padding: 2pt 6pt;
+    margin-right: 6pt; vertical-align: middle;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.1em;
+  }
+
+  /* Moment blocks */
+  .moment {
+    border-left: 3px solid #ff6a1a;
+    padding: 6pt 10pt;
+    margin-bottom: 8pt;
+    background: #fafafa;
+  }
+  .moment .when {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #ff6a1a;
+    margin-bottom: 2pt; font-weight: 700;
+  }
+  .moment .what {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 11pt; margin-bottom: 4pt;
+  }
+  .moment .script {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt; line-height: 1.45;
+    background: #fff; border: 1px solid #ddd;
+    padding: 6pt 8pt; margin: 4pt 0 6pt;
+  }
+
+  /* Roles table */
+  table.roles {
+    width: 100%; border-collapse: collapse;
+    font-size: 9pt; margin-top: 4pt;
+  }
+  table.roles th, table.roles td {
+    border: 1px solid #ddd;
+    padding: 5pt 7pt; text-align: left;
+    vertical-align: top;
+  }
+  table.roles th {
+    background: #0d0d12; color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt; letter-spacing: 0.1em;
+    text-transform: uppercase; font-weight: 700;
+  }
+  table.roles td:first-child {
+    font-weight: 700; background: #f5f5f5;
+    font-size: 9pt;
+  }
+
+  /* Back-side sections */
+  .bonus-box {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 10pt;
+    margin-bottom: 8pt;
+  }
+  .bonus-box h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 11pt; margin-bottom: 4pt;
+  }
+  .bonus-box ul {
+    margin-left: 14pt; font-size: 9pt;
+    margin-top: 4pt;
+  }
+  .bonus-box ul li { margin-bottom: 3pt; }
+  .bonus-box .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt; letter-spacing: 0.1em;
+    text-transform: uppercase; font-weight: 700;
+    padding: 2pt 6pt; border-radius: 2px;
+  }
+  .tag-ok { background: #d1fae5; color: #065f46; }
+  .tag-no { background: #fee2e2; color: #991b1b; }
+
+  ul.don't-list {
+    list-style: none; padding: 0; font-size: 9pt;
+  }
+  ul.dont-list li {
+    padding: 4pt 6pt 4pt 20pt;
+    position: relative;
+    border-left: 2px solid #991b1b;
+    background: #fef2f2;
+    margin-bottom: 4pt;
+  }
+  ul.dont-list li::before {
+    content: '✕'; color: #991b1b;
+    position: absolute; left: 6pt; top: 3pt;
+    font-weight: 700;
+  }
+  ul.dont-list strong { color: #991b1b; }
+
+  /* Footer */
+  .sheet-footer {
+    margin-top: 14pt;
+    padding-top: 8pt;
+    border-top: 1px solid #ddd;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt; letter-spacing: 0.1em;
+    color: #666;
+    display: flex; justify-content: space-between;
+    text-transform: uppercase;
+  }
+
+  /* Header brand strip */
+  .brand-strip {
+    display: flex; justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid #0d0d12;
+    padding-bottom: 6pt; margin-bottom: 8pt;
+  }
+  .brand-strip .brand {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 11pt; letter-spacing: -0.02em;
+  }
+  .brand-strip .brand .orange { color: #ff6a1a; }
+  .brand-strip .url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt; letter-spacing: 0.08em;
+    color: #666;
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <h1>Crew Review Cheat Sheet — Print View</h1>
+  <button onclick="window.print()">Save as PDF / Print</button>
+</div>
+
+<!-- ============ PAGE 1 / FRONT ============ -->
+<div class="page">
+  <div class="brand-strip">
+    <div class="brand">BLUE COLLAR <span class="orange">TECHY</span></div>
+    <div class="url">bluecollartechy.com / crew-cheat-sheet</div>
+  </div>
+
+  <h1 class="sheet-title">Review asks the <span class="hi">whole crew</span> can run.</h1>
+  <p class="deck">Tape this to the shop wall. Stuff it in the truck binder. One sheet. Three moments. No dropped balls.</p>
+
+  <h2 class="section-title"><span class="num">01</span>Three moments across every project</h2>
+
+  <div class="moment">
+    <div class="when">Contract signing · Day one</div>
+    <div class="what">Set the expectation.</div>
+    <div class="script">"One more thing before we get rolling. When we wrap and you're happy with the work, I'm going to ask you for a Google review. It's how most of our new clients find us. Just want you to know that's part of how we close out every project."</div>
+  </div>
+
+  <div class="moment">
+    <div class="when">Mid-project · Milestone day</div>
+    <div class="what">The check-in.</div>
+    <div class="script">"Almost there. Once we wrap the final details you're going to get a text from me with that Google review link we talked about. Nothing heavy, just one tap."</div>
+  </div>
+
+  <div class="moment">
+    <div class="when">Final walkthrough · Job close-out</div>
+    <div class="what">The ask + same-day text.</div>
+    <div class="script">"Last thing. Like I mentioned on day one, I'm going to text you a Google review link tonight. It's the single thing that helps me the most. Totally fine if something comes up and you can't get to it."</div>
+    <div class="script">SMS (evening of): "Hey [name] this is [your name] with [company]. Thanks again for having us out. Here's the Google review link I mentioned: [short URL]. Appreciate you."</div>
+  </div>
+
+  <h2 class="section-title"><span class="num">02</span>Who does what</h2>
+
+  <table class="roles">
+    <thead>
+      <tr>
+        <th style="width:22%">Moment</th>
+        <th style="width:26%">Owner / PM</th>
+        <th style="width:26%">Lead installer / foreman</th>
+        <th style="width:26%">Office / CRM</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Contract signing</td>
+        <td>Delivers the expectation line in person during paperwork</td>
+        <td>Not involved yet</td>
+        <td>Logs contract signed, fires day-one welcome email from CRM</td>
+      </tr>
+      <tr>
+        <td>Mid-project milestone</td>
+        <td>Drops in if on site, reinforces</td>
+        <td>Delivers the priming line when the milestone hits</td>
+        <td>Fires milestone reminder text when stage moves to Mid-Project</td>
+      </tr>
+      <tr>
+        <td>Final walkthrough</td>
+        <td>Closes out warranty + review ask in same breath</td>
+        <td>Reinforces in passing, hands off confidently</td>
+        <td>Auto-fires same-day SMS + day-3 fallback email</td>
+      </tr>
+      <tr>
+        <td>Day-3 fallback</td>
+        <td>Reviews the tracker weekly</td>
+        <td>Nothing — the CRM handles it</td>
+        <td>Email fires automatically if no review yet</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sheet-footer">
+    <span>Front · Field playbook</span>
+    <span>Blue Collar Techy · 2026</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 2 / BACK ============ -->
+<div class="page">
+  <div class="brand-strip">
+    <div class="brand">BLUE COLLAR <span class="orange">TECHY</span></div>
+    <div class="url">bluecollartechy.com / crew-cheat-sheet</div>
+  </div>
+
+  <h1 class="sheet-title">Crew <span class="hi">bonus</span> + the 2026 rules.</h1>
+  <p class="deck">Pay the crew for effort, not the customer for reviews. That keeps you clean with Google and it actually works.</p>
+
+  <h2 class="section-title"><span class="num">03</span>Plug-and-play crew bonus</h2>
+
+  <div class="bonus-box">
+    <h3>Baseline structure</h3>
+    <ul>
+      <li><strong>$20-$40 per landed review</strong> (paid to the crew member tied to the project)</li>
+      <li><strong>$100 quarterly bonus</strong> to the crew member with the most reviews (or split if the team is small)</li>
+      <li><strong>Public leaderboard</strong> in the shop — reviews landed by crew, month over month</li>
+      <li>Paid monthly, on a regular payroll cycle (not cash, not a gift card)</li>
+    </ul>
+  </div>
+
+  <div class="bonus-box">
+    <h3>The rules that keep it legal under Google's March 2026 update</h3>
+    <ul>
+      <li><span class="tag tag-ok">OK</span>&nbsp;&nbsp;Paying crew for doing the ask correctly and the customer freely leaving a review</li>
+      <li><span class="tag tag-ok">OK</span>&nbsp;&nbsp;Bonuses tied to review <em>count</em>, not specific star ratings</li>
+      <li><span class="tag tag-ok">OK</span>&nbsp;&nbsp;Internal leaderboards, recognition, bonuses for crew effort</li>
+      <li><span class="tag tag-no">NO</span>&nbsp;&nbsp;Offering the customer anything in exchange (discounts, tips back, perks)</li>
+      <li><span class="tag tag-no">NO</span>&nbsp;&nbsp;Paying bonuses only on 5-star reviews (that's review gating)</li>
+      <li><span class="tag tag-no">NO</span>&nbsp;&nbsp;Having the crew leave reviews themselves or ask family to leave reviews</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title"><span class="num">04</span>Don't do this (2026 update)</h2>
+
+  <ul class="dont-list">
+    <li><strong>No incentives to the customer.</strong> No discounts, gift cards, raffle entries, free add-ons in exchange for reviews. Retroactive enforcement — old ones can get pulled.</li>
+    <li><strong>No employee or subcontractor reviews.</strong> Not your crew, not the guys you sub to regularly, not office staff. Google cross-references accounts.</li>
+    <li><strong>No family reviews.</strong> Your cousin, brother-in-law, kids. The profile gets flagged.</li>
+    <li><strong>No AI-generated review text for the customer to paste.</strong> Google's detector catches the content itself.</li>
+    <li><strong>No review gating.</strong> Asking "would this be 5 stars?" and only sending the yes group to Google is explicitly banned.</li>
+    <li><strong>No bulk third-party services.</strong> "Get 20 reviews in a week" operations got wiped in the update.</li>
+  </ul>
+
+  <h2 class="section-title"><span class="num">05</span>Weekly review checklist (tape to clipboard)</h2>
+
+  <table class="roles">
+    <tbody>
+      <tr>
+        <td style="width:70%">All jobs closed this week had the walkthrough ask delivered</td>
+        <td style="text-align:center;width:10%">☐</td>
+        <td style="text-align:center;width:20%">Owner</td>
+      </tr>
+      <tr>
+        <td>Same-day SMS fired from the CRM on every closed job</td>
+        <td style="text-align:center">☐</td>
+        <td style="text-align:center">CRM auto</td>
+      </tr>
+      <tr>
+        <td>Day-3 fallback emails went out where reviews didn't land</td>
+        <td style="text-align:center">☐</td>
+        <td style="text-align:center">CRM auto</td>
+      </tr>
+      <tr>
+        <td>Every review received this week has a reply (including 4-star and below)</td>
+        <td style="text-align:center">☐</td>
+        <td style="text-align:center">Owner</td>
+      </tr>
+      <tr>
+        <td>Crew bonus log updated (review landed → crew member credited)</td>
+        <td style="text-align:center">☐</td>
+        <td style="text-align:center">Office</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sheet-footer">
+    <span>Back · Compensation + compliance</span>
+    <span>Full playbook: bluecollartechy.com/blog/how-to-get-more-google-reviews</span>
+  </div>
+</div>
+
+</body>
+</html>

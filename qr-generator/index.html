@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Branded QR Code Generator · Blue Collar Techy</title>
+<meta name="description" content="Free QR code generator for contractors. Paste your Google review link, drop in your logo, download a print-ready branded QR code in 30 seconds." />
+<meta name="author" content="Nick Conley" />
+<meta name="theme-color" content="#0d0d12" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://bluecollartechy.com/qr-generator/" />
+<meta property="og:title" content="Branded QR Code Generator · Blue Collar Techy" />
+<meta property="og:description" content="Free QR code generator for contractors. Paste a link, drop your logo, download a print-ready branded QR code." />
+<meta property="og:image" content="https://bluecollartechy.com/og-image.jpg" />
+
+<link rel="canonical" href="https://bluecollartechy.com/qr-generator/" />
+<link rel="icon" type="image/svg+xml" href="../logos/bct-favicon.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0d0d12; --bg-elev: #15151d; --bg-card: #1a1a24;
+    --border: #272733; --text: #f5f5f7; --text-dim: #a0a0ab; --text-faint: #6b6b78;
+    --accent: #ff6a1a; --accent-bright: #ff8530; --accent-hover: #47c8f5;
+    --success: #4ade80; --error: #f87171;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg); color: var(--text);
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 17px; line-height: 1.65;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .narrow { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+  a { color: inherit; text-decoration: none; }
+
+  nav.site-nav {
+    border-bottom: 1px solid var(--border); padding: 24px 0;
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(12px); background: rgba(13, 13, 18, 0.85);
+  }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo svg { height: 52px; width: auto; display: block; }
+  .nav-links { display: flex; gap: 36px; font-size: 14px; font-weight: 600; }
+  .nav-links a { color: var(--text-dim); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-links a.active { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: #000;
+    padding: 10px 18px; font-weight: 700; font-size: 13px;
+    letter-spacing: 0.02em; border-radius: 2px; text-transform: uppercase;
+  }
+
+  .hero-qr { padding: 72px 0 32px; }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--accent-hover);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 22px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .kicker::before { content: ''; width: 28px; height: 2px; background: var(--accent-hover); }
+  h1.qr-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(40px, 5.2vw, 68px);
+    line-height: 1.02; letter-spacing: -0.02em;
+    margin-bottom: 22px;
+  }
+  h1.qr-title .hi { color: var(--accent); }
+  .hero-sub {
+    font-size: 19px; color: var(--text-dim);
+    max-width: 680px; line-height: 1.55;
+  }
+
+  .tool {
+    padding: 40px 0 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .form-col, .output-col {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 32px;
+  }
+
+  .field { margin-bottom: 22px; }
+  .field label {
+    display: block; margin-bottom: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .field .hint {
+    font-size: 13px; color: var(--text-faint);
+    margin-top: 6px; letter-spacing: normal; text-transform: none;
+    font-family: 'Archivo', sans-serif;
+  }
+  .field input[type=url], .field input[type=text] {
+    width: 100%; padding: 12px 14px;
+    background: var(--bg); border: 1px solid var(--border);
+    color: var(--text); font-family: 'Archivo', sans-serif;
+    font-size: 15px; border-radius: 2px;
+  }
+  .field input[type=url]:focus, .field input[type=text]:focus {
+    outline: none; border-color: var(--accent);
+  }
+  .field input[type=file] {
+    width: 100%; padding: 10px;
+    background: var(--bg); border: 1px dashed var(--border);
+    color: var(--text-dim); font-family: 'Archivo', sans-serif;
+    font-size: 14px; border-radius: 2px; cursor: pointer;
+  }
+  .field input[type=file]:hover { border-color: var(--accent); }
+
+  .field .colors {
+    display: flex; gap: 10px; flex-wrap: wrap;
+  }
+  .field .colors input[type=radio] { display: none; }
+  .field .colors label {
+    width: 36px; height: 36px;
+    border-radius: 50%; cursor: pointer;
+    border: 2px solid var(--border);
+    padding: 0; margin: 0; font-size: 0;
+    transition: transform 0.15s, border-color 0.15s;
+  }
+  .field .colors input[type=radio]:checked + label {
+    border-color: var(--accent); transform: scale(1.1);
+  }
+
+  .field .size-group {
+    display: flex; gap: 10px;
+  }
+  .field .size-group input[type=radio] { display: none; }
+  .field .size-group label {
+    flex: 1; padding: 12px; text-align: center;
+    border: 1px solid var(--border); cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.12em;
+    color: var(--text-dim); background: var(--bg);
+    transition: all 0.15s;
+  }
+  .field .size-group input[type=radio]:checked + label {
+    border-color: var(--accent); color: var(--accent); background: var(--bg-elev);
+  }
+
+  button.primary {
+    width: 100%; padding: 16px;
+    background: var(--accent); color: #000;
+    border: none; font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 14px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px;
+    transition: background 0.15s;
+  }
+  button.primary:hover { background: var(--accent-bright); }
+  button.primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  button.secondary {
+    background: transparent; color: var(--text);
+    border: 1px solid var(--border); padding: 14px 20px;
+    font-family: 'Archivo', sans-serif; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px; margin-right: 10px;
+  }
+  button.secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+  .qr-preview {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #fff;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    padding: 12px;
+    margin-bottom: 22px;
+    border-radius: 2px;
+  }
+  .qr-preview .placeholder {
+    color: #999; font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
+  }
+  .qr-preview canvas, .qr-preview svg {
+    max-width: 100%; max-height: 100%; height: auto;
+  }
+
+  .output-col h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px; margin-bottom: 8px;
+  }
+  .output-col p { color: var(--text-dim); font-size: 15px; margin-bottom: 24px; }
+
+  .info {
+    background: rgba(71, 200, 245, 0.06);
+    border: 1px solid var(--border);
+    padding: 18px 22px;
+    margin-top: 32px;
+    border-radius: 2px;
+    font-size: 14.5px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+  .info strong { color: var(--accent-hover); font-weight: 700; }
+
+  .end-cta { padding: 100px 0; border-top: 1px solid var(--border); text-align: center; }
+  .end-cta h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 3.6vw, 40px); line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .end-cta p { color: var(--text-dim); font-size: 17px; max-width: 560px; margin: 0 auto 28px; }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 24px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 13px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    border: 2px solid transparent; border-radius: 2px;
+  }
+  .btn-primary { background: var(--accent); color: #000; }
+  .btn-primary:hover { background: var(--accent-bright); }
+  .btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
+  .btn-secondary:hover { border-color: var(--text); }
+
+  footer {
+    padding: 80px 0 40px; background: #0a0a10;
+    border-top: 1px solid var(--border);
+  }
+  .foot-top {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px; padding-bottom: 60px;
+    border-bottom: 1px solid var(--border);
+  }
+  .foot-brand .logo-mini { margin-bottom: 20px; }
+  .foot-brand .logo-mini svg { height: 76px; width: auto; }
+  .foot-brand p { color: var(--text-dim); font-size: 14px; max-width: 300px; line-height: 1.6; }
+  .foot-col h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a { color: var(--text-dim); font-size: 14px; transition: color 0.2s; }
+  .foot-col a:hover { color: var(--accent); }
+  .foot-bottom {
+    padding-top: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--text-faint); letter-spacing: 0.08em;
+  }
+  .brand-tag { color: var(--accent-hover, #47c8f5); font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .tool { grid-template-columns: 1fr; gap: 28px; }
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="../index.html" aria-label="Blue Collar Techy">
+      <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+        <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
+        <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
+        <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
+        <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
+        <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
+        <text x="290" y="78" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">EST · 2026</text>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="../about.html">About</a>
+      <a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a>
+      <a href="../resources/">Resources</a>
+      <a href="../blog/">Blog</a>
+      <a href="../work-with-me.html">Work with me</a>
+    </div>
+    <a class="nav-cta" href="../index.html#newsletter">Subscribe</a>
+  </div>
+</nav>
+
+<section class="hero-qr">
+  <div class="narrow">
+    <div class="kicker">Free · No signup</div>
+    <h1 class="qr-title">Branded review <span class="hi">QR codes</span> for contractors.</h1>
+    <p class="hero-sub">Paste your Google review link. Drop your logo in the middle. Download a print-ready PNG for truck magnets, job-site signage, invoices, or the counter. Works for any URL, not just reviews. Takes about 30 seconds.</p>
+  </div>
+</section>
+
+<section class="narrow">
+  <div class="tool">
+    <div class="form-col">
+      <form id="qr-form">
+        <div class="field">
+          <label for="url">Link to encode</label>
+          <input type="url" id="url" name="url" placeholder="https://g.page/r/your-review-url" required />
+          <div class="hint">Grab your Google review link from your Business Profile, or use any URL you want a QR for.</div>
+        </div>
+
+        <div class="field">
+          <label for="logo">Logo (PNG or SVG)</label>
+          <input type="file" id="logo" name="logo" accept="image/png,image/jpeg,image/svg+xml" />
+          <div class="hint">Transparent PNG works best. Leave empty for a plain QR.</div>
+        </div>
+
+        <div class="field">
+          <label>Brand color</label>
+          <div class="colors">
+            <input type="radio" name="color" id="c-black" value="#000000" checked />
+            <label for="c-black" style="background:#000;"></label>
+            <input type="radio" name="color" id="c-orange" value="#ff6a1a" />
+            <label for="c-orange" style="background:#ff6a1a;"></label>
+            <input type="radio" name="color" id="c-blue" value="#2563eb" />
+            <label for="c-blue" style="background:#2563eb;"></label>
+            <input type="radio" name="color" id="c-green" value="#166534" />
+            <label for="c-green" style="background:#166534;"></label>
+            <input type="radio" name="color" id="c-red" value="#991b1b" />
+            <label for="c-red" style="background:#991b1b;"></label>
+            <input type="radio" name="color" id="c-navy" value="#1e3a8a" />
+            <label for="c-navy" style="background:#1e3a8a;"></label>
+          </div>
+          <div class="hint">Black reads cleanest in print. Color is fine for signage with good contrast.</div>
+        </div>
+
+        <div class="field">
+          <label>Size</label>
+          <div class="size-group">
+            <input type="radio" name="size" id="s-small" value="500" />
+            <label for="s-small">Small<br/><span style="opacity:0.6;">500px</span></label>
+            <input type="radio" name="size" id="s-med" value="1000" checked />
+            <label for="s-med">Medium<br/><span style="opacity:0.6;">1000px</span></label>
+            <input type="radio" name="size" id="s-large" value="2000" />
+            <label for="s-large">Large<br/><span style="opacity:0.6;">2000px</span></label>
+          </div>
+          <div class="hint">Large is best for truck magnets and yard signs. Small for business cards.</div>
+        </div>
+
+        <button class="primary" type="submit">Generate QR code</button>
+      </form>
+    </div>
+
+    <div class="output-col">
+      <h3>Preview</h3>
+      <p>Real-time preview. Update any field and it regenerates.</p>
+      <div class="qr-preview" id="qr-preview">
+        <div class="placeholder">Enter a URL to start</div>
+      </div>
+      <button class="secondary" id="download-png" disabled>Download PNG</button>
+      <button class="secondary" id="download-svg" disabled>Download SVG</button>
+
+      <div class="info">
+        <strong>Truck magnet tip:</strong> use the Large size, black color, transparent-background logo. Print at 4 inches square or larger for easy scanning from 3+ feet away. Test with your own phone from that distance before ordering a batch.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="end-cta">
+  <div class="container">
+    <h2>Now automate the whole review ask.</h2>
+    <p>The QR is the endpoint. What really moves the needle is asking at the right three moments across the job. Here's the full playbook.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="../blog/how-to-get-more-google-reviews">Read the reviews playbook</a>
+      <a class="btn btn-secondary" href="../gbp-check/">Check your GBP health</a>
+      <a class="btn btn-secondary" href="../index.html#newsletter">Get the newsletter</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo-mini">
+          <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
+            <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
+            <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
+            <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
+            <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
+          </svg>
+        </div>
+        <p><span class="brand-tag">Practical tech for the trades.</span> AI, local SEO, and real systems. No guru nonsense.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="../resources/">Resources</a></li>
+          <li><a href="../blog/">Blog</a></li>
+          <li><a href="../work-with-me.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Work</h4>
+        <ul>
+          <li><a href="../work-with-me.html">Get in touch</a></li>
+          <li><a href="https://tektongrowth.com" target="_blank" rel="noopener">Tekton Growth</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Blue Collar Techy · Nick Conley</span>
+      <span>Built for the trades</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.9.1/lib/qr-code-styling.js"></script>
+<script>
+(() => {
+  const form = document.getElementById('qr-form');
+  const preview = document.getElementById('qr-preview');
+  const pngBtn = document.getElementById('download-png');
+  const svgBtn = document.getElementById('download-svg');
+  const urlInput = document.getElementById('url');
+  const logoInput = document.getElementById('logo');
+
+  let qr = null;
+  let logoDataUrl = null;
+
+  function currentColor() {
+    const picked = document.querySelector('input[name="color"]:checked');
+    return picked ? picked.value : '#000000';
+  }
+  function currentSize() {
+    const picked = document.querySelector('input[name="size"]:checked');
+    return picked ? parseInt(picked.value, 10) : 1000;
+  }
+
+  function buildOptions() {
+    const url = urlInput.value.trim();
+    if (!url) return null;
+    const color = currentColor();
+    const size = currentSize();
+    const opts = {
+      width: size,
+      height: size,
+      type: 'canvas',
+      data: url,
+      margin: 10,
+      qrOptions: { errorCorrectionLevel: 'H' },
+      dotsOptions: { color, type: 'rounded' },
+      cornersSquareOptions: { color, type: 'extra-rounded' },
+      cornersDotOptions: { color },
+      backgroundOptions: { color: '#ffffff' },
+    };
+    if (logoDataUrl) {
+      opts.image = logoDataUrl;
+      opts.imageOptions = {
+        hideBackgroundDots: true,
+        imageSize: 0.35,
+        margin: 4,
+        crossOrigin: 'anonymous',
+      };
+    }
+    return opts;
+  }
+
+  function render() {
+    const opts = buildOptions();
+    if (!opts) {
+      preview.innerHTML = '<div class="placeholder">Enter a URL to start</div>';
+      pngBtn.disabled = true;
+      svgBtn.disabled = true;
+      return;
+    }
+    preview.innerHTML = '';
+    qr = new QRCodeStyling(opts);
+    qr.append(preview);
+    pngBtn.disabled = false;
+    svgBtn.disabled = false;
+  }
+
+  // Live preview as user types / changes options
+  [urlInput, ...document.querySelectorAll('input[name="color"], input[name="size"]')]
+    .forEach(el => el.addEventListener('input', render));
+
+  // Logo upload
+  logoInput.addEventListener('change', () => {
+    const file = logoInput.files?.[0];
+    if (!file) { logoDataUrl = null; render(); return; }
+    const reader = new FileReader();
+    reader.onload = e => { logoDataUrl = e.target.result; render(); };
+    reader.readAsDataURL(file);
+  });
+
+  // Form submit = regenerate (safety net)
+  form.addEventListener('submit', e => { e.preventDefault(); render(); });
+
+  pngBtn.addEventListener('click', () => {
+    if (qr) qr.download({ name: 'bct-review-qr', extension: 'png' });
+  });
+  svgBtn.addEventListener('click', () => {
+    if (qr) {
+      const opts = buildOptions();
+      opts.type = 'svg';
+      const svgQr = new QRCodeStyling(opts);
+      svgQr.download({ name: 'bct-review-qr', extension: 'svg' });
+    }
+  });
+})();
+</script>
+</body>
+</html>
