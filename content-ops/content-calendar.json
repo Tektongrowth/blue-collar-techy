@@ -77,7 +77,7 @@
       "angle": "Rank and review the real options. What each costs, what you actually get, who should skip each one.",
       "internal_link": "market-up-sales-down",
       "tool_cta": "market-scan",
-      "resource_spinoff": "Lead source tracker spreadsheet"
+      "resource_spinoff": null
     },
     {
       "slot": 4,
@@ -269,11 +269,13 @@
       "lead_capture": true
     },
     {
-      "name": "Lead source tracker spreadsheet",
+      "name": "GoHighLevel walkthrough video series",
       "tied_to_post": 3,
       "target_date": "2026-06-04",
-      "format": "Google Sheets template",
-      "lead_capture": true
+      "format": "YouTube video series + companion blog posts",
+      "lead_capture": false,
+      "replaces": "Lead source tracker spreadsheet (removed 2026-04-18 — spreadsheets are off-brand for BCT per feedback_crm_over_spreadsheets.md)",
+      "plan_doc": "content-ops/ghl-walkthrough-series-plan.md"
     },
     {
       "name": "LSA readiness checklist",
