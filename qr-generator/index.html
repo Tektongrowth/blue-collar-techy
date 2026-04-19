@@ -360,10 +360,32 @@
   <div class="tool">
     <div class="form-col">
       <form id="qr-form">
-        <div class="field">
-          <label for="url">Link to encode</label>
-          <input type="url" id="url" name="url" placeholder="https://g.page/r/your-review-url" required />
-          <div class="hint">Grab your Google review link from your Business Profile, or use any URL you want a QR for.</div>
+        <div class="mode-toggle" role="tablist">
+          <button type="button" id="mode-find" class="active">Find my review link</button>
+          <button type="button" id="mode-paste">I have a link</button>
+        </div>
+
+        <div id="find-mode">
+          <div class="field">
+            <label for="biz">Business name</label>
+            <input type="text" id="biz" placeholder="Tekton Design Build" />
+          </div>
+          <div class="field">
+            <label for="city">City, State</label>
+            <input type="text" id="city" placeholder="Asheville, NC" />
+            <div class="hint">The city where Google lists your Business Profile. State abbreviation is fine.</div>
+          </div>
+          <button type="button" class="find-btn" id="find-btn">Find my Google review link</button>
+          <div class="find-status" id="find-status"></div>
+          <div class="match-list" id="match-list"></div>
+        </div>
+
+        <div id="paste-mode" style="display:none;">
+          <div class="field">
+            <label for="url">Link to encode</label>
+            <input type="url" id="url" name="url" placeholder="https://g.page/r/your-review-url" />
+            <div class="hint">Any URL works — Google review, website, landing page, booking link.</div>
+          </div>
         </div>
 
         <div class="field">
@@ -491,6 +513,107 @@
   const svgBtn = document.getElementById('download-svg');
   const urlInput = document.getElementById('url');
   const logoInput = document.getElementById('logo');
+
+  // --- Mode toggle (find vs paste) ---
+  const modeFind = document.getElementById('mode-find');
+  const modePaste = document.getElementById('mode-paste');
+  const findSection = document.getElementById('find-mode');
+  const pasteSection = document.getElementById('paste-mode');
+  function setMode(mode) {
+    if (mode === 'find') {
+      modeFind.classList.add('active'); modePaste.classList.remove('active');
+      findSection.style.display = ''; pasteSection.style.display = 'none';
+    } else {
+      modePaste.classList.add('active'); modeFind.classList.remove('active');
+      findSection.style.display = 'none'; pasteSection.style.display = '';
+    }
+  }
+  modeFind.addEventListener('click', () => setMode('find'));
+  modePaste.addEventListener('click', () => setMode('paste'));
+
+  // --- Find-my-link ---
+  const bizInput = document.getElementById('biz');
+  const cityInput = document.getElementById('city');
+  const findBtn = document.getElementById('find-btn');
+  const findStatus = document.getElementById('find-status');
+  const matchList = document.getElementById('match-list');
+
+  findBtn.addEventListener('click', async () => {
+    const business = bizInput.value.trim();
+    const city = cityInput.value.trim();
+    if (!business || !city) {
+      findStatus.className = 'find-status error';
+      findStatus.textContent = 'Business name and city are both required.';
+      return;
+    }
+    findBtn.disabled = true;
+    findStatus.className = 'find-status';
+    findStatus.textContent = 'Looking up your listing…';
+    matchList.classList.remove('open');
+    matchList.innerHTML = '';
+
+    try {
+      const res = await fetch('/api/find-review-url', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ business, city }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) {
+        findStatus.className = 'find-status error';
+        findStatus.textContent = data.error || `Couldn't find a match. Try the exact name on your Business Profile, or switch to "I have a link".`;
+        return;
+      }
+      const matches = data.matches || [];
+      if (!matches.length) {
+        findStatus.className = 'find-status error';
+        findStatus.textContent = `No listings matched. Check the spelling or switch to "I have a link".`;
+        return;
+      }
+      findStatus.className = 'find-status success';
+      findStatus.textContent = matches.length === 1
+        ? 'Found it. Tap to use.'
+        : `Found ${matches.length} possible matches. Tap the one that's you.`;
+      matchList.classList.add('open');
+      matches.forEach((m, i) => {
+        const div = document.createElement('div');
+        div.className = 'match';
+        div.dataset.url = m.review_url;
+        const addressLine = [m.address, m.phone].filter(Boolean).join(' · ');
+        const ratingLine = (m.rating && m.reviews)
+          ? `${m.rating}★ · ${m.reviews} reviews`
+          : (m.rating ? `${m.rating}★` : '');
+        div.innerHTML = `
+          <div class="t">${escapeHtml(m.title)}</div>
+          <div class="a">${escapeHtml(addressLine || 'No address on file')}</div>
+          ${ratingLine ? `<div class="a">${escapeHtml(ratingLine)}</div>` : ''}
+        `;
+        div.addEventListener('click', () => {
+          document.querySelectorAll('.match').forEach(n => n.classList.remove('selected'));
+          div.classList.add('selected');
+          urlInput.value = m.review_url;
+          findStatus.className = 'find-status success';
+          findStatus.textContent = '✓ Review link loaded. Scroll down and add your logo.';
+          render();
+        });
+        matchList.appendChild(div);
+      });
+    } catch (err) {
+      findStatus.className = 'find-status error';
+      findStatus.textContent = 'Lookup failed. Try again in a second.';
+    } finally {
+      findBtn.disabled = false;
+    }
+  });
+
+  function escapeHtml(s) {
+    return String(s || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
 
   let qr = null;
   let logoDataUrl = null;
