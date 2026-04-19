@@ -179,19 +179,38 @@
   .find-status.success { color: var(--success); }
 
   .field .colors {
-    display: flex; gap: 10px; flex-wrap: wrap;
+    display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
   }
   .field .colors input[type=radio] { display: none; }
-  .field .colors label {
+  .field .colors label.swatch {
     width: 36px; height: 36px;
     border-radius: 50%; cursor: pointer;
     border: 2px solid var(--border);
     padding: 0; margin: 0; font-size: 0;
     transition: transform 0.15s, border-color 0.15s;
+    position: relative;
   }
-  .field .colors input[type=radio]:checked + label {
+  .field .colors input[type=radio]:checked + label.swatch {
     border-color: var(--accent); transform: scale(1.1);
   }
+  .field .colors label.swatch.custom {
+    background: conic-gradient(from 0deg,
+      #ff6a1a, #ffeb00, #4ade80, #47c8f5, #a855f7, #f43f5e, #ff6a1a);
+  }
+  .field .colors label.swatch.custom::after {
+    content: '+';
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #000; font-size: 20px; font-weight: 700;
+    text-shadow: 0 0 2px #fff;
+  }
+  .field .colors input[type=color] {
+    width: 44px; height: 36px; padding: 0;
+    border: 1px solid var(--border); border-radius: 2px;
+    background: transparent; cursor: pointer;
+    display: none;
+  }
+  .field .colors input[type=color].open { display: inline-block; }
 
   .field .size-group {
     display: flex; gap: 10px;
@@ -412,19 +431,22 @@
           <label>Brand color</label>
           <div class="colors">
             <input type="radio" name="color" id="c-black" value="#000000" checked />
-            <label for="c-black" style="background:#000;"></label>
+            <label for="c-black" class="swatch" style="background:#000;"></label>
             <input type="radio" name="color" id="c-orange" value="#ff6a1a" />
-            <label for="c-orange" style="background:#ff6a1a;"></label>
+            <label for="c-orange" class="swatch" style="background:#ff6a1a;"></label>
             <input type="radio" name="color" id="c-blue" value="#2563eb" />
-            <label for="c-blue" style="background:#2563eb;"></label>
+            <label for="c-blue" class="swatch" style="background:#2563eb;"></label>
             <input type="radio" name="color" id="c-green" value="#166534" />
-            <label for="c-green" style="background:#166534;"></label>
+            <label for="c-green" class="swatch" style="background:#166534;"></label>
             <input type="radio" name="color" id="c-red" value="#991b1b" />
-            <label for="c-red" style="background:#991b1b;"></label>
+            <label for="c-red" class="swatch" style="background:#991b1b;"></label>
             <input type="radio" name="color" id="c-navy" value="#1e3a8a" />
-            <label for="c-navy" style="background:#1e3a8a;"></label>
+            <label for="c-navy" class="swatch" style="background:#1e3a8a;"></label>
+            <input type="radio" name="color" id="c-custom" value="custom" />
+            <label for="c-custom" class="swatch custom" title="Custom color"></label>
+            <input type="color" id="c-custom-picker" value="#ff6a1a" />
           </div>
-          <div class="hint">Black reads cleanest in print. Color is fine for signage with good contrast.</div>
+          <div class="hint">Black reads cleanest in print. Keep contrast high for reliable scanning.</div>
         </div>
 
         <div class="field">
@@ -632,10 +654,26 @@
   let qr = null;
   let logoDataUrl = null;
 
+  const customPicker = document.getElementById('c-custom-picker');
+  const customRadio = document.getElementById('c-custom');
   function currentColor() {
     const picked = document.querySelector('input[name="color"]:checked');
-    return picked ? picked.value : '#000000';
+    if (!picked) return '#000000';
+    if (picked.value === 'custom') return customPicker.value || '#000000';
+    return picked.value;
   }
+  // Show native color picker when "custom" swatch is selected; selecting the
+  // picker value also auto-checks the custom radio.
+  document.querySelectorAll('input[name="color"]').forEach(r => {
+    r.addEventListener('change', () => {
+      customPicker.classList.toggle('open', customRadio.checked);
+    });
+  });
+  customPicker.addEventListener('input', () => {
+    customRadio.checked = true;
+    customPicker.classList.add('open');
+    scheduleRender();
+  });
   function currentSize() {
     const picked = document.querySelector('input[name="size"]:checked');
     return picked ? parseInt(picked.value, 10) : 1000;
