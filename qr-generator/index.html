@@ -119,6 +119,65 @@
   }
   .field input[type=file]:hover { border-color: var(--accent); }
 
+  /* Mode toggle */
+  .mode-toggle {
+    display: flex; gap: 0;
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 2px; margin-bottom: 22px;
+    overflow: hidden;
+  }
+  .mode-toggle button {
+    flex: 1; padding: 12px 14px;
+    background: transparent; border: none;
+    color: var(--text-dim); cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.14em;
+    text-transform: uppercase; font-weight: 700;
+    transition: all 0.15s;
+  }
+  .mode-toggle button.active {
+    background: var(--accent); color: #000;
+  }
+  .mode-toggle button:not(.active):hover { color: var(--accent); }
+
+  .find-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 600px) { .find-grid { grid-template-columns: 1fr; } }
+
+  button.find-btn {
+    width: 100%; padding: 12px;
+    background: var(--bg); color: var(--accent-hover);
+    border: 1px solid var(--accent-hover);
+    font-family: 'Archivo', sans-serif; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px;
+    transition: all 0.15s;
+  }
+  button.find-btn:hover { background: var(--accent-hover); color: #000; }
+  button.find-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .match-list { margin: 14px 0 0; display: none; }
+  .match-list.open { display: block; }
+  .match {
+    background: var(--bg); border: 1px solid var(--border);
+    padding: 14px 16px; margin-bottom: 8px;
+    cursor: pointer; transition: all 0.15s;
+  }
+  .match:hover { border-color: var(--accent); }
+  .match .t { font-weight: 700; margin-bottom: 4px; color: var(--text); }
+  .match .a { font-size: 13px; color: var(--text-dim); }
+  .match.selected {
+    border-color: var(--accent); background: var(--bg-elev);
+  }
+  .match.selected::before {
+    content: '✓ selected — '; color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+
+  .find-status { min-height: 18px; margin-top: 8px; font-size: 13px; color: var(--text-dim); }
+  .find-status.error { color: var(--error); }
+  .find-status.success { color: var(--success); }
+
   .field .colors {
     display: flex; gap: 10px; flex-wrap: wrap;
   }
