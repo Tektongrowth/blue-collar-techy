@@ -903,6 +903,9 @@
         setMsg('You are already on the list. I will email you when the beta opens.', 'ok');
       } else {
         setMsg('On the list. I will email you when the beta opens.', 'ok');
+        if (window.bctTrackLead) {
+          window.bctTrackLead('waitlist_local_lead_engine');
+        }
       }
       emailInput.value = '';
       btn.textContent = 'Joined ✓';

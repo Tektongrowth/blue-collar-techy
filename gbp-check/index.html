@@ -599,6 +599,12 @@
 
       reportDiv.innerHTML = json.html;
       show('report');
+      if (window.bctTrackLead) {
+        window.bctTrackLead('gbp_check', {
+          business_name: (data.businessName || '').toString().slice(0, 80),
+          city: (data.city || '').toString().slice(0, 60),
+        });
+      }
     } catch (err) {
       errorMsg.textContent = err.message || 'Something went sideways. Please try again.';
       show('error');

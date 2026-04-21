@@ -83,4 +83,34 @@
       submission_page: location.pathname,
     };
   };
+
+  /**
+   * Fire a GA4 generate_lead event with full first-touch attribution.
+   * Call from every successful form submit.
+   *
+   *   window.bctTrackLead('newsletter');
+   *   window.bctTrackLead('market_scan', { industry: 'landscaping', city: 'Denver' });
+   *
+   * GA4 event name is "generate_lead" (a recommended event). Mark it as a
+   * Key Event in GA4 Admin so it counts as a conversion in reports.
+   */
+  window.bctTrackLead = function (formName, extra) {
+    try {
+      const attr = window.bctGetAttribution();
+      const params = Object.assign({
+        form_name: formName || 'unknown',
+        utm_source: attr.utm_source,
+        utm_medium: attr.utm_medium,
+        utm_campaign: attr.utm_campaign,
+        utm_content: attr.utm_content,
+        utm_term: attr.utm_term,
+        landing_page: attr.landing_page,
+        referrer: attr.referrer,
+        submission_page: attr.submission_page,
+      }, extra || {});
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'generate_lead', params);
+      }
+    } catch (_) { /* never let tracking break the form */ }
+  };
 })();

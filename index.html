@@ -973,6 +973,9 @@
           : "You're in. I'll send the good stuff.",
         'nl-ok'
       );
+      if (!data.already_subscribed && window.bctTrackLead) {
+        window.bctTrackLead('newsletter');
+      }
     } catch (err) {
       setMsg('Network error. Try again in a minute.', 'nl-err');
       btn.disabled = false;

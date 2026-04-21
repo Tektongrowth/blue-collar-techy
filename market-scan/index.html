@@ -781,6 +781,12 @@
 
       renderReport(data.report);
       showState('success');
+      if (window.bctTrackLead) {
+        window.bctTrackLead('market_scan', {
+          industry: payload.industry || '',
+          city: payload.city || '',
+        });
+      }
     } catch (err) {
       clearInterval(timer);
       document.getElementById('error-detail').textContent =
