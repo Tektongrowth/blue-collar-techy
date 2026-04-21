@@ -1,0 +1,72 @@
+name: Add Cloudflare DNS TXT record
+
+# Manual trigger only. Uses CLOUDFLARE_API_TOKEN secret to add a TXT record
+# to any zone on the same Cloudflare account. Reusable for GSC verification,
+# DKIM/DMARC, domain ownership proofs, etc.
+
+on:
+  workflow_dispatch:
+    inputs:
+      domain:
+        description: "Domain zone (e.g., bluecollartechy.com)"
+        required: true
+      name:
+        description: "Record name (@ for apex, or subdomain)"
+        required: true
+        default: "@"
+      content:
+        description: "TXT content (exact value, no surrounding quotes)"
+        required: true
+      ttl:
+        description: "TTL in seconds (1 = Auto)"
+        required: false
+        default: "1"
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add TXT via Cloudflare API
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          DOMAIN: ${{ inputs.domain }}
+          REC_NAME: ${{ inputs.name }}
+          REC_CONTENT: ${{ inputs.content }}
+          REC_TTL: ${{ inputs.ttl }}
+        run: |
+          set -euo pipefail
+
+          echo "Looking up zone id for $DOMAIN..."
+          ZONE_RESPONSE=$(curl -sS -H "Authorization: Bearer $CF_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/zones?name=$DOMAIN")
+          ZONE_ID=$(echo "$ZONE_RESPONSE" | jq -r '.result[0].id // empty')
+
+          if [ -z "$ZONE_ID" ]; then
+            echo "Zone not found. API response:"
+            echo "$ZONE_RESPONSE" | jq
+            exit 1
+          fi
+          echo "Zone ID: $ZONE_ID"
+
+          echo "Adding TXT record..."
+          BODY=$(jq -n \
+            --arg n "$REC_NAME" \
+            --arg c "$REC_CONTENT" \
+            --argjson t "$REC_TTL" \
+            '{type:"TXT", name:$n, content:$c, ttl:$t}')
+
+          RESPONSE=$(curl -sS -X POST \
+            -H "Authorization: Bearer $CF_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records" \
+            -d "$BODY")
+
+          SUCCESS=$(echo "$RESPONSE" | jq -r '.success')
+          if [ "$SUCCESS" != "true" ]; then
+            echo "API error:"
+            echo "$RESPONSE" | jq
+            exit 1
+          fi
+
+          echo "Added TXT record:"
+          echo "$RESPONSE" | jq '.result | {id, name, content, ttl, created_on}'
