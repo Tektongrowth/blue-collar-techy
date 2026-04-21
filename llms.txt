@@ -12,7 +12,6 @@ Practical tech, AI, and local SEO for blue-collar business owners. Hosted by Nic
 - No guru content. No "transform your business in 30 days." Just working tools and breakdowns.
 
 ## Blog Posts
-- [I tested the $99 AI SEO tool contractors are being sold](https://bluecollartechy.com/blog/i-tested-the-99-ai-seo-tool.html): First-person review of a popular $99 lifetime AI SEO platform after running every feature against BCT. Ten buttons, six real tools, one broken. Generated articles contain fabricated statistics (a made-up plumbing case study). No local SEO execution (no GBP audit, no grid rank tracking, no citations, no location pages, no schema, no reviews). Five-question test for evaluating any AI SEO tool before buying.
 - [How to get more Google reviews as a contractor](https://bluecollartechy.com/blog/how-to-get-more-google-reviews.html): The three-ask playbook (in-person, same-day text, 3-day email) with exact scripts, plus the new March 2026 Google policy rules (no incentives, no employee reviews, retroactive enforcement).
 - [When leads dry up, is it the market, the agency, or you?](https://bluecollartechy.com/blog/market-agency-or-you.html): The three-bucket diagnostic. How to tell whether your marketing agency is failing, the market moved, or the owner side has leaks. Start here.
 - [10 things no marketing agency can fix for you](https://bluecollartechy.com/blog/ten-things-no-agency-can-fix.html): The full list of owner-side habits that kill contractor businesses. Grouped by speed, reputation, and sales. Ranked by damage.
