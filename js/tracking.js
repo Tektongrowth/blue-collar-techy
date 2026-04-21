@@ -99,6 +99,7 @@
       const attr = window.bctGetAttribution();
       const params = Object.assign({
         form_name: formName || 'unknown',
+        source_channel: 'client',
         utm_source: attr.utm_source,
         utm_medium: attr.utm_medium,
         utm_campaign: attr.utm_campaign,

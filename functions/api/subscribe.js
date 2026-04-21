@@ -7,13 +7,15 @@
  * 2. Add contact to Resend Audience
  * 3. If source matches a lead magnet, send delivery email with PDF attached
  * 4. Optionally push to GHL with attribution tags
- * 5. Return { ok }
+ * 5. Server-side GA4 generate_lead event (MP) — captures users who block gtag
+ * 6. Return { ok }
  *
  * Required env vars:
  *   RESEND_API_KEY, RESEND_AUDIENCE_ID
  * Optional:
  *   RESEND_FROM_EMAIL (default 'Nick Conley <nick@bluecollartechy.com>')
  *   GHL_API_KEY, GHL_LOCATION_ID — mirror subscribers into GHL as contacts
+ *   GA4_MEASUREMENT_ID, GA4_MP_SECRET — server-side lead conversion tracking
  */
 
 // Lead magnet catalog. Add new entries here to enable PDF delivery for a new resource.
@@ -146,6 +148,53 @@ function buildAttributionTags(a, source) {
   return tags.filter(Boolean);
 }
 
+function parseGaClientId(cookieHeader) {
+  // _ga cookie format: GA1.<domain-depth>.<client_id_numeric>.<timestamp>
+  // We want just "<client_id_numeric>.<timestamp>" for MP.
+  if (!cookieHeader) return null;
+  const m = cookieHeader.match(/_ga=GA\d+\.\d+\.(\d+\.\d+)/);
+  return m ? m[1] : null;
+}
+
+function formNameFromSource(source) {
+  if (!source) return 'newsletter';
+  if (source === 'local-lead-engine-waitlist') return 'waitlist_local_lead_engine';
+  // Normalize anything else into a safe identifier
+  return 'lead_magnet_' + String(source).toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+}
+
+async function sendGa4Event({ env, clientId, eventName, params }) {
+  if (!env.GA4_MEASUREMENT_ID || !env.GA4_MP_SECRET) return;
+  const url = 'https://www.google-analytics.com/mp/collect'
+    + '?measurement_id=' + encodeURIComponent(env.GA4_MEASUREMENT_ID)
+    + '&api_secret=' + encodeURIComponent(env.GA4_MP_SECRET);
+  const cid = clientId || (Math.floor(Math.random() * 1e10) + '.' + Math.floor(Date.now() / 1000));
+  const body = {
+    client_id: cid,
+    events: [{
+      name: eventName,
+      params: Object.assign({
+        // GA4 MP requires session_id + engagement_time_msec for the event
+        // to be counted in reports (not just ingested).
+        engagement_time_msec: 100,
+        session_id: Math.floor(Date.now() / 1000).toString(),
+      }, params || {}),
+    }],
+  };
+  try {
+    const r = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    if (!r.ok) {
+      console.error('[ga4-mp] status', r.status, (await r.text()).slice(0, 200));
+    }
+  } catch (e) {
+    console.error('[ga4-mp]', e.message);
+  }
+}
+
 async function pushToGhl(email, attribution, source, env) {
   if (!env.GHL_API_KEY || !env.GHL_LOCATION_ID) return null;
   const tags = ['bct-newsletter', ...buildAttributionTags(attribution, source)];
@@ -221,6 +270,27 @@ export async function onRequestPost(context) {
 
     // Fire-and-forget GHL push
     pushToGhl(email, attribution, source, env).catch(() => {});
+
+    // Fire-and-forget server-side GA4 lead event.
+    // Skip for already-subscribed to avoid double-counting repeat submitters.
+    if (!result.already_subscribed) {
+      const cid = parseGaClientId(request.headers.get('cookie') || '');
+      sendGa4Event({
+        env,
+        clientId: cid,
+        eventName: 'generate_lead',
+        params: {
+          form_name: formNameFromSource(source),
+          source_channel: 'server',
+          utm_source: (attribution && attribution.utm_source) || '',
+          utm_medium: (attribution && attribution.utm_medium) || '',
+          utm_campaign: (attribution && attribution.utm_campaign) || '',
+          utm_content: (attribution && attribution.utm_content) || '',
+          landing_page: (attribution && attribution.landing_page) || '',
+          referrer: (attribution && attribution.referrer) || '',
+        },
+      }).catch(() => {});
+    }
 
     return json({
       ok: true,
