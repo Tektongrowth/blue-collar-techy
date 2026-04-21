@@ -1,0 +1,26 @@
+name: List zone DNS records (debug)
+
+on:
+  workflow_dispatch:
+    inputs:
+      domain:
+        description: "Domain zone"
+        required: true
+
+jobs:
+  list:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List all records
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_DNS_TOKEN }}
+          DOMAIN: ${{ inputs.domain }}
+        run: |
+          set -euo pipefail
+          ZONE_ID=$(curl -sS -H "Authorization: Bearer $CF_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/zones?name=$DOMAIN" \
+            | jq -r '.result[0].id // empty')
+          echo "Zone: $DOMAIN ($ZONE_ID)"
+          curl -sS -H "Authorization: Bearer $CF_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records?per_page=100" \
+            | jq '.result[] | {type, name, content, ttl, proxied}'
