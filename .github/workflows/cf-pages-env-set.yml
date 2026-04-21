@@ -1,0 +1,110 @@
+name: Set Cloudflare Pages env var
+
+# Reusable workflow for setting a single production env var on a Cloudflare
+# Pages project. Triggers a redeploy so Functions pick up the new value.
+#
+# Uses CLOUDFLARE_API_TOKEN (Pages:Edit scoped). If that token lacks
+# sufficient permissions, create a dedicated CLOUDFLARE_PAGES_TOKEN secret
+# with Account:Cloudflare Pages:Edit scope and switch the secret reference below.
+#
+# Usage:
+#   gh workflow run cf-pages-env-set.yml \
+#     -f project=blue-collar-techy \
+#     -f key=GA4_MP_SECRET \
+#     -f value="..."
+#
+# Note: the value is passed as a workflow_dispatch input. It is NOT logged
+# (the workflow redacts it in outputs) but it DOES briefly exist in the
+# workflow run metadata. For highly sensitive secrets, prefer the manual
+# Cloudflare dashboard path.
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: "Cloudflare Pages project name (e.g. blue-collar-techy)"
+        required: true
+      key:
+        description: "Env var name (e.g. GA4_MP_SECRET)"
+        required: true
+      value:
+        description: "Env var value"
+        required: true
+      redeploy:
+        description: "Trigger production redeploy after setting (yes/no)"
+        required: false
+        default: "yes"
+
+jobs:
+  set-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set env var via CF API
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          PROJECT: ${{ inputs.project }}
+          KEY: ${{ inputs.key }}
+          VALUE: ${{ inputs.value }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "$CF_API_TOKEN" ] || [ -z "$CF_ACCOUNT_ID" ]; then
+            echo "::error::Missing CLOUDFLARE_API_TOKEN or CLOUDFLARE_ACCOUNT_ID secret"
+            exit 1
+          fi
+
+          echo "Setting ${KEY}=*** (redacted) on Cloudflare Pages project ${PROJECT}..."
+
+          # Fetch current project config
+          PROJECT_JSON=$(curl -sS -H "Authorization: Bearer $CF_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT_ID/pages/projects/$PROJECT")
+
+          SUCCESS=$(echo "$PROJECT_JSON" | jq -r '.success')
+          if [ "$SUCCESS" != "true" ]; then
+            echo "::error::Failed to fetch project. Response:"
+            echo "$PROJECT_JSON" | jq
+            exit 1
+          fi
+
+          # Patch production env vars with the new key. Preserves other env vars.
+          PATCH_BODY=$(jq -n \
+            --arg k "$KEY" \
+            --arg v "$VALUE" \
+            '{deployment_configs: {production: {env_vars: {($k): {value: $v, type: "plain_text"}}}}}')
+
+          RESPONSE=$(curl -sS -X PATCH \
+            -H "Authorization: Bearer $CF_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT_ID/pages/projects/$PROJECT" \
+            -d "$PATCH_BODY")
+
+          SUCCESS=$(echo "$RESPONSE" | jq -r '.success')
+          if [ "$SUCCESS" != "true" ]; then
+            echo "::error::Failed to patch env var. Response:"
+            # Redact any echo of the token or value
+            echo "$RESPONSE" | jq 'del(.result.deployment_configs.production.env_vars)'
+            exit 1
+          fi
+
+          echo "✓ Env var set on production"
+
+      - name: Trigger redeploy
+        if: ${{ inputs.redeploy == 'yes' }}
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          PROJECT: ${{ inputs.project }}
+        run: |
+          set -euo pipefail
+          RESPONSE=$(curl -sS -X POST \
+            -H "Authorization: Bearer $CF_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT_ID/pages/projects/$PROJECT/deployments")
+          SUCCESS=$(echo "$RESPONSE" | jq -r '.success')
+          if [ "$SUCCESS" != "true" ]; then
+            echo "::warning::Redeploy trigger failed (env var is set but Functions won't pick it up until next deploy). Response:"
+            echo "$RESPONSE" | jq
+            exit 0
+          fi
+          DEPLOY_ID=$(echo "$RESPONSE" | jq -r '.result.id')
+          echo "✓ Redeploy triggered: $DEPLOY_ID"
