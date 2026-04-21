@@ -359,6 +359,171 @@
   .btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
   .btn-secondary:hover { border-color: var(--text); }
 
+  .waitlist {
+    padding: 120px 0;
+    border-top: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--bg) 0%, #0a0a10 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .waitlist::before {
+    content: '// COMING SOON';
+    position: absolute; top: 40px; left: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent-hover);
+    letter-spacing: 0.1em;
+  }
+  .waitlist::after {
+    content: ''; position: absolute;
+    top: 50%; right: -100px; transform: translateY(-50%);
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255, 106, 26, 0.12), transparent 70%);
+    pointer-events: none;
+  }
+  .wl-inner {
+    max-width: 720px;
+    position: relative; z-index: 2;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .wl-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .wl-inner h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    max-width: 720px;
+  }
+  .wl-inner h2 .hi { color: var(--accent); }
+  .wl-inner p.intro {
+    font-size: 18px;
+    color: var(--text-dim);
+    margin-bottom: 28px;
+    max-width: 640px;
+  }
+  .wl-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 24px;
+    margin: 0 0 36px;
+    padding: 0;
+    list-style: none;
+    max-width: 640px;
+  }
+  .wl-list li {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text);
+    padding-left: 18px;
+    position: relative;
+    letter-spacing: 0.04em;
+    line-height: 1.8;
+  }
+  .wl-list li::before {
+    content: '✓';
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  form.wl-form {
+    display: flex; gap: 0;
+    border: 2px solid var(--border);
+    background: var(--bg-card);
+    max-width: 540px;
+    transition: border-color 0.2s;
+    margin-bottom: 14px;
+  }
+  form.wl-form:focus-within { border-color: var(--accent); }
+  form.wl-form input[type="email"] {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 18px 20px;
+    color: var(--text);
+    font-family: 'Archivo', sans-serif;
+    font-size: 15px;
+  }
+  form.wl-form input::placeholder { color: var(--text-faint); }
+  form.wl-form input.hp-wl {
+    position: absolute; left: -9999px; top: -9999px;
+    width: 1px; height: 1px; opacity: 0;
+  }
+  form.wl-form button {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 0 28px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  form.wl-form button:hover { background: var(--accent-bright); }
+  form.wl-form button:disabled { opacity: 0.6; cursor: wait; }
+  .wl-msg {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    margin: 8px 0 12px;
+    min-height: 20px;
+    letter-spacing: 0.02em;
+  }
+  .wl-msg.ok { color: var(--accent-hover); }
+  .wl-msg.err { color: var(--accent); }
+  .wl-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+  .wl-meanwhile {
+    margin-top: 56px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border);
+    max-width: 640px;
+  }
+  .wl-meanwhile .h {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .wl-meanwhile p {
+    color: var(--text-dim);
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+  .wl-meanwhile .links {
+    display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .wl-meanwhile .links a {
+    font-family: 'Archivo', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 10px 18px;
+    border-radius: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .wl-meanwhile .links a:hover { border-color: var(--accent); color: var(--accent); }
+
   footer {
     padding: 80px 0 40px;
     background: #0a0a10;
@@ -401,6 +566,9 @@
     .inline-cta { padding: 28px 24px; }
     .tool-table { font-size: 13px; }
     .tool-table th, .tool-table td { padding: 10px 8px; }
+    .wl-list { grid-template-columns: 1fr; }
+    form.wl-form { flex-direction: column; }
+    form.wl-form button { padding: 16px; }
   }
 </style>
 
@@ -651,21 +819,101 @@
   </div>
 </section>
 
-<section class="end-cta">
-  <div class="container">
-    <div class="kicker">What's next</div>
-    <h2>Check what is actually running in your market first.</h2>
-    <p>Before you spend on any tool, know whether your market has moved. The Market Demand Scan pulls 24 months of Google search data for your trade in your city. Year-over-year comparison. It tells you whether demand actually dropped or whether you're solving the wrong problem.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="../market-scan/">
-        Run the market scan
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" fill="none"/></svg>
-      </a>
-      <a class="btn btn-secondary" href="../gbp-check/">Run my GBP check</a>
-      <a class="btn btn-secondary" href="../index.html#newsletter">Get the newsletter</a>
+<section class="waitlist">
+  <div class="wl-inner">
+    <div class="wl-eyebrow">What I'm Building</div>
+    <h2>The local SEO tool <span class="hi">this one isn't.</span></h2>
+    <p class="intro">I'm building a self-serve tool that does the work this $99 lifetime product tells you to go do yourself. Designed for contractors. Built to move the map pack, not fill a blog.</p>
+
+    <ul class="wl-list">
+      <li>GBP audit + monthly health</li>
+      <li>Grid heatmap rank tracking</li>
+      <li>Citation consistency monitor</li>
+      <li>Review velocity + response drafter</li>
+      <li>Competitor map-pack watch</li>
+      <li>Location + service page builder</li>
+      <li>Local schema generator</li>
+      <li>One chat interface to run it all</li>
+    </ul>
+
+    <form id="wl-form" class="wl-form" novalidate>
+      <input type="email" id="wl-email" name="email" placeholder="your@email.com" required autocomplete="email" />
+      <input type="text" name="website" class="hp-wl" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <button type="submit" id="wl-btn">Join the list</button>
+    </form>
+    <div id="wl-msg" class="wl-msg" role="status" aria-live="polite"></div>
+    <div class="wl-note">// First access when the beta opens. No spam. Unsubscribe anytime.</div>
+
+    <div class="wl-meanwhile">
+      <div class="h">// Meanwhile</div>
+      <p>Free tools that already work. Run them while you wait.</p>
+      <div class="links">
+        <a href="../market-scan/">Market Demand Scan</a>
+        <a href="../gbp-check/">GBP Health Check</a>
+        <a href="../index.html#newsletter">Newsletter</a>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+(function () {
+  const form = document.getElementById('wl-form');
+  if (!form) return;
+  const emailInput = document.getElementById('wl-email');
+  const btn = document.getElementById('wl-btn');
+  const msg = document.getElementById('wl-msg');
+
+  function setMsg(text, cls) {
+    msg.textContent = text;
+    msg.className = 'wl-msg' + (cls ? ' ' + cls : '');
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const email = (emailInput.value || '').trim();
+    const website = form.website.value;
+    if (!email) return;
+    btn.disabled = true;
+    btn.textContent = 'Joining…';
+    setMsg('');
+
+    try {
+      const attribution = window.bctGetAttribution ? window.bctGetAttribution() : {};
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email,
+          website: website,
+          source: 'local-lead-engine-waitlist',
+          attribution: attribution
+        }),
+      });
+      const data = await res.json().catch(function () { return {}; });
+
+      if (!res.ok) {
+        setMsg(data.error || 'Something went wrong. Try again in a minute.', 'err');
+        btn.disabled = false;
+        btn.textContent = 'Join the list';
+        return;
+      }
+
+      if (data.already_subscribed) {
+        setMsg('You are already on the list. I will email you when the beta opens.', 'ok');
+      } else {
+        setMsg('On the list. I will email you when the beta opens.', 'ok');
+      }
+      emailInput.value = '';
+      btn.textContent = 'Joined ✓';
+    } catch (err) {
+      setMsg('Network error. Try again in a minute.', 'err');
+      btn.disabled = false;
+      btn.textContent = 'Join the list';
+    }
+  });
+})();
+</script>
 
 <footer>
   <div class="container">
