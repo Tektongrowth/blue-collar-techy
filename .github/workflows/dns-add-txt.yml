@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: Add TXT via Cloudflare API
         env:
-          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_DNS_TOKEN }}
           DOMAIN: ${{ inputs.domain }}
           REC_NAME: ${{ inputs.name }}
           REC_CONTENT: ${{ inputs.content }}
