@@ -1,4 +1,21 @@
 /**
+ * Blue Collar Techy — Google Analytics 4 bootstrap
+ * Loads gtag.js and fires pageview. Property: Blue Collar Techy (G-YGLDW6TYCY).
+ */
+(function () {
+  if (window.gtag) return; // idempotent
+  var GA_ID = 'G-YGLDW6TYCY';
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', GA_ID, { send_page_view: true });
+})();
+
+/**
  * Blue Collar Techy — attribution tracking
  * First-touch UTM capture + landing page/referrer storage.
  * Stored in localStorage with a 90-day TTL so returning visitors still
