@@ -61,6 +61,31 @@
   }
   .nav-inner { display: flex; justify-content: space-between; align-items: center; }
   .nav-logo svg { height: 52px; width: auto; display: block; }
+  .nav-cta-mobile { display: none; }
+  .nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    width: 44px; height: 44px;
+    cursor: pointer;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    transition: all 0.25s ease;
+  }
+  .nav-toggle:hover { border-color: var(--accent); }
+  .nav-toggle span {
+    display: block;
+    width: 20px; height: 2px;
+    background: var(--text);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .site-nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .site-nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  .site-nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   .nav-links { display: flex; gap: 36px; font-size: 14px; font-weight: 600; }
   .nav-links a { color: var(--text-dim); transition: color 0.2s; }
   .nav-links a:hover, .nav-links a.active { color: var(--text); }
@@ -374,7 +399,45 @@
 
   @media (max-width: 900px) {
     .foot-top { grid-template-columns: 1fr 1fr; gap: 40px; }
-    .nav-links { display: none; }
+    .nav-toggle { display: flex; }
+    .nav-cta { display: none; }
+    .nav-links {
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(13, 13, 18, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 0;
+      font-size: 15px;
+      transform: translateY(-12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .nav-links a {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-links a:last-of-type { border-bottom: none; }
+    .site-nav.nav-open .nav-links {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .site-nav.nav-open .nav-links .nav-cta-mobile {
+      display: block;
+      margin: 12px 24px 16px;
+      background: var(--accent);
+      color: #000;
+      padding: 12px 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      border-radius: 2px;
+      border-bottom: none;
+    }
     .article-meta-row { flex-direction: column; gap: 8px; }
     .inline-cta { padding: 28px 24px; }
   }
@@ -419,14 +482,18 @@
         <text x="290" y="78" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">EST · 2026</text>
       </svg>
     </a>
-    <div class="nav-links">
+    <div class="nav-links" id="primary-nav">
       <a href="../about.html">About</a>
       <a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a>
       <a href="../resources/">Resources</a>
       <a href="index.html" class="active">Blog</a>
       <a href="../work-with-me.html">Work with me</a>
+      <a class="nav-cta-mobile" href="../index.html#newsletter">Subscribe</a>
     </div>
     <a class="nav-cta" href="../index.html#newsletter">Subscribe</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -685,5 +752,24 @@
 </footer>
 
 <script src="/js/tracking.js"></script>
+<script>
+  (function(){
+    var nav = document.querySelector('nav.site-nav');
+    if (!nav) return;
+    var btn = nav.querySelector('.nav-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('nav-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Close drawer when a link is tapped
+    nav.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('nav-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
 </body>
 </html>
