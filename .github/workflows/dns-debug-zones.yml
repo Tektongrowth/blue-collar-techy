@@ -1,0 +1,36 @@
+name: List all zones + full zone detail
+
+on:
+  workflow_dispatch:
+    inputs:
+      domain:
+        description: "Domain"
+        required: true
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Full audit
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_DNS_TOKEN }}
+          DOMAIN: ${{ inputs.domain }}
+        run: |
+          set -euo pipefail
+          echo "--- ALL zones visible to token (up to 100) ---"
+          curl -sS -H "Authorization: Bearer $CF_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/zones?per_page=100" \
+            | jq '.result[] | {name, id, status, account: .account.name}'
+          echo ""
+          echo "--- Zone detail for $DOMAIN ---"
+          ZONE_ID=$(curl -sS -H "Authorization: Bearer $CF_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/zones?name=$DOMAIN" \
+            | jq -r '.result[0].id // empty')
+          curl -sS -H "Authorization: Bearer $CF_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/zones/$ZONE_ID" \
+            | jq '.result | {name, status, paused, original_name_servers, name_servers, vanity_name_servers, type, development_mode, activated_on, created_on, modified_on}'
+          echo ""
+          echo "--- ALL DNS records on zone ---"
+          curl -sS -H "Authorization: Bearer $CF_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records?per_page=100" \
+            | jq '.result[] | {type, name, content, proxied, ttl}'
