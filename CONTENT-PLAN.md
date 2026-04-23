@@ -1,7 +1,38 @@
 # Blue Collar Techy — Content Plan
 
 **Generated:** 2026-04-17
+**Last updated:** 2026-04-23 — added mission positioning + three-audience framing
 **Strategy:** Pillar + cluster model. Each pillar post targets a head term with real search volume. Supporting posts cluster around the pillar. All tied to one of four themes: Diagnostic, GBP/Local SEO, AI + Tech Stack, Marketing Fundamentals.
+
+---
+
+## Positioning (the "why" under every post)
+
+> **Most contractor marketing is noise. I'm building both sides of the fix — the businesses I serve directly at Tekton Growth, and the marketers I train at Agency Launch Pad.**
+
+This positioning goes on About, in video hooks, in pitch emails, at the top of Agency Launch Pad, and (eventually) on the rebuilt Tekton Growth site. Single source of truth.
+
+### Three audiences served by one content engine
+
+| Audience | What they want | Where they exit the funnel | Share of attention |
+|---|---|---|---|
+| **Contractors** (primary) | Practical tech/SEO/AI help, no BS | → Tekton Growth (done-for-you, 12-mo) | ~80% of voice |
+| **Aspiring agency owners** (secondary) | Playbook, community, Nick's frameworks | → Agency Launch Pad (Skool) | ~15% of voice |
+| **Newsletter lurkers** (tertiary) | Just want the content | Stay in the list + YouTube | ~5% of voice |
+
+**BCT is the top of funnel for all three.** No separate content engine for Agency Launch Pad or Tekton Growth — BCT is the discovery layer. Tekton Growth fulfills. Agency Launch Pad fulfills inside Skool.
+
+### Double-duty rule
+
+Every piece of content should primarily serve contractors AND be content an aspiring agency owner would learn from by watching. The angle is always *"here's the practical answer"* — never *"here's how to sell this to your clients."*
+
+Examples that work:
+
+- **"How to vet a marketing agency in 10 minutes"** — contractors protect themselves, marketers learn what vettable looks like
+- **"5 red-flag lines contractors hear from agencies"** — peer validation for contractors, anti-playbook for marketers
+- **"What bad contractor marketing actually looks like"** — self-defense for contractors, "don't do these things" for marketers
+- **Sales call walkthroughs (redacted)** — contractors see what a good agency feels like, marketers learn how to run one
+- **Behind the scenes running Tekton Growth** — proof for contractors, operational preview for aspiring operators
 
 ---
 
@@ -182,3 +213,69 @@ Each tool expands the "bucket" of the diagnostic framework:
 - "Zero volume" keywords with high intent (e.g. "contractor sales process") are still worth pursuing. Google surfaces question-based content in PAA + AI Overview.
 - Pillar posts should each have 8-12 H2s and 2,000+ words. Supporting posts 1,500-2,000.
 - All posts follow the established format: meta bar, kicker + title + sub, chapters with `// section` markers, checklists, data callouts, pull quote, inline CTA, end CTA.
+
+---
+
+## Voice (non-negotiable)
+
+- **Short declarative sentences.** Period before conjunctions sometimes for impact.
+- **Contractor-to-contractor peer voice.** "I've been on both sides." Not "let me teach you."
+- **Jobsite imagery.** Trucks, phones, crews waiting — not funnels, avatars, or personas.
+- **Hot takes in bold.** One line that carries a position, not three.
+- **No em dashes.** Ever. Commas or periods.
+- **No contrast reversals** ("not X — it's Y"). Period + new sentence.
+- **No guru vocabulary.** No "unlock," "level up," "game-changer," "crush it."
+- **Hardscape metaphors welcome.** Base prep, laying pavers, expanding the patio. Translates SEO into trade language.
+
+---
+
+## Guardrails — what NOT to do
+
+- **No Agency Launch Pad content on BCT.** Do not write "how to land your first contractor client" on BCT. That lives inside Skool.
+- **Don't over-index on agency critique.** Industry takedowns are seasoning, not the meal. >20% of output goes "agencies are bad" and the contractor audience tunes out.
+- **One CTA per post.** Subscribe OR run the scan OR book a call. Not a menu.
+- **No fake urgency.** No "before it's too late," no "limited spots." That's the guru playbook.
+- **No gatekeeping.** Free tools stay free. Blog stays public. Paywalls only inside Skool and Tekton engagements.
+- **No spreadsheet-as-the-recommendation** in BCT tech content. Every tech recommendation is a real tool (CRM, calculator, app). Spreadsheets are fine as teaching aids, not as the final advice.
+- **One post = one next step.** Don't cross-sell all three brands in a single post.
+
+---
+
+## Lead routing (how tags drive follow-up)
+
+Every form submission on BCT ends up in GHL with attribution tags. Workflows route by tag:
+
+| Tag pattern | Routes to | Sequence |
+|---|---|---|
+| `bct-newsletter` only | Newsletter drip + long-form CTAs | Soft nurture |
+| `bct-market-scan` + `bct-<industry>` | Tekton Growth discovery call nurture | Sales-leaning |
+| UTM or form hint indicating marketer intent | Agency Launch Pad nurture | Community-leaning |
+| `src-*` attribution tags | Reports: "which sources drive which conversions" | — |
+
+GHL handles the branching. BCT's job is to capture the intent; the CRM sorts it.
+
+---
+
+## Agency Launch Pad discovery path
+
+BCT content doesn't teach agency building. It demonstrates competence with contractors, which is exactly what an aspiring agency owner wants to see. The path:
+
+1. Aspiring agency owner lands on a BCT blog post or video
+2. Sees the quality + "both sides" positioning
+3. Visits About page → sees the Three Doors
+4. Clicks "Agency Launch Pad" → enters Skool
+
+That flow is live in About + Work-with-me (commit `f635bb4`). Keep the BCT content itself contractor-facing so the discovery is organic, not pitched.
+
+---
+
+## Review cadence
+
+Reread this doc at the start of every month. Check:
+
+- Which posts actually shipped vs planned
+- Which pillar posts performed (traffic + signups)
+- Whether the audience mix on the newsletter is shifting (contractor-heavy vs marketer-heavy)
+- Whether any single theme has drifted >20% of output
+
+Update the queue. If a post underperformed, separate "wrong voice" from "wrong topic" from "wrong timing." Kill the ones that are wrong topic. Rewrite the ones that are wrong voice. Repost the ones that are wrong timing.
