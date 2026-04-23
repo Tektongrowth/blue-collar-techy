@@ -423,6 +423,57 @@
     width: 20px; height: 2px; background: var(--accent);
   }
 
+  /* THREE DOORS */
+  .doors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 40px 0 16px;
+  }
+  @media (max-width: 900px) { .doors-grid { grid-template-columns: 1fr; } }
+  .door {
+    background: var(--bg);
+    padding: 32px 28px 28px;
+    display: flex; flex-direction: column;
+    position: relative;
+    transition: background 0.2s;
+  }
+  .door.door-current { background: var(--bg-card); }
+  .door.door-current::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--accent);
+  }
+  .door-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--text-faint);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .door.door-current .door-label { color: var(--accent); }
+  .door-name {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+  }
+  .door p {
+    color: var(--text-dim);
+    font-size: 15px;
+    line-height: 1.55;
+    margin-bottom: 20px;
+    flex: 1;
+  }
+  .door-cta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--accent);
+    letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 700;
+    transition: color 0.2s;
+  }
+  .door-cta:hover { color: var(--accent-bright); }
+
   /* END CTA */
   .end-cta {
     padding: 120px 0;
@@ -672,12 +723,45 @@
 <!-- MANIFESTO BLOCK -->
 <section class="manifesto-block">
   <div class="narrow manifesto-inner">
-    <div class="kicker">The Hot Take</div>
-    <h2>Your marketing agency is <span class="hi">not the hero</span> of your business. You are.</h2>
-    <p>I learned that the hard way.</p>
-    <p>Good marketing matters. Good SEO matters. Good systems matter. But no agency can fix a weak reputation, slow follow-up, bad sales process, or a business that does not do what it says it does.</p>
-    <p>The owners who understand that usually grow.</p>
-    <p><strong>The ones who think writing a check solves the whole problem usually get burned.</strong></p>
+    <div class="kicker">The Mission</div>
+    <h2>Most contractor marketing is <span class="hi">noise.</span> I'm building both sides of the fix.</h2>
+    <p>Big promises. Weak follow-through. Fancy words around average work. That's what most contractors see when they hire a marketing agency. I know because I was that contractor once, writing those checks.</p>
+    <p><strong>Your marketing agency is not the hero of your business. You are.</strong></p>
+    <p>No agency can fix a weak reputation, slow follow-up, bad sales process, or a business that does not do what it says it does. The owners who understand that usually grow. The ones who think writing a check solves the whole problem usually get burned.</p>
+    <p>That's why I'm not just running an agency. I'm building a movement. I serve contractors directly at Tekton Growth, and I train marketers who want to serve contractors with the same mindset at Agency Launch Pad. Every good agency we put into the market is one less contractor getting sold garbage.</p>
+    <p class="dim">Three doors. Same mission. Better marketing for the trades.</p>
+  </div>
+</section>
+
+<!-- THREE DOORS -->
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Three doors, one mission</div>
+    <h2>Pick the <span class="hi">door</span> that fits where you are.</h2>
+    <p class="lead">Same mission runs through all three: contractors deserve better marketing. Each brand serves a different person in that mission.</p>
+
+    <div class="doors-grid">
+      <div class="door door-current">
+        <div class="door-label">You're here</div>
+        <div class="door-name">Blue Collar Techy</div>
+        <p>Free content, tools, and breakdowns for blue-collar business owners. Videos, newsletter, the market scan tool, the blog. This is the home base for everything.</p>
+        <a class="door-cta" href="index.html#newsletter">Subscribe to the newsletter →</a>
+      </div>
+
+      <div class="door">
+        <div class="door-label">For contractors</div>
+        <div class="door-name">Tekton Growth</div>
+        <p>My marketing agency. Done-for-you local SEO, websites, systems, and AI for contractors who want it handled by people who actually get the trade. Twelve-month engagements.</p>
+        <a class="door-cta" href="https://tektongrowth.com" target="_blank" rel="noopener">Work with Tekton Growth →</a>
+      </div>
+
+      <div class="door">
+        <div class="door-label">For marketers</div>
+        <div class="door-name">Agency Launch Pad</div>
+        <p>For marketers and operators who want to build an agency serving the trades — without becoming the noise. Community, frameworks, and the playbooks from running Tekton Growth.</p>
+        <a class="door-cta" href="https://www.skool.com/agency-launch-pad" target="_blank" rel="noopener">Join on Skool →</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -712,14 +796,15 @@
 <section class="end-cta">
   <div class="container">
     <div class="kicker">What's Next</div>
-    <h2>Start where you want.</h2>
+    <h2>Pick your next step.</h2>
     <div class="cta-row">
-      <a class="btn btn-primary" href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">
+      <a class="btn btn-primary" href="index.html#newsletter">Get the newsletter</a>
+      <a class="btn btn-secondary" href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">
         Watch on YouTube
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
       </a>
-      <a class="btn btn-secondary" href="index.html#newsletter">Get the newsletter</a>
       <a class="btn btn-secondary" href="https://tektongrowth.com" target="_blank" rel="noopener">Work with Tekton Growth</a>
+      <a class="btn btn-secondary" href="https://www.skool.com/agency-launch-pad" target="_blank" rel="noopener">Join Agency Launch Pad</a>
     </div>
   </div>
 </section>

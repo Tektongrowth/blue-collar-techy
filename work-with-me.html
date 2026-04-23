@@ -169,6 +169,89 @@
     line-height: 1.55;
   }
 
+  /* AUDIENCE FORK */
+  .audience-fork {
+    padding: 64px 0 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .fork-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--accent);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 20px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .fork-label::before {
+    content: ''; width: 28px; height: 2px; background: var(--accent);
+  }
+  .fork-heading {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 3.2vw, 40px);
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+  .fork-heading .hi { color: var(--accent); }
+  .fork-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 720px) { .fork-grid { grid-template-columns: 1fr; } }
+  .fork-card {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    padding: 36px 32px 32px;
+    display: flex; flex-direction: column;
+    transition: border-color 0.2s, transform 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+  }
+  .fork-card:hover {
+    border-color: var(--accent);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.2);
+  }
+  .fork-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 4px; height: 100%; background: var(--accent);
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .fork-card:hover::before { opacity: 1; }
+  .fork-card .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--accent);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .fork-card h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 24px; line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+  .fork-card .sub {
+    color: var(--text-dim);
+    font-size: 15px; line-height: 1.55;
+    margin-bottom: 20px;
+    flex: 1;
+  }
+  .fork-card .arrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--accent);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    font-weight: 700;
+  }
+  .fork-fallback {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--text-faint);
+    letter-spacing: 0.08em; line-height: 1.6;
+    margin-top: 20px;
+  }
+  .fork-fallback a { color: var(--accent); font-weight: 700; }
+  .fork-fallback a:hover { color: var(--accent-bright); }
+
   /* FORM */
   .form-wrap {
     padding: 72px 0 100px;
@@ -369,8 +452,33 @@
 <section class="hero">
   <div class="container">
     <div class="eyebrow">Work with Nick</div>
-    <h1>Tell me what you're <span class="hi">trying to do.</span></h1>
-    <p class="hero-sub">If you want help with AI, marketing, local SEO, automations, or just figuring out what to focus on, drop your details below. I read every message myself. If it's a fit, I'll reach out.</p>
+    <h1>Let's figure out <span class="hi">where you fit.</span></h1>
+    <p class="hero-sub">I work with two kinds of people. Contractors who want help growing their business, and marketers who want to build an agency that actually serves the trades well. Pick the door that fits you. If neither quite does, scroll down and message me.</p>
+  </div>
+</section>
+
+<section class="audience-fork">
+  <div class="narrow">
+    <div class="fork-label">Two doors</div>
+    <h2 class="fork-heading">Which <span class="hi">one</span> are you?</h2>
+
+    <div class="fork-grid">
+      <a class="fork-card" href="https://tektongrowth.com" target="_blank" rel="noopener">
+        <div class="tag">Contractor</div>
+        <h3>I run a trades business and want help growing it.</h3>
+        <div class="sub">Local SEO, websites, systems, AI, done for you by people who get the trade. Twelve-month engagements. This goes to Tekton Growth, my agency.</div>
+        <div class="arrow">Go to Tekton Growth →</div>
+      </a>
+
+      <a class="fork-card" href="https://www.skool.com/agency-launch-pad" target="_blank" rel="noopener">
+        <div class="tag">Marketer</div>
+        <h3>I want to build an agency that serves the trades the right way.</h3>
+        <div class="sub">Frameworks, community, and the actual playbooks I use running Tekton Growth. For marketers and operators who want to break into contractor marketing without becoming more noise in the industry.</div>
+        <div class="arrow">Join Agency Launch Pad →</div>
+      </a>
+    </div>
+
+    <p class="fork-fallback">// Not quite either? Keep scrolling — the form below comes straight to me.</p>
   </div>
 </section>
 
