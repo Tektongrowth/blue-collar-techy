@@ -848,6 +848,15 @@
 
       renderReport(data.report);
       showState('success');
+
+      // Fire GA4 generate_lead event with scan context
+      if (typeof window.bctTrackLead === 'function') {
+        window.bctTrackLead('market_scan', {
+          industry: payload.industry,
+          city: payload.city,
+          confidence: (data.report && data.report.confidence && data.report.confidence.level) || '',
+        });
+      }
       if (window.bctTrackLead) {
         window.bctTrackLead('market_scan', {
           industry: payload.industry || '',

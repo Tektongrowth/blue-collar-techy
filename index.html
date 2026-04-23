@@ -1045,6 +1045,11 @@
           : "You're in. I'll send the good stuff.",
         'nl-ok'
       );
+
+      // Fire GA4 generate_lead event (only on genuinely new subs)
+      if (!data.already_subscribed && typeof window.bctTrackLead === 'function') {
+        window.bctTrackLead('newsletter');
+      }
       if (!data.already_subscribed && window.bctTrackLead) {
         window.bctTrackLead('newsletter');
       }
