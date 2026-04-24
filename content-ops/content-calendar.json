@@ -1,16 +1,17 @@
 {
   "meta": {
-    "cadence": "biweekly",
-    "publish_day": "Thursday",
+    "cadence": "2x weekly (Tue + Thu)",
+    "publish_day": "Tuesday + Thursday",
     "voice": "blue-collar contractor talking to peers, no guru language, no em dashes",
-    "source": "DataForSEO keywords_for_keywords pull 2026-04-18",
+    "source": "DataForSEO keywords_for_keywords pull 2026-04-18 + Fathom call mining 2026-04-22, 2026-04-23",
     "length_target_words": 1800,
     "must_include": [
       "current events hook (per feedback_current_events_research.md)",
       "one internal link to existing BCT post",
       "one CTA to a BCT tool or newsletter",
       "one hardscape-era story or analogy where natural"
-    ]
+    ],
+    "cadence_changed_at": "2026-04-23"
   },
   "existing_internal_link_targets": {
     "market-agency-or-you": "diagnostic three-bucket (market/agency/you)",
@@ -42,11 +43,30 @@
       "tool_cta": "gbp-check",
       "resource_spinoff": null,
       "published": true,
-      "notes": "Originally planned a Review Request Template Pack. Scrapped 2026-04-19 — was just a duplicate of the post's tap-to-copy scripts. The GHL review-automation walkthrough video (slot 3 lead magnet) is the real value-add."
+      "notes": "Originally planned a Review Request Template Pack. Scrapped 2026-04-19 \u2014 was just a duplicate of the post's tap-to-copy scripts. The GHL review-automation walkthrough video (slot 3 lead magnet) is the real value-add."
     },
     {
+      "slug": "gbp-video-verification-walkthrough",
+      "h1_working": "How to pass Google Business Profile video verification (without the back-and-forth)",
+      "primary_keyword": "google business profile video verification",
+      "primary_volume": 0,
+      "secondary_keywords": [
+        "gbp verification",
+        "google business verification video",
+        "google maps verification"
+      ],
+      "theme": "local_seo_gbp",
+      "angle": "Exact checklist (signage, truck, keys, business cards, equipment) + common fail reasons. Embed the YouTube walkthrough.",
+      "internal_link": "gbp-audit-15-minutes",
+      "tool_cta": "gbp-check",
+      "resource_spinoff": "YouTube walkthrough video",
+      "source_note": "Multiple clients stalled on this; Kyle 2026-04-22 + Wilson/Darren 2026-04-23",
       "slot": 2,
-      "publish_date": "2026-05-14",
+      "publish_date": "2026-04-28"
+    },
+    {
+      "slot": 3,
+      "publish_date": "2026-04-30",
       "slug": "how-to-rank-higher-on-google-maps",
       "h1_working": "How to rank higher on Google Maps as a contractor (7 moves that still work in 2026)",
       "primary_keyword": "how to rank higher on google maps",
@@ -63,8 +83,122 @@
       "resource_spinoff": null
     },
     {
-      "slot": 3,
-      "publish_date": "2026-05-28",
+      "slug": "map-pack-vs-google-ads-click-share",
+      "h1_working": "Map Pack vs Google Ads: where your local clicks actually come from",
+      "primary_keyword": "google local pack clicks",
+      "primary_volume": 0,
+      "secondary_keywords": [
+        "google map pack ctr",
+        "organic vs ads local",
+        "where local traffic comes from"
+      ],
+      "theme": "local_seo_gbp",
+      "angle": "60-70% vs 8-10%. Real click-share data. Why you can't outspend your way past a weak GBP.",
+      "internal_link": "market-up-sales-down",
+      "tool_cta": "gbp-check",
+      "resource_spinoff": null,
+      "source_note": "Supreme Scapes audit prep 2026-04-23",
+      "slot": 4,
+      "publish_date": "2026-05-05"
+    },
+    {
+      "slug": "service-area-vs-physical-address-gbp",
+      "h1_working": "Does your Google Business Profile need a physical address? (service-area vs storefront)",
+      "primary_keyword": "service area business google",
+      "primary_volume": 0,
+      "secondary_keywords": [
+        "gbp service area business",
+        "hidden address google business",
+        "service area vs storefront gbp"
+      ],
+      "theme": "local_seo_gbp",
+      "angle": "Supreme Scapes case: service-area-only profiles rank weakly outside a tight core. When to add an address, when to hide.",
+      "internal_link": "gbp-audit-15-minutes",
+      "tool_cta": "gbp-check",
+      "resource_spinoff": null,
+      "source_note": "Supreme Scapes audit 2026-04-23",
+      "slot": 5,
+      "publish_date": "2026-05-07"
+    },
+    {
+      "slug": "move-google-business-profile-without-losing-rankings",
+      "h1_working": "How to move your Google Business Profile without losing your rankings",
+      "primary_keyword": "change google business profile address",
+      "primary_volume": 0,
+      "secondary_keywords": [
+        "moving google business profile",
+        "update gbp address",
+        "multi location gbp"
+      ],
+      "theme": "local_seo_gbp",
+      "angle": "Add location pages \u2192 citations \u2192 30-day index window \u2192 new GBP \u2192 video verify. Packaged as $6K one-time.",
+      "internal_link": "gbp-audit-15-minutes",
+      "tool_cta": "gbp-check",
+      "resource_spinoff": null,
+      "source_note": "Kyle 2026-04-22 (Elliot West); Darren Rochester expansion 2026-04-23",
+      "slot": 6,
+      "publish_date": "2026-05-12"
+    },
+    {
+      "slug": "seo-is-not-a-lead-engine",
+      "h1_working": "SEO isn't a lead engine. Here's what it actually is.",
+      "primary_keyword": "seo results timeline",
+      "primary_volume": 0,
+      "secondary_keywords": [
+        "how long seo takes",
+        "seo expectations",
+        "seo for contractors"
+      ],
+      "theme": "marketing_agency",
+      "angle": "Compounding asset vs instant-switch. Set expectations before signing. Sales positioning piece.",
+      "internal_link": "market-up-sales-down",
+      "tool_cta": "market-scan",
+      "resource_spinoff": null,
+      "source_note": "Both Kyle 1:1s 2026-04-22 + 2026-04-23",
+      "slot": 7,
+      "publish_date": "2026-05-14"
+    },
+    {
+      "slug": "duplicate-closed-google-listings-cleanup",
+      "h1_working": "Duplicate and closed Google listings are killing your rankings (how to clean them up)",
+      "primary_keyword": "duplicate google business profile",
+      "primary_volume": 0,
+      "secondary_keywords": [
+        "remove closed google listing",
+        "merge google business profiles",
+        "old gbp still showing"
+      ],
+      "theme": "local_seo_gbp",
+      "angle": "Common contractor problem. Step-by-step: identify dupes, request merge, handle closed listings that won't disappear.",
+      "internal_link": "gbp-audit-15-minutes",
+      "tool_cta": "gbp-check",
+      "resource_spinoff": null,
+      "source_note": "Supreme Scapes legacy listing 2026-04-23",
+      "slot": 8,
+      "publish_date": "2026-05-19"
+    },
+    {
+      "slug": "start-seo-when-busy-not-slow",
+      "h1_working": "Start SEO when you're busy, not when you're slow (the contractor timing mistake)",
+      "primary_keyword": "when to start seo",
+      "primary_volume": 0,
+      "secondary_keywords": [
+        "seo timing contractor",
+        "when is the best time for seo",
+        "seo before slow season"
+      ],
+      "theme": "marketing_agency",
+      "angle": "Most contractors hire an agency when leads dry up. By then SEO is a 6-month project competing with their panic. Flip it.",
+      "internal_link": "market-up-sales-down",
+      "tool_cta": "market-scan",
+      "resource_spinoff": null,
+      "source_note": "Kyle 1:1 2026-04-23 \u2014 Sutton seasonality reframe",
+      "slot": 9,
+      "publish_date": "2026-05-21"
+    },
+    {
+      "slot": 10,
+      "publish_date": "2026-05-26",
       "slug": "best-lead-generation-companies-for-contractors",
       "h1_working": "Best lead generation companies for contractors: honest 2026 breakdown",
       "primary_keyword": "best lead generation companies for contractors",
@@ -81,8 +215,27 @@
       "resource_spinoff": null
     },
     {
-      "slot": 4,
-      "publish_date": "2026-06-11",
+      "slug": "contractor-pricing-ceiling",
+      "h1_working": "The contractor pricing ceiling: why you're probably too cheap",
+      "primary_keyword": "contractor pricing",
+      "primary_volume": 0,
+      "secondary_keywords": [
+        "how much to charge contractor",
+        "contractor rates too low",
+        "raise prices contractor"
+      ],
+      "theme": "sales_ops",
+      "angle": "Raise prices when overbooked. Signals you're under-priced. Real ranges by trade.",
+      "internal_link": "ten-things-no-agency-can-fix",
+      "tool_cta": "newsletter",
+      "resource_spinoff": "Pricing audit calculator (tool build)",
+      "source_note": "Kyle 1:1 2026-04-23",
+      "slot": 11,
+      "publish_date": "2026-05-28"
+    },
+    {
+      "slot": 12,
+      "publish_date": "2026-06-02",
       "slug": "local-service-ads-for-contractors",
       "h1_working": "Local Service Ads for contractors: what they cost, how to get badged, when to turn them off",
       "primary_keyword": "local service ads",
@@ -100,8 +253,8 @@
       "resource_spinoff": "LSA readiness checklist"
     },
     {
-      "slot": 5,
-      "publish_date": "2026-06-25",
+      "slot": 13,
+      "publish_date": "2026-06-04",
       "slug": "best-ai-tools-for-contractors",
       "h1_working": "Best AI tools for contractors in 2026 (what we actually use at Tekton Growth)",
       "primary_keyword": "best ai for small business",
@@ -118,8 +271,8 @@
       "resource_spinoff": null
     },
     {
-      "slot": 6,
-      "publish_date": "2026-07-09",
+      "slot": 14,
+      "publish_date": "2026-06-09",
       "slug": "how-to-get-leads-as-a-contractor",
       "h1_working": "How to get leads as a contractor without paying Angi or HomeAdvisor a dime",
       "primary_keyword": "how to get leads as a contractor",
@@ -136,8 +289,8 @@
       "resource_spinoff": null
     },
     {
-      "slot": 7,
-      "publish_date": "2026-07-23",
+      "slot": 15,
+      "publish_date": "2026-06-11",
       "slug": "free-google-business-profile-guide",
       "h1_working": "The free Google Business Profile (everything you get without paying anyone)",
       "primary_keyword": "free google business profile",
@@ -155,8 +308,8 @@
       "resource_spinoff": null
     },
     {
-      "slot": 8,
-      "publish_date": "2026-08-06",
+      "slot": 16,
+      "publish_date": "2026-06-16",
       "slug": "best-contractor-websites",
       "h1_working": "Best contractor websites of 2026 (and what makes them actually convert)",
       "primary_keyword": "best contractor websites",
@@ -173,8 +326,8 @@
       "resource_spinoff": "Website audit checklist"
     },
     {
-      "slot": 9,
-      "publish_date": "2026-08-20",
+      "slot": 17,
+      "publish_date": "2026-06-18",
       "slug": "best-marketing-for-contractors-by-trade",
       "h1_working": "Best marketing for contractors by trade (what works for hardscape isn't what works for HVAC)",
       "primary_keyword": "best marketing for contractors",
@@ -191,8 +344,8 @@
       "resource_spinoff": null
     },
     {
-      "slot": 10,
-      "publish_date": "2026-09-03",
+      "slot": 18,
+      "publish_date": "2026-06-23",
       "slug": "bad-contractor-websites",
       "h1_working": "7 things bad contractor websites all do (and lose trust for)",
       "primary_keyword": "bad contractors website",
@@ -208,8 +361,8 @@
       "resource_spinoff": null
     },
     {
-      "slot": 11,
-      "publish_date": "2026-09-17",
+      "slot": 19,
+      "publish_date": "2026-06-25",
       "slug": "best-seo-for-contractors",
       "h1_working": "Best SEO for contractors (what to look for in a real agency, what to run from)",
       "primary_keyword": "best seo for contractors",
@@ -226,8 +379,8 @@
       "resource_spinoff": "SEO agency evaluation checklist"
     },
     {
-      "slot": 12,
-      "publish_date": "2026-10-01",
+      "slot": 20,
+      "publish_date": "2026-06-30",
       "slug": "free-leads-for-contractors",
       "h1_working": "Free leads for contractors: where they really come from (and what they actually cost you)",
       "primary_keyword": "free leads for contractors",
@@ -243,8 +396,8 @@
       "resource_spinoff": null
     },
     {
-      "slot": 13,
-      "publish_date": "2026-10-15",
+      "slot": 21,
+      "publish_date": "2026-07-02",
       "slug": "ai-for-small-business-contractors",
       "h1_working": "AI for small business contractors: 10 real uses that actually save hours",
       "primary_keyword": "ai for small business",
@@ -268,7 +421,7 @@
       "target_date": "2026-06-04",
       "format": "YouTube video series + companion blog posts",
       "lead_capture": false,
-      "replaces": "Lead source tracker spreadsheet (removed 2026-04-18 — spreadsheets are off-brand for BCT per feedback_crm_over_spreadsheets.md)",
+      "replaces": "Lead source tracker spreadsheet (removed 2026-04-18 \u2014 spreadsheets are off-brand for BCT per feedback_crm_over_spreadsheets.md)",
       "plan_doc": "content-ops/ghl-walkthrough-series-plan.md"
     },
     {
