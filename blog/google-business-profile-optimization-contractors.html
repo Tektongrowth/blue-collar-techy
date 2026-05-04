@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The complete guide to Google Business Profile optimization for contractors · Blue Collar Techy</title>
+<meta name="description" content="Everything a contractor needs to know about Google Business Profile optimization. Category selection, service descriptions, photos, Google Posts, Q&A, review responses, and spam reporting. Organized by priority tier." />
+<meta name="author" content="Nick Conley" />
+<meta name="theme-color" content="#0d0d12" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bluecollartechy.com/blog/google-business-profile-optimization-contractors" />
+<meta property="og:title" content="The complete guide to Google Business Profile optimization for contractors" />
+<meta property="og:description" content="Category selection, service descriptions, photos, posts, Q&A, review responses, and spam reporting. Eight priority tiers, in the order that moves the map pack fastest." />
+<meta property="og:image" content="https://bluecollartechy.com/og-image.jpg" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The complete guide to Google Business Profile optimization for contractors" />
+<meta name="twitter:description" content="Eight priority tiers for getting the most out of your Google Business Profile. The pillar resource on GBP optimization for contractors." />
+<meta name="twitter:image" content="https://bluecollartechy.com/og-image.jpg" />
+
+<link rel="canonical" href="https://bluecollartechy.com/blog/google-business-profile-optimization-contractors" />
+<link rel="icon" type="image/svg+xml" href="../logos/bct-favicon.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0d0d12;
+    --bg-elev: #15151d;
+    --bg-card: #1a1a24;
+    --border: #272733;
+    --text: #f5f5f7;
+    --text-dim: #a0a0ab;
+    --text-faint: #6b6b78;
+    --accent: #ff6a1a;
+    --accent-bright: #ff8530;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .narrow { max-width: 780px; margin: 0 auto; padding: 0 32px; }
+  a { color: inherit; text-decoration: none; }
+  .accent { color: var(--accent); }
+
+  nav.site-nav {
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(13, 13, 18, 0.85);
+  }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo svg { height: 52px; width: auto; display: block; }
+  .nav-cta-mobile { display: none; }
+  .nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    width: 44px; height: 44px;
+    cursor: pointer;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    transition: all 0.25s ease;
+  }
+  .nav-toggle:hover { border-color: var(--accent); }
+  .nav-toggle span {
+    display: block;
+    width: 20px; height: 2px;
+    background: var(--text);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .site-nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .site-nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  .site-nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-links { display: flex; gap: 36px; font-size: 14px; font-weight: 600; }
+  .nav-links a { color: var(--text-dim); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-links a.active { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: #000;
+    padding: 10px 18px; font-weight: 700; font-size: 13px;
+    letter-spacing: 0.02em; border-radius: 2px; text-transform: uppercase;
+  }
+
+  .article-meta {
+    padding: 40px 0 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .article-meta-row {
+    display: flex; justify-content: space-between; gap: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .article-meta-row span.hl { color: var(--accent); }
+
+  .hero-post { padding: 80px 0 80px; }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .kicker::before {
+    content: ''; width: 28px; height: 2px; background: var(--accent);
+  }
+  h1.post-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(40px, 5.6vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin-bottom: 36px;
+    max-width: 960px;
+  }
+  h1.post-title .hi { color: var(--accent); }
+  .hero-sub {
+    font-size: 22px;
+    color: var(--text-dim);
+    max-width: 680px;
+    line-height: 1.5;
+  }
+  .post-byline {
+    margin-top: 40px;
+    display: flex; gap: 24px; flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .post-byline span.v { color: var(--text); }
+
+  .chapter {
+    padding: 48px 0;
+    border-top: 1px solid var(--border);
+  }
+  .chapter-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .chapter h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(30px, 3.5vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    max-width: 760px;
+  }
+  .chapter h2 .hi { color: var(--accent); }
+  .chapter h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin: 32px 0 14px;
+    color: var(--text);
+  }
+  .chapter p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+  .chapter p.lead {
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+  .chapter p.dim {
+    color: #ffb089;
+    font-style: italic;
+    border-left: 3px solid var(--accent);
+    padding: 6px 0 6px 20px;
+    margin: 28px 0 26px;
+  }
+  .chapter p strong { color: var(--text); font-weight: 700; }
+  .chapter ul, .chapter ol {
+    margin: 14px 0 28px;
+    padding-left: 28px;
+  }
+  .chapter ul li, .chapter ol li {
+    font-size: 18px;
+    line-height: 1.65;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .chapter ul li::marker { color: var(--accent); }
+
+  .checklist {
+    list-style: none !important;
+    padding: 32px 0 !important;
+    margin: 32px 0 !important;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .checklist li {
+    position: relative;
+    padding: 14px 0 14px 44px !important;
+    font-size: 18px;
+    color: var(--text);
+  }
+  .checklist li::before {
+    content: '';
+    position: absolute; left: 0; top: 22px;
+    width: 24px; height: 2px;
+    background: var(--accent);
+  }
+  .checklist li strong { color: var(--accent); font-weight: 800; }
+
+  .data-callout {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 36px 40px;
+    margin: 40px 0;
+    position: relative;
+  }
+  .data-callout .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .data-callout h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+  .data-callout p { font-size: 16px; line-height: 1.65; margin-bottom: 10px; color: var(--text-dim); }
+  .data-callout ul { padding-left: 22px !important; margin: 12px 0 !important; }
+  .data-callout ul li { font-size: 16px; margin-bottom: 8px; color: var(--text-dim); }
+  .data-callout ul li strong { color: var(--accent); font-weight: 700; }
+
+  .pullquote {
+    padding: 96px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--bg) 0%, #0a0a10 100%);
+    text-align: center;
+  }
+  .pullquote blockquote {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 3.6vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    max-width: 900px;
+    margin: 0 auto 24px;
+  }
+  .pullquote blockquote .hi { color: var(--accent); }
+  .pullquote cite {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  .inline-cta {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 40px;
+    margin: 48px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .inline-cta::before {
+    content: '';
+    position: absolute; top: 0; left: 0; bottom: 0;
+    width: 4px; background: var(--accent);
+  }
+  .inline-cta .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .inline-cta h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 26px;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+  .inline-cta p {
+    color: var(--text-dim);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .inline-cta a.btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #000;
+    padding: 14px 26px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 13px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .inline-cta a.btn:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+
+  .end-cta {
+    padding: 120px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .end-cta .kicker { margin-bottom: 24px; }
+  .end-cta h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    max-width: 820px; margin-left: auto; margin-right: auto;
+  }
+  .end-cta p {
+    color: var(--text-dim);
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 640px;
+    margin-left: auto; margin-right: auto;
+  }
+  .cta-row {
+    display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 18px 32px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 14px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    border: 2px solid transparent; border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: var(--accent); color: #000; }
+  .btn-primary:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+  .btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
+  .btn-secondary:hover { border-color: var(--text); }
+
+  footer {
+    padding: 80px 0 40px;
+    background: #0a0a10;
+    border-top: 1px solid var(--border);
+  }
+  .foot-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--border);
+  }
+  .foot-brand .logo-mini { margin-bottom: 20px; }
+  .foot-brand .logo-mini svg { height: 76px; width: auto; }
+  .foot-brand p { color: var(--text-dim); font-size: 14px; max-width: 300px; line-height: 1.6; }
+  .foot-col h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a { color: var(--text-dim); font-size: 14px; transition: color 0.2s; }
+  .foot-col a:hover { color: var(--accent); }
+  .foot-bottom {
+    padding-top: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--text-faint); letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 900px) {
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .nav-toggle { display: flex; }
+    .nav-cta { display: none; }
+    .nav-links {
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(13, 13, 18, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 0;
+      font-size: 15px;
+      transform: translateY(-12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .nav-links a {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-links a:last-of-type { border-bottom: none; }
+    .site-nav.nav-open .nav-links {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .site-nav.nav-open .nav-links .nav-cta-mobile {
+      display: block;
+      margin: 12px 24px 16px;
+      background: var(--accent);
+      color: #000;
+      padding: 12px 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      border-radius: 2px;
+      border-bottom: none;
+    }
+    .article-meta-row { flex-direction: column; gap: 8px; }
+    .data-callout { padding: 28px 24px; }
+    .inline-cta { padding: 28px 24px; }
+  }
+  .brand-tag {
+    color: var(--accent-hover, #47c8f5);
+    font-weight: 600;
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The complete guide to Google Business Profile optimization for contractors",
+  "description": "Everything a contractor needs to know about Google Business Profile optimization. Category selection, service descriptions, photos, Google Posts, Q&A, review responses, and spam reporting. Organized by priority tier.",
+  "author": {
+    "@type": "Person",
+    "name": "Nick Conley",
+    "url": "https://bluecollartechy.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Blue Collar Techy",
+    "url": "https://bluecollartechy.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bluecollartechy.com/logos/bct-primary.svg"
+    }
+  },
+  "datePublished": "2026-05-04",
+  "dateModified": "2026-05-04",
+  "mainEntityOfPage": "https://bluecollartechy.com/blog/google-business-profile-optimization-contractors",
+  "image": "https://bluecollartechy.com/og-image.jpg",
+  "articleSection": "Local SEO"
+}
+</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="../index.html" aria-label="Blue Collar Techy">
+      <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+        <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
+        <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
+        <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
+        <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
+        <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
+        <text x="290" y="78" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">EST · 2026</text>
+      </svg>
+    </a>
+    <div class="nav-links" id="primary-nav">
+      <a href="../about.html">About</a>
+      <a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a>
+      <a href="../resources/">Resources</a>
+      <a href="index.html" class="active">Blog</a>
+      <a href="../work-with-me.html">Work with me</a>
+      <a class="nav-cta-mobile" href="../index.html#newsletter">Subscribe</a>
+    </div>
+    <a class="nav-cta" href="../index.html#newsletter">Subscribe</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="article-meta">
+  <div class="container">
+    <div class="article-meta-row">
+      <span><span class="hl">BLOG</span> / GBP · LOCAL SEO</span>
+      <span>Published · 2026-05-04</span>
+      <span>Read · 18 min</span>
+    </div>
+  </div>
+</div>
+
+<section class="hero-post">
+  <div class="narrow">
+    <div class="kicker">The Full Playbook</div>
+    <h1 class="post-title">The complete guide to Google Business Profile optimization <span class="hi">for contractors.</span></h1>
+    <p class="hero-sub">Category selection, service descriptions, photo strategy, Q&amp;A, review responses, Google Posts, and spam reporting. Eight priority tiers. Work through them in order and your profile will outrank most of your market within 30 days.</p>
+    <div class="post-byline">
+      <span>BY <span class="v">NICK CONLEY</span></span>
+      <span>FOUNDER · BLUE COLLAR TECHY</span>
+    </div>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Why this post exists</div>
+    <p class="lead">The <a href="gbp-audit-15-minutes.html" style="color:var(--accent);text-decoration:underline;">15-minute GBP audit</a> tells you what's broken. This post tells you how to fix all of it, and then some.</p>
+    <p>The audit is a diagnostic. Think of it like walking a job site before the crew shows up. You flag the problems in order of severity. You make your list. Then you go figure out how to fix them.</p>
+    <p>This post is the fix. Eight priority tiers, organized by how much each one moves your map pack ranking. Tier one before tier two. Tier two before tier three. The order matters because some fixes only work once the ones above them are right.</p>
+    <p>This is the same framework I use when we take on a new client at Tekton Growth. First 30 days, we work through each tier. By the time we get to tier eight, the profile is doing more work than most contractors in that market ever get out of it.</p>
+    <p>Before you start: open a browser tab to Google Maps, search your business name, and click "Edit profile" from the Knowledge Panel. Leave it open. You'll need it through most of this.</p>
+    <p class="dim">Already ran the 15-minute audit and know where your gaps are? Skip to the tier that covers them. The 30-day build order is at the bottom.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Tier 1 — Claim and verify</div>
+    <h2>Nothing else works until you own the listing.</h2>
+    <p>Pull up your business on Google Maps. If the listing says "Own this business?" instead of showing an edit panel, you don't own it. Stop here. Claimed ownership is the foundation. Everything else in this guide depends on it.</p>
+    <p>Click the claim link and go through Google's verification flow. Most contractors get a postcard mailed to their business address with a PIN. Some accounts qualify for phone or video verification, which is faster. If Google offers instant verification, take it. Postcard delivery can run five to seven business days, and your profile stays in limbo until it arrives.</p>
+    <p>Once you're verified, go to your profile dashboard and check who has owner and manager access. You should be listed as an owner. If you have an agency managing the profile, give them manager-level access, not owner. If you ever part ways with them, you can remove a manager without a fight. Removing an owner is a different process and can get complicated.</p>
+
+    <h3>NAP consistency</h3>
+    <p>Your name, address, and phone number on Google need to match every other directory you're listed on. Yelp, Angi, BBB, Houzz, Facebook, your website. Same format. Same spelling. Same suite number and abbreviation style if applicable.</p>
+    <p>If one listing says "Smith Landscaping, LLC" and another says "Smith Landscape and Design," Google reads uncertainty. That uncertainty can pull your ranking down. Spend an hour running through your major directories and making them match exactly.</p>
+    <p>One rule: never keyword-stuff your business name. "Smith Landscaping Paver Contractor Austin TX" is against Google's policy. Competitors report it. Google removes the extra text. Your name should match your real business name and nothing else.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Tier 2 — Categories</div>
+    <h2>Your primary category is the most important choice on the whole profile.</h2>
+    <p class="lead">More important than your photos. More important than your reviews. More important than any post you'll ever write. Pick the wrong primary category and you're invisible to the searches that matter most.</p>
+
+    <h3>How categories work</h3>
+    <p>Google uses your primary category to match your profile to search queries. If somebody searches "paver patio contractor near me" and your primary category is "Landscaper," Google has to decide whether you're a match. If your primary is "Paving Contractor" or "Hardscape Contractor," the match is clear.</p>
+    <p>Pick the most specific category that describes your primary revenue source. Not your most general service. The work that makes up the biggest share of your jobs.</p>
+
+    <div class="data-callout">
+      <div class="label">Category examples by trade</div>
+      <h3>Specific primary categories for common contractor businesses</h3>
+      <ul>
+        <li><strong>Hardscape / paving:</strong> "Paving Contractor" or "Stone Contractor" — not "Landscaper"</li>
+        <li><strong>Roofing:</strong> "Roofing Contractor" — not "General Contractor"</li>
+        <li><strong>HVAC:</strong> "HVAC Contractor" — not "Contractor"</li>
+        <li><strong>Plumbing:</strong> "Plumber" — not "Home Services"</li>
+        <li><strong>Electrical:</strong> "Electrician" — not "Contractor"</li>
+        <li><strong>Fencing:</strong> "Fence Contractor" — not "Landscaper"</li>
+        <li><strong>Concrete flatwork:</strong> "Concrete Contractor" — not "General Contractor"</li>
+        <li><strong>Remodeling GC:</strong> "Remodeling Contractor" — not "Construction Company"</li>
+      </ul>
+      <p>If you're between two categories, pick the one that matches your highest-revenue service and put the other as a secondary.</p>
+    </div>
+
+    <h3>Secondary categories</h3>
+    <p>Add three to five secondary categories for the other services you actually take jobs for today. Not services you might do someday. Not services from a previous version of the business. Services you sell and install right now.</p>
+    <p>If you're a hardscape company that also does fencing, add "Fence Contractor." If drainage work is part of most of your installs, add "Drainage Service." If you do outdoor kitchens, add the closest match. Google will surface your profile for secondary category searches even when your primary isn't an exact fit for the query.</p>
+    <p>Keep the list clean. Adding every category you can think of stopped working years ago. A focused list of three to five secondaries outperforms a stuffed list every time.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Tier 3 — Services and attributes</div>
+    <h2>Free real estate most contractors leave empty.</h2>
+    <p>The services section is one of the most underused parts of a Google Business Profile. Most contractors have it half-filled or set to defaults. Filling it out properly costs nothing and gives Google more surface area to rank you for.</p>
+
+    <h3>Writing service descriptions that actually help</h3>
+    <p>Add every service you offer. For each one, write two to three sentences. What materials you use. What the process looks like. What type of property or project it's typically for.</p>
+    <p>Plain language. Not "We offer premium hardscape solutions for discerning homeowners." Write "We install concrete and paver patios for residential properties. Projects typically run two to five days. We handle grading, base prep, and haul-off." That second version has what Google is looking for. It also has what a homeowner reading it is looking for.</p>
+    <p>Three sentences per service. That's all it takes. If you have twenty services, add twenty. This is one of the few places in local SEO where more is genuinely more, as long as it's honest and specific.</p>
+    <p>Aim for at least eight to fifteen services with real descriptions, not just names. A contractor with fifteen fully described services gives Google significantly more to work with than a competitor with four blank listings.</p>
+
+    <h3>Attributes</h3>
+    <p>Attributes are the checkboxes in the info section of your profile. Some show publicly as small badges on your listing. Others feed Google's internal filtering. Go through every option and check the ones that honestly apply.</p>
+    <p>Check "Women-owned" or "Veteran-led" or "Minority-owned" if those describe your business. Some customers filter for these specifically. Check "Free estimates" if you offer them. Check "Identifies as LGBTQ+-friendly" if that's accurate. None of these hurt. Most of them help.</p>
+    <p>Service-related attributes vary by category. HVAC companies see different options than landscapers. Look through the full list for your category. A missed attribute is a free signal you left on the table.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Tier 4 — Photo strategy</div>
+    <h2>Bad photos are fine. <span class="hi">No photos are not.</span></h2>
+    <p>Homeowners want to see real work from real jobs. An iPhone photo of a finished patio at 6 PM is ten times more useful than an empty photo section. You don't need a photographer. You need a phone and a habit.</p>
+
+    <h3>What to shoot</h3>
+    <p>Completed project photos come first. Before and after if you can manage it, though the after alone is enough. Shoot from multiple angles. Show the full area and get a close-up or two. Both matter, because some homeowners want the scale and some want the detail.</p>
+    <p>In-progress shots are valuable because they show process. A base layer going down, material staged on site, a crew member setting pavers. This is content competitors with thin profiles never post because they're not on the job taking it.</p>
+    <p>Crew photos make the profile feel real. A crew shot next to a finished job. Somebody running a plate compactor. Anything that shows real humans behind the listing. Most homeowners want to know who's going to show up at their house before they call.</p>
+    <p>Equipment and vehicles round it out. Truck with your logo. Skid steer. Equipment yard. Not required for a strong profile, but it adds body to a thin one.</p>
+
+    <h3>Targets and freshness</h3>
+    <p>Aim for 30 to 50 photos. That's the range where a profile starts feeling substantial. More is fine. Fewer feels thin.</p>
+    <p>Freshness matters as much as count. A profile with 100 photos and nothing new in eight months reads as abandoned. A profile with 25 photos and three new ones last week reads as active. Set a goal: new photos every time a significant job wraps.</p>
+
+    <h3>The crew workflow</h3>
+    <p>The easiest way to stay current: ask your crew to take three photos at job completion. End of day, finished area, different angles. They send them to a shared album or directly to you. You upload the best ones weekly.</p>
+    <p>That habit takes 90 seconds per job. Put it on the close-out checklist alongside collecting the signed completion form. Most crews will do it without pushback once it's routine.</p>
+    <p class="dim">Google allows customers to upload photos to your listing. You can't remove them unless they violate policy. Most customer photos are fine and look authentic, which works in your favor. Flag anything inappropriate through the profile dashboard.</p>
+
+    <div class="inline-cta">
+      <div class="label">Free Tool · GBP Health Check</div>
+      <h3>See where your profile stands against your top competitors.</h3>
+      <p>Enter your business name and city. I'll score your live profile on nine dimensions, compare your review count and photo freshness to the top contractors in your area, and return a priority fix list. Takes about a minute.</p>
+      <a class="btn" href="../gbp-check/">Run my GBP audit →</a>
+    </div>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Tier 5 — Google Posts</div>
+    <h2>Most contractors never touch this section. <span class="hi">That's the opportunity.</span></h2>
+    <p>Google Posts are short updates that appear on your profile under "Updates." They function like a social feed attached directly to your map pack listing. Most contractor profiles have zero posts, or posts from a year ago. That makes the ones that do post stand out immediately.</p>
+
+    <h3>What a post does</h3>
+    <p>A Google Post keeps your profile looking active. It gives Google fresh content tied to your listing. It gives a homeowner something to read beyond your hours and address.</p>
+    <p>Posts also push your current work, seasonal services, and availability directly into your listing. If you just finished a major project, post about it. If you're booking into summer, post that. If you have a spring offer running, post it. Any of those is better than nothing. All of them together build a profile that looks like a real, active business.</p>
+
+    <h3>What to write</h3>
+    <p>Aim for two to four posts per month minimum. Weekly if it's easy. You don't need to be clever. You need to be present.</p>
+    <p>A basic post that works: one photo of recent work, one to two sentences describing it, your city name in the copy. "Wrapped this retaining wall and paver patio in [City] this week. Materials: Unilock Beacon Hill Smooth with natural bluestone cap." That is a real post. Done. Post it.</p>
+    <p>Seasonal posts work well too. "Taking on retaining wall projects now through July. Serving [City] and surrounding areas. Call or click below to get on the schedule." Short. Direct. Tells the searcher you're available.</p>
+
+    <h3>Using the button</h3>
+    <p>Every Google Post can include a call-to-action button with a link. Use it every time. Link to your contact form or estimate request page. Even a low click-through rate is worth having the signal. A post with no link wastes the placement.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Tier 6 — Q&amp;A management</div>
+    <h2>Anybody can answer your Q&amp;A. <span class="hi">You should go first.</span></h2>
+    <p>The Q&amp;A section on a Google Business Profile is one of the most-read and least-managed features on the platform. Homeowners read it before they call. Most contractors never look at it.</p>
+
+    <h3>The problem with unmanaged Q&amp;A</h3>
+    <p>Here's how Q&amp;A works: anyone can submit a question to your profile. Anyone can answer it. Including strangers. Including competitors. The business owner can answer too, but unless you're checking the section, you may not know a question was even asked.</p>
+    <p>A question that says "Do you offer free estimates?" answered by a random person with "Not sure, probably not" is a lead killer. That answer is wrong. But it's sitting there until you log in and fix it.</p>
+
+    <h3>How to clean it up and seed it</h3>
+    <p>Log in to your profile and open the Q&amp;A section. Read every question. If a question has an answer from someone other than you, check whether it's accurate. If it's wrong or misleading, post the correct answer from your owner account. You can't delete a random answer, but your response will appear alongside it and customers will see both.</p>
+    <p>After you've cleaned up what's there, seed the section yourself. You can submit questions to your own listing, then answer them from the owner account. There's no policy against it. Write the five questions your customers ask most often before they hire you and answer them directly.</p>
+
+    <div class="data-callout">
+      <div class="label">Q&A questions worth adding to every contractor profile</div>
+      <h3>Five questions that remove friction before the first call</h3>
+      <ul>
+        <li><strong>"Are you licensed and insured?"</strong> — The first thing most homeowners want to know. Give the direct yes and include your license number if you want.</li>
+        <li><strong>"Do you offer free estimates?"</strong> — Yes or no. If yes, note whether it's in-person or you can do a phone range first.</li>
+        <li><strong>"What areas do you serve?"</strong> — List your actual service cities. More specific beats "surrounding areas" every time.</li>
+        <li><strong>"How long does a typical [service] take?"</strong> — Give a real range. Filters out tire-kickers and sets the right expectation before anyone calls.</li>
+        <li><strong>"How does your estimate process work?"</strong> — Who picks up the phone, when you call back, how fast you get a quote out. Sets the tone before the first conversation.</li>
+      </ul>
+    </div>
+
+    <h3>Monitoring it going forward</h3>
+    <p>Set a reminder to check Q&amp;A once a month. Takes five minutes. A new question may have come in since your last visit. A random person may have answered something incorrectly. Keeping it accurate is a small lift when you do it on a schedule.</p>
+  </div>
+</section>
+
+<section class="pullquote">
+  <div class="container">
+    <blockquote>Your <span class="hi">response to every review</span> is read by the next twenty customers who find your profile. Write it for them, not for the reviewer.</blockquote>
+    <cite>Rule of the review response</cite>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Tier 7 — Review responses</div>
+    <h2>Responding to reviews is not optional anymore.</h2>
+    <p>Google doesn't require it. But customers read your responses before they call. A contractor who replies to every review, including the hard ones, looks like someone who gives a damn. A contractor with a hundred reviews and zero responses looks absent. Absence is a signal too.</p>
+    <p>Your response isn't really for the person who left the review. It's for the next twenty people who find your profile. Write it that way.</p>
+
+    <h3>Responding to positive reviews</h3>
+    <p>Keep it short. Vary the language so it doesn't look automated. Use the reviewer's first name when you can. That's the whole formula.</p>
+    <p>Some templates that work without sounding canned:</p>
+    <ul>
+      <li>"Thanks [Name], really glad the [project type] came out the way you wanted it. Appreciate you taking the time."</li>
+      <li>"That [patio / retaining wall / driveway] was a fun one. Thanks for letting us do the work."</li>
+      <li>"Appreciate it. Enjoy the new [space]. Reach out if you ever need anything down the road."</li>
+    </ul>
+    <p>None of those are clever. They're real. Customers read them and feel they were written by a person, not a marketing team. That's the goal.</p>
+
+    <h3>Responding to negative reviews</h3>
+    <p>This is where most contractors blow it. They argue. They apologize for things they didn't do. Or they ignore the review entirely. None of those work. All three of them tell the next reader something you don't want them to know about you.</p>
+    <p>The rules: never argue in the response. Never identify the customer by name, privacy is a real concern. Never offer a refund or discount in the response text, that looks like buying silence and Google can use it against you. Never apologize for something you haven't verified.</p>
+    <p>The goal of a negative response is not to win the argument. The goal is to show every future customer who reads it that you're a professional who handles problems calmly. This template works for most situations:</p>
+    <p class="dim">"Hi, thanks for sharing your feedback. This doesn't reflect the standard we hold ourselves to, and I'd like to understand what happened. Please reach out to us directly at [phone or email] so we can look into this."</p>
+    <p>That response acknowledges the review without admitting fault. It takes the conversation offline. It signals to every future reader that you follow up on problems. It's short, professional, and accurate regardless of whether the review is fair.</p>
+
+    <h3>Reporting fake or spam reviews</h3>
+    <p>For reviews that are clearly fake or from someone who never worked with you, report them. Open the review, click the three dots, and choose "Report review." Choose the most specific violation type and submit. Google's investigation process can be slow, but reporting it is always worth doing. Use the response template above while you wait. It handles the public-facing side.</p>
+
+    <h3>What to avoid in all responses</h3>
+    <p>Don't keyword-stuff your responses. "Thank you for your review of our paving services in Austin, Texas!" reads as spam and is against Google's guidelines. Keep responses natural. Responses that read like a human wrote them perform better and carry no risk of profile penalties.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Tier 8 — Spam and profile health</div>
+    <h2>Defense matters as much as offense once you're ranking.</h2>
+    <p>Most of the tiers above are about building. This one is about protecting what you've built. A well-optimized profile can get undercut by competitor spam listings, random suggested edits, and policy violations you didn't know were violations.</p>
+
+    <h3>Competitor spam listings</h3>
+    <p>Some markets have real spam problems. Fake businesses with keyword-stuffed names, addresses at a UPS Store, and review patterns that look manufactured. These profiles rank in the map pack and take calls that should go to real contractors.</p>
+    <p>If you see something suspicious in your market, look at the listing closely. Check whether the address is a real office or a mail drop. Check whether the business name has keyword stuffing beyond the actual name. Look at whether reviews cluster in a suspicious pattern, many five-star reviews posted within a few days of each other with generic copy.</p>
+    <p>If it looks like spam, report it. Open the listing on Google Maps, click the three dots, and select "Report a problem." Choose the most accurate violation type and submit. Consistent reports from multiple users move faster than a single report. If you know other legitimate contractors in your market dealing with the same spam listing, coordinate the reports.</p>
+
+    <h3>Suggested edits from strangers</h3>
+    <p>Google allows any user to suggest edits to any business listing. Your address, your phone, your hours, even your business name. Most of these come from well-meaning people who noticed something that looked wrong. Some come from competitors.</p>
+    <p>You won't always get a notification. Check your profile dashboard once a month for pending suggested edits. Deny anything you didn't submit yourself until you've verified it. An incorrect phone number submitted as a correction and approved can cost you calls for weeks before you notice it.</p>
+
+    <h3>What causes profile suspensions</h3>
+    <p>Google suspends profiles for policy violations. The most common causes: keyword-stuffed business name, address set to a residential property when you're operating as a service-area business with no public storefront, service area set to an unrealistically large radius, and review activity that looks bought or coordinated.</p>
+    <p>Keep the profile clean from the start. Follow the naming rules. Be honest about your address and service area. If you run the business out of your home and drive to jobs, hide your residential address in the profile settings and configure a service area instead. That is the correct setup for a home-based service business. Listing your house as a business address and then hiding it later can trigger a review flag.</p>
+    <p>If your profile gets suspended, go to Google's Business Profile Help and submit a reinstatement request. Include documentation: business license, insurance certificate, photos of your truck with the company name on it. The process can take weeks. Prevention is faster.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// The 30-day build</div>
+    <h2>Eight tiers in 30 days. Not a weekend sprint.</h2>
+    <p class="lead">You're not going to do all of this in one sitting. You don't need to. This is base prep before the pavers go down. Do it in the right order and each layer supports the one above it.</p>
+    <p>Here's a timeline that works without burning a week on your profile:</p>
+
+    <ul class="checklist">
+      <li><strong>Week 1.</strong> Claim and verify. Fix NAP across every directory you're listed on. Lock in your primary category and add the right secondaries. This is the foundation. Nothing else compounds until this is right.</li>
+      <li><strong>Week 2.</strong> Fill out services with real descriptions. Work through the attributes list. Write two to three sentences for every service you offer, not just the top three.</li>
+      <li><strong>Week 3.</strong> Upload 20 to 30 photos of recent work. Set up the crew photo workflow. Write your first Google Post and put twice-monthly posts on the schedule going forward.</li>
+      <li><strong>Week 4.</strong> Seed Q&amp;A with five questions and answer them. Respond to every unanswered review. Check for spam listings in your map pack and report the obvious ones. Review pending suggested edits in your dashboard.</li>
+    </ul>
+
+    <p>After week four, the work drops to maintenance. Two posts per month minimum. New photos when jobs wrap. Review responses within 48 hours of any new review coming in. A full profile check once per quarter to catch anything that drifted.</p>
+    <p>None of this is technically hard. It requires attention, not skill. The hardest part is the habit. Most of your competitors aren't doing this because they're running crews and not sitting at a laptop. That gap is the whole opportunity. The profiles that rank are usually the ones that are consistently maintained, not the ones that were optimized once and forgotten.</p>
+    <p>If you want a fast picture of where you stand before you start building, the GBP Health Check below scores your live profile on nine dimensions and benchmarks you against the top three contractors in your area. Start there. It shows you the biggest gaps in about a minute, which tells you exactly which tier to hit first.</p>
+  </div>
+</section>
+
+<section class="end-cta">
+  <div class="container">
+    <div class="kicker">What's next</div>
+    <h2>See your score before you start building.</h2>
+    <p>The GBP Health Check scores your live profile on nine dimensions and compares your review count, photo freshness, and category setup against the top contractors in your area. Free. Takes about a minute.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="../gbp-check/">
+        Run my GBP audit
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" fill="none"/></svg>
+      </a>
+      <a class="btn btn-secondary" href="gbp-audit-15-minutes.html">Read the 15-min audit</a>
+      <a class="btn btn-secondary" href="../index.html#newsletter">Get the newsletter</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo-mini">
+          <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
+            <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
+            <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
+            <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
+            <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
+          </svg>
+        </div>
+        <p><span class="brand-tag">Practical tech for the trades.</span> AI, local SEO, and real systems. No guru nonsense.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="../resources/">Resources</a></li>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="../work-with-me.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Work</h4>
+        <ul>
+          <li><a href="../work-with-me.html">Get in touch</a></li>
+          <li><a href="https://tektongrowth.com" target="_blank" rel="noopener">Tekton Growth</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="#" target="_blank" rel="noopener">X</a></li>
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Blue Collar Techy · Nick Conley</span>
+      <span>Built for the trades</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/tracking.js"></script>
+<script>
+  (function(){
+    var nav = document.querySelector('nav.site-nav');
+    if (!nav) return;
+    var btn = nav.querySelector('.nav-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('nav-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('nav-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+</body>
+</html>
