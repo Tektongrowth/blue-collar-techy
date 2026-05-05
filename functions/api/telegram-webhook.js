@@ -52,7 +52,31 @@ export async function onRequestPost({ request, env }) {
 }
 
 async function approvePr(env, prNum, cb) {
-  // 1. Merge the PR (squash, delete branch)
+  // 1. Check if PR is a draft. The merge endpoint returns a generic 405 for
+  // draft PRs which surfaces as a confusing error. Use the GraphQL
+  // markPullRequestReadyForReview mutation if needed, then proceed.
+  const prDetail = await fetch(`https://api.github.com/repos/${REPO}/pulls/${prNum}`, {
+    headers: ghHeaders(env),
+  });
+  if (prDetail.ok) {
+    const pr = await prDetail.json();
+    if (pr.draft) {
+      const ready = await fetch(`https://api.github.com/graphql`, {
+        method: "POST",
+        headers: ghHeaders(env),
+        body: JSON.stringify({
+          query: `mutation($id: ID!) { markPullRequestReadyForReview(input: { pullRequestId: $id }) { pullRequest { id } } }`,
+          variables: { id: pr.node_id },
+        }),
+      });
+      if (!ready.ok) {
+        const body = await ready.text();
+        throw new Error(`Mark-ready failed ${ready.status}: ${body.slice(0, 200)}`);
+      }
+    }
+  }
+
+  // 2. Merge the PR (squash, delete branch)
   const mergeRes = await fetch(`https://api.github.com/repos/${REPO}/pulls/${prNum}/merge`, {
     method: "PUT",
     headers: ghHeaders(env),
@@ -64,7 +88,7 @@ async function approvePr(env, prNum, cb) {
     throw new Error(`GitHub merge ${mergeRes.status}: ${body.slice(0, 200)}`);
   }
 
-  // 2. Get PR details to find the branch (so we can delete it)
+  // 3. Get PR details to find the branch (so we can delete it)
   const prRes = await fetch(`https://api.github.com/repos/${REPO}/pulls/${prNum}`, {
     headers: ghHeaders(env),
   });
