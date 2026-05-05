@@ -1,0 +1,113 @@
+{
+  "as_of": "2026-05-05",
+  "sitemap": {
+    "submitted": 17,
+    "indexed": 0,
+    "errors": 0,
+    "warnings": 0
+  },
+  "inspections": {
+    "https://bluecollartechy.com/about.html": {
+      "verdict": "NEUTRAL",
+      "coverage": "Redirect error",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "last_crawl": "2026-05-05T06:06:51Z"
+    },
+    "https://bluecollartechy.com/blog/gbp-audit-15-minutes": {
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "last_crawl": "never"
+    },
+    "https://bluecollartechy.com/blog/google-business-profile-optimization-contractors": {
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "last_crawl": "never"
+    },
+    "https://bluecollartechy.com/blog/how-to-get-more-google-reviews": {
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "last_crawl": "never"
+    },
+    "https://bluecollartechy.com/blog/i-tested-the-99-ai-seo-tool": {
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "last_crawl": "never"
+    },
+    "https://bluecollartechy.com/blog/": {
+      "verdict": "NEUTRAL",
+      "coverage": "Discovered - currently not indexed",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "last_crawl": "never"
+    },
+    "https://bluecollartechy.com/blog/market-agency-or-you": {
+      "verdict": "NEUTRAL",
+      "coverage": "Duplicate, Google chose different canonical than user",
+      "indexing": "INDEXING_ALLOWED",
+      "last_crawl": "2026-05-05T06:08:51Z"
+    },
+    "https://bluecollartechy.com/blog/market-up-sales-down": {
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
+      "indexing": "INDEXING_ALLOWED",
+      "last_crawl": "2026-05-05T06:08:51Z"
+    },
+    "https://bluecollartechy.com/blog/ten-things-no-agency-can-fix": {
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
+      "indexing": "INDEXING_ALLOWED",
+      "last_crawl": "2026-05-05T06:10:51Z"
+    },
+    "https://bluecollartechy.com/gbp-check/": {
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
+      "indexing": "INDEXING_ALLOWED",
+      "last_crawl": "2026-04-21T16:58:48Z"
+    },
+    "https://bluecollartechy.com/": {
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
+      "indexing": "INDEXING_ALLOWED",
+      "last_crawl": "2026-04-21T06:10:30Z"
+    },
+    "https://bluecollartechy.com/market-scan/": {
+      "verdict": "NEUTRAL",
+      "coverage": "Discovered - currently not indexed",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "last_crawl": "never"
+    },
+    "https://bluecollartechy.com/qr-generator/": {
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
+      "indexing": "INDEXING_ALLOWED",
+      "last_crawl": "2026-05-05T06:10:51Z"
+    },
+    "https://bluecollartechy.com/resources/crew-cheat-sheet/": {
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
+      "indexing": "INDEXING_ALLOWED",
+      "last_crawl": "2026-05-05T06:10:51Z"
+    },
+    "https://bluecollartechy.com/resources/gbp-optimization-checklist/": {
+      "verdict": "NEUTRAL",
+      "coverage": "Discovered - currently not indexed",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "last_crawl": "never"
+    },
+    "https://bluecollartechy.com/resources/": {
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
+      "indexing": "INDEXING_ALLOWED",
+      "last_crawl": "2026-05-05T06:10:51Z"
+    },
+    "https://bluecollartechy.com/work-with-me.html": {
+      "verdict": "NEUTRAL",
+      "coverage": "Discovered - currently not indexed",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "last_crawl": "never"
+    }
+  }
+}
