@@ -68,12 +68,15 @@ def canonical_urls():
 def sitemap_status(sc):
     res = sc.sitemaps().list(siteUrl=SITE).execute()
     out = {"submitted": 0, "indexed": 0, "errors": 0, "warnings": 0}
+    def num(v):
+        try: return int(v)
+        except: return 0
     for s in res.get('sitemap', []):
-        out["errors"] += s.get('errors', 0)
-        out["warnings"] += s.get('warnings', 0)
+        out["errors"] += num(s.get('errors', 0))
+        out["warnings"] += num(s.get('warnings', 0))
         for c in s.get('contents', []):
-            out["submitted"] += c.get('submitted', 0)
-            out["indexed"] += c.get('indexed', 0)
+            out["submitted"] += num(c.get('submitted', 0))
+            out["indexed"] += num(c.get('indexed', 0))
     return out
 
 
