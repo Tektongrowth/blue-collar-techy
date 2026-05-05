@@ -485,7 +485,62 @@
     color: var(--accent-hover, #47c8f5);
     font-weight: 600;
   }
-  </style>
+  
+  .related-posts { padding: 80px 0; border-top: 1px solid var(--border); }
+  .related-posts .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .related-posts .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .related-posts h2.related-h {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin-bottom: 36px; max-width: 760px;
+  }
+  .related-grid {
+    display: grid; gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .related-card {
+    display: block;
+    background: var(--bg-card, #1a1a24);
+    border: 1px solid var(--border);
+    padding: 28px 28px 24px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .related-card:hover {
+    border-color: var(--accent);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.18);
+  }
+  .related-card .cat {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--accent);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-card h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 19px; line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px; color: var(--text);
+  }
+  .related-card p {
+    color: var(--text-dim);
+    font-size: 14px; line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .related-card .arrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--accent);
+    letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 700;
+  }
+  @media (max-width: 700px) { .related-grid { grid-template-columns: 1fr; } }
+</style>
 
 <!-- JSON-LD BlogPosting schema -->
 <script type="application/ld+json">
@@ -725,6 +780,33 @@
 </section>
 
 <!-- END CTA -->
+
+<section class="related-posts">
+  <div class="container">
+    <div class="kicker">// Read next</div>
+    <h2 class="related-h">More from the BCT playbook.</h2>
+    <div class="related-grid">
+      <a class="related-card" href="market-agency-or-you.html">
+        <div class="cat">Diagnosis</div>
+        <h3>When leads dry up: is it the market, the agency, or you?</h3>
+        <p>The three-bucket diagnostic that saves the most money.</p>
+        <span class="arrow">Read →</span>
+      </a>
+      <a class="related-card" href="market-up-sales-down.html">
+        <div class="cat">Mindset · Diagnosis</div>
+        <h3>Your market is up but sales are down. What now?</h3>
+        <p>Price-aware markets, the four-pool model, the right order of moves.</p>
+        <span class="arrow">Read →</span>
+      </a>
+      <a class="related-card" href="gbp-audit-15-minutes.html">
+        <div class="cat">Local SEO · How-To</div>
+        <h3>Audit your Google Business Profile in 15 minutes</h3>
+        <p>Seven checks any contractor can run on their own profile.</p>
+        <span class="arrow">Read →</span>
+      </a>
+    </div>
+  </div>
+</section>
 <section class="end-cta">
   <div class="container">
     <div class="kicker">What's next</div>
