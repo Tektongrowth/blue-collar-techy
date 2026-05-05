@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>GBP Optimization Checklist — Blue Collar Techy</title>
+<meta name="robots" content="noindex" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  @page { size: Letter; margin: 0.4in; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: #fff; color: #0d0d12;
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 10pt; line-height: 1.4;
+  }
+  body { padding: 0.25in 0.25in 0.15in; }
+  .page { page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  .toolbar {
+    position: sticky; top: 0;
+    background: #0d0d12; color: #fff;
+    padding: 12px 20px; margin: -0.25in -0.25in 20px;
+    display: flex; gap: 12px; justify-content: space-between;
+    align-items: center;
+  }
+  .toolbar h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+  }
+  .toolbar button {
+    background: #ff6a1a; color: #000; border: none;
+    padding: 10px 18px; font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 11px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px;
+  }
+  @media print {
+    .toolbar { display: none !important; }
+    body { padding: 0 !important; }
+  }
+
+  .brand-strip {
+    display: flex; justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid #0d0d12;
+    padding-bottom: 6pt; margin-bottom: 8pt;
+  }
+  .brand-strip .brand {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 11pt; letter-spacing: -0.02em;
+  }
+  .brand-strip .brand .orange { color: #ff6a1a; }
+  .brand-strip .url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt; letter-spacing: 0.08em;
+    color: #666;
+  }
+
+  h1.sheet-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 20pt; line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin-bottom: 4pt;
+  }
+  h1.sheet-title .hi { color: #ff6a1a; }
+  .deck { font-size: 10pt; color: #555; margin-bottom: 10pt; }
+
+  h2.section-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 12pt; margin: 10pt 0 6pt;
+    padding-bottom: 3pt;
+    border-bottom: 2px solid #ff6a1a;
+  }
+  h2.section-title .num {
+    display: inline-block;
+    background: #ff6a1a; color: #fff;
+    font-size: 9pt; padding: 2pt 6pt;
+    margin-right: 6pt; vertical-align: middle;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.1em;
+  }
+
+  ul.check {
+    list-style: none; padding: 0; margin: 4pt 0 8pt;
+    font-size: 9.5pt;
+  }
+  ul.check li {
+    padding: 4pt 6pt 4pt 26pt;
+    position: relative;
+    margin-bottom: 3pt;
+    background: #fafafa;
+    border-left: 2px solid #ddd;
+  }
+  ul.check li::before {
+    content: '☐'; color: #ff6a1a;
+    position: absolute; left: 8pt; top: 3pt;
+    font-size: 14pt; font-weight: 700;
+    line-height: 1;
+  }
+  ul.check li strong { color: #0d0d12; }
+  ul.check li .pro {
+    display: inline-block;
+    background: #ff6a1a; color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt; letter-spacing: 0.1em;
+    text-transform: uppercase; font-weight: 700;
+    padding: 1pt 5pt; border-radius: 2px;
+    margin-left: 4pt; vertical-align: middle;
+  }
+
+  ul.steps {
+    list-style: decimal; padding-left: 24pt; margin: 4pt 0 10pt;
+    font-size: 9.5pt; line-height: 1.55;
+  }
+  ul.steps li { margin-bottom: 5pt; padding-left: 4pt; }
+  ul.steps li strong { color: #0d0d12; }
+
+  .callout {
+    background: #fff7f0;
+    border: 1px solid #f0cda3;
+    border-left: 3px solid #ff6a1a;
+    padding: 8pt 10pt; margin: 8pt 0;
+    font-size: 9.5pt;
+  }
+  .callout .lab {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #ff6a1a;
+    font-weight: 700; margin-bottom: 3pt;
+  }
+
+  table.script {
+    width: 100%; border-collapse: collapse;
+    font-size: 9pt; margin: 4pt 0 8pt;
+  }
+  table.script th, table.script td {
+    border: 1px solid #ddd;
+    padding: 5pt 7pt; text-align: left;
+    vertical-align: top;
+  }
+  table.script th {
+    background: #0d0d12; color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt; letter-spacing: 0.1em;
+    text-transform: uppercase; font-weight: 700;
+    width: 32%;
+  }
+  table.script td.action {
+    font-style: italic; color: #555;
+  }
+
+  .sheet-footer {
+    margin-top: 14pt;
+    padding-top: 8pt;
+    border-top: 1px solid #ddd;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt; letter-spacing: 0.1em;
+    color: #666;
+    display: flex; justify-content: space-between;
+    text-transform: uppercase;
+  }
+
+  .two-col {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10pt;
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <h1>GBP Optimization Checklist — Print View</h1>
+  <button onclick="window.print()">Save as PDF / Print</button>
+</div>
+
+<!-- ========== PAGE 1 ========== -->
+<div class="page">
+  <div class="brand-strip">
+    <div class="brand">BLUE COLLAR <span class="orange">TECHY</span></div>
+    <div class="url">bluecollartechy.com / gbp-checklist</div>
+  </div>
+
+  <h1 class="sheet-title">The full Google Business Profile <span class="hi">optimization checklist</span> for contractors.</h1>
+  <p class="deck">Every field, every step, every backup move. Same checklist Tekton Growth runs on every new client. Print it. Tape it to the wall. Tick it as you go.</p>
+
+  <h2 class="section-title"><span class="num">01</span>NAP consistency (do this first)</h2>
+  <div class="callout">
+    <div class="lab">Foundation rule</div>
+    Your <strong>Name, Address, and Phone Number</strong> must be identical across every online platform — your website, GBP, Yelp, BBB, Facebook, every directory. Inconsistencies tell Google you might be three different businesses.
+  </div>
+
+  <h2 class="section-title"><span class="num">02</span>Profile setup — every field</h2>
+  <ul class="check">
+    <li><strong>Business Name.</strong> Use the exact legal/registered name. No keyword stuffing — Google clips it and flags trust.</li>
+    <li><strong>Profile Picture.</strong> 3D version of your logo if possible. Otherwise a clean square logo on solid background.</li>
+    <li><strong>Cover Photo.</strong> Imagery that matches your service focus. For hardscape, a finished patio. For HVAC, a crew on site. Real, not stock.</li>
+    <li><strong>Primary Category.</strong> Pick the most specific match for your money service (e.g., "Paver Contractor" over "Contractor").</li>
+    <li><strong>Secondary Categories.</strong> Add 3-5 more covering your real service mix. After picking each category, drill into the Service Options Google offers under it.</li>
+    <li><strong>Services.</strong> Manually add anything not auto-captured by category selection. The more granular, the better.</li>
+    <li><strong>Business Address.</strong> Use a real address if you can. Businesses rank in roughly a 15-mile radius from their listed address. If you're a service-area-only profile (no displayed address), your ranking ceiling drops hard. <span class="pro">PRO</span> A virtual office in a strategic location can dramatically expand your service radius.</li>
+    <li><strong>Shortname.</strong> Match your business name. Used in your share-friendly Google review URL.</li>
+    <li><strong>Phone.</strong> Local business line — same number that's on your website.</li>
+    <li><strong>Website.</strong> Link to your live site (or a placeholder URL if not live yet — fill it in later).</li>
+    <li><strong>Business Description.</strong> Cover your services, your unique selling points, and your customer commitment. Use service-area keywords naturally. No keyword stuffing.</li>
+    <li><strong>Operating Hours.</strong> Real hours. <strong>Don't pick 24/7</strong> — Google flags it as suspicious for service trades.</li>
+    <li><strong>Photos.</strong> Upload work photos, equipment, crew, vehicles, the shop. Aim for 30+ at launch and 3-5 new per month.</li>
+    <li><strong>Q&A.</strong> Seed roughly 10 FAQs that map to your primary services and service areas. Answer each one yourself.</li>
+    <li><strong>Service Areas.</strong> Add every city and zip code you actually service.</li>
+    <li><strong>Booking Button.</strong> Point to your website's contact page or a calendar booking link.</li>
+    <li><strong>Products.</strong> Re-add your services here with a picture and short description for each.</li>
+    <li><strong>Social Links.</strong> Connect every social profile you actually maintain.</li>
+    <li><strong>"More" Section.</strong> Fill in the From-the-Business field and all relevant Service Options.</li>
+    <li><strong>Messaging.</strong> Turn it on. Then commit to monitoring it.</li>
+  </ul>
+
+  <div class="sheet-footer">
+    <span>Page 1 · Initial optimization</span>
+    <span>Blue Collar Techy · 2026</span>
+  </div>
+</div>
+
+<!-- ========== PAGE 2 ========== -->
+<div class="page">
+  <div class="brand-strip">
+    <div class="brand">BLUE COLLAR <span class="orange">TECHY</span></div>
+    <div class="url">bluecollartechy.com / gbp-checklist</div>
+  </div>
+
+  <h1 class="sheet-title">Recurring maintenance + the <span class="hi">95% video verification</span> playbook.</h1>
+  <p class="deck">Optimization is one-time. Maintenance is forever. And video verification is where most contractors get stuck — here's the process Tekton Growth uses with a 95% pass rate.</p>
+
+  <h2 class="section-title"><span class="num">03</span>Recurring maintenance</h2>
+  <ul class="check">
+    <li><strong>Review acquisition.</strong> Ask every customer. Reviews are the currency Google uses to measure work activity and local authority. Reviews boost rankings <strong>and</strong> Google Ads quality scores.</li>
+    <li><strong>GBP messages.</strong> Monitor them. Respond fast. Slow responses kill conversion and Google penalizes neglect.</li>
+    <li><strong>Review responses.</strong> Respond to all of them, especially the bad ones. Use them to showcase professionalism to the next 10 readers, not the one customer.</li>
+    <li><strong>Photos + posts.</strong> Frequent uploads. Aim for one post and 3-5 photos per week.</li>
+    <li><strong>Insights review.</strong> Check it monthly. See how your effort is moving the needle (search visibility, calls, direction requests, photo views).</li>
+  </ul>
+
+  <h2 class="section-title"><span class="num">04</span>Video verification — 95% pass rate prep</h2>
+  <p style="font-size:9.5pt; color:#444; margin-bottom: 6pt;">When you set up a new GBP <strong>or</strong> change your address, Google triggers verification. Get prepped before you submit so you don't get stuck in re-shoot loops.</p>
+
+  <ul class="check">
+    <li><strong>Office door canvas/sign.</strong> CRUCIAL. A printed sign that has your business name on it, hangable on a door.</li>
+    <li><strong>Business cards.</strong> Printed, with NAP that matches the GBP exactly.</li>
+    <li><strong>Vehicle branding.</strong> Wrap, lettering, or magnet — anything that ties the truck to the business.</li>
+    <li><strong>Branded shirt + hat.</strong> Optional but lifts pass rate. Wear them in the video.</li>
+  </ul>
+  <div class="callout">
+    <div class="lab">Where to print</div>
+    Design on Canva or Fiverr. Print on VistaPrint. Don't skip the canvas/sign — that's the single most common reason contractor verifications fail.
+  </div>
+
+  <h2 class="section-title"><span class="num">05</span>Backup: business identity verification</h2>
+  <p style="font-size:9.5pt; color:#444; margin-bottom: 6pt;">If video verification fails, Google escalates to identity verification. <strong>Get these ready now</strong> so you can move in one day instead of waiting for a re-trigger.</p>
+  <div class="two-col">
+    <div>
+      <p style="font-family:'JetBrains Mono',monospace;font-size:8pt;letter-spacing:0.14em;text-transform:uppercase;color:#ff6a1a;margin-bottom:3pt;">Photos to gather</p>
+      <ul class="check">
+        <li>Vehicles or equipment</li>
+        <li>Outside of the location</li>
+        <li>Street sign at the address</li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-family:'JetBrains Mono',monospace;font-size:8pt;letter-spacing:0.14em;text-transform:uppercase;color:#ff6a1a;margin-bottom:3pt;">Documents (any one)</p>
+      <ul class="check">
+        <li>Business registration (with address)</li>
+        <li>Insurance certificate (with address)</li>
+        <li>Licensing (with address)</li>
+        <li>Utility bill (with address)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sheet-footer">
+    <span>Page 2 · Maintenance + verification prep</span>
+    <span>Save once, reuse forever</span>
+  </div>
+</div>
+
+<!-- ========== PAGE 3 ========== -->
+<div class="page">
+  <div class="brand-strip">
+    <div class="brand">BLUE COLLAR <span class="orange">TECHY</span></div>
+    <div class="url">bluecollartechy.com / gbp-checklist</div>
+  </div>
+
+  <h1 class="sheet-title">The <span class="hi">video verification</span> shoot script.</h1>
+  <p class="deck">Run through this exactly. Attention to detail here saves you a 7-day rejection cycle. Re-read Google's instructions in the verification flow before you hit record.</p>
+
+  <h2 class="section-title"><span class="num">06</span>The shoot — start outside</h2>
+  <ol class="steps">
+    <li><strong>Introduce yourself.</strong> "Hi, I'm [your name], owner of [business]." Wear your branded shirt and hat.</li>
+    <li><strong>Show your business card</strong> on camera. Hold it close enough to read.</li>
+    <li><strong>Show vehicle branding.</strong> Wrap, lettering, magnet — whatever you have. Show it clearly.</li>
+    <li><strong>Show equipment</strong> in the vehicle or shop.</li>
+    <li><strong>Show the outside of the building.</strong> Pan across the building, the street, surrounding buildings, and the street sign if visible.</li>
+  </ol>
+
+  <h2 class="section-title"><span class="num">07</span>Go inside — public and private offices</h2>
+  <ol class="steps">
+    <li><strong>Open "Public Office."</strong> This is where the canvas/sign goes. Open the door, briefly show the room, and say: <em>"This is where customers conduct business."</em> An office space with a desk, business cards, laptop, etc. is ideal.</li>
+    <li><strong>Open "Private Office."</strong> Open a second door, briefly show inside, and say: <em>"This is where customers cannot enter."</em> Even a closet works — just somewhere customers don't access without permission.</li>
+  </ol>
+
+  <table class="script">
+    <thead><tr><th>If asked</th><th>Answer</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Do customers visit your location?</td>
+        <td class="action">Yes, customers can and do visit.</td>
+      </tr>
+      <tr>
+        <td>Are you a service-area business?</td>
+        <td class="action">No, we have a physical location.</td>
+      </tr>
+      <tr>
+        <td>Is this a virtual office?</td>
+        <td class="action">No, this is not a virtual office location.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-title"><span class="num">08</span>If you get rejected</h2>
+  <ul class="check">
+    <li><strong>First rejection.</strong> Submit a ticket via GBP Support. Request a <strong>Live Video Call</strong> with a Google rep — same process, but live and easier to pass.</li>
+    <li><strong>Second rejection.</strong> Submit another ticket with your business identity documentation (page 2). Also request the Appeal Form.</li>
+    <li><strong>Profile suspended?</strong> Submit the Reinstatement Form. Use the documentation you gathered. If rejected, request the Appeal Form and follow up in the same support thread.</li>
+  </ul>
+
+  <div class="callout">
+    <div class="lab">Stuck or want this done for you?</div>
+    Tekton Growth runs this full process for clients across the country. Email <strong>nick@tektongrowth.com</strong> if you want help, or run the GBP Health Check at <strong>bluecollartechy.com/gbp-check</strong> to see where your profile stands today.
+  </div>
+
+  <div class="sheet-footer">
+    <span>Page 3 · Video verification script</span>
+    <span>bluecollartechy.com</span>
+  </div>
+</div>
+
+</body>
+</html>

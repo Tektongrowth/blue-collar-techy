@@ -26,6 +26,7 @@ Practical tech, AI, and local SEO for blue-collar business owners. Hosted by Nic
 - [Branded QR Code Generator](https://bluecollartechy.com/qr-generator/): Client-side tool that turns any link (typically a Google review URL) plus a logo into a print-ready branded QR code. PNG or SVG download. Works for truck magnets, signage, invoices, business cards.
 
 ## Free Resources
+- [GBP Optimization Checklist](https://bluecollartechy.com/resources/gbp-optimization-checklist/): 3-page printable PDF — every Google Business Profile field set up correctly, recurring maintenance, plus the video verification shoot script Tekton Growth uses to pass on the first try about 95% of the time. Companion to the GBP optimization blog post.
 - [Crew Review Training Cheat Sheet](https://bluecollartechy.com/resources/crew-cheat-sheet/): One-page printable for training a crew on the three-moment review ask. Scripts, owner-vs-crew roles matrix, a crew bonus structure that stays Google-compliant under the March 2026 policy update, and a weekly owner checklist.
 
 ## Services

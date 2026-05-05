@@ -20,6 +20,39 @@
 
 // Lead magnet catalog. Add new entries here to enable PDF delivery for a new resource.
 const LEAD_MAGNETS = {
+  'gbp-optimization-checklist': {
+    pdf_url: 'https://bluecollartechy.com/resources/gbp-optimization-checklist/gbp-optimization-checklist.pdf',
+    pdf_filename: 'gbp-optimization-checklist.pdf',
+    subject: 'Your GBP optimization checklist (attached)',
+    html: `
+      <p>Thanks for grabbing the GBP optimization checklist.</p>
+      <p>Attached is the printable 3-page PDF. Page 1 is every field you need to set up correctly. Page 2 is the recurring maintenance and verification prep kit. Page 3 is the video verification shoot script Tekton Growth uses to pass on the first try about 95% of the time.</p>
+      <p>How I'd use it:</p>
+      <ul>
+        <li>Print all three pages. Tape page 1 to the wall and tick fields off as you go.</li>
+        <li>Order the verification prep items (canvas/sign, business cards, vehicle branding, branded shirt and hat) before you trigger video verification.</li>
+        <li>Read the page 3 shoot script before you hit record. The trick questions at the bottom of page 3 are the most common reason verifications fail.</li>
+      </ul>
+      <p>If you want to see how your profile scores right now, run the GBP Health Check at <a href="https://bluecollartechy.com/gbp-check/">bluecollartechy.com/gbp-check</a>. It takes about a minute.</p>
+      <p>Nick</p>
+      <p style="font-size:12px;color:#666;">Blue Collar Techy — practical tech for the trades. <a href="https://bluecollartechy.com">bluecollartechy.com</a></p>
+    `,
+    text: `Thanks for grabbing the GBP optimization checklist.
+
+Attached is the printable 3-page PDF. Page 1 is every field you need to set up correctly. Page 2 is the recurring maintenance and verification prep kit. Page 3 is the video verification shoot script Tekton Growth uses to pass on the first try about 95% of the time.
+
+How I'd use it:
+- Print all three pages. Tape page 1 to the wall and tick fields off as you go.
+- Order the verification prep items (canvas/sign, business cards, vehicle branding, branded shirt and hat) before you trigger video verification.
+- Read the page 3 shoot script before you hit record. The trick questions at the bottom of page 3 are the most common reason verifications fail.
+
+If you want to see how your profile scores right now, run the GBP Health Check at https://bluecollartechy.com/gbp-check/. Takes about a minute.
+
+Nick
+Blue Collar Techy — practical tech for the trades
+https://bluecollartechy.com
+`,
+  },
   'crew-cheat-sheet': {
     pdf_url: 'https://bluecollartechy.com/resources/crew-cheat-sheet/crew-cheat-sheet.pdf',
     pdf_filename: 'crew-review-cheat-sheet.pdf',
