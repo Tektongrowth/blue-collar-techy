@@ -52,27 +52,47 @@ jobs:
       - name: Regenerate sitemap.xml
         run: |
           python3 <<'PY'
-          import pathlib, datetime
+          import pathlib, datetime, re
           root = pathlib.Path(".")
           base = "https://bluecollartechy.com"
           today = datetime.date.today().isoformat()
+
+          # Skip these: noindex pages, redirects, internal-only
+          SKIP = {
+              "under-construction.html",
+              "utm/index.html",
+              # Lead-magnet printable views are noindex
+              "resources/crew-cheat-sheet/sheet.html",
+              "resources/gbp-optimization-checklist/sheet.html",
+          }
+
           urls = []
-
-          # Top-level pages
-          for name in ["index.html", "about.html", "work-with-me.html",
-                       "blog/index.html", "resources/index.html",
-                       "market-scan/index.html", "gbp-check/index.html"]:
-              if (root / name).exists():
-                  loc = base + "/" + name.replace("index.html", "").rstrip("/")
-                  if not loc.endswith("/") and "." not in loc.split("/")[-1]:
-                      loc += "/"
-                  urls.append((loc if loc != base + "/" else base + "/", today))
-
-          # Blog posts
-          for post in sorted((root / "blog").glob("*.html")):
-              if post.name == "index.html":
+          # Walk every .html in the repo. Skip directories that aren't served.
+          EXCLUDE_DIRS = {"node_modules", ".git", ".github", "functions", "content-ops"}
+          for path in sorted(root.rglob("*.html")):
+              parts = path.parts
+              if any(p in EXCLUDE_DIRS for p in parts):
                   continue
-              urls.append((f"{base}/blog/{post.stem}.html", today))
+              rel = str(path.relative_to(root))
+              if rel in SKIP:
+                  continue
+              # Skip any page with <meta name="robots" content="noindex">
+              try:
+                  text = path.read_text(errors="ignore")
+                  if re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\'][^"\']*noindex', text, re.I):
+                      continue
+              except Exception:
+                  pass
+
+              # Build canonical URL: index.html → directory URL, others keep .html
+              if path.name == "index.html":
+                  if rel == "index.html":
+                      loc = f"{base}/"
+                  else:
+                      loc = f"{base}/{rel[:-len('index.html')]}"
+              else:
+                  loc = f"{base}/{rel}"
+              urls.append((loc, today))
 
           body = ['<?xml version="1.0" encoding="UTF-8"?>',
                   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -80,6 +100,7 @@ jobs:
               body.append(f"  <url><loc>{loc}</loc><lastmod>{lastmod}</lastmod></url>")
           body.append("</urlset>")
           (root / "sitemap.xml").write_text("\n".join(body) + "\n")
+          print(f"Wrote sitemap with {len(urls)} URLs")
           PY
 
       - name: Commit calendar + sitemap changes

@@ -3,7 +3,7 @@
     "cadence": "2x weekly (Tue + Thu)",
     "publish_day": "Tuesday + Thursday",
     "voice": "blue-collar contractor talking to peers, no guru language, no em dashes",
-    "source": "DataForSEO keywords_for_keywords pull 2026-04-18 + Fathom call mining 2026-04-22, 2026-04-23",
+    "source": "DataForSEO keywords_for_keywords pull 2026-04-18 + Fathom call mining 2026-04-22, 2026-04-23 + 3 meta posts added 2026-05-05 (AI pipeline, CRM-not-spreadsheet, mine-sales-calls)",
     "length_target_words": 1800,
     "must_include": [
       "current events hook (per feedback_current_events_research.md)",
@@ -83,6 +83,66 @@
       "resource_spinoff": null
     },
     {
+      "slug": "ai-content-pipeline-build",
+      "h1_working": "I built an AI agent that publishes my blog twice a week. Here's how.",
+      "primary_keyword": "ai blog automation",
+      "primary_volume": 0,
+      "secondary_keywords": [
+        "claude code automation",
+        "ai content pipeline",
+        "automate blog publishing",
+        "ai agent for content"
+      ],
+      "theme": "ai_tech",
+      "angle": "Behind-the-scenes: cron \u2192 Claude headless \u2192 preview deploy \u2192 Telegram approve \u2192 production. Honest version of 'I tested the $99 AI SEO tool' \u2014 here's what real AI in a contractor agency looks like.",
+      "internal_link": "i-tested-the-99-ai-seo-tool",
+      "tool_cta": "newsletter",
+      "resource_spinoff": "YouTube screen-recording walkthrough",
+      "source_note": "Built with Nick across 2026-04 sessions. Sources: chat logs, the actual repo at Tektongrowth/blue-collar-techy",
+      "publish_date": "2026-05-07",
+      "slot": 4
+    },
+    {
+      "slug": "contractors-need-crm-not-spreadsheet",
+      "h1_working": "Why contractors need a CRM, not a spreadsheet (no matter what stage you're at)",
+      "primary_keyword": "best crm for contractors",
+      "primary_volume": 0,
+      "secondary_keywords": [
+        "crm vs spreadsheet contractor",
+        "contractor sales tracking",
+        "gohighlevel for contractors",
+        "contractor business systems"
+      ],
+      "theme": "ai_tech",
+      "angle": "Direct positioning piece. Spreadsheets drop balls, don't trigger automations, don't persist. Frame GoHighLevel naturally without being a sales pitch. Fits between the GHL walkthrough drops.",
+      "internal_link": "ten-things-no-agency-can-fix",
+      "tool_cta": "newsletter",
+      "resource_spinoff": null,
+      "source_note": "Memory: feedback_crm_over_spreadsheets.md. Brand thesis support.",
+      "publish_date": "2026-05-12",
+      "slot": 5
+    },
+    {
+      "slug": "mine-sales-calls-for-blog-topics",
+      "h1_working": "How to mine your sales calls for blog topics (the AI-assisted method)",
+      "primary_keyword": "content ideas from sales calls",
+      "primary_volume": 0,
+      "secondary_keywords": [
+        "fathom blog topics",
+        "ai content research",
+        "sales call transcripts content",
+        "customer pain point content"
+      ],
+      "theme": "ai_tech",
+      "angle": "Process post. Pull Fathom transcripts \u2192 AI extracts recurring contractor pain points \u2192 blog calendar. Niche but unique. Strong meta angle for marketing-curious contractors.",
+      "internal_link": "ai-content-pipeline-build",
+      "tool_cta": "newsletter",
+      "resource_spinoff": null,
+      "source_note": "The exact process we used 2026-04-22 and 2026-04-23",
+      "publish_date": "2026-05-14",
+      "slot": 6
+    },
+    {
       "slug": "map-pack-vs-google-ads-click-share",
       "h1_working": "Map Pack vs Google Ads: where your local clicks actually come from",
       "primary_keyword": "google local pack clicks",
@@ -98,8 +158,8 @@
       "tool_cta": "gbp-check",
       "resource_spinoff": null,
       "source_note": "Supreme Scapes audit prep 2026-04-23",
-      "slot": 4,
-      "publish_date": "2026-05-05"
+      "slot": 7,
+      "publish_date": "2026-05-19"
     },
     {
       "slug": "service-area-vs-physical-address-gbp",
@@ -117,8 +177,8 @@
       "tool_cta": "gbp-check",
       "resource_spinoff": null,
       "source_note": "Supreme Scapes audit 2026-04-23",
-      "slot": 5,
-      "publish_date": "2026-05-07"
+      "slot": 8,
+      "publish_date": "2026-05-21"
     },
     {
       "slug": "move-google-business-profile-without-losing-rankings",
@@ -136,8 +196,8 @@
       "tool_cta": "gbp-check",
       "resource_spinoff": null,
       "source_note": "Kyle 2026-04-22 (Elliot West); Darren Rochester expansion 2026-04-23",
-      "slot": 6,
-      "publish_date": "2026-05-12"
+      "slot": 9,
+      "publish_date": "2026-05-26"
     },
     {
       "slug": "seo-is-not-a-lead-engine",
@@ -155,8 +215,8 @@
       "tool_cta": "market-scan",
       "resource_spinoff": null,
       "source_note": "Both Kyle 1:1s 2026-04-22 + 2026-04-23",
-      "slot": 7,
-      "publish_date": "2026-05-14"
+      "slot": 10,
+      "publish_date": "2026-05-28"
     },
     {
       "slug": "duplicate-closed-google-listings-cleanup",
@@ -174,8 +234,8 @@
       "tool_cta": "gbp-check",
       "resource_spinoff": null,
       "source_note": "Supreme Scapes legacy listing 2026-04-23",
-      "slot": 8,
-      "publish_date": "2026-05-19"
+      "slot": 11,
+      "publish_date": "2026-06-02"
     },
     {
       "slug": "start-seo-when-busy-not-slow",
@@ -193,12 +253,12 @@
       "tool_cta": "market-scan",
       "resource_spinoff": null,
       "source_note": "Kyle 1:1 2026-04-23 \u2014 Sutton seasonality reframe",
-      "slot": 9,
-      "publish_date": "2026-05-21"
+      "slot": 12,
+      "publish_date": "2026-06-04"
     },
     {
-      "slot": 10,
-      "publish_date": "2026-05-26",
+      "slot": 13,
+      "publish_date": "2026-06-09",
       "slug": "best-lead-generation-companies-for-contractors",
       "h1_working": "Best lead generation companies for contractors: honest 2026 breakdown",
       "primary_keyword": "best lead generation companies for contractors",
@@ -230,12 +290,12 @@
       "tool_cta": "newsletter",
       "resource_spinoff": "Pricing audit calculator (tool build)",
       "source_note": "Kyle 1:1 2026-04-23",
-      "slot": 11,
-      "publish_date": "2026-05-28"
+      "slot": 14,
+      "publish_date": "2026-06-11"
     },
     {
-      "slot": 12,
-      "publish_date": "2026-06-02",
+      "slot": 15,
+      "publish_date": "2026-06-16",
       "slug": "local-service-ads-for-contractors",
       "h1_working": "Local Service Ads for contractors: what they cost, how to get badged, when to turn them off",
       "primary_keyword": "local service ads",
@@ -253,8 +313,8 @@
       "resource_spinoff": "LSA readiness checklist"
     },
     {
-      "slot": 13,
-      "publish_date": "2026-06-04",
+      "slot": 16,
+      "publish_date": "2026-06-18",
       "slug": "best-ai-tools-for-contractors",
       "h1_working": "Best AI tools for contractors in 2026 (what we actually use at Tekton Growth)",
       "primary_keyword": "best ai for small business",
@@ -271,8 +331,8 @@
       "resource_spinoff": null
     },
     {
-      "slot": 14,
-      "publish_date": "2026-06-09",
+      "slot": 17,
+      "publish_date": "2026-06-23",
       "slug": "how-to-get-leads-as-a-contractor",
       "h1_working": "How to get leads as a contractor without paying Angi or HomeAdvisor a dime",
       "primary_keyword": "how to get leads as a contractor",
@@ -289,8 +349,8 @@
       "resource_spinoff": null
     },
     {
-      "slot": 15,
-      "publish_date": "2026-06-11",
+      "slot": 18,
+      "publish_date": "2026-06-25",
       "slug": "free-google-business-profile-guide",
       "h1_working": "The free Google Business Profile (everything you get without paying anyone)",
       "primary_keyword": "free google business profile",
@@ -308,8 +368,8 @@
       "resource_spinoff": null
     },
     {
-      "slot": 16,
-      "publish_date": "2026-06-16",
+      "slot": 19,
+      "publish_date": "2026-06-30",
       "slug": "best-contractor-websites",
       "h1_working": "Best contractor websites of 2026 (and what makes them actually convert)",
       "primary_keyword": "best contractor websites",
@@ -326,8 +386,8 @@
       "resource_spinoff": "Website audit checklist"
     },
     {
-      "slot": 17,
-      "publish_date": "2026-06-18",
+      "slot": 20,
+      "publish_date": "2026-07-02",
       "slug": "best-marketing-for-contractors-by-trade",
       "h1_working": "Best marketing for contractors by trade (what works for hardscape isn't what works for HVAC)",
       "primary_keyword": "best marketing for contractors",
@@ -344,8 +404,8 @@
       "resource_spinoff": null
     },
     {
-      "slot": 18,
-      "publish_date": "2026-06-23",
+      "slot": 21,
+      "publish_date": "2026-07-07",
       "slug": "bad-contractor-websites",
       "h1_working": "7 things bad contractor websites all do (and lose trust for)",
       "primary_keyword": "bad contractors website",
@@ -361,8 +421,8 @@
       "resource_spinoff": null
     },
     {
-      "slot": 19,
-      "publish_date": "2026-06-25",
+      "slot": 22,
+      "publish_date": "2026-07-09",
       "slug": "best-seo-for-contractors",
       "h1_working": "Best SEO for contractors (what to look for in a real agency, what to run from)",
       "primary_keyword": "best seo for contractors",
@@ -379,8 +439,8 @@
       "resource_spinoff": "SEO agency evaluation checklist"
     },
     {
-      "slot": 20,
-      "publish_date": "2026-06-30",
+      "slot": 23,
+      "publish_date": "2026-07-14",
       "slug": "free-leads-for-contractors",
       "h1_working": "Free leads for contractors: where they really come from (and what they actually cost you)",
       "primary_keyword": "free leads for contractors",
@@ -396,8 +456,8 @@
       "resource_spinoff": null
     },
     {
-      "slot": 21,
-      "publish_date": "2026-07-02",
+      "slot": 24,
+      "publish_date": "2026-07-16",
       "slug": "ai-for-small-business-contractors",
       "h1_working": "AI for small business contractors: 10 real uses that actually save hours",
       "primary_keyword": "ai for small business",
