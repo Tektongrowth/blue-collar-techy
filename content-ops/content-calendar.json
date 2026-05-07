@@ -25,6 +25,27 @@
   },
   "posts": [
     {
+      "slot": 25,
+      "publish_date": "2026-05-06",
+      "slug": "small-jobs-are-marketing",
+      "h1_working": "The small jobs are marketing. Most contractors don't see it that way.",
+      "primary_keyword": "marketing for contractors",
+      "primary_volume": null,
+      "secondary_keywords": [
+        "small jobs contractors",
+        "contractor marketing strategy",
+        "contractor lead generation",
+        "niche vs nimble contractor"
+      ],
+      "theme": "marketing_mindset",
+      "angle": "When the market shifts, the leads outside your usual lane become some of the cheapest marketing dollars in the trades. Mindset piece on niche vs nimble and the relationship economy.",
+      "internal_link": "market-up-sales-down",
+      "tool_cta": "market-scan",
+      "resource_spinoff": null,
+      "published": false,
+      "notes": "Drafted from Nick+Kyle call analysis 2026-05-06. Personal story: Tekton Design Build, Northern California hardscape, $3M revenue, lost $1M of work in 5 weeks, closed company. Two lessons: runway burn before you flex, and relationships are what carried us through."
+    },
+    {
       "slot": 1,
       "publish_date": "2026-04-30",
       "slug": "how-to-get-more-google-reviews",

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The small jobs are marketing. Most contractors don't see it that way. · Blue Collar Techy</title>
+<meta name="description" content="Doing only one kind of work is great when your market supports it. When the market shifts, the calls coming in for jobs outside your usual lane stop being a distraction and start being some of the cheapest advertising money you'll ever spend." />
+<meta name="author" content="Nick Conley" />
+<meta name="theme-color" content="#0d0d12" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bluecollartechy.com/blog/small-jobs-are-marketing" />
+<meta property="og:title" content="The small jobs are marketing. Most contractors don't see it that way." />
+<meta property="og:description" content="When the market shifts, the calls coming in for work outside your usual lane become some of the cheapest advertising money you'll ever spend. A piece on specializing, staying flexible, and what people remembering your name actually does for you." />
+<meta property="og:image" content="https://bluecollartechy.com/og-image.jpg" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The small jobs are marketing." />
+<meta name="twitter:description" content="When the market shifts, the leads outside your usual lane become some of the cheapest marketing money you'll ever spend." />
+<meta name="twitter:image" content="https://bluecollartechy.com/og-image.jpg" />
+
+<link rel="canonical" href="https://bluecollartechy.com/blog/small-jobs-are-marketing" />
+<link rel="icon" type="image/svg+xml" href="../logos/bct-favicon.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0d0d12;
+    --bg-elev: #15151d;
+    --bg-card: #1a1a24;
+    --border: #272733;
+    --text: #f5f5f7;
+    --text-dim: #a0a0ab;
+    --text-faint: #6b6b78;
+    --accent: #ff6a1a;
+    --accent-bright: #ff8530;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .narrow { max-width: 780px; margin: 0 auto; padding: 0 32px; }
+  a { color: inherit; text-decoration: none; }
+  .accent { color: var(--accent); }
+
+  nav.site-nav {
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(13, 13, 18, 0.85);
+  }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo svg { height: 52px; width: auto; display: block; }
+  .nav-cta-mobile { display: none; }
+  .nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    width: 44px; height: 44px;
+    cursor: pointer;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    transition: all 0.25s ease;
+  }
+  .nav-toggle:hover { border-color: var(--accent); }
+  .nav-toggle span {
+    display: block;
+    width: 20px; height: 2px;
+    background: var(--text);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .site-nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .site-nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  .site-nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-links { display: flex; gap: 36px; font-size: 14px; font-weight: 600; }
+  .nav-links a { color: var(--text-dim); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-links a.active { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: #000;
+    padding: 10px 18px; font-weight: 700; font-size: 13px;
+    letter-spacing: 0.02em; border-radius: 2px; text-transform: uppercase;
+  }
+
+  .article-meta {
+    padding: 40px 0 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .article-meta-row {
+    display: flex; justify-content: space-between; gap: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .article-meta-row span.hl { color: var(--accent); }
+
+  .hero-post { padding: 80px 0 80px; }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--accent);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 28px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .kicker::before { content: ''; width: 28px; height: 2px; background: var(--accent); }
+  h1.post-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(40px, 5.6vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin-bottom: 36px;
+    max-width: 960px;
+  }
+  h1.post-title .hi { color: var(--accent); }
+  .hero-sub {
+    font-size: 22px;
+    color: var(--text-dim);
+    max-width: 680px;
+    line-height: 1.5;
+  }
+  .post-byline {
+    margin-top: 40px;
+    display: flex; gap: 24px; flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .post-byline span.v { color: var(--text); }
+
+  .chapter {
+    padding: 48px 0;
+    border-top: 1px solid var(--border);
+  }
+  .chapter-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .chapter h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(30px, 3.5vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    max-width: 760px;
+  }
+  .chapter h2 .hi { color: var(--accent); }
+  .chapter h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin: 32px 0 14px;
+    color: var(--text);
+  }
+  .chapter p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+  .chapter p.lead {
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+  .chapter p.dim {
+    color: #ffb089;
+    font-style: italic;
+    border-left: 3px solid var(--accent);
+    padding: 6px 0 6px 20px;
+    margin: 28px 0 26px;
+  }
+  .chapter p strong { color: var(--text); font-weight: 700; }
+  .chapter ol, .chapter ul {
+    margin: 14px 0 28px;
+    padding-left: 28px;
+  }
+  .chapter ol li, .chapter ul li {
+    font-size: 18px;
+    line-height: 1.65;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .chapter ul li::marker, .chapter ol li::marker { color: var(--accent); }
+
+  .checklist {
+    list-style: none !important;
+    padding: 32px 0 !important;
+    margin: 32px 0 !important;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .checklist li {
+    position: relative;
+    padding: 14px 0 14px 44px !important;
+    font-size: 18px;
+    color: var(--text);
+  }
+  .checklist li::before {
+    content: '';
+    position: absolute; left: 0; top: 22px;
+    width: 24px; height: 2px;
+    background: var(--accent);
+  }
+  .checklist li strong { color: var(--accent); font-weight: 800; }
+
+  /* TWO POOL CARDS */
+  .pools {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 32px 0 24px;
+  }
+  @media (max-width: 700px) { .pools { grid-template-columns: 1fr; } }
+  .pool {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 28px 32px;
+    border-top: 4px solid var(--accent);
+  }
+  .pool .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--accent);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .pool h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    margin-bottom: 14px;
+    line-height: 1.1;
+  }
+  .pool p {
+    font-size: 16px; line-height: 1.6;
+    margin-bottom: 10px;
+    color: var(--text-dim);
+  }
+  .pool p strong { color: var(--text); }
+
+  .pullquote {
+    padding: 96px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--bg) 0%, #0a0a10 100%);
+    text-align: center;
+  }
+  .pullquote blockquote {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 3.6vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    max-width: 900px;
+    margin: 0 auto 24px;
+  }
+  .pullquote blockquote .hi { color: var(--accent); }
+  .pullquote cite {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  .inline-cta {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 40px;
+    margin: 48px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .inline-cta::before {
+    content: '';
+    position: absolute; top: 0; left: 0; bottom: 0;
+    width: 4px; background: var(--accent);
+  }
+  .inline-cta .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .inline-cta h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 26px;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+  .inline-cta p {
+    color: var(--text-dim);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .inline-cta a.btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #000;
+    padding: 14px 26px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 13px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .inline-cta a.btn:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+
+  .end-cta {
+    padding: 120px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .end-cta .kicker { margin-bottom: 24px; }
+  .end-cta h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    max-width: 820px; margin-left: auto; margin-right: auto;
+  }
+  .end-cta p {
+    color: var(--text-dim);
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 640px;
+    margin-left: auto; margin-right: auto;
+  }
+  .cta-row {
+    display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 18px 32px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 14px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    border: 2px solid transparent; border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: var(--accent); color: #000; }
+  .btn-primary:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+  .btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
+  .btn-secondary:hover { border-color: var(--text); }
+
+  footer {
+    padding: 80px 0 40px;
+    background: #0a0a10;
+    border-top: 1px solid var(--border);
+  }
+  .foot-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--border);
+  }
+  .foot-brand .logo-mini { margin-bottom: 20px; }
+  .foot-brand .logo-mini svg { height: 76px; width: auto; }
+  .foot-brand p { color: var(--text-dim); font-size: 14px; max-width: 300px; line-height: 1.6; }
+  .foot-col h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a { color: var(--text-dim); font-size: 14px; transition: color 0.2s; }
+  .foot-col a:hover { color: var(--accent); }
+  .foot-bottom {
+    padding-top: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--text-faint); letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 900px) {
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .nav-toggle { display: flex; }
+    .nav-cta { display: none; }
+    .nav-links {
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(13, 13, 18, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 0;
+      font-size: 15px;
+      transform: translateY(-12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .nav-links a {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-links a:last-of-type { border-bottom: none; }
+    .site-nav.nav-open .nav-links {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .site-nav.nav-open .nav-links .nav-cta-mobile {
+      display: block;
+      margin: 12px 24px 16px;
+      background: var(--accent);
+      color: #000;
+      padding: 12px 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      border-radius: 2px;
+      border-bottom: none;
+    }
+    .article-meta-row { flex-direction: column; gap: 8px; }
+    .inline-cta { padding: 28px 24px; }
+  }
+  .brand-tag {
+    color: var(--accent-hover, #47c8f5);
+    font-weight: 600;
+  }
+  
+  .related-posts { padding: 80px 0; border-top: 1px solid var(--border); }
+  .related-posts .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .related-posts .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .related-posts h2.related-h {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin-bottom: 36px; max-width: 760px;
+  }
+  .related-grid {
+    display: grid; gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .related-card {
+    display: block;
+    background: var(--bg-card, #1a1a24);
+    border: 1px solid var(--border);
+    padding: 28px 28px 24px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .related-card:hover {
+    border-color: var(--accent);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.18);
+  }
+  .related-card .cat {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--accent);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-card h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 19px; line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px; color: var(--text);
+  }
+  .related-card p {
+    color: var(--text-dim);
+    font-size: 14px; line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .related-card .arrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--accent);
+    letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 700;
+  }
+  @media (max-width: 700px) { .related-grid { grid-template-columns: 1fr; } }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The small jobs are marketing. Most contractors don't see it that way.",
+  "description": "Doing only one kind of work is great when your market supports it. When the market shifts, the calls coming in for jobs outside your usual lane become some of the cheapest advertising money you'll ever spend.",
+  "author": { "@type": "Person", "name": "Nick Conley", "url": "https://bluecollartechy.com/about" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Blue Collar Techy",
+    "url": "https://bluecollartechy.com",
+    "logo": { "@type": "ImageObject", "url": "https://bluecollartechy.com/logos/bct-primary.svg" }
+  },
+  "datePublished": "2026-05-06",
+  "dateModified": "2026-05-06",
+  "mainEntityOfPage": "https://bluecollartechy.com/blog/small-jobs-are-marketing",
+  "image": "https://bluecollartechy.com/og-image.jpg",
+  "articleSection": "Marketing"
+}
+</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="../index.html" aria-label="Blue Collar Techy">
+      <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+        <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
+        <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
+        <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
+        <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
+        <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
+        <text x="290" y="78" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">EST · 2026</text>
+      </svg>
+    </a>
+    <div class="nav-links" id="primary-nav">
+      <a href="../about.html">About</a>
+      <a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a>
+      <a href="../resources/">Resources</a>
+      <a href="index.html" class="active">Blog</a>
+      <a href="../work-with-me.html">Work with me</a>
+      <a class="nav-cta-mobile" href="../index.html#newsletter">Subscribe</a>
+    </div>
+    <a class="nav-cta" href="../index.html#newsletter">Subscribe</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="article-meta">
+  <div class="container">
+    <div class="article-meta-row">
+      <span><span class="hl">BLOG</span> / MARKETING MINDSET</span>
+      <span>Published · 2026-05-06</span>
+      <span>Read · 11 min</span>
+    </div>
+  </div>
+</div>
+
+<section class="hero-post">
+  <div class="narrow">
+    <div class="kicker">The Mindset Shift</div>
+    <h1 class="post-title">The small jobs are marketing. <span class="hi">Most contractors don't see it that way</span>.</h1>
+    <p class="hero-sub">Doing only one kind of work is great when your market supports it. When the market shifts, the calls coming in for jobs outside your usual lane stop being a distraction and start being some of the cheapest advertising money you'll ever spend.</p>
+    <div class="post-byline">
+      <span>BY <span class="v">NICK CONLEY</span></span>
+      <span>FOUNDER · BLUE COLLAR TECHY</span>
+    </div>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// The setup</div>
+    <p class="lead">Markets have seasons.</p>
+    <p>The same trade business that ran flat out for five years can hit a stretch where the phone gets quieter. Different calls start coming in. Smaller jobs. Stuff outside the work you usually take. Mulch when you do hardscape. Repairs when you do new builds. Service calls when you do installs.</p>
+    <p>Most owners filter those out. They don't fit. They aren't the work you want. So you say no, and you wait for the work you do want to come back.</p>
+    <p>I've watched a lot of trade businesses run that play. Sometimes the market is forgiving and the work you want comes back. Sometimes it doesn't. And while you're waiting, you're letting some of the cheapest advertising money you'll ever spend walk right out the door.</p>
+    <p class="dim">This post is about that. If you read it and walk away thinking different about the next "I don't really do that" call that comes through your line, that's the win.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 01 · Sticking to what you do is a real strategy. So is being able to stretch.</div>
+    <h2>Sticking to what you do is a real strategy. <span class="hi">So is being able to stretch.</span></h2>
+    <p>Let's get one thing out of the way up front.</p>
+    <p>Some guys can run a hardscape company that only does paver patios and never lack for work. Some guys can run a roofing company that only does asphalt shingles and stay booked. Some markets have so much of one specific kind of work that you can build a whole career on a single service and the market does the sorting for you.</p>
+    <p>If that's your market, this post isn't telling you to change anything. Specializing works. It's how a lot of the best companies in this trade got built.</p>
+    <p>But specializing is a market thing as much as it's a business choice. You can specialize because the demand around you is there. The day that demand thins out, you're either still specializing because you want to, or you're specializing because you can't see another way. Those are two different situations and most owners can't tell which one they're in until it's been a problem for a while.</p>
+    <p>Being able to stretch is a different play. It says "I read what's actually selling in my market this season and I match what I take to what's out there." Some seasons that means doing only what you're known for. Some seasons that means widening up. The guys I've seen weather the most cycles aren't always the ones with the cleanest specialty. They're the ones who can read what's happening and change what they take.</p>
+    <p class="dim">You don't have to give up what you're known for to stay flexible. You just have to know what season you're in.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 02 · A call outside your usual work isn't a bad lead. It's free advertising you're refusing.</div>
+    <h2>A call outside your usual work isn't a bad lead. <span class="hi">It's free advertising you're refusing.</span></h2>
+    <p>Here's the way I think about it.</p>
+    <p>Advertising, the way most contractors think about it, is the stuff with line items. SEO. Google Ads. LSAs. Facebook ads. Print, mailers, truck wraps, jobsite signs. You write a check, you get visibility, hopefully you get a call, hopefully you close it.</p>
+    <p>That definition leaves out the cheapest dollar you'll ever spend on getting your name out there. That dollar is the work you do for a homeowner who already paid you to do something for them.</p>
+    <p>Every customer you've already worked for is worth more to you than every brand-new prospect. Every conversation you have with a homeowner standing in their backyard is worth more than any ad you'll ever pay for. The "yeah, I used those guys, they were great" line they drop at a kid's soccer game on Saturday is worth more than a month of Google ad spend.</p>
+    <p>When a call comes in for work outside what you usually do, the cost of getting that call is already covered. They found you. They dialed your number. They're ready to pay somebody. The only question is whether you say yes to building a relationship for the price of a half-day job, or whether you let your competitor build it instead.</p>
+    <p class="dim">Saying no to that call isn't keeping your business clean. It's writing your competitor a check for free advertising.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 03 · Run the math on the relationship</div>
+    <h2>Run the math on <span class="hi">what one customer is actually worth.</span></h2>
+    <p>Run actual numbers in your head.</p>
+    <p>The average homeowner owns a house for forty or fifty years. They renovate. They expand. They re-do the patio. They put in a pool. They re-side. They re-roof. Their kids grow up and need a yard for graduation parties. Their parents move in and they need an accessible bathroom. Life happens, and homes get worked on every step of the way.</p>
+    <p>Every contractor who does a job for that homeowner becomes somebody they can call for the next thing. Some of those contractors get the call back. Some don't. The ones who do are the ones the homeowner remembers liking. Not the ones with the prettiest website. The ones who showed up, did the work, treated them right, and didn't make them feel small for the size of the job.</p>
+    <p>A two-thousand-dollar half-day job is one way into that forty-year relationship. You're not making your money on the half-day job. You're making your money on the patio they call you for next spring. On the retaining wall a year after that. On the outdoor kitchen four years from now. On the neighbor across the fence who watched the whole thing go down and asked who you were.</p>
+    <p class="dim">The "small job" is the cheapest way to land a new customer in the trades, and most contractors are turning it down.</p>
+  </div>
+</section>
+
+<section class="pullquote">
+  <div class="container">
+    <blockquote>Saying no to a small job isn't keeping your business clean. <span class="hi">It's writing your competitor a check for free advertising.</span></blockquote>
+    <cite>The way to look at it</cite>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 04 · What I learned running my own hardscape company</div>
+    <h2>What I learned <span class="hi">running my own hardscape company.</span></h2>
+    <p>I ran a hardscape company in Northern California for ten years. We hit three million in revenue at the peak. By any number on a tax return, we were the success story.</p>
+    <p>We worked in a market with real money in it. Beautiful properties, big budgets, the kind of homeowner who hires real installers. The problem was where most of that budget went. They'd remodel the kitchen, redo the bathrooms, finish the basement, and then come outside with whatever was left. By the time they got to us, the dream patio had become a smaller patio. The outdoor kitchen had become a grill on a slab. The retaining wall got value-engineered into railroad ties.</p>
+    <p>I started realizing the conversation I needed to be in was the one happening before they made the kitchen decision, not the one happening after. That's why we launched Tekton Design Build. A separate division that handled full-property design, inside and outside together, so we could be in front of the budget conversation early. The plan was to give homeowners the whole picture before they spent themselves out of the back yard.</p>
+    <p>It was the right idea. I just didn't have time to make it happen.</p>
+    <p>The market shifted on us before the new direction took hold. We lost a million dollars worth of work in five weeks. The area we'd grown into couldn't carry what we'd built at the size we'd built it. I closed the company.</p>
+    <p>The first thing I learned wasn't "specializing was the wrong move." Our specialty was excellent. Our reputation was excellent. Our work was excellent. What I learned was that the second your market starts shifting, every month you wait to widen up is a month you're burning time you didn't know you'd run out of. By the time it's obvious you need to flex, you've usually already lost the time it would take to do it.</p>
+    <p>The second thing I learned was about what actually carried us through the lean stretches before we closed. It wasn't the new portfolio pieces. It wasn't the SEO. It wasn't the ads we were running. It was people remembering us. Past customers calling for the next phase of work. Neighbors of past customers. The HOA that hired us because the woman three doors down said we'd done a good job for her two years earlier. The phone calls that didn't go quiet were the ones from people who already knew us.</p>
+    <p class="dim">If I were running that company today, with the markets the way they are now, I'd take a wider range of work earlier. Not because specializing is wrong. Because every customer you do work for is one more person who can call you or refer you, and every "I don't really do that" call I turned down was one more person I never got the chance to build that with.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 05 · What new customers actually cost</div>
+    <h2>Compare what a new customer costs through ads to <span class="hi">what a small job done well costs.</span></h2>
+    <p>Pull this comparison if you've never done it.</p>
+    <p>The cost to land a brand new customer through paid channels right now sits between two hundred and seven hundred dollars per booked lead, depending on the channel and the market. Per Harvard's Joint Center for Housing Studies, remodel spending is on track to hit $522 billion in 2026, but homeowners are shrinking jobs and shopping harder. A booked lead in 2026 costs more and closes slower than the same lead two years ago.</p>
+    <p>The cost to land a referral from a happy past customer is just about zero. They tell their neighbor about you. The neighbor calls. You skip the whole front of the line. Same booked lead, way less money out the door.</p>
+    <p>A small job done well is the cheapest way to make future referrals happen. You're not just doing the work. You're getting paid to do advertising. The customer pays you, and the work you do for them turns them into your next salesperson.</p>
+    <p class="dim">Every contractor who is dialing in their SEO, running ads, paying for LSAs, and at the same time turning down calls outside their usual work is leaking money on both ends. They're paying to land customers through the front door and refusing free customers at the side door.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 06 · Different ways of looking at it</div>
+    <h2>Business gets harder when you only see it <span class="hi">one way.</span></h2>
+    <p>Some guys say protect what you're known for, stay focused, don't water it down. They're right sometimes.</p>
+    <p>Some guys say take everything that pays, scale up, get bigger. They're right sometimes too.</p>
+    <p>The way I think most owners don't use enough is the advertising way. Every job is part of how you get the next job, no matter the size. A small job is a billboard you got paid to install. A medium job is a relationship you got paid to start. A big job is a portfolio piece you got paid to deliver.</p>
+    <p>Look at it that way and the calls outside your usual work stop being a problem to filter. They become a call to think about the same way you'd think about any advertising decision. <em>What is this worth in the long run if I treat it like a relationship and not just a job?</em></p>
+    <p class="dim">That's not the same as saying yes to everything. It's saying you owe the call a real look before you turn it down. Some are still no's. The ones that are yes's are the wins your competitors aren't catching.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 07 · Find out what season you're actually in</div>
+    <h2>Before you decide, run the numbers <span class="hi">on your actual market.</span></h2>
+    <p>Before you decide whether to tighten up or stretch out, find out what your market is doing.</p>
+    <p>The free <a href="../market-scan/">BCT Market Scan</a> pulls live Google search numbers for every trade category in your zip code and shows you which categories are growing year over year, which are flat, and which are shrinking. Takes about ninety seconds.</p>
+    <p>If your category is up year over year and your phone is still slow, the issue isn't the market. It's the work you've been turning down. If your category is genuinely down, that's a different post, and I've written about that case in <a href="market-up-sales-down.html">your market is up but sales are down</a>.</p>
+    <p class="dim">Most of the contractors I work with are in the first situation more than the second. The market is fine. They've just gotten more rigid about what they take.</p>
+
+    <div class="inline-cta">
+      <div class="label">Run the diagnostic</div>
+      <h3>Is your market actually up?</h3>
+      <p>The free market scan pulls 24 months of Google search demand for every construction-and-trades category in your zip code. Year-over-year comparison. Tells you whether you're protecting your specialty or protecting a habit.</p>
+      <a class="btn" href="../market-scan/">Run my market scan →</a>
+    </div>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// The closer</div>
+    <h2>Sticking to what you do is a luxury when the market gives it to you. <span class="hi">Stretching is a necessity when it doesn't.</span></h2>
+    <p>The cheapest way to get your name out there has always been doing good work for the customer in front of you. That happens every time you take a job and treat it like a long conversation. It gets wasted every time you say no to a call that doesn't quite fit because you're waiting for a better one.</p>
+    <p>Markets shift. Seasons change. I closed a hardscape company once because I waited too long to read the season I was in. The customers who already knew us were the only ones still calling toward the end. The customers we hadn't worked for yet, because we'd kept ourselves too narrow, were the ones we needed and didn't have.</p>
+    <p class="dim">If your phone has been quieter than it used to be, look at the calls you've been turning down lately and ask whether you've been protecting what you're known for, or just protecting a habit. There's a real difference. The first one is strategy. The second one is what closes companies.</p>
+  </div>
+</section>
+
+
+<section class="related-posts">
+  <div class="container">
+    <div class="kicker">// Read next</div>
+    <h2 class="related-h">More from the BCT playbook.</h2>
+    <div class="related-grid">
+      <a class="related-card" href="market-up-sales-down.html">
+        <div class="cat">Diagnosis</div>
+        <h3>Your market is up but sales are down. What now?</h3>
+        <p>The four-pool model and what to do when the leads are coming but the deals aren't closing.</p>
+        <span class="arrow">Read →</span>
+      </a>
+      <a class="related-card" href="market-agency-or-you.html">
+        <div class="cat">Diagnosis</div>
+        <h3>When leads dry up: is it the market, the agency, or you?</h3>
+        <p>The three-bucket diagnostic that saves the most money.</p>
+        <span class="arrow">Read →</span>
+      </a>
+      <a class="related-card" href="ten-things-no-agency-can-fix.html">
+        <div class="cat">Owner Habits</div>
+        <h3>10 things no marketing agency can fix for you</h3>
+        <p>The leaks no agency can plug, ranked by damage.</p>
+        <span class="arrow">Read →</span>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="end-cta">
+  <div class="container">
+    <div class="kicker">What's next</div>
+    <h2>Run the numbers on your actual market.</h2>
+    <p>Before you decide whether to tighten up or flex out, find out what your market is actually doing. The free scan pulls 24 months of search demand for your trade and city.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="../market-scan/">
+        Run my market scan
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" fill="none"/></svg>
+      </a>
+      <a class="btn btn-secondary" href="../gbp-check/">Audit my GBP</a>
+      <a class="btn btn-secondary" href="../index.html#newsletter">Get the newsletter</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo-mini">
+          <svg viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="30" width="220" height="140" fill="none" stroke="#f5f5f7" stroke-width="5"/>
+            <text x="130" y="96" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="56" fill="#f5f5f7" letter-spacing="-2">BCT</text>
+            <line x1="50" y1="112" x2="210" y2="112" stroke="#ff6a1a" stroke-width="2"/>
+            <text x="130" y="132" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="10" fill="#f5f5f7" letter-spacing="3">BLUE COLLAR TECHY</text>
+            <text x="130" y="150" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">BUILT TO LAST · EST 2026</text>
+          </svg>
+        </div>
+        <p><span class="brand-tag">Practical tech for the trades.</span> AI, local SEO, and real systems. No guru nonsense.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="../resources/">Resources</a></li>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="../work-with-me.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Work</h4>
+        <ul>
+          <li><a href="../work-with-me.html">Get in touch</a></li>
+          <li><a href="https://tektongrowth.com" target="_blank" rel="noopener">Tekton Growth</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="#" target="_blank" rel="noopener">X</a></li>
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Blue Collar Techy · Nick Conley</span>
+      <span>Built for the trades</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/tracking.js"></script>
+<script>
+  (function(){
+    var nav = document.querySelector('nav.site-nav');
+    if (!nav) return;
+    var btn = nav.querySelector('.nav-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('nav-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Close drawer when a link is tapped
+    nav.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('nav-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+</body>
+</html>
