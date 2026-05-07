@@ -1,8 +1,20 @@
 const CUSTOM_DOMAIN = 'bluecollartechy.com';
+const WWW_DOMAIN = 'www.bluecollartechy.com';
 const PRODUCTION_PAGES_HOST = 'blue-collar-techy.pages.dev';
 
 export const onRequest = async (context) => {
   const url = new URL(context.request.url);
+
+  if (url.hostname === WWW_DOMAIN) {
+    const target = 'https://' + CUSTOM_DOMAIN + url.pathname + url.search;
+    return new Response(null, {
+      status: 301,
+      headers: {
+        'Location': target,
+        'Cache-Control': 'public, max-age=3600',
+      },
+    });
+  }
 
   if (url.hostname === PRODUCTION_PAGES_HOST) {
     const target = 'https://' + CUSTOM_DOMAIN + url.pathname + url.search;
