@@ -493,6 +493,27 @@
       "internal_link": "market-up-sales-down",
       "tool_cta": "newsletter",
       "resource_spinoff": "Contractor AI prompt pack"
+    },
+    {
+      "slot": 25,
+      "publish_date": "2026-05-05",
+      "slug": "google-ads-vs-facebook-ads-for-contractors",
+      "h1_working": "Google Ads vs Facebook Ads for contractors: when paid ads actually work (and when they burn money)",
+      "primary_keyword": "google ads vs facebook ads for contractors",
+      "primary_volume": 0,
+      "secondary_keywords": [
+        "paid ads contractor",
+        "facebook ads contractor",
+        "google ads contractor",
+        "local service ads contractor"
+      ],
+      "theme": "ads",
+      "angle": "Honest contractor's-eye view from Nick. Last $6K story, the 90/10 reality, the timing rule. Synthesizes the marketing mindset framework + 2026 paid ad benchmarks.",
+      "internal_link": "market-up-sales-down",
+      "tool_cta": "market-scan",
+      "resource_spinoff": null,
+      "source_note": "Off-cycle ship 2026-05-05 \u2014 Nick wanted this published soon. Built from marketing-mindset-framework.md + Nick's lived experience + WebSearch on 2026 CPC/CPL/LSA benchmarks.",
+      "published": true
     }
   ],
   "resources_roadmap": [

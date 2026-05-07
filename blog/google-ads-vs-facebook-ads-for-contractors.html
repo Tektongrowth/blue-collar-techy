@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Google Ads vs Facebook Ads for contractors: when paid ads actually work · Blue Collar Techy</title>
+<meta name="description" content="An honest contractor's-eye view of paid ads. When Google, when Facebook, when Local Service Ads, and when not to run any of them. From a guy who burned his last $6,000 on a campaign that didn't work." />
+<meta name="author" content="Nick Conley" />
+<meta name="theme-color" content="#0d0d12" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bluecollartechy.com/blog/google-ads-vs-facebook-ads-for-contractors" />
+<meta property="og:title" content="Google Ads vs Facebook Ads for contractors: when paid ads actually work" />
+<meta property="og:description" content="An honest contractor's-eye view of paid ads. When Google, when Facebook, when Local Service Ads, and when not to run any of them." />
+<meta property="og:image" content="https://bluecollartechy.com/og-image.jpg" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Google Ads vs Facebook Ads for contractors" />
+<meta name="twitter:description" content="When paid ads actually work for contractors and when they burn money. From a guy who burned his last $6K on ads that didn't work." />
+<meta name="twitter:image" content="https://bluecollartechy.com/og-image.jpg" />
+
+<link rel="canonical" href="https://bluecollartechy.com/blog/google-ads-vs-facebook-ads-for-contractors" />
+<link rel="icon" type="image/svg+xml" href="../logos/bct-favicon.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0d0d12;
+    --bg-elev: #15151d;
+    --bg-card: #1a1a24;
+    --border: #272733;
+    --text: #f5f5f7;
+    --text-dim: #a0a0ab;
+    --text-faint: #6b6b78;
+    --accent: #ff6a1a;
+    --accent-bright: #ff8530;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .narrow { max-width: 780px; margin: 0 auto; padding: 0 32px; }
+  a { color: inherit; text-decoration: none; }
+  .accent { color: var(--accent); }
+
+  nav.site-nav {
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(13, 13, 18, 0.85);
+  }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo svg { height: 52px; width: auto; display: block; }
+  .nav-cta-mobile { display: none; }
+  .nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    width: 44px; height: 44px;
+    cursor: pointer;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    transition: all 0.25s ease;
+  }
+  .nav-toggle:hover { border-color: var(--accent); }
+  .nav-toggle span {
+    display: block;
+    width: 20px; height: 2px;
+    background: var(--text);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .site-nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .site-nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  .site-nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-links { display: flex; gap: 36px; font-size: 14px; font-weight: 600; }
+  .nav-links a { color: var(--text-dim); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-links a.active { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: #000;
+    padding: 10px 18px; font-weight: 700; font-size: 13px;
+    letter-spacing: 0.02em; border-radius: 2px; text-transform: uppercase;
+  }
+
+  .article-meta {
+    padding: 40px 0 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .article-meta-row {
+    display: flex; justify-content: space-between; gap: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .article-meta-row span.hl { color: var(--accent); }
+
+  .hero-post { padding: 80px 0 80px; }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--accent);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 28px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .kicker::before { content: ''; width: 28px; height: 2px; background: var(--accent); }
+  h1.post-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(40px, 5.6vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin-bottom: 36px;
+    max-width: 960px;
+  }
+  h1.post-title .hi { color: var(--accent); }
+  .hero-sub {
+    font-size: 22px;
+    color: var(--text-dim);
+    max-width: 680px;
+    line-height: 1.5;
+  }
+  .post-byline {
+    margin-top: 40px;
+    display: flex; gap: 24px; flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .post-byline span.v { color: var(--text); }
+
+  .chapter {
+    padding: 48px 0;
+    border-top: 1px solid var(--border);
+  }
+  .chapter-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .chapter h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(30px, 3.5vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    max-width: 760px;
+  }
+  .chapter h2 .hi { color: var(--accent); }
+  .chapter h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin: 32px 0 14px;
+    color: var(--text);
+  }
+  .chapter p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+  .chapter p.lead {
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+  .chapter p.dim {
+    color: #ffb089;
+    font-style: italic;
+    border-left: 3px solid var(--accent);
+    padding: 6px 0 6px 20px;
+    margin: 28px 0 26px;
+  }
+  .chapter p strong { color: var(--text); font-weight: 700; }
+  .chapter ol, .chapter ul {
+    margin: 14px 0 28px;
+    padding-left: 28px;
+  }
+  .chapter ol li, .chapter ul li {
+    font-size: 18px;
+    line-height: 1.65;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .chapter ul li::marker, .chapter ol li::marker { color: var(--accent); }
+
+  .checklist {
+    list-style: none !important;
+    padding: 32px 0 !important;
+    margin: 32px 0 !important;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .checklist li {
+    position: relative;
+    padding: 14px 0 14px 44px !important;
+    font-size: 18px;
+    color: var(--text);
+  }
+  .checklist li::before {
+    content: '';
+    position: absolute; left: 0; top: 22px;
+    width: 24px; height: 2px;
+    background: var(--accent);
+  }
+  .checklist li strong { color: var(--accent); font-weight: 800; }
+
+  /* TWO POOL CARDS */
+  .pools {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 32px 0 24px;
+  }
+  @media (max-width: 700px) { .pools { grid-template-columns: 1fr; } }
+  .pool {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 28px 32px;
+    border-top: 4px solid var(--accent);
+  }
+  .pool .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--accent);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .pool h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    margin-bottom: 14px;
+    line-height: 1.1;
+  }
+  .pool p {
+    font-size: 16px; line-height: 1.6;
+    margin-bottom: 10px;
+    color: var(--text-dim);
+  }
+  .pool p strong { color: var(--text); }
+
+  .pullquote {
+    padding: 96px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--bg) 0%, #0a0a10 100%);
+    text-align: center;
+  }
+  .pullquote blockquote {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 3.6vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    max-width: 900px;
+    margin: 0 auto 24px;
+  }
+  .pullquote blockquote .hi { color: var(--accent); }
+  .pullquote cite {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  .inline-cta {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 40px;
+    margin: 48px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .inline-cta::before {
+    content: '';
+    position: absolute; top: 0; left: 0; bottom: 0;
+    width: 4px; background: var(--accent);
+  }
+  .inline-cta .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .inline-cta h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 26px;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+  .inline-cta p {
+    color: var(--text-dim);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .inline-cta a.btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #000;
+    padding: 14px 26px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 13px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .inline-cta a.btn:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+
+  .end-cta {
+    padding: 120px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .end-cta .kicker { margin-bottom: 24px; }
+  .end-cta h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    max-width: 820px; margin-left: auto; margin-right: auto;
+  }
+  .end-cta p {
+    color: var(--text-dim);
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 640px;
+    margin-left: auto; margin-right: auto;
+  }
+  .cta-row {
+    display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 18px 32px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 14px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    border: 2px solid transparent; border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: var(--accent); color: #000; }
+  .btn-primary:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+  .btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
+  .btn-secondary:hover { border-color: var(--text); }
+
+  footer {
+    padding: 80px 0 40px;
+    background: #0a0a10;
+    border-top: 1px solid var(--border);
+  }
+  .foot-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--border);
+  }
+  .foot-brand .logo-mini { margin-bottom: 20px; }
+  .foot-brand .logo-mini svg { height: 76px; width: auto; }
+  .foot-brand p { color: var(--text-dim); font-size: 14px; max-width: 300px; line-height: 1.6; }
+  .foot-col h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a { color: var(--text-dim); font-size: 14px; transition: color 0.2s; }
+  .foot-col a:hover { color: var(--accent); }
+  .foot-bottom {
+    padding-top: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--text-faint); letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 900px) {
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .nav-toggle { display: flex; }
+    .nav-cta { display: none; }
+    .nav-links {
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(13, 13, 18, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 0;
+      font-size: 15px;
+      transform: translateY(-12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .nav-links a {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-links a:last-of-type { border-bottom: none; }
+    .site-nav.nav-open .nav-links {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .site-nav.nav-open .nav-links .nav-cta-mobile {
+      display: block;
+      margin: 12px 24px 16px;
+      background: var(--accent);
+      color: #000;
+      padding: 12px 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      border-radius: 2px;
+      border-bottom: none;
+    }
+    .article-meta-row { flex-direction: column; gap: 8px; }
+    .inline-cta { padding: 28px 24px; }
+  }
+  .brand-tag {
+    color: var(--accent-hover, #47c8f5);
+    font-weight: 600;
+  }
+  
+  .related-posts { padding: 80px 0; border-top: 1px solid var(--border); }
+  .related-posts .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .related-posts .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .related-posts h2.related-h {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin-bottom: 36px; max-width: 760px;
+  }
+  .related-grid {
+    display: grid; gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .related-card {
+    display: block;
+    background: var(--bg-card, #1a1a24);
+    border: 1px solid var(--border);
+    padding: 28px 28px 24px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .related-card:hover {
+    border-color: var(--accent);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.18);
+  }
+  .related-card .cat {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--accent);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-card h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 19px; line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px; color: var(--text);
+  }
+  .related-card p {
+    color: var(--text-dim);
+    font-size: 14px; line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .related-card .arrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--accent);
+    letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 700;
+  }
+  @media (max-width: 700px) { .related-grid { grid-template-columns: 1fr; } }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Google Ads vs Facebook Ads for contractors: when paid ads actually work (and when they burn money)",
+  "description": "An honest contractor's-eye view of paid ads. When Google, when Facebook, when Local Service Ads, and when not to run any of them.",
+  "url": "https://bluecollartechy.com/blog/google-ads-vs-facebook-ads-for-contractors",
+  "author": {"@type": "Person", "name": "Nick Conley", "url": "https://bluecollartechy.com/about.html"},
+  "publisher": {"@type": "Organization", "name": "Blue Collar Techy", "url": "https://bluecollartechy.com"},
+  "image": "https://bluecollartechy.com/og-image.jpg",
+  "datePublished": "2026-05-05",
+  "dateModified": "2026-05-05",
+  "articleSection": "Paid Ads"
+}
+</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="../index.html" aria-label="Blue Collar Techy">
+      <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+        <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
+        <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
+        <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
+        <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
+        <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
+        <text x="290" y="78" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">EST · 2026</text>
+      </svg>
+    </a>
+    <div class="nav-links" id="primary-nav">
+      <a href="../about.html">About</a>
+      <a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a>
+      <a href="../resources/">Resources</a>
+      <a href="index.html" class="active">Blog</a>
+      <a href="../work-with-me.html">Work with me</a>
+      <a class="nav-cta-mobile" href="../index.html#newsletter">Subscribe</a>
+    </div>
+    <a class="nav-cta" href="../index.html#newsletter">Subscribe</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="article-meta">
+  <div class="container">
+    <div class="article-meta-row">
+      <span><span class="hl">BLOG</span> / PAID ADS</span>
+      <span>Published · 2026-05-05</span>
+      <span>Read · 11 min</span>
+    </div>
+  </div>
+</div>
+
+<section class="hero-post">
+  <div class="narrow">
+    <div class="kicker">Paid Ads</div>
+    <h1 class="post-title">Google Ads vs Facebook Ads for contractors: <span class="hi">when paid ads actually work</span> (and when they burn money).</h1>
+    <p class="hero-sub">I've burned my last $6,000 on a campaign that didn't work. I've also seen ads light a contractor's business on fire. The difference is almost never which platform you picked. It's when you turned them on and what was underneath.</p>
+    <div class="post-byline">
+      <span>BY <span class="v">NICK CONLEY</span></span>
+      <span>FOUNDER · BLUE COLLAR TECHY</span>
+    </div>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 01 The setup most contractors are in</div>
+    <p class="lead">The contractors I see launching paid ad campaigns are almost always in one of two situations. Their pipeline is empty and they're scared. Or their pipeline is full and they have margin to spend on growth.</p>
+    <p>Guess which one usually doesn't work.</p>
+    <p>The story I keep watching play out: phone stops ringing for a few weeks. The owner panics. Somebody on Facebook tells them ads will fix it. They cobble together their last few thousand bucks, hand it to an agency, and wait for the leads to come in. Two months later they're broker than they started, the ads "didn't work," and the agency is to blame.</p>
+    <p>I'm telling this story because I'm in it. I owned a hardscape company in Northern California in the redwoods for 10 years. I went through this cycle myself. I'd be slow, I'd panic, I'd find an agency, I'd put up money I shouldn't have been spending, and the campaign would underperform. Sometimes wildly. The agency wasn't always the problem. Sometimes the problem was that the demand wasn't there in the moment, or my brand online was thin, or my sales process leaked, or I was running ads in the middle of a wet Pacific winter trying to sell outdoor work nobody was about to break ground on. The platform didn't owe me a save.</p>
+    <p>This is the quiet thing nobody wants to say out loud: ads are not a rescue mission. They're a multiplier. If you don't have something solid for them to multiply, you're paying Google or Facebook to expose your weaknesses faster.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 02 The 90/10 reality</div>
+    <h2>Even a great agency leaves <span class="hi">one in ten</span> behind.</h2>
+    <p>I once hired a Facebook ad agency with a strong reputation. They told me 90% of their clients hit profitable cost-per-lead numbers. I trusted that. I signed up. Six weeks in, my campaign was burning money. Eight weeks in, we shut it down.</p>
+    <p>I was the 10%.</p>
+    <p>I'm not bitter about that. They were good operators. The math just didn't line up for my offer in my market in that month. The reason most contractor ad-spend stories end in frustration is that nobody tells you about the 10%. The case studies on the agency's website are 100% wins by definition. The contractor in the ad doesn't know they're betting on a coin flip with a slight tilt.</p>
+    <p>Two takeaways from that. First: hire good agencies, not bad ones. Cheap ones almost always end badly. But also: even good ones miss. Don't hand them money you can't afford to lose. If a 10% miss rate would put you out of business, the right move is not to run ads. The right move is to fix your other numbers first.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 03 The single rule on timing</div>
+    <h2>Ads are fuel. They are not a lifeline.</h2>
+    <p>The single rule that prevents almost every bad ad outcome I've watched: <strong>run ads from a position of margin, not panic.</strong></p>
+    <p>If you have a steady pipeline, healthy cash, and a working sales process, ads are a great way to add another channel and accelerate growth. If you're sweating payroll Friday and have $6,000 you can't afford to lose, paid ads are the worst place to put it. The 60-90 day sales cycle most ads need to optimize is not going to save your week.</p>
+    <p>Layer on what I call the marketing mindset (more on this in <a href="market-up-sales-down" style="color:var(--accent);">your market is up but sales are down</a>): there are five phases a contractor goes through with marketing. Phase 0 is panic, phase 4 is growth. Ads belong in phase 4. Not earlier. When I see a phase 0 contractor running paid ads, I see a contractor about to lose more money.</p>
+    <p class="dim">If you take one thing from this entire post: do not light paid ads on the day you ran out of work. Light them on the day you have enough work that you could survive 90 days of campaign optimization without it tanking your finances.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 04 The mindset comes before the channel</div>
+    <h2>Ads pour traffic into a leaky bucket. <span class="hi">Plug the leaks first.</span></h2>
+    <p>Before you decide between Google or Facebook, run through the leaks no agency can fix. None of these are about ads. All of them determine whether ads work.</p>
+    <ul class="checklist">
+      <li><strong>Phone gets answered fast.</strong> If your average response time on a new lead is over 5 minutes, half your ad spend is leaking to whoever answered first.</li>
+      <li><strong>Estimates go out within 24 to 48 hours.</strong> Slow estimates die. They die especially fast on ads where the customer is actively shopping.</li>
+      <li><strong>Follow-up exists.</strong> Most contractors estimate and ghost. The ad money is buying you the conversation. The follow-up is what closes it.</li>
+      <li><strong>GBP is set up properly.</strong> Half the value of paid ads is people seeing your name and Googling you separately. If your <a href="gbp-audit-15-minutes" style="color:var(--accent);">Google Business Profile is half-built</a>, you lose that hidden lead.</li>
+      <li><strong>Reviews are over 20 and current.</strong> Customers click through your ad, see eight reviews from 2022, and bounce. The ad already cost you. The bounce is on the profile.</li>
+      <li><strong>You know your numbers.</strong> Average ticket. Close rate. Cost-per-job tolerance. If you don't know what a job is worth to you, you can't tell if ads worked.</li>
+    </ul>
+    <p>Every one of those is on the owner. None of them are an agency's job. The reason I lead with this in every paid-ads conversation: I have watched contractors drop $5,000 a month on Google Ads with a leaky bucket and then call the agency a scam. The agency wasn't the scam. The bucket was the scam.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 05 Google Search Ads (PPC)</div>
+    <h2>The high-intent expensive lane.</h2>
+    <p>Google Search Ads put you above the organic results when somebody types something like "paver patio contractor near me" or "lawn care service oakland." The intent is high. The buyer is in shopping mode. The cost reflects it.</p>
+    <p>Real 2026 numbers, with landscape and lawn care broken out specifically (because home services averages are useless if you're in the green industry):</p>
+    <ul>
+      <li><strong>Landscape and lawn care CPC runs $40 to $90 per click</strong>, often higher in competitive metros. That's far above the home-services average of $6.55. The competition is brutal in this vertical.</li>
+      <li><strong>Cost-per-lead in landscape and lawn care is around $85 to $100</strong> as the industry expectation, with $104 considered a good number for design-build. Lawn maintenance dips to $40-$50 per lead during peak signup season (late April / early May), then climbs back to the mid $80s through summer.</li>
+      <li><strong>Hardscape specifically has a lower CPC than general landscaping</strong>, partly because most competitors lump hardscape under "landscaping" campaigns and partly because hardscape isn't a consumer-known term. The volume is lower, but the people who do search "hardscape" or "paver patio installer" are unusually qualified.</li>
+      <li>For comparison: roofing/HVAC/plumbing CPCs run $10 to $45. Competitive metros (LA, Phoenix, Dallas) push some keywords to $25 to $75. CPCs across home services rose 10 to 25% in 2026.</li>
+    </ul>
+    <p>Run the math. If your CPC is $60 and you close 1 in every 25 clicks, your cost-per-job is $1,500 before platform fees. Whether that's profitable depends entirely on your average ticket. A landscape design-build company with a $25,000 average ticket eats that. A weekly lawn cutting service charging $50 a visit cannot.</p>
+    <p><strong>Google Search Ads are best when:</strong></p>
+    <ul>
+      <li>Your trade has clear search intent (people actively Google "landscaper near me" or "patio installer" when they're ready)</li>
+      <li>Your average ticket is high enough to absorb $300 to $1,500 cost-per-acquisition</li>
+      <li>Your sales process closes hot leads quickly (estimate within 24-48 hours, follow-up if no signed contract)</li>
+      <li>You have margin to optimize the campaign for 60 to 90 days before you judge it</li>
+    </ul>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 06 Google Local Service Ads (LSA)</div>
+    <h2>The pay-per-call cousin everybody is running now.</h2>
+    <p>LSAs sit above regular Google Ads. They show your business with a Google Verified badge and a phone number. You pay per phone call (or per message), not per click. They're verified-only. Google checks your license, insurance, and identity before you can run them.</p>
+    <p>One thing to know going in: in October 2025 Google rebranded the old Google Guaranteed program to <strong>Google Verified</strong>, consolidating Guaranteed, Screened, and License Verified into one badge. The money-back guarantee that used to come with Google Guaranteed is gone. You still get the trust signal of the badge, but customers can't file for a refund through Google anymore. If you're hearing legacy advice that name-drops "Google Guaranteed," it's outdated.</p>
+    <p>Real 2026 numbers:</p>
+    <ul>
+      <li><strong>Landscape and lawn care LSA cost-per-lead runs $15 to $40</strong>, which is significantly cheaper than the green industry's regular Google Ads CPL of $85 to $100. If you can pass verification, LSAs are usually the best paid channel for green industry contractors.</li>
+      <li>Across home services as a whole: <strong>average LSA CPL is about $53</strong> as of February 2026, based on data from 888 contractors and $6.72 million in observed spend.</li>
+      <li>HVAC: $51 per lead in normal markets, $80+ in major metros, $100+ for emergency AC calls in summer.</li>
+      <li>Plumbing: $35 to $65 per lead.</li>
+      <li>Electrical: $39 average.</li>
+      <li>LSA costs have climbed about 40% in competitive markets since 2023.</li>
+      <li>Adoption among contractors is now around 70%, up from 28% in 2021. Translation: the seats are mostly full and prices keep climbing.</li>
+    </ul>
+    <p>The big advantage of LSAs is intent purity. The phone is ringing. The customer needs the service. You're not paying for clicks that go nowhere.</p>
+    <p>The big disadvantage is the disputes process. You'll get charged for calls that aren't qualified, and you have to dispute them inside Google's system. Some get refunded. Some don't. Crews and admin staff need to know what counts as a billable lead and what doesn't, and your office needs to be ready to dispute fast.</p>
+    <p>One important note for landscape and lawn care specifically: LSA works for maintenance, design, install, irrigation, and tree services. The Verified badge and pre-qualified leads do real work for the trust signal because most homeowners hiring landscape have been burned at least once. Cheaper CPL plus higher trust is a strong combination if you can clear the verification process.</p>
+    <p><strong>LSAs are best when:</strong></p>
+    <ul>
+      <li>Your trade has urgency or trust friction (landscape and lawn care benefit heavily from the Verified badge; HVAC, plumbing, electrical, pest, roofing repair all benefit from the urgency)</li>
+      <li>You can pass the verification process (license, insurance, identity)</li>
+      <li>Your phones are answered live, fast, by someone trained</li>
+      <li>You have someone in the office willing to dispute bad leads weekly</li>
+    </ul>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 07 Facebook (Meta) Ads</div>
+    <h2>The lower-intent bigger pool.</h2>
+    <p>Facebook and Instagram ads are the opposite end of the spectrum. The user is not searching for you. They're scrolling, sometimes at 11pm, and your ad shows up between a recipe video and their cousin's wedding photos. The intent is way lower. The pool is way bigger.</p>
+    <p>Real 2026 numbers, with landscape and lawn care broken out:</p>
+    <ul>
+      <li><strong>Landscape and lawn care Meta cost-per-lead consistently runs $25 to $60</strong>, making it one of the cheapest paid channels for the green industry.</li>
+      <li>Home services overall on Meta runs $30 to $60 for local campaigns.</li>
+      <li>Broader home improvement (siding, windows, roofing replacement, full remodels) runs $45 to $228 depending on the offer.</li>
+      <li>Construction-specific CPLs are projected around $45 in 2026, up about 9% year over year.</li>
+      <li>A $90 cost-per-lead with a 10% close rate means you're paying $900 per won customer. That math works for landscape design-build at $25K average tickets. It bankrupts a $50/visit lawn cutting business.</li>
+    </ul>
+    <p>The mistake most contractors make on Meta is judging it the same way they'd judge Google Search Ads. The leads behave completely differently. On Meta, a chunk of your leads are dreamers. They saw your before/after photo of a paver patio, filled in a form to "see pricing," and have no real intent to break ground this year. Or this decade.</p>
+    <p>That doesn't make Meta worthless. It means you need a nurture system. Email follow-up. Text follow-up. A long enough sales cycle that the dreamer who liked your photo in May becomes a real buyer in October. Without that nurture, Meta is a leaky bucket. With it, Meta is one of the cheapest top-of-funnel lead sources in the green industry.</p>
+    <p>Visual trades benefit the most. Landscape, hardscape, outdoor living, paver installation, and design-build work photograph well, scroll-stopping when paired with strong before/afters. Lawn maintenance is harder on Meta because the work is less visual and less aspirational. Lawn maintenance often does better on LSA than on Meta.</p>
+    <p><strong>Meta Ads are best when:</strong></p>
+    <ul>
+      <li>You have visual work (hardscape, design-build, outdoor living, full landscaping projects, kitchens, baths)</li>
+      <li>You have a real nurture sequence. At minimum a 3-touch email and SMS follow-up over 30 to 90 days</li>
+      <li>Your average ticket is high enough to absorb $90 to $228 cost-per-lead in higher-tier categories, or $25 to $60 in green industry</li>
+      <li>You're widening the net in a price-aware market (people doing comparison shopping take longer to commit)</li>
+    </ul>
+  </div>
+</section>
+
+<section class="pullquote">
+  <div class="container">
+    <blockquote>Ads are fuel. They are not a lifeline. The day you light them is <span class="hi">not</span> the day you ran out of work.</blockquote>
+    <cite>The single rule on timing</cite>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 08 The hidden value of running ads</div>
+    <h2>The leads you can't track are real.</h2>
+    <p>Here's the thing that almost never gets credit. Even when an ad campaign looks like it underperformed on direct attribution, the ads were doing work you couldn't see.</p>
+    <p>Somebody scrolls past your Facebook ad three times in a week. They don't click. A month later, their pool pump dies. They Google your business name (they remembered it from the ad), find your GBP, call you direct. That lead shows up as "Google" or "direct" in your reporting. The Facebook ad got zero credit. The Facebook ad earned the lead.</p>
+    <p>Same on the Google side. Somebody types "outdoor living contractor charlotte." They see your ad. They don't click your ad. Two weeks later they're back, comparing three companies, and they Google your name specifically. They convert through your website. The ad got no direct credit. The ad created the brand search.</p>
+    <p>This is sometimes called the halo effect. It's harder to measure than direct conversions, and any agency telling you otherwise is selling you. But it's real, and it's bigger than most contractors realize. Especially for visual trades on Meta where the ad creative builds memory.</p>
+    <p>The takeaway is not "ads are secretly working even when they look like they failed, so keep spending forever." The takeaway is: when you assess ad performance, look at the whole funnel. Are direct calls up? Is brand search up in <a href="gbp-audit-15-minutes" style="color:var(--accent);">Google Search Console</a>? Are reviews coming in faster? Are estimate requests up in general? An ad campaign showing a $200 cost-per-lead might be paired with $800 of free brand search uplift you'll never put in the spreadsheet.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 09 How to actually decide</div>
+    <h2>Three questions, in order.</h2>
+    <p>Skip the platform debate. Ask these three questions in this order:</p>
+
+    <h3>1. Where's your buyer's intent right now?</h3>
+    <p>If your customer types your service into Google when they need you (HVAC, plumbing, emergency anything, mid-emergency repair work), Google Search Ads or LSAs are the right starting point. The buyer is already shopping. You just need to be at the top of the search.</p>
+    <p>If your customer doesn't think to Google you because they're not in pain (bigger projects: kitchens, additions, hardscape, outdoor living, pools), Meta Ads earn their keep. You're putting your work in front of people who didn't know they wanted it yet, and you're letting it cook.</p>
+
+    <h3>2. Do you have nurture infrastructure?</h3>
+    <p>Long sales cycles need long nurture. If your only follow-up is a single estimate email and then silence, you can't run Meta Ads profitably. You'll burn cash on dreamers and convert almost none of them. Either build the nurture (CRM, email sequence, SMS sequence) or stay on the Google/LSA side where the buyer is hotter.</p>
+
+    <h3>3. Can you afford to lose the budget for 90 days?</h3>
+    <p>Every paid ad campaign needs an optimization window. Audiences need to mature. Creative needs to test. Bids need to settle. The campaign that's profitable in month four was money-losing in month one. If a 90-day soft outcome would damage your finances, the answer is not "pick the cheaper platform." The answer is don't run ads yet.</p>
+    <p>The right answer for almost every panicking contractor I talk to is: stop thinking about ads. Tighten your sales process. Get reviews. Show up at the chamber. Call your last 50 customers and ask for referrals. Plug your bucket. Ads can come later when you have surplus to spend, not when you're trying to make payroll.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 10 When NOT to run ads</div>
+    <h2>The rules that save you money.</h2>
+    <p>If any of the following are true, the smart move is to fix this thing first and run ads later. Every dollar you spend on ads while these are broken is a dollar you didn't need to spend at all.</p>
+    <ul class="checklist">
+      <li><strong>Your phone goes to voicemail.</strong> Or rings to a guy on a roof who can't pick up. Fix that with call-routing or a virtual receptionist before you spend on lead gen. The fix is cheap. The waste is not.</li>
+      <li><strong>Your estimates take more than 48 hours to send.</strong> Hot leads die in a day. Speed up the proposal process before adding more leads to the queue.</li>
+      <li><strong>You don't have CRM-based follow-up.</strong> No automated text, no nurture email, no past-customer touches. You're going to lose 70% of your ad-generated leads to the gap between "interested" and "ready."</li>
+      <li><strong>Your reviews are under 20 or stale.</strong> Customers will see your ad, click through, see five old reviews, and bounce. <a href="how-to-get-more-google-reviews" style="color:var(--accent);">Fix the review pipeline first.</a></li>
+      <li><strong>Your GBP isn't optimized.</strong> Half the ad money is paying for clicks where the customer then checks your profile. If the profile looks abandoned, you paid for nothing.</li>
+      <li><strong>You don't know your average ticket, close rate, or break-even cost-per-job.</strong> You can't measure ad ROI without these numbers. You can't even tell if the campaign is working.</li>
+      <li><strong>You're running ads with your last $6,000.</strong> I did it. It didn't work. I'm telling you because I wish somebody had told me.</li>
+    </ul>
+
+    <div class="inline-cta">
+      <div class="label">Free Tool · Use Before You Spend</div>
+      <h3>Run a market scan first.</h3>
+      <p>Before you hand any money to Google or Facebook, find out if the demand for your service in your city is up, flat, or down year over year. The market scan pulls 24 months of search demand for your trade in your specific market. Free. Takes a minute. Tells you whether the problem is even ad-shaped.</p>
+      <a class="btn" href="../market-scan/">Run my market scan →</a>
+    </div>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// 11 The bottom line</div>
+    <h2>Pick the platform <span class="hi">last</span>, not first.</h2>
+    <p>Most contractors are arguing about Google vs Facebook before they should be arguing about whether to run ads at all. The platform is a downstream decision. Upstream is whether your business is in shape for ads to compound on something real.</p>
+    <p>If you've fixed the leaks. If you have margin you're willing to invest for 90 days. If your sales process closes. Then yes, pick a platform. For most contractors with high search intent and a good GBP, Google Search Ads or LSAs are the cleanest start. For visual trades with a real nurture system and patience, Meta Ads stretch your budget further.</p>
+    <p>If you haven't fixed the leaks, ads are the most expensive way to learn that lesson. Don't let me see another contractor email me six months from now saying "we spent $30K on ads and got nothing." Spend $0 on ads, $5K fixing the systems, and rerun this conversation in March.</p>
+    <p>I'm not anti-ads. I run ads myself. I help clients run ads. I've seen them double a contractor's pipeline. I've also seen them empty bank accounts. The deciding factor is almost never the platform. It's the readiness.</p>
+  </div>
+</section>
+
+<section class="end-cta">
+  <div class="container">
+    <div class="kicker">What's next</div>
+    <h2>The bigger picture lives in two other posts.</h2>
+    <p>If your phone has slowed down and you're trying to figure out if it's the market, the agency, or you, start with the diagnostic. If your market is up but your sales feel slow, the price-aware market piece will save you money before you ever spend on ads.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="market-up-sales-down">
+        Read: market up, sales down
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" fill="none"/></svg>
+      </a>
+      <a class="btn btn-secondary" href="market-agency-or-you">Read: market, agency, or you?</a>
+      <a class="btn btn-secondary" href="../market-scan/">Run my market scan</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo-mini">
+          <svg viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="30" width="220" height="140" fill="none" stroke="#f5f5f7" stroke-width="5"/>
+            <text x="130" y="96" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="56" fill="#f5f5f7" letter-spacing="-2">BCT</text>
+            <line x1="50" y1="112" x2="210" y2="112" stroke="#ff6a1a" stroke-width="2"/>
+            <text x="130" y="132" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="10" fill="#f5f5f7" letter-spacing="3">BLUE COLLAR TECHY</text>
+            <text x="130" y="150" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">BUILT TO LAST · EST 2026</text>
+          </svg>
+        </div>
+        <p><span class="brand-tag">Practical tech for the trades.</span> AI, local SEO, and real systems. No guru nonsense.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="../resources/">Resources</a></li>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="../work-with-me.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Work</h4>
+        <ul>
+          <li><a href="../work-with-me.html">Get in touch</a></li>
+          <li><a href="https://tektongrowth.com" target="_blank" rel="noopener">Tekton Growth</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="#" target="_blank" rel="noopener">X</a></li>
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Blue Collar Techy · Nick Conley</span>
+      <span>Built for the trades</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/tracking.js"></script>
+<script>
+  (function(){
+    var nav = document.querySelector('nav.site-nav');
+    if (!nav) return;
+    var btn = nav.querySelector('.nav-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('nav-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Close drawer when a link is tapped
+    nav.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('nav-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+</body>
+</html>
