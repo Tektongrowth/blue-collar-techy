@@ -1,17 +1,17 @@
 {
-  "as_of": "2026-05-05",
+  "as_of": "2026-05-11",
   "sitemap": {
-    "submitted": 17,
+    "submitted": 19,
     "indexed": 0,
-    "errors": 0,
+    "errors": 1,
     "warnings": 0
   },
   "inspections": {
-    "https://bluecollartechy.com/about.html": {
+    "https://bluecollartechy.com/about": {
       "verdict": "NEUTRAL",
-      "coverage": "Redirect error",
+      "coverage": "Discovered - currently not indexed",
       "indexing": "INDEXING_STATE_UNSPECIFIED",
-      "last_crawl": "2026-05-05T06:06:51Z"
+      "last_crawl": "never"
     },
     "https://bluecollartechy.com/blog/gbp-audit-15-minutes": {
       "verdict": "NEUTRAL",
@@ -19,9 +19,15 @@
       "indexing": "INDEXING_STATE_UNSPECIFIED",
       "last_crawl": "never"
     },
+    "https://bluecollartechy.com/blog/google-ads-vs-facebook-ads-for-contractors": {
+      "verdict": "NEUTRAL",
+      "coverage": "Discovered - currently not indexed",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "last_crawl": "never"
+    },
     "https://bluecollartechy.com/blog/google-business-profile-optimization-contractors": {
       "verdict": "NEUTRAL",
-      "coverage": "URL is unknown to Google",
+      "coverage": "Discovered - currently not indexed",
       "indexing": "INDEXING_STATE_UNSPECIFIED",
       "last_crawl": "never"
     },
@@ -33,7 +39,7 @@
     },
     "https://bluecollartechy.com/blog/i-tested-the-99-ai-seo-tool": {
       "verdict": "NEUTRAL",
-      "coverage": "URL is unknown to Google",
+      "coverage": "Discovered - currently not indexed",
       "indexing": "INDEXING_STATE_UNSPECIFIED",
       "last_crawl": "never"
     },
@@ -54,6 +60,12 @@
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
       "last_crawl": "2026-05-05T06:08:51Z"
+    },
+    "https://bluecollartechy.com/blog/small-jobs-are-marketing": {
+      "verdict": "NEUTRAL",
+      "coverage": "Discovered - currently not indexed",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "last_crawl": "never"
     },
     "https://bluecollartechy.com/blog/ten-things-no-agency-can-fix": {
       "verdict": "PASS",
@@ -103,7 +115,7 @@
       "indexing": "INDEXING_ALLOWED",
       "last_crawl": "2026-05-05T06:10:51Z"
     },
-    "https://bluecollartechy.com/work-with-me.html": {
+    "https://bluecollartechy.com/work-with-me": {
       "verdict": "NEUTRAL",
       "coverage": "Discovered - currently not indexed",
       "indexing": "INDEXING_STATE_UNSPECIFIED",
