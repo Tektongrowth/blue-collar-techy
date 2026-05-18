@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-11",
+  "as_of": "2026-05-18",
   "sitemap": {
     "submitted": 19,
     "indexed": 0,
@@ -8,20 +8,20 @@
   },
   "inspections": {
     "https://bluecollartechy.com/about": {
-      "verdict": "NEUTRAL",
-      "coverage": "Discovered - currently not indexed",
-      "indexing": "INDEXING_STATE_UNSPECIFIED",
-      "last_crawl": "never"
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
+      "indexing": "INDEXING_ALLOWED",
+      "last_crawl": "2026-05-15T23:42:54Z"
     },
     "https://bluecollartechy.com/blog/gbp-audit-15-minutes": {
       "verdict": "NEUTRAL",
-      "coverage": "URL is unknown to Google",
+      "coverage": "Discovered - currently not indexed",
       "indexing": "INDEXING_STATE_UNSPECIFIED",
       "last_crawl": "never"
     },
     "https://bluecollartechy.com/blog/google-ads-vs-facebook-ads-for-contractors": {
       "verdict": "NEUTRAL",
-      "coverage": "Discovered - currently not indexed",
+      "coverage": "URL is unknown to Google",
       "indexing": "INDEXING_STATE_UNSPECIFIED",
       "last_crawl": "never"
     },
@@ -59,7 +59,7 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-05-05T06:08:51Z"
+      "last_crawl": "2026-05-16T10:33:01Z"
     },
     "https://bluecollartechy.com/blog/small-jobs-are-marketing": {
       "verdict": "NEUTRAL",
@@ -71,7 +71,7 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-05-05T06:10:51Z"
+      "last_crawl": "2026-05-18T14:34:39Z"
     },
     "https://bluecollartechy.com/gbp-check/": {
       "verdict": "PASS",
@@ -83,7 +83,7 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-04-21T06:10:30Z"
+      "last_crawl": "2026-05-16T08:28:01Z"
     },
     "https://bluecollartechy.com/market-scan/": {
       "verdict": "NEUTRAL",
