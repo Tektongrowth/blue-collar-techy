@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-18",
+  "as_of": "2026-05-25",
   "sitemap": {
     "submitted": 19,
     "indexed": 0,
@@ -15,25 +15,25 @@
     },
     "https://bluecollartechy.com/blog/gbp-audit-15-minutes": {
       "verdict": "NEUTRAL",
-      "coverage": "Discovered - currently not indexed",
+      "coverage": "URL is unknown to Google",
       "indexing": "INDEXING_STATE_UNSPECIFIED",
       "last_crawl": "never"
     },
     "https://bluecollartechy.com/blog/google-ads-vs-facebook-ads-for-contractors": {
       "verdict": "NEUTRAL",
-      "coverage": "URL is unknown to Google",
-      "indexing": "INDEXING_STATE_UNSPECIFIED",
-      "last_crawl": "never"
-    },
-    "https://bluecollartechy.com/blog/google-business-profile-optimization-contractors": {
-      "verdict": "NEUTRAL",
       "coverage": "Discovered - currently not indexed",
       "indexing": "INDEXING_STATE_UNSPECIFIED",
       "last_crawl": "never"
     },
+    "https://bluecollartechy.com/blog/google-business-profile-optimization-contractors": {
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
+      "indexing": "INDEXING_ALLOWED",
+      "last_crawl": "2026-05-18T17:04:40Z"
+    },
     "https://bluecollartechy.com/blog/how-to-get-more-google-reviews": {
       "verdict": "NEUTRAL",
-      "coverage": "URL is unknown to Google",
+      "coverage": "Discovered - currently not indexed",
       "indexing": "INDEXING_STATE_UNSPECIFIED",
       "last_crawl": "never"
     },
@@ -63,7 +63,7 @@
     },
     "https://bluecollartechy.com/blog/small-jobs-are-marketing": {
       "verdict": "NEUTRAL",
-      "coverage": "Discovered - currently not indexed",
+      "coverage": "URL is unknown to Google",
       "indexing": "INDEXING_STATE_UNSPECIFIED",
       "last_crawl": "never"
     },
@@ -73,11 +73,17 @@
       "indexing": "INDEXING_ALLOWED",
       "last_crawl": "2026-05-18T14:34:39Z"
     },
+    "https://bluecollartechy.com/blog/why-your-business-isnt-showing-up-on-google-maps": {
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "last_crawl": "never"
+    },
     "https://bluecollartechy.com/gbp-check/": {
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-04-21T16:58:48Z"
+      "last_crawl": "2026-05-22T15:32:56Z"
     },
     "https://bluecollartechy.com/": {
       "verdict": "PASS",
@@ -105,7 +111,7 @@
     },
     "https://bluecollartechy.com/resources/gbp-optimization-checklist/": {
       "verdict": "NEUTRAL",
-      "coverage": "Discovered - currently not indexed",
+      "coverage": "URL is unknown to Google",
       "indexing": "INDEXING_STATE_UNSPECIFIED",
       "last_crawl": "never"
     },
@@ -113,7 +119,7 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-05-05T06:10:51Z"
+      "last_crawl": "2026-05-22T19:58:59Z"
     },
     "https://bluecollartechy.com/work-with-me": {
       "verdict": "NEUTRAL",
