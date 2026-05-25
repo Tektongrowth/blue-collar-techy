@@ -4,19 +4,19 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Why your business isn't showing up on Google Maps (and the 7 fixes, in order) · Blue Collar Techy</title>
-<meta name="description" content="Your business isn't showing up on Google Maps. There are seven reasons. Here is the troubleshooting ladder — each fix in the order that saves the most time." />
+<meta name="description" content="Not showing up in the Google Maps pack? Work through this troubleshooting ladder in order. Each fix depends on the one before it. Claim status, NAP, category, spam, proximity, competition gap, review signals." />
 <meta name="author" content="Nick Conley" />
 <meta name="theme-color" content="#0d0d12" />
 
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bluecollartechy.com/blog/why-your-business-isnt-showing-up-on-google-maps" />
 <meta property="og:title" content="Why your business isn't showing up on Google Maps (and the 7 fixes, in order)" />
-<meta property="og:description" content="Seven checks in the right order. Start at fix one. Most contractors skip to fix four when fix one is the actual problem." />
+<meta property="og:description" content="Not in the map pack? Work through this troubleshooting ladder in order. Claim status, NAP, category, spam, proximity, competition gap, review signals." />
 <meta property="og:image" content="https://bluecollartechy.com/og-image.jpg" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Why your business isn't showing up on Google Maps (and the 7 fixes, in order)" />
-<meta name="twitter:description" content="Seven checks in the right order. Start at fix one." />
+<meta name="twitter:description" content="Seven-step troubleshooting ladder for contractors not showing up in the Google Maps pack." />
 <meta name="twitter:image" content="https://bluecollartechy.com/og-image.jpg" />
 
 <link rel="canonical" href="https://bluecollartechy.com/blog/why-your-business-isnt-showing-up-on-google-maps" />
@@ -209,68 +209,52 @@
   }
   .chapter ul li::marker { color: var(--accent); }
 
-  .step {
+  .checklist {
+    list-style: none !important;
+    padding: 32px 0 !important;
+    margin: 32px 0 !important;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .checklist li {
+    position: relative;
+    padding: 14px 0 14px 44px !important;
+    font-size: 18px;
+    color: var(--text);
+  }
+  .checklist li::before {
+    content: '';
+    position: absolute; left: 0; top: 22px;
+    width: 24px; height: 2px;
+    background: var(--accent);
+  }
+  .checklist li strong { color: var(--accent); font-weight: 800; }
+
+  .data-callout {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    padding: 32px 36px;
-    margin: 28px 0;
+    padding: 36px 40px;
+    margin: 40px 0;
     position: relative;
   }
-  .step .tag {
-    display: flex; align-items: center; gap: 14px;
-    margin-bottom: 18px;
-  }
-  .step .tag .time {
+  .data-callout .label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    background: var(--accent);
-    color: #0d0d12;
-    font-weight: 700;
-    padding: 5px 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-  .step .tag .step-no {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--text-faint);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-  }
-  .step h3 {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 24px;
-    letter-spacing: -0.01em;
-    margin-bottom: 14px;
-    color: var(--text);
-    line-height: 1.15;
-  }
-  .step h3 .hi { color: var(--accent); }
-  .step p {
-    font-size: 16px;
-    line-height: 1.65;
-    margin-bottom: 12px;
-    color: var(--text);
-  }
-  .step .look-for {
-    margin: 14px 0;
-    padding-left: 16px;
-    border-left: 2px solid var(--accent);
-  }
-  .step .look-for .h {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
     color: var(--accent);
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    margin-bottom: 6px;
+    margin-bottom: 16px;
   }
-  .step .look-for p {
-    font-size: 15px;
-    color: var(--text-dim);
-    margin-bottom: 0;
-    line-height: 1.6;
+  .data-callout h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: var(--text);
   }
+  .data-callout p { font-size: 16px; line-height: 1.65; margin-bottom: 10px; color: var(--text-dim); }
+  .data-callout ul { padding-left: 22px !important; margin: 12px 0 !important; }
+  .data-callout ul li { font-size: 16px; margin-bottom: 8px; color: var(--text-dim); }
+  .data-callout ul li strong { color: var(--accent); font-weight: 700; }
 
   .pullquote {
     padding: 96px 0;
@@ -296,27 +280,6 @@
     text-transform: uppercase;
     font-style: normal;
   }
-
-  .checklist {
-    list-style: none !important;
-    padding: 32px 0 !important;
-    margin: 32px 0 !important;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .checklist li {
-    position: relative;
-    padding: 14px 0 14px 44px !important;
-    font-size: 18px;
-    color: var(--text);
-  }
-  .checklist li::before {
-    content: '';
-    position: absolute; left: 0; top: 22px;
-    width: 24px; height: 2px;
-    background: var(--accent);
-  }
-  .checklist li strong { color: var(--accent); font-weight: 800; }
 
   .inline-cta {
     background: var(--bg-card);
@@ -475,7 +438,7 @@
       border-bottom: none;
     }
     .article-meta-row { flex-direction: column; gap: 8px; }
-    .step { padding: 24px; }
+    .data-callout { padding: 28px 24px; }
     .inline-cta { padding: 28px 24px; }
   }
   .brand-tag {
@@ -544,7 +507,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Why your business isn't showing up on Google Maps (and the 7 fixes, in order)",
-  "description": "Your business isn't showing up on Google Maps. There are seven reasons. Here is the troubleshooting ladder, each fix in the order that saves the most time.",
+  "description": "Not showing up in the Google Maps pack? Work through this troubleshooting ladder in order. Claim status, NAP consistency, category selection, spam listings, proximity, competition gap, and review signals.",
   "author": {
     "@type": "Person",
     "name": "Nick Conley",
@@ -559,28 +522,11 @@
       "url": "https://bluecollartechy.com/logos/bct-primary.svg"
     }
   },
-  "datePublished": "2026-05-18",
-  "dateModified": "2026-05-18",
+  "datePublished": "2026-05-25",
+  "dateModified": "2026-05-25",
   "mainEntityOfPage": "https://bluecollartechy.com/blog/why-your-business-isnt-showing-up-on-google-maps",
   "image": "https://bluecollartechy.com/og-image.jpg",
   "articleSection": "Local SEO"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Why your business isn't showing up on Google Maps: 7 fixes in order",
-  "description": "A troubleshooting ladder for contractors whose business isn't appearing in the Google Maps local pack. Seven checks, in the order that surfaces the actual problem fastest.",
-  "step": [
-    {"@type": "HowToStep", "name": "Confirm your listing is claimed and verified", "text": "Search your business name on Google. If you see 'Own this business?' you don't own it. Claim it before doing anything else.", "position": 1},
-    {"@type": "HowToStep", "name": "Check NAP consistency across the web", "text": "Your business name, address, and phone number should be identical on your GBP, website, Yelp, Facebook, BBB, and every directory you are listed on.", "position": 2},
-    {"@type": "HowToStep", "name": "Fix your primary category", "text": "Pick the most specific category that matches your primary service. General Contractor is too broad to rank competitively for most trade searches.", "position": 3},
-    {"@type": "HowToStep", "name": "Report spam listings and resolve duplicates", "text": "Check whether competitors are keyword-stuffing their business names. Look for duplicate listings of your own business that may be splitting your authority.", "position": 4},
-    {"@type": "HowToStep", "name": "Understand your proximity baseline", "text": "The map pack is geographically weighted. You rank better near your address. This is a factor to work around, not a bug to fix.", "position": 5},
-    {"@type": "HowToStep", "name": "Size up the competition", "text": "Pull up the top three listings for your primary service. How many reviews do they have? How long have they been active? That gap tells you how long this takes.", "position": 6},
-    {"@type": "HowToStep", "name": "Audit your review signals", "text": "Check review volume, recency, and whether you are responding to every review. All three affect your map pack position.", "position": 7}
-  ]
 }
 </script>
 </head>
@@ -616,18 +562,18 @@
 <div class="article-meta">
   <div class="container">
     <div class="article-meta-row">
-      <span><span class="hl">BLOG</span> / LOCAL SEO</span>
-      <span>Published · 2026-05-18</span>
-      <span>Read · 10 min</span>
+      <span><span class="hl">BLOG</span> / GBP · LOCAL SEO</span>
+      <span>Published · 2026-05-25</span>
+      <span>Read · 11 min</span>
     </div>
   </div>
 </div>
 
 <section class="hero-post">
   <div class="narrow">
-    <div class="kicker">Troubleshoot</div>
-    <h1 class="post-title">Why your business isn't showing up on <span class="hi">Google Maps.</span></h1>
-    <p class="hero-sub">There are seven reasons this happens. Most are fixable in an afternoon. The problem is most contractors jump to fix four or five without checking whether fix one is the actual culprit. Work the ladder in order.</p>
+    <div class="kicker">The Troubleshooting Ladder</div>
+    <h1 class="post-title">Why your business isn't showing up on Google Maps <span class="hi">(and the 7 fixes, in order).</span></h1>
+    <p class="hero-sub">Not in the map pack? There are seven reasons this happens and they stack on each other. Work through them in order. The first one you fail is where you stop and fix. Each layer depends on the one below it.</p>
     <div class="post-byline">
       <span>BY <span class="v">NICK CONLEY</span></span>
       <span>FOUNDER · BLUE COLLAR TECHY</span>
@@ -638,156 +584,182 @@
 <section class="chapter">
   <div class="narrow">
     <div class="chapter-num">// The setup</div>
-    <p class="lead">For most contractors, the map pack drives more calls than the website. Three spots. Most customers pick from those three. If your business isn't in those three, you're invisible to a large slice of the people searching for what you do.</p>
-    <p>The question I hear most: "Why isn't my business showing up?" Sometimes a contractor means they don't show up at all. Sometimes they mean they're at position eight instead of the top three. Both are problems. Different causes.</p>
-    <p>I've audited a lot of contractor profiles. The cause is almost always in one of seven places. They compound on each other. Fix six is mostly irrelevant when fix one is still broken.</p>
-    <p>Think of it like base prep before a paver install. Skip the compacted base and everything you lay on top eventually shifts. Work fix one first. If it's clean, move to fix two. Don't jump ahead.</p>
-    <p class="dim">Before you start: search your business name in Google. Find the map listing. You are about to run each of these checks on that live profile.</p>
+    <p class="lead">Your truck is out there. Your crew is working. Your customers are happy. But when somebody searches your service and your city on Google, you're not in the top three results. Or you're not showing up at all.</p>
+    <p>Most contractors I talk to skip straight to blaming Google or their agency when this happens. Sometimes the agency is the problem. A lot of the time it's something fixable that nobody has walked them through in the right order.</p>
+    <p>I've worked through this diagnosis with businesses in a dozen different markets. Landscapers in the Pacific Northwest. Fence contractors outside of Chicago. HVAC crews in Florida. The root cause is almost always in one of seven places. And they're not equal. Fix one before you fix two. Fix two before you fix three.</p>
+    <p>The reason order matters: some of these fixes only work once the ones above them are solid. You can post Google Updates every week but if your NAP is inconsistent across 40 directories, Google still reads your profile as uncertain. Uncertainty kills rankings.</p>
+    <p>Work through these in sequence. The first one you fail is where you stop and fix it before moving down the list.</p>
+    <p class="dim">Already run the 15-minute GBP audit? This post goes deeper on why you're not ranking, not just what's missing on your profile. Different question, more specific answers.</p>
   </div>
 </section>
 
 <section class="chapter">
   <div class="narrow">
-    <div class="chapter-num">// The seven fixes</div>
+    <div class="chapter-num">// Fix 1 — Claim and verify</div>
+    <h2>Nothing else works until you own the listing.</h2>
+    <p>Pull up your business on Google Maps right now. Search your business name and look at what comes up. If the panel says "Own this business?" instead of showing you an edit interface, you don't own it. Stop here.</p>
+    <p>Google auto-generates listings from public data sources. Yelp. Yellow Pages. Business license databases. Your listing may exist and may even rank without you ever creating it. But an unclaimed listing can't be fully optimized, and anyone can suggest edits to it without your knowledge. Competitors have used this to quietly update a rival's phone number or service hours.</p>
+    <p>Click the claim link and go through verification. Most businesses get a postcard mailed to the business address with a PIN. Some qualify for phone verification or video verification, which both move faster. If Google offers instant verification because it matches data it already has, take it. Don't wait on a postcard when you don't have to.</p>
 
-    <div class="step">
-      <div class="tag">
-        <span class="time">Fix 01</span>
-        <span class="step-no">Start here — always</span>
-      </div>
-      <h3>Your listing is not claimed <span class="hi">or not verified.</span></h3>
-      <p>About one in nine Google Business Profiles is still unclaimed. The business exists on Google's map data, shows up when people search, and nobody who works there can edit it. If that's your profile, nothing else on this list matters until you fix it.</p>
-      <p>How to check: search your business name on Google. If the listing shows "Own this business?" you don't own it. If you can log in and edit every field, you're clear. If your profile shows "Verification pending" or an unverified notice, your map pack visibility is limited.</p>
-      <p>A suspended profile is a separate problem and the worst outcome. If your profile was suspended, you won't appear in Maps at all. Suspensions happen for keyword stuffing in the business name, a fake or unverifiable address, or a flag from a competitor. The reinstatement process runs through Google's appeals tool. As of 2026, once you open the document upload form you have 60 minutes to submit your supporting files. The window closes after that and you have to reopen the appeal. Timeline to resolution is typically three to fourteen business days.</p>
-      <div class="look-for">
-        <div class="h">What clean looks like</div>
-        <p>You are logged in as an owner, you can edit every field, and the profile shows a verified badge. No pending verification notice. No suspension flag.</p>
-      </div>
+    <h3>Check who has access</h3>
+    <p>Log into your Google Business Profile dashboard and look at the user list. You should be listed as an Owner. If a previous marketing agency has Owner-level access and you've parted ways, their access needs to go. Removing a Manager is simple. Removing a co-Owner takes more steps and can drag on if they're unresponsive.</p>
+    <p>Give agencies Manager access, not Owner. That distinction protects you when the relationship ends.</p>
+    <p>If your profile is claimed and verified, move to fix two. If not, stop here and complete this before anything else on the list. I mean it. The other fixes depend on this foundation.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Fix 2 — NAP consistency</div>
+    <h2>Your name, address, and phone have to match everywhere.</h2>
+    <p>NAP stands for name, address, phone number. Every directory on the internet that lists your business needs to match Google exactly. Same format. Same abbreviations. Same suite number. Same everything.</p>
+    <p>Why it matters: Google cross-references your listing against dozens of other data sources to confirm you're a real, operating business at the address and phone number you've claimed. When those sources don't agree, Google reads uncertainty. Uncertainty suppresses rankings. Not dramatically overnight, but consistently, over time, across competitive queries where two or three other businesses have cleaner signals than you do.</p>
+
+    <h3>Where to check</h3>
+    <p>Start with the directories that carry the most weight as data sources: your website, Yelp, Angi, HomeAdvisor, BBB, Houzz, Facebook, and Apple Maps. If you're in a local chamber of commerce directory, check that too. Any directory where your business appears is worth reviewing.</p>
+    <p>The most common errors I find: the business name changed over time and wasn't updated everywhere. A phone number changed and a few directories still have the old one. The address was formatted differently on different sites, "Street" versus "St." or a suite number included on some and missing on others.</p>
+    <p>Fix every mismatch. It takes a few hours the first time. It's one of the highest-return things you can do for your map pack ranking because it's pure cleanup, and most competitors aren't doing it.</p>
+
+    <div class="data-callout">
+      <div class="label">The one rule you can't break</div>
+      <h3>Never keyword-stuff your Google business name.</h3>
+      <p>"Smith Fence Contractor Austin TX Best Prices" is a policy violation. Competitors report it. Google removes the extra text or suspends the profile. Your business name on Google must match your real legal or trade name and nothing else.</p>
+      <p>This applies to secondary directories too. If your Yelp listing says "Smith Fencing — Licensed &amp; Insured — Austin TX" and your Google listing says "Smith Fencing," that inconsistency is the kind Google notices. Use your real name, consistently, everywhere.</p>
     </div>
+  </div>
+</section>
 
-    <div class="step">
-      <div class="tag">
-        <span class="time">Fix 02</span>
-        <span class="step-no">NAP consistency</span>
-      </div>
-      <h3>Your name, address, and phone <span class="hi">don't match everywhere.</span></h3>
-      <p>Google cross-references your profile against your website, Facebook, Yelp, the BBB, HomeAdvisor, Angi, and hundreds of smaller directories. If "ABC Paving LLC" on your GBP shows up as "ABC Paving and Concrete" on Yelp, Google reads those as two different businesses. That inconsistency can work against your rankings.</p>
-      <p>Address format matters more than most people think. "123 Main St" versus "123 Main Street" versus "123 Main Street Suite A" are technically different strings to a machine. Pick a format. Use it identically everywhere.</p>
-      <p>One trap contractors fall into: stuffing keywords into the business name field. "Best Paving Contractor Phoenix Fast Affordable" instead of your legal business name is against Google's terms. Competitors can and do report it. Google clips the extras, and you lose trust in the process. Use your legal business name. Only your legal business name.</p>
-      <div class="look-for">
-        <div class="h">What clean looks like</div>
-        <p>Business name, address, and phone are identical across your GBP, your website's contact page, and every directory where you are listed. Same format. Same abbreviations. Same spelling.</p>
-      </div>
-    </div>
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Fix 3 — Primary category</div>
+    <h2>The single most important ranking signal on the whole profile.</h2>
+    <p class="lead">More important than your photos. More important than your review count. More important than any post you ever write. Pick the wrong primary category and you're invisible to the searches that pay you.</p>
+    <p>Google uses your primary category to decide which queries your profile is eligible to rank for. If somebody searches "paver patio contractor near me" and your primary is "Landscaper," Google has to make a judgment call about whether you're relevant. If your primary is "Paving Contractor" or "Hardscape Contractor," the match is unambiguous.</p>
+    <p>Look at your primary category right now. Is it the most specific option that describes your main revenue source? Not your most general service. Not the category that sounded most professional when you set it up. The one that matches the searches your highest-value customers are typing.</p>
 
-    <div class="step">
-      <div class="tag">
-        <span class="time">Fix 03</span>
-        <span class="step-no">Category selection</span>
-      </div>
-      <h3>Your primary category is <span class="hi">too broad or just wrong.</span></h3>
-      <p>Your primary category is one of the strongest relevance signals you send Google. It tells the algorithm what searches to consider your profile for. "General Contractor" is too broad. Someone searching for a roofer, a flooring crew, and a paving company could all theoretically match a "General Contractor" listing. That's not specific enough to rank well for any of them.</p>
-      <p>Pick the most specific category that accurately describes the majority of your revenue. If you do driveways and parking lots, "Paving Contractor" beats "General Contractor." If you build retaining walls and outdoor living spaces, "Landscape Contractor" or "Hardscape Contractor" is a better fit than "Home Improvement Contractor." If your primary service is roofing, your primary category should say "Roofing Contractor."</p>
-      <p>Secondary categories expand your footprint. Add three to five that cover the other services you actually do. The right combination helps you show up for related searches you would otherwise miss entirely.</p>
-      <div class="look-for">
-        <div class="h">What clean looks like</div>
-        <p>One specific primary category that matches your main revenue source. Three to five secondary categories that map to real work you perform. No categories you don't actually offer.</p>
-      </div>
-    </div>
+    <h3>Common category mismatches by trade</h3>
+    <ul>
+      <li>Hardscape and paving: "Landscaper" instead of "Paving Contractor" or "Stone Contractor"</li>
+      <li>Roofing: "General Contractor" instead of "Roofing Contractor"</li>
+      <li>Fencing: "Landscaper" instead of "Fence Contractor"</li>
+      <li>Concrete flatwork: "General Contractor" instead of "Concrete Contractor"</li>
+      <li>HVAC: "Contractor" instead of "HVAC Contractor"</li>
+      <li>Remodeling: "Construction Company" instead of "Remodeling Contractor"</li>
+    </ul>
+    <p>If you're between two categories, pick the one that matches your highest-revenue service and put the other as a secondary. Secondary categories give you surface area for additional query types. But the primary drives your core map pack eligibility. Get it right first.</p>
+    <p>The <a href="google-business-profile-optimization-contractors.html" style="color:var(--accent);text-decoration:underline;">full GBP optimization guide</a> covers secondary categories and the rest of the profile build. But if you're not showing up in the pack, category is the single fix that moves rankings the fastest when it's wrong.</p>
+  </div>
+</section>
 
-    <div class="step">
-      <div class="tag">
-        <span class="time">Fix 04</span>
-        <span class="step-no">Spam and duplicates</span>
-      </div>
-      <h3>Competitor spam or <span class="hi">your own duplicate listings.</span></h3>
-      <p>Sometimes the issue is not what's wrong with your profile. Sometimes it's what's wrong with the map pack itself.</p>
-      <p>Keyword-stuffed business names are common in competitive trades markets. A competitor showing up as "Absolute Best Roofing Dallas Cheap Fast Licensed" instead of their actual business name is breaking Google's rules. Google relies on the public to report these. Search the map pack for your primary service. If you see listings with obvious keyword stuffing in the name field, use the "Suggest an edit" option on that listing to flag it. It doesn't resolve overnight, but it works.</p>
-      <p>The other kind of duplicate is your own. If you've created two profiles for the same business at the same or different addresses, those listings split your signals. Google may suppress both. If you find a duplicate of your own profile, use the "Claim this business" flow on the secondary one to merge or close it.</p>
-      <div class="look-for">
-        <div class="h">What clean looks like</div>
-        <p>One GBP for your business. No keyword-stuffed names in the top map results for your primary service. Any duplicate of your own listing has been merged or removed.</p>
-      </div>
-    </div>
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Fix 4 — Spam listings above you</div>
+    <h2>Sometimes you're doing everything right. <span class="hi">And somebody else is cheating.</span></h2>
+    <p>Map pack spam is a real problem in competitive contractor markets. Keyword-stuffed business names. Fake or virtual office addresses. Review clusters where a dozen five-star reviews showed up in a three-day window from accounts with one review each. These profiles violate Google's policies. Many of them rank anyway because nobody reports them.</p>
+    <p>Before you spend another dollar on optimization, look at the three businesses ranking above you. Open each one on Google Maps.</p>
 
-    <div class="step">
-      <div class="tag">
-        <span class="time">Fix 05</span>
-        <span class="step-no">Proximity factors</span>
-      </div>
-      <h3>You rank fine, just <span class="hi">not where the searches are happening.</span></h3>
-      <p>The map pack is geographically weighted. Google factors the distance between where a search is made and where your business is located. If your shop is on the east side of town, you'll rank better for searches made from the east side than from the west side of town. That's not a bug. It's how the algorithm works.</p>
-      <p>Service area businesses hit this constantly. A roofing company based in one suburb does half its work in the next suburb over and can't understand why they rank well at home and barely appear ten miles away. That's proximity working as intended. You need to understand it and work around it over time, not try to eliminate it.</p>
-      <p>What you can do: building authority in specific cities through location-based content, review clusters tied to those areas, and local citations helps expand your effective footprint. It doesn't happen in a week. And hiding your address doesn't escape proximity. Google still factors location data from your GBP even when the address isn't displayed publicly.</p>
-      <div class="look-for">
-        <div class="h">What clean looks like</div>
-        <p>Your service area is set accurately in GBP. You rank well in the geography closest to your address. Expanding that coverage into new areas is a months-long build, not an afternoon fix.</p>
-      </div>
-    </div>
+    <h3>What to look for</h3>
+    <p>Business name: Does it include keywords beyond the actual business name? "ABC Fence Contractor Austin TX Licensed Insured" is keyword stuffing. Real businesses are named for themselves, not for their search terms.</p>
+    <p>Address: Is it a real office, a shared workspace, or a mailbox service? UPS Store addresses and virtual office locations are common spam signals. Click the address and see what shows up on Street View. A mailbox storefront or an empty parking lot is a red flag.</p>
+    <p>Reviews: Look at the pattern. Fifty reviews with forty of them posted in a single month, all short, all five stars, all from accounts with one review total. That is manufactured. Real review profiles grow steadily over time and have variation in length, rating, and reviewer history.</p>
 
-    <div class="step">
-      <div class="tag">
-        <span class="time">Fix 06</span>
-        <span class="step-no">Competition strength</span>
-      </div>
-      <h3>The top three in your market are <span class="hi">just stronger right now.</span></h3>
-      <p>Sometimes fixes one through five are clean and you're still not in the top three. That means the profiles outranking you are simply more established. Pull up the top two or three listings for your primary service and look at them honestly. How many reviews do they have? When was their last review? How long have they been active? How complete is their profile?</p>
-      <p>If the top result in your market has 280 reviews, a 4.9-star rating, posts every two weeks, and has been verified for six years, you are not going to out-rank them this week. That gap closes over time, not over a weekend.</p>
-      <p>The good news: you do not need to be first to get calls. Showing up at position two or three still puts you in the map pack. Position two still gets seen. The goal is the top three, not the top one. And the fastest path to the top three is consistently doing the things that compound: reviews, photos, posts, profile completeness. All of it. Month over month.</p>
-      <div class="look-for">
-        <div class="h">What clean looks like</div>
-        <p>You know the specific gap between your profile and the top three on reviews, recency, and completeness. You have a plan to close that gap steadily. Not in a sprint.</p>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="tag">
-        <span class="time">Fix 07</span>
-        <span class="step-no">Review signals</span>
-      </div>
-      <h3>Volume, recency, and response rate are <span class="hi">all dragging you down.</span></h3>
-      <p>Reviews affect map pack rankings in three specific ways: how many you have, how recently the newest ones came in, and whether you are responding to them.</p>
-      <p>Volume is the most visible gap. A business with 12 reviews and one with 180 reviews rank differently for the same search. That gap is not invisible to the algorithm and it is not invisible to the person choosing between listings.</p>
-      <p>Recency surprises people the most. A contractor with 150 five-star reviews stopped collecting new ones for six months. Rankings slipped. They restarted their review ask process, got ten new reviews over two weeks, and their map position bounced back within days. Google treats review freshness as a signal that the business is still active and still serving customers. An old stack of great reviews eventually looks like a business that used to be good.</p>
-      <p>Response rate is the third piece. Responding to reviews tells both Google and the next person reading your profile that someone is paying attention. You don't need a paragraph for each one. A sentence or two, acknowledging the specific job or the feedback, is enough. The point is that every review, including the negative ones, got a response.</p>
-      <div class="look-for">
-        <div class="h">What clean looks like</div>
-        <p>Review count is within striking range of the top competitor in your map pack. A new review has come in within the last 30 days. You have responded to every review, including the negative ones.</p>
-      </div>
-    </div>
-
+    <h3>How to report</h3>
+    <p>Open the suspicious listing on Google Maps. Click the three-dot menu. Select "Report a problem." Choose the most accurate violation category. Keyword stuffing in the business name, fake address, and fraudulent content each have their own report type. Use the specific one, not the generic "other."</p>
+    <p>Multiple reports from different users move faster than a single report. If you know other legitimate contractors in the same market dealing with the same spam listing, coordinate. That map pack has room for three real businesses. Clearing out the fake ones makes room for yours.</p>
+    <p class="dim">Google's enforcement on spam is inconsistent and sometimes slow. Report it and keep building your own profile. Don't count on a spam removal as your ranking strategy. Use it as a parallel effort while you do the work on your own side.</p>
   </div>
 </section>
 
 <section class="pullquote">
   <div class="container">
-    <blockquote>The order matters. Fix six is irrelevant when <span class="hi">fix one is still broken.</span></blockquote>
-    <cite>The troubleshooting ladder</cite>
+    <blockquote>Proximity tells Google <span class="hi">who to show.</span> Reviews, photos, and posts tell Google <span class="hi">who to trust.</span> You need both.</blockquote>
+    <cite>The two parts of a map pack ranking</cite>
   </div>
 </section>
 
 <section class="chapter">
   <div class="narrow">
-    <div class="chapter-num">// Where to start</div>
-    <h2>Run the ladder. Stop when you find the break.</h2>
-    <p>Every one of these issues costs you calls. Some of them cost you a lot of calls. Most contractors I talk to are trying to fix five things at once and making no real progress on any of them.</p>
-    <p>Pick the first one you haven't confirmed is clean. Fix it this week. Then move to the next one.</p>
-    <ul class="checklist">
-      <li><strong>Ownership and verification.</strong> If you don't control the profile, stop here and claim it. Everything else waits.</li>
-      <li><strong>NAP consistency.</strong> Check your website, Yelp, Facebook, and the BBB. One hour of cleanup can close a leak that's been costing you for months.</li>
-      <li><strong>Primary category.</strong> If you've changed your main service or grown past your original category, update it. This one takes five minutes.</li>
-      <li><strong>Spam and duplicates.</strong> Scan the map pack for keyword-stuffed competitors. Report them. Check for duplicates of your own listing.</li>
-      <li><strong>Proximity.</strong> Understand where you rank well and where you don't. Expanding your footprint into new areas is a long build, not a quick setting.</li>
-      <li><strong>Competition gap.</strong> Know the specific gap. Build toward it. Consistently, not in bursts.</li>
-      <li><strong>Review signals.</strong> Restart the ask process if it stalled. Respond to everything. Recency matters more than most contractors realize.</li>
-    </ul>
+    <div class="chapter-num">// Fix 5 — Proximity</div>
+    <h2>Google shows the nearest businesses first. <span class="hi">That's not always you.</span></h2>
+    <p>Here's the piece that catches a lot of contractors off guard. Google Maps results are calculated partly from the searcher's physical location at the moment they search. Not your office location. Theirs.</p>
+    <p>If a homeowner on the north side of your city searches "fence contractor near me" from their phone, Google shows results ranked in part by how close each business is to where that person is standing. If your office or service vehicle is on the south side of town, you're competing against businesses that are physically closer to that search.</p>
+    <p>This is why you can rank in the top three when someone searches from your own neighborhood and not show up at all when they search from across town. Same profile, same query, different result.</p>
+
+    <h3>Two things that close the proximity gap over time</h3>
+    <p>First: your service area configuration. Make sure your service area in the profile is set to cover the full geography you actually serve. Don't set it to just your immediate neighborhood. Set it to the cities and towns you take jobs in. This tells Google you're a legitimate option for searches originating anywhere in that area, even when your address is further away.</p>
+    <p>Second: reviews from across your service area. When customers write reviews and naturally mention their neighborhood or city in the text, Google reads it as a location relevance signal for that area. You can't write your customers' reviews for them. But you can build the habit of asking for reviews consistently from every job, across your full footprint. Over time, reviews mentioning different parts of your service area help close the proximity gap for searches coming from those locations.</p>
+    <p>Proximity is the hardest gap on this list to close quickly. It's also the only one that's partially outside your direct control. Fix the other six first. Then work on widening your footprint through reviews and service area settings.</p>
 
     <div class="inline-cta">
       <div class="label">Free Tool · GBP Health Check</div>
-      <h3>See exactly where you stand.</h3>
-      <p>Enter your business name and city. I'll pull your live Google Business Profile, score it on nine dimensions, and benchmark your review count against the top contractors in your area. The report shows up in under a minute and tells you which of these seven issues to hit first.</p>
+      <h3>See how your profile stacks up against the businesses ranking above you.</h3>
+      <p>Enter your business name and city. I'll pull your live Google Business Profile, score it on nine dimensions, and compare your review count, photo freshness, and profile activity against the top three contractors in your area. Takes about a minute and shows you exactly which gap to close first.</p>
       <a class="btn" href="../gbp-check/">Run my GBP audit →</a>
     </div>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Fix 6 — Competition gap</div>
+    <h2>The businesses above you are doing more. Usually three things more.</h2>
+    <p>You've verified claim status, cleaned up NAP, set the right primary category, reported spam, and configured your service area. If you're still not in the map pack, the remaining gap is usually this: the businesses ranking above you have a meaningfully stronger profile, and Google is consistently choosing them over you.</p>
+    <p>The gap almost always shows up in one of three places. Check each one against the top three results in your market.</p>
+
+    <h3>Review count</h3>
+    <p>If you have 18 reviews and the businesses ranking above you each have 80 to 120, Google reads that gap as a signal about business maturity and customer trust. You can't manufacture reviews, and buying them violates Google's policies. But you can build a consistent ask process that closes this gap over 60 to 90 days.</p>
+    <p>Three asks per closed job, in the right moments, using the right script. The full process is in the <a href="how-to-get-more-google-reviews.html" style="color:var(--accent);text-decoration:underline;">Google reviews playbook</a>. If review count is your biggest gap, that post is the next one to read after this one.</p>
+
+    <h3>Photo freshness</h3>
+    <p>A profile with 100 photos and nothing new in eight months reads as abandoned. A profile with 30 photos and new ones added in the last two weeks reads as active. Google's freshness signals weight recent activity. Check when the top three in your market last uploaded photos. If they're current and you're not, that's a gap you can close within a week.</p>
+    <p>The simplest habit: ask your crew to take three photos at the end of every significant job. Different angles, finished area. They send them to a shared album. You upload the best ones weekly. 90 seconds per job. Put it on the close-out checklist.</p>
+
+    <h3>Post activity</h3>
+    <p>Most contractor profiles have zero Google Posts or posts from a year ago. If the businesses ranking above you are posting two to four times a month and you're not, they're building a compounding freshness advantage. Each post is a small signal that the business is active, current, and serving customers in the area.</p>
+    <p>A basic post that works: one photo of recent work, one to two sentences describing it, your city name in the copy, a call-to-action button linking to your estimate request page. That is a real post. It takes five minutes. It signals more than zero posts ever will.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Fix 7 — Review signals</div>
+    <h2>Review count is only part of the picture. <span class="hi">Three other signals matter.</span></h2>
+    <p>Fix six covers the count gap. Fix seven covers what's happening inside your reviews that the count alone doesn't tell you.</p>
+
+    <h3>Recency</h3>
+    <p>A profile with 80 reviews and nothing new in 18 months is declining in Google's eyes. The businesses that hold map pack rankings consistently are almost always receiving new reviews on a regular cadence, not because they game the system, but because they ask every customer after every job.</p>
+    <p>Look at your last 10 reviews. How long did that span take to accumulate? If the most recent one is from four months ago, your review momentum has stalled. The ask process is the fix. You can't outsource it to an agency. It has to come from the person the customer knows, at the moment the job wraps.</p>
+
+    <h3>Response rate</h3>
+    <p>Google tracks whether businesses respond to reviews. A profile where the owner responds to most reviews, including the hard ones, signals an engaged, operating business. A profile with zero responses signals absence. Absence is a ranking signal too, just not in your favor.</p>
+    <p>The sprint: go through every unanswered review on your profile and respond to each one today. Positive reviews get a short, personal response using the reviewer's first name. Negative reviews get a professional, calm reply that takes the conversation offline without admitting fault. Once you're current, set a target of responding to new reviews within 48 hours.</p>
+    <p>Your responses aren't really for the reviewer. They're for the next 20 people who read your profile before they decide whether to call. Write them that way.</p>
+
+    <h3>Star rating</h3>
+    <p>Below 4.0 and Google actively reduces how often your profile appears for queries where the searcher is comparison shopping. Above 4.5 is the range where your rating stops being a drag and starts being a mild positive. The fix isn't trying to remove bad reviews. The fix is a consistent ask process that generates enough new positive reviews to continuously dilute older negatives.</p>
+    <p>One contractor I worked with had 34 reviews at 4.1 stars, with three bad reviews clustered from a rough stretch two years back. Six months of consistent asking got him to 71 reviews at 4.7. The bad reviews didn't go anywhere. They just got buried by the volume of good ones. That's the only reliable path here.</p>
+    <p class="dim">Asking customers to change their reviews, offering discounts for review updates, or having employees post reviews on your behalf all violate Google's current policies. The March 2026 policy update added retroactive enforcement. The ask process is the only compliant approach.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// The diagnostic order</div>
+    <h2>Work the ladder. <span class="hi">Don't skip steps.</span></h2>
+    <p>Seven fixes, in the right order. The first one you fail is where you stop and build before moving on.</p>
+
+    <ul class="checklist">
+      <li><strong>1. Claim status.</strong> Verified and owned by you? If not, stop here and complete verification before anything else. Old agency access with Owner permissions? Remove it.</li>
+      <li><strong>2. NAP consistency.</strong> Name, address, phone matching across Google, your website, Yelp, Angi, BBB, Facebook, Apple Maps, and any other directory you're listed on? If not, fix every mismatch.</li>
+      <li><strong>3. Primary category.</strong> Is it the most specific category for your main revenue service? If you're a fence contractor with "Landscaper" as primary, update it today. This one fix moves rankings faster than anything else when it's wrong.</li>
+      <li><strong>4. Spam check.</strong> Scan the top three results in your market. Keyword-stuffed names, fake addresses, or suspicious review patterns? Report each violation using the specific violation type, not the generic option.</li>
+      <li><strong>5. Proximity and service area.</strong> Is your service area configured to cover the full geography you actually serve? Then start building reviews from jobs across your footprint. This one closes slowly. Keep moving.</li>
+      <li><strong>6. Competition gap.</strong> Compare your review count, photo freshness, and post frequency against the top three. Find the biggest gap. Close it first.</li>
+      <li><strong>7. Review signals.</strong> Check recency, response rate, and star rating. Start the consistent ask process if you haven't. Respond to every unanswered review before the week is out.</li>
+    </ul>
+
+    <p>Most contractors who aren't showing up in the map pack have two or three of these stacked on each other. Rarely just one. Work through the list and you'll find them.</p>
+    <p>If you want to shortcut the investigation, the GBP Health Check below scores your live profile against the top competitors in your market and flags which of these gaps is costing you the most. It doesn't replace doing the work. But it shows you where to start.</p>
   </div>
 </section>
 
@@ -798,20 +770,20 @@
     <div class="related-grid">
       <a class="related-card" href="google-business-profile-optimization-contractors.html">
         <div class="cat">GBP · Local SEO · Pillar</div>
-        <h3>The complete guide to GBP optimization for contractors</h3>
+        <h3>The complete guide to Google Business Profile optimization for contractors</h3>
         <p>Eight priority tiers, in the order that moves the map pack fastest.</p>
         <span class="arrow">Read →</span>
       </a>
       <a class="related-card" href="how-to-get-more-google-reviews.html">
         <div class="cat">Reviews · How-To</div>
-        <h3>How to get more Google reviews as a contractor</h3>
-        <p>Three-moment ask framework and the 2026 Google policy rules.</p>
+        <h3>Google reviews for contractors: the ask playbook that actually works</h3>
+        <p>Three-moment ask framework, exact scripts, and the new 2026 Google rules.</p>
         <span class="arrow">Read →</span>
       </a>
       <a class="related-card" href="gbp-audit-15-minutes.html">
         <div class="cat">Local SEO · How-To</div>
         <h3>Audit your Google Business Profile in 15 minutes</h3>
-        <p>Seven checks any contractor can run on their own profile right now.</p>
+        <p>Seven checks any contractor can run on their own profile. Start here before you optimize.</p>
         <span class="arrow">Read →</span>
       </a>
     </div>
@@ -820,15 +792,15 @@
 
 <section class="end-cta">
   <div class="container">
-    <div class="kicker">Next step</div>
-    <h2>Run the audit. Close the biggest leak first.</h2>
-    <p>The GBP Health Check scores your live profile and benchmarks your review count against the top contractors in your market. Takes about a minute. No signup wall for the report.</p>
+    <div class="kicker">What's next</div>
+    <h2>Find out which of these seven gaps is costing you the most.</h2>
+    <p>The GBP Health Check scores your live profile on nine dimensions and benchmarks your review count, photo freshness, and category setup against the top three contractors in your market. Free. Takes about a minute.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="../gbp-check/">
         Run my GBP audit
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" fill="none"/></svg>
       </a>
-      <a class="btn btn-secondary" href="google-business-profile-optimization-contractors.html">Full GBP guide</a>
+      <a class="btn btn-secondary" href="google-business-profile-optimization-contractors.html">Read the full GBP guide</a>
       <a class="btn btn-secondary" href="../index.html#newsletter">Get the newsletter</a>
     </div>
   </div>
