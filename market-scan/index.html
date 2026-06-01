@@ -14,7 +14,7 @@
 <meta property="og:description" content="Find out if your market is actually slow. Free year-over-year Google search demand report." />
 <meta property="og:image" content="https://bluecollartechy.com/og-image.png" />
 
-<link rel="icon" type="image/svg+xml" href="../logos/bct-favicon.svg" />
+<link rel="icon" type="image/png" href="../logos/bct-logo-mark.png" />
 <link rel="canonical" href="https://bluecollartechy.com/market-scan/" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,7 +44,8 @@
     backdrop-filter: blur(12px); background: rgba(13, 13, 18, 0.85);
   }
   .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-  .nav-logo svg { height: 52px; width: auto; display: block; }
+  .nav-logo svg, .nav-logo img { height: 52px; width: auto; display: block; }
+  .nav-logo img { object-fit: contain; }
   .nav-cta-mobile { display: none; }
   .nav-toggle {
     display: none;
@@ -485,7 +486,8 @@
     gap: 60px; padding-bottom: 60px; border-bottom: 1px solid var(--border);
   }
   .foot-brand .logo-mini { margin-bottom: 20px; }
-  .foot-brand .logo-mini svg { height: 76px; width: auto; }
+  .foot-brand .logo-mini svg, .foot-brand .logo-mini img { height: 76px; width: auto; display: block; }
+  .foot-brand .logo-mini img { object-fit: contain; }
   .foot-brand p { color: var(--text-dim); font-size: 14px; max-width: 300px; line-height: 1.6; }
   .foot-col h4 {
     font-family: 'JetBrains Mono', monospace; font-size: 11px;
@@ -572,14 +574,7 @@
 <nav class="site-nav">
   <div class="container nav-inner">
     <a class="nav-logo" href="../index.html" aria-label="Blue Collar Techy">
-      <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
-        <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
-        <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
-        <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
-        <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
-        <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
-        <text x="290" y="78" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">EST · 2026</text>
-      </svg>
+      <img src="../logos/bct-logo-horizontal.jpg" alt="Blue Collar Techy logo" loading="eager" />
     </a>
     <div class="nav-links" id="primary-nav">
       <a href="../about.html">About</a>
@@ -739,13 +734,7 @@
     <div class="foot-top">
       <div class="foot-brand">
         <div class="logo-mini">
-          <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
-            <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
-            <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
-            <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
-            <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
-            <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
-          </svg>
+          <img src="../logos/bct-logo-horizontal.jpg" alt="Blue Collar Techy logo" loading="lazy" />
         </div>
         <p><span class="brand-tag">Practical tech for the trades.</span> AI, local SEO, and real systems. Plain English.</p>
       </div>
