@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-25",
+  "as_of": "2026-06-01",
   "sitemap": {
     "submitted": 19,
     "indexed": 0,
@@ -15,7 +15,7 @@
     },
     "https://bluecollartechy.com/blog/gbp-audit-15-minutes": {
       "verdict": "NEUTRAL",
-      "coverage": "URL is unknown to Google",
+      "coverage": "Discovered - currently not indexed",
       "indexing": "INDEXING_STATE_UNSPECIFIED",
       "last_crawl": "never"
     },
@@ -63,7 +63,7 @@
     },
     "https://bluecollartechy.com/blog/small-jobs-are-marketing": {
       "verdict": "NEUTRAL",
-      "coverage": "URL is unknown to Google",
+      "coverage": "Discovered - currently not indexed",
       "indexing": "INDEXING_STATE_UNSPECIFIED",
       "last_crawl": "never"
     },
@@ -89,7 +89,7 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-05-16T08:28:01Z"
+      "last_crawl": "2026-06-01T10:43:56Z"
     },
     "https://bluecollartechy.com/market-scan/": {
       "verdict": "NEUTRAL",
@@ -101,7 +101,7 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-05-05T06:10:51Z"
+      "last_crawl": "2026-05-18T18:58:47Z"
     },
     "https://bluecollartechy.com/resources/crew-cheat-sheet/": {
       "verdict": "PASS",
