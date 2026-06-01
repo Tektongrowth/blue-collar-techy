@@ -1,6 +1,6 @@
 # Blue Collar Techy
 
-Practical tech, AI, and local SEO for blue-collar business owners. Hosted by Nick Conley, a former hardscape contractor who now runs a marketing and tech company for the trades (Tekton Growth).
+Plain-English tech, AI, local SEO, follow-up, and systems help for contractors. Hosted by Nick Conley, a former hardscape contractor who now runs a marketing and tech company for the trades (Tekton Growth).
 
 > Blue Collar Techy exists to cut through the noise of marketing, AI, and tech for contractors and trades owners. Honest diagnostic frameworks, practical how-tos, and free tools that use real data.
 
@@ -9,7 +9,7 @@ Practical tech, AI, and local SEO for blue-collar business owners. Hosted by Nic
 
 ## Core Perspective
 - The "market, agency, you" framework: when leads slow down, the cause is almost always in one of three buckets. Diagnose in order. Don't blame the agency before checking whether the market moved or the owner-side fundamentals are leaking calls.
-- No guru content. No "transform your business in 30 days." Just working tools and breakdowns.
+- No magic fixes or "transform your business in 30 days" promises. Just working tools and breakdowns.
 
 ## Blog Posts
 - [The small jobs are marketing. Most contractors don't see it that way.](https://bluecollartechy.com/blog/small-jobs-are-marketing.html): Mindset piece on specializing vs staying flexible. When the market shifts, calls for work outside your usual lane become some of the cheapest advertising dollars in the trades. Covers what one customer is actually worth over forty years, the cost comparison between paid leads and referrals, and what Nick learned closing a $3M Northern California hardscape company that tried to widen up too late. Internal link to market-up-sales-down. Paired tool: Market Demand Scan.
@@ -34,7 +34,7 @@ Practical tech, AI, and local SEO for blue-collar business owners. Hosted by Nic
 
 ## Services
 - [Work with Nick](https://bluecollartechy.com/work-with-me.html): Direct contact. Submit what you're trying to do with AI, marketing, local SEO, or systems.
-- [Tekton Growth](https://tektongrowth.com): Done-for-you SEO and marketing agency for contractors. Runs in parallel with Blue Collar Techy.
+- [Tekton Growth](https://tektongrowth.com): Optional implementation path for contractors who want help building the website, Google visibility, follow-up, and systems discussed on Blue Collar Techy.
 
 ## Contact
 - Email: nick@tektongrowth.com
