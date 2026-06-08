@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-01",
+  "as_of": "2026-06-08",
   "sitemap": {
     "submitted": 19,
     "indexed": 0,
@@ -12,6 +12,12 @@
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
       "last_crawl": "2026-05-15T23:42:54Z"
+    },
+    "https://bluecollartechy.com/blog/contractor-seo-2026": {
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "last_crawl": "never"
     },
     "https://bluecollartechy.com/blog/gbp-audit-15-minutes": {
       "verdict": "NEUTRAL",
@@ -50,10 +56,10 @@
       "last_crawl": "never"
     },
     "https://bluecollartechy.com/blog/market-agency-or-you": {
-      "verdict": "NEUTRAL",
-      "coverage": "Duplicate, Google chose different canonical than user",
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-05-05T06:08:51Z"
+      "last_crawl": "2026-06-02T10:39:04Z"
     },
     "https://bluecollartechy.com/blog/market-up-sales-down": {
       "verdict": "PASS",
@@ -89,7 +95,7 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-06-01T10:43:56Z"
+      "last_crawl": "2026-06-04T17:45:05Z"
     },
     "https://bluecollartechy.com/market-scan/": {
       "verdict": "NEUTRAL",
@@ -101,7 +107,7 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-05-18T18:58:47Z"
+      "last_crawl": "2026-06-04T10:03:39Z"
     },
     "https://bluecollartechy.com/resources/crew-cheat-sheet/": {
       "verdict": "PASS",
@@ -111,7 +117,7 @@
     },
     "https://bluecollartechy.com/resources/gbp-optimization-checklist/": {
       "verdict": "NEUTRAL",
-      "coverage": "URL is unknown to Google",
+      "coverage": "Discovered - currently not indexed",
       "indexing": "INDEXING_STATE_UNSPECIFIED",
       "last_crawl": "never"
     },
