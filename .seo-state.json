@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-15",
+  "as_of": "2026-06-22",
   "sitemap": {
     "submitted": 20,
     "indexed": 0,
@@ -20,16 +20,16 @@
       "last_crawl": "never"
     },
     "https://bluecollartechy.com/blog/gbp-audit-15-minutes": {
-      "verdict": "NEUTRAL",
-      "coverage": "Discovered - currently not indexed",
-      "indexing": "INDEXING_STATE_UNSPECIFIED",
-      "last_crawl": "never"
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
+      "indexing": "INDEXING_ALLOWED",
+      "last_crawl": "2026-06-17T04:49:54Z"
     },
     "https://bluecollartechy.com/blog/google-ads-vs-facebook-ads-for-contractors": {
       "verdict": "NEUTRAL",
-      "coverage": "Discovered - currently not indexed",
-      "indexing": "INDEXING_STATE_UNSPECIFIED",
-      "last_crawl": "never"
+      "coverage": "Crawled - currently not indexed",
+      "indexing": "INDEXING_ALLOWED",
+      "last_crawl": "2026-06-16T00:00:27Z"
     },
     "https://bluecollartechy.com/blog/google-business-profile-optimization-contractors": {
       "verdict": "NEUTRAL",
@@ -53,7 +53,7 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-06-09T16:48:01Z"
+      "last_crawl": "2026-06-19T10:25:14Z"
     },
     "https://bluecollartechy.com/blog/market-agency-or-you": {
       "verdict": "PASS",
@@ -62,22 +62,22 @@
       "last_crawl": "2026-06-14T00:44:57Z"
     },
     "https://bluecollartechy.com/blog/market-up-sales-down": {
-      "verdict": "PASS",
-      "coverage": "Submitted and indexed",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-05-16T10:33:01Z"
+      "last_crawl": "2026-06-19T05:10:10Z"
     },
     "https://bluecollartechy.com/blog/small-jobs-are-marketing": {
-      "verdict": "NEUTRAL",
-      "coverage": "Discovered - currently not indexed",
-      "indexing": "INDEXING_STATE_UNSPECIFIED",
-      "last_crawl": "never"
-    },
-    "https://bluecollartechy.com/blog/ten-things-no-agency-can-fix": {
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-05-18T14:34:39Z"
+      "last_crawl": "2026-06-21T22:36:03Z"
+    },
+    "https://bluecollartechy.com/blog/ten-things-no-agency-can-fix": {
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
+      "indexing": "INDEXING_ALLOWED",
+      "last_crawl": "2026-06-18T06:26:44Z"
     },
     "https://bluecollartechy.com/blog/why-your-business-isnt-showing-up-on-google-maps": {
       "verdict": "PASS",
@@ -95,11 +95,11 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-06-04T17:45:05Z"
+      "last_crawl": "2026-06-20T12:15:48Z"
     },
     "https://bluecollartechy.com/market-scan/": {
       "verdict": "NEUTRAL",
-      "coverage": "Discovered - currently not indexed",
+      "coverage": "URL is unknown to Google",
       "indexing": "INDEXING_STATE_UNSPECIFIED",
       "last_crawl": "never"
     },
@@ -125,7 +125,7 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-06-09T11:48:45Z"
+      "last_crawl": "2026-06-19T09:10:14Z"
     },
     "https://bluecollartechy.com/work-with-me": {
       "verdict": "NEUTRAL",
