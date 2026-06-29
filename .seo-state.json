@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-22",
+  "as_of": "2026-06-29",
   "sitemap": {
     "submitted": 20,
     "indexed": 0,
@@ -86,8 +86,8 @@
       "last_crawl": "2026-06-09T22:42:39Z"
     },
     "https://bluecollartechy.com/gbp-check/": {
-      "verdict": "PASS",
-      "coverage": "Submitted and indexed",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
       "indexing": "INDEXING_ALLOWED",
       "last_crawl": "2026-05-22T15:32:56Z"
     },
@@ -99,7 +99,7 @@
     },
     "https://bluecollartechy.com/market-scan/": {
       "verdict": "NEUTRAL",
-      "coverage": "URL is unknown to Google",
+      "coverage": "Discovered - currently not indexed",
       "indexing": "INDEXING_STATE_UNSPECIFIED",
       "last_crawl": "never"
     },
