@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-29",
+  "as_of": "2026-07-06",
   "sitemap": {
     "submitted": 20,
     "indexed": 0,
@@ -47,13 +47,13 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-06-09T05:36:48Z"
+      "last_crawl": "2026-07-06T03:43:09Z"
     },
     "https://bluecollartechy.com/blog/": {
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-06-19T10:25:14Z"
+      "last_crawl": "2026-07-06T13:43:09Z"
     },
     "https://bluecollartechy.com/blog/market-agency-or-you": {
       "verdict": "PASS",
@@ -95,13 +95,13 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-06-20T12:15:48Z"
+      "last_crawl": "2026-07-06T07:14:13Z"
     },
     "https://bluecollartechy.com/market-scan/": {
-      "verdict": "NEUTRAL",
-      "coverage": "Discovered - currently not indexed",
-      "indexing": "INDEXING_STATE_UNSPECIFIED",
-      "last_crawl": "never"
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
+      "indexing": "INDEXING_ALLOWED",
+      "last_crawl": "2026-07-06T03:10:10Z"
     },
     "https://bluecollartechy.com/qr-generator/": {
       "verdict": "PASS",
@@ -117,7 +117,7 @@
     },
     "https://bluecollartechy.com/resources/gbp-optimization-checklist/": {
       "verdict": "NEUTRAL",
-      "coverage": "Discovered - currently not indexed",
+      "coverage": "URL is unknown to Google",
       "indexing": "INDEXING_STATE_UNSPECIFIED",
       "last_crawl": "never"
     },
@@ -125,13 +125,13 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-06-19T09:10:14Z"
+      "last_crawl": "2026-07-06T11:13:09Z"
     },
     "https://bluecollartechy.com/work-with-me": {
-      "verdict": "NEUTRAL",
-      "coverage": "Discovered - currently not indexed",
-      "indexing": "INDEXING_STATE_UNSPECIFIED",
-      "last_crawl": "never"
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
+      "indexing": "INDEXING_ALLOWED",
+      "last_crawl": "2026-07-03T09:37:49Z"
     }
   }
 }
