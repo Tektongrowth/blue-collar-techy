@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-07-20",
+  "as_of": "2026-07-27",
   "sitemap": {
     "submitted": 20,
     "indexed": 0,
@@ -8,22 +8,22 @@
   },
   "inspections": {
     "https://bluecollartechy.com/about": {
-      "verdict": "NEUTRAL",
-      "coverage": "Crawled - currently not indexed",
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-06-12T21:08:29Z"
+      "last_crawl": "2026-07-23T22:56:52Z"
     },
     "https://bluecollartechy.com/blog/contractor-seo-2026": {
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-08T00:11:37Z"
+      "last_crawl": "2026-07-25T11:31:36Z"
     },
     "https://bluecollartechy.com/blog/gbp-audit-15-minutes": {
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-06-17T04:49:54Z"
+      "last_crawl": "2026-07-24T22:11:40Z"
     },
     "https://bluecollartechy.com/blog/google-ads-vs-facebook-ads-for-contractors": {
       "verdict": "NEUTRAL",
@@ -47,19 +47,19 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-10T00:55:34Z"
+      "last_crawl": "2026-07-24T10:43:26Z"
     },
     "https://bluecollartechy.com/blog/": {
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-06T13:43:09Z"
+      "last_crawl": "2026-07-23T09:20:26Z"
     },
     "https://bluecollartechy.com/blog/market-agency-or-you": {
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-06-14T00:44:57Z"
+      "last_crawl": "2026-07-25T10:16:36Z"
     },
     "https://bluecollartechy.com/blog/market-up-sales-down": {
       "verdict": "NEUTRAL",
@@ -71,7 +71,7 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-08T17:51:04Z"
+      "last_crawl": "2026-07-25T16:31:37Z"
     },
     "https://bluecollartechy.com/blog/ten-things-no-agency-can-fix": {
       "verdict": "NEUTRAL",
@@ -95,7 +95,7 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-10T03:43:09Z"
+      "last_crawl": "2026-07-25T08:11:36Z"
     },
     "https://bluecollartechy.com/market-scan/": {
       "verdict": "PASS",
@@ -107,7 +107,7 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-06-04T10:03:39Z"
+      "last_crawl": "2026-07-22T12:57:29Z"
     },
     "https://bluecollartechy.com/resources/crew-cheat-sheet/": {
       "verdict": "PASS",
@@ -119,13 +119,13 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-09T01:45:15Z"
+      "last_crawl": "2026-07-25T21:31:36Z"
     },
     "https://bluecollartechy.com/resources/": {
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-07T23:45:51Z"
+      "last_crawl": "2026-07-23T17:07:37Z"
     },
     "https://bluecollartechy.com/work-with-me": {
       "verdict": "PASS",
