@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-03",
+  "as_of": "2026-08-10",
   "sitemap": {
     "submitted": 20,
     "indexed": 0,
@@ -11,7 +11,7 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-23T22:56:52Z"
+      "last_crawl": "2026-08-07T07:17:05Z"
     },
     "https://bluecollartechy.com/blog/contractor-seo-2026": {
       "verdict": "PASS",
@@ -23,7 +23,7 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-24T22:11:40Z"
+      "last_crawl": "2026-08-08T06:27:29Z"
     },
     "https://bluecollartechy.com/blog/google-ads-vs-facebook-ads-for-contractors": {
       "verdict": "NEUTRAL",
@@ -47,13 +47,13 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-24T10:43:26Z"
+      "last_crawl": "2026-08-07T21:54:30Z"
     },
     "https://bluecollartechy.com/blog/": {
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-23T09:20:26Z"
+      "last_crawl": "2026-08-07T08:07:05Z"
     },
     "https://bluecollartechy.com/blog/market-agency-or-you": {
       "verdict": "PASS",
@@ -83,7 +83,7 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-12T22:58:31Z"
+      "last_crawl": "2026-08-08T08:57:33Z"
     },
     "https://bluecollartechy.com/gbp-check/": {
       "verdict": "NEUTRAL",
@@ -125,13 +125,13 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-23T17:07:37Z"
+      "last_crawl": "2026-08-07T10:11:28Z"
     },
     "https://bluecollartechy.com/work-with-me": {
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-25T10:36:10Z"
+      "last_crawl": "2026-08-08T01:39:40Z"
     }
   }
 }
