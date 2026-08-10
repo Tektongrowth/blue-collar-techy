@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contractor marketing: the real playbook for trade businesses under $5M · Blue Collar Techy</title>
+<meta name="description" content="The contractor marketing playbook that actually fits a trade business under $5M. Which channels work, what to budget by revenue stage, when to hire an agency versus going DIY, and the mistakes that are everywhere." />
+<meta name="author" content="Nick Conley" />
+<meta name="theme-color" content="#0d0d12" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bluecollartechy.com/blog/contractor-marketing-playbook" />
+<meta property="og:title" content="Contractor marketing: the real playbook for trade businesses under $5M" />
+<meta property="og:description" content="Which channels work, what to budget by revenue stage, when to hire an agency versus going DIY, and the mistakes that are everywhere." />
+<meta property="og:image" content="https://bluecollartechy.com/og-image.jpg" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Contractor marketing: the real playbook for trade businesses under $5M" />
+<meta name="twitter:description" content="Which channels actually work for trade businesses. Budget benchmarks. The agency vs. DIY decision. And the mistakes that keep showing up." />
+<meta name="twitter:image" content="https://bluecollartechy.com/og-image.jpg" />
+
+<link rel="canonical" href="https://bluecollartechy.com/blog/contractor-marketing-playbook" />
+<link rel="icon" type="image/png" href="../logos/bct-logo-mark.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0d0d12;
+    --bg-elev: #15151d;
+    --bg-card: #1a1a24;
+    --border: #272733;
+    --text: #f5f5f7;
+    --text-dim: #a0a0ab;
+    --text-faint: #6b6b78;
+    --accent: #ff6a1a;
+    --accent-bright: #ff8530;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .narrow { max-width: 780px; margin: 0 auto; padding: 0 32px; }
+  a { color: inherit; text-decoration: none; }
+  .accent { color: var(--accent); }
+
+  nav.site-nav {
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(13, 13, 18, 0.85);
+  }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo svg, .nav-logo img { height: 52px; width: auto; display: block; }
+  .nav-logo img { object-fit: contain; }
+  .nav-cta-mobile { display: none; }
+  .nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    width: 44px; height: 44px;
+    cursor: pointer;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    transition: all 0.25s ease;
+  }
+  .nav-toggle:hover { border-color: var(--accent); }
+  .nav-toggle span {
+    display: block;
+    width: 20px; height: 2px;
+    background: var(--text);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .site-nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .site-nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  .site-nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-links { display: flex; gap: 36px; font-size: 14px; font-weight: 600; }
+  .nav-links a { color: var(--text-dim); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-links a.active { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: #000;
+    padding: 10px 18px; font-weight: 700; font-size: 13px;
+    letter-spacing: 0.02em; border-radius: 2px; text-transform: uppercase;
+  }
+
+  .article-meta {
+    padding: 40px 0 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .article-meta-row {
+    display: flex; justify-content: space-between; gap: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .article-meta-row span.hl { color: var(--accent); }
+
+  .hero-post { padding: 80px 0 80px; }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .kicker::before {
+    content: ''; width: 28px; height: 2px; background: var(--accent);
+  }
+  h1.post-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(40px, 5.6vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin-bottom: 36px;
+    max-width: 960px;
+  }
+  h1.post-title .hi { color: var(--accent); }
+  .hero-sub {
+    font-size: 22px;
+    color: var(--text-dim);
+    max-width: 680px;
+    line-height: 1.5;
+  }
+  .post-byline {
+    margin-top: 40px;
+    display: flex; gap: 24px; flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .post-byline span.v { color: var(--text); }
+
+  .chapter {
+    padding: 48px 0;
+    border-top: 1px solid var(--border);
+  }
+  .chapter-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .chapter h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(30px, 3.5vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    max-width: 760px;
+  }
+  .chapter h2 .hi { color: var(--accent); }
+  .chapter h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin: 32px 0 14px;
+    color: var(--text);
+  }
+  .chapter p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+  .chapter p.lead {
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+  .chapter p.dim {
+    color: #ffb089;
+    font-style: italic;
+    border-left: 3px solid var(--accent);
+    padding: 6px 0 6px 20px;
+    margin: 28px 0 26px;
+  }
+  .chapter p strong { color: var(--text); font-weight: 700; }
+  .chapter ul, .chapter ol {
+    margin: 14px 0 28px;
+    padding-left: 28px;
+  }
+  .chapter ul li, .chapter ol li {
+    font-size: 18px;
+    line-height: 1.65;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .chapter ul li::marker { color: var(--accent); }
+
+  .checklist {
+    list-style: none !important;
+    padding: 32px 0 !important;
+    margin: 32px 0 !important;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .checklist li {
+    position: relative;
+    padding: 14px 0 14px 44px !important;
+    font-size: 18px;
+    color: var(--text);
+  }
+  .checklist li::before {
+    content: '';
+    position: absolute; left: 0; top: 22px;
+    width: 24px; height: 2px;
+    background: var(--accent);
+  }
+  .checklist li strong { color: var(--accent); font-weight: 800; }
+
+  .data-callout {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 36px 40px;
+    margin: 40px 0;
+    position: relative;
+  }
+  .data-callout .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .data-callout h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+  .data-callout p { font-size: 16px; line-height: 1.65; margin-bottom: 10px; color: var(--text-dim); }
+  .data-callout ul { padding-left: 22px !important; margin: 12px 0 !important; }
+  .data-callout ul li { font-size: 16px; margin-bottom: 8px; color: var(--text-dim); }
+  .data-callout ul li strong { color: var(--accent); font-weight: 700; }
+
+  .pullquote {
+    padding: 96px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--bg) 0%, #0a0a10 100%);
+    text-align: center;
+  }
+  .pullquote blockquote {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 3.6vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    max-width: 900px;
+    margin: 0 auto 24px;
+  }
+  .pullquote blockquote .hi { color: var(--accent); }
+  .pullquote cite {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  .inline-cta {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 40px;
+    margin: 48px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .inline-cta::before {
+    content: '';
+    position: absolute; top: 0; left: 0; bottom: 0;
+    width: 4px; background: var(--accent);
+  }
+  .inline-cta .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .inline-cta h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 26px;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+  .inline-cta p {
+    color: var(--text-dim);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .inline-cta a.btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #000;
+    padding: 14px 26px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 13px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .inline-cta a.btn:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+
+  .end-cta {
+    padding: 120px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .end-cta .kicker { margin-bottom: 24px; }
+  .end-cta h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    max-width: 820px; margin-left: auto; margin-right: auto;
+  }
+  .end-cta p {
+    color: var(--text-dim);
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 640px;
+    margin-left: auto; margin-right: auto;
+  }
+  .cta-row {
+    display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 18px 32px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 14px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    border: 2px solid transparent; border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: var(--accent); color: #000; }
+  .btn-primary:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+  .btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
+  .btn-secondary:hover { border-color: var(--text); }
+
+  footer {
+    padding: 80px 0 40px;
+    background: #0a0a10;
+    border-top: 1px solid var(--border);
+  }
+  .foot-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--border);
+  }
+  .foot-brand .logo-mini { margin-bottom: 20px; }
+  .foot-brand .logo-mini img { height: 76px; width: auto; display: block; object-fit: contain; }
+  .foot-brand p { color: var(--text-dim); font-size: 14px; max-width: 300px; line-height: 1.6; }
+  .foot-col h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a { color: var(--text-dim); font-size: 14px; transition: color 0.2s; }
+  .foot-col a:hover { color: var(--accent); }
+  .foot-bottom {
+    padding-top: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--text-faint); letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 900px) {
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .nav-toggle { display: flex; }
+    .nav-cta { display: none; }
+    .nav-links {
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(13, 13, 18, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 0;
+      font-size: 15px;
+      transform: translateY(-12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .nav-links a {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-links a:last-of-type { border-bottom: none; }
+    .site-nav.nav-open .nav-links {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .site-nav.nav-open .nav-links .nav-cta-mobile {
+      display: block;
+      margin: 12px 24px 16px;
+      background: var(--accent);
+      color: #000;
+      padding: 12px 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      border-radius: 2px;
+      border-bottom: none;
+    }
+    .article-meta-row { flex-direction: column; gap: 8px; }
+    .data-callout { padding: 28px 24px; }
+    .inline-cta { padding: 28px 24px; }
+  }
+  .brand-tag {
+    color: var(--accent-hover, #47c8f5);
+    font-weight: 600;
+  }
+
+  .related-posts { padding: 80px 0; border-top: 1px solid var(--border); }
+  .related-posts .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .related-posts .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .related-posts h2.related-h {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin-bottom: 36px; max-width: 760px;
+  }
+  .related-grid {
+    display: grid; gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .related-card {
+    display: block;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 28px 28px 24px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .related-card:hover {
+    border-color: var(--accent);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.18);
+  }
+  .related-card .cat {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--accent);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-card h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 19px; line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px; color: var(--text);
+  }
+  .related-card p {
+    color: var(--text-dim);
+    font-size: 14px; line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .related-card .arrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--accent);
+    letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 700;
+  }
+  @media (max-width: 700px) { .related-grid { grid-template-columns: 1fr; } }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Contractor marketing: the real playbook for trade businesses under $5M",
+  "description": "The contractor marketing playbook that actually fits a trade business under $5M. Which channels work, what to budget by revenue stage, when to hire an agency versus going DIY, and the mistakes that are everywhere.",
+  "author": {
+    "@type": "Person",
+    "name": "Nick Conley",
+    "url": "https://bluecollartechy.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Blue Collar Techy",
+    "url": "https://bluecollartechy.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bluecollartechy.com/logos/bct-primary.svg"
+    }
+  },
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "mainEntityOfPage": "https://bluecollartechy.com/blog/contractor-marketing-playbook",
+  "image": "https://bluecollartechy.com/og-image.jpg",
+  "articleSection": "Marketing Fundamentals"
+}
+</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="../index.html" aria-label="Blue Collar Techy">
+      <img src="../logos/bct-logo-horizontal.png" alt="Blue Collar Techy logo" loading="eager" />
+    </a>
+    <div class="nav-links" id="primary-nav">
+      <a href="../about.html">About</a>
+      <a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a>
+      <a href="../resources/">Resources</a>
+      <a href="index.html" class="active">Blog</a>
+      <a href="../work-with-me.html">Work with me</a>
+      <a class="nav-cta-mobile" href="../index.html#newsletter">Subscribe</a>
+    </div>
+    <a class="nav-cta" href="../index.html#newsletter">Subscribe</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="article-meta">
+  <div class="container">
+    <div class="article-meta-row">
+      <span><span class="hl">BLOG</span> / MARKETING FUNDAMENTALS · PILLAR</span>
+      <span>Published · 2026-08-10</span>
+      <span>Read · 20 min</span>
+    </div>
+  </div>
+</div>
+
+<section class="hero-post">
+  <div class="narrow">
+    <div class="kicker">The Marketing Pillar</div>
+    <h1 class="post-title">Contractor marketing: the real playbook for <span class="hi">trade businesses under $5M.</span></h1>
+    <p class="hero-sub">Which channels actually work, what to budget by revenue stage, when to hire an agency versus doing it yourself, and the mistakes that show up on every contractor's account. Built for trades, not e-commerce.</p>
+    <div class="post-byline">
+      <span>BY <span class="v">NICK CONLEY</span></span>
+      <span>FOUNDER · BLUE COLLAR TECHY</span>
+    </div>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Why most contractor marketing advice is aimed at the wrong business</div>
+    <p class="lead">The marketing advice available to contractors is enormous in volume and almost entirely written for the wrong audience. Most of it assumes a marketing team, a content budget, a dedicated ad manager, and a sales funnel that looks like a SaaS company's. None of that applies to a hardscape crew in Ohio or a plumbing shop in Phoenix.</p>
+    <p>I ran a $3M hardscape company in Northern California for ten years. I've since spent years inside contractor marketing accounts at Tekton Growth. The thing I keep seeing is that the contractors burning money on marketing are almost always following advice that would work great for a retail brand or a home services franchise. It does not work for an owner-operator trade business with two trucks and seasonal cash flow.</p>
+    <p>This post is the playbook I actually use. It is organized around the decisions you have to make in the right order. Channels come before budget. Budget comes before the agency decision. Get those reversed and you spend money before you know what you're buying.</p>
+    <p class="dim">Already paying an agency? Read every section. The channels chapter tells you what a competent engagement covers. The mistakes chapter tells you what a bad one looks like. If you can't tell which one you have after reading both, that's already an answer.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// The five channels that actually move the needle</div>
+    <h2>Not every channel works for every contractor. <span class="hi">These five do.</span></h2>
+    <p>The marketing landscape for contractors is not as complicated as it gets sold. There are five channels that consistently deliver leads for trade businesses under $5M. The other dozen things people pitch you are either premature, wrong-fit, or overpriced for what they return at your revenue stage.</p>
+
+    <h3>1. Local SEO and Google Business Profile</h3>
+    <p>This is the highest-return channel for most contractors who stick with it. When someone searches "paver contractor near me" or "HVAC repair Austin" from their phone, the first thing they see is the map pack. Three listings, a map, and a button to call. If you're not in the three-pack for your core service and market, you don't exist for that searcher.</p>
+    <p>Local SEO delivers 400 to 450% ROI for construction and home service businesses. That is the highest return of any marketing channel measured across the industry. It is also the slowest to build. You're not going to see map pack movement in two weeks. You'll see it at 60 to 90 days of consistent execution. That timeline is why most contractors abandon it before it pays off.</p>
+    <p>The full local SEO playbook is in a separate post. The short version: your Google Business Profile has to be fully optimized and actively maintained. Your website needs one real page for each major service. Your name, address, and phone number have to match across every directory. And you have to be consistently collecting reviews. Those four things, done well and kept up, compound into map pack presence over time.</p>
+
+    <h3>2. Google Local Services Ads</h3>
+    <p>LSAs are the fastest way to get phone calls while organic rankings are building. You pay per lead, not per click. Google verifies your license, insurance, and background check before running the ads. The Google Guarantee badge shows up on your listing. For a new market or a contractor starting from scratch digitally, LSAs are often the first paid channel worth turning on.</p>
+    <p>The tradeoff is that LSAs are competitive in metro markets and you're bidding against every contractor in your category. Cost per lead varies heavily by trade and market. In construction, Google search ads averaged $165 per lead in 2025. LSAs tend to run lower for established, verified accounts. Dispute bad leads quickly. Google gives you a credit process, and most contractors don't use it.</p>
+
+    <h3>3. Referral and review systems</h3>
+    <p>Every contractor tells me referrals are their best source of leads. They're usually right. What they're almost never doing is running a system around it. They're waiting for referrals instead of creating the conditions that produce them.</p>
+    <p>82% of small businesses say referrals are their primary source of new customers. Word-of-mouth converts at two to three times the rate of paid advertising. That is not an argument for ignoring digital. It is an argument for treating referrals as a channel with a real process behind it, not a lucky outcome you hope happens after every job.</p>
+    <p>The system is simple. Three ask touchpoints after every job. In-person when the crew packs up. A text that night with your Google review link. A follow-up email three days later if no review has appeared. That process, run on every closed job without exception, compounds into both review count and referral volume over 60 to 90 days. The reviews are public and searchable. The referrals are private and warm. Both matter.</p>
+
+    <h3>4. Google Ads</h3>
+    <p>Google Ads work for contractors at the right stage. That stage is not "I need leads right now and my bank account is low." It is "I have solid organic presence and I want to amplify the demand I'm already capturing." Running Google Ads on top of a working organic base returns significantly more than running them cold on a site with no GBP, no reviews, and no service pages.</p>
+    <p>The contractors I see burn money on Google Ads are almost always running broad match keywords with no negative list, sending traffic to a homepage instead of a service page, and checking the campaign once a month. That is not a Google Ads problem. That is a management problem. If you're not running Google Ads yourself, whoever manages them needs to be looking at search term reports weekly and cutting waste continuously. That's the job.</p>
+
+    <h3>5. Email to your existing customer base</h3>
+    <p>This is the most underused channel in contractor marketing. You have a list of past customers. Each one trusted you enough to hire you once. Most of them would hire you again or refer you to someone if you stayed visible to them. Most contractors send nothing after the job is complete. Radio silence for two years, then wonder why repeat business is low.</p>
+    <p>A simple quarterly email to your past customer list generates real return. Seasonal maintenance reminders. Project spotlights. A referral ask with a photo from a recent job. Nothing complicated. The channel cost is nearly zero. The return on a single repeat job or referral from a former customer pays for the effort a hundred times over. Build the list. Send to it. Do it consistently.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Budget benchmarks by revenue stage</div>
+    <h2>How much to spend. <span class="hi">In contractor terms, not MBA terms.</span></h2>
+    <p>The standard advice is to spend 5 to 15 percent of revenue on marketing. That range is wide enough to be almost useless. Here is what the breakdown actually looks like by stage.</p>
+
+    <div class="data-callout">
+      <div class="label">2026 Marketing Budget Benchmarks — Trade Businesses</div>
+      <h3>What each stage should actually be spending</h3>
+      <ul>
+        <li><strong>Under $500K revenue:</strong> 10 to 15% of revenue. At this stage, you're still building your base. Referrals are your primary channel and they should stay that way, but you need a real GBP, a real website, and a consistent review ask process running before you spend a dollar on paid ads. Focus the budget on organic first.</li>
+        <li><strong>$500K to $1.5M revenue:</strong> 8 to 12% of revenue. This is where most contractors add their first paid channel. LSAs or Google Ads on top of a solid organic foundation. The key word is on top. Don't start paid until organic is working. At $1M revenue, 10% is $100K per year or about $8,300 a month. That's enough for a real agency engagement plus a meaningful ad budget.</li>
+        <li><strong>$1.5M to $5M revenue:</strong> 5 to 10% of revenue. You have the base built and you're in growth mode or market-hold mode. Growth mode pushes toward 10% and adds channels. Hold mode is closer to 5 to 6% and maintains what's working without adding complexity. The mistake at this stage is cutting marketing too aggressively during a good quarter and losing ground to competitors who kept going.</li>
+        <li><strong>First 3 to 5 years, unfamiliar market:</strong> 12 to 20% of revenue. Building a presence from nothing is expensive. There's no existing referral base to compound. Plan for higher spend and a longer timeline to positive return. Most contractors who enter a new market underestimate both.</li>
+      </ul>
+      <p>US residential builders with strong, established referral bases average 2.8 to 3.2% of revenue on marketing. That's the floor for a mature business in a stable market. If you're below that and your pipeline is uncertain, you're underspending for the phase you're in.</p>
+    </div>
+
+    <p>The mistake most contractors make is not the dollar amount. It's the sequence. They spend money before the foundation is solid and wonder why the return is low. A $3,000 per month Google Ads campaign sending traffic to a site with no service pages, a three-star GBP, and no review recency is not a marketing investment. It is a drain.</p>
+    <p>Check the demand picture before you commit to a spend level. If search volume for your primary service is declining in your specific market, that changes the math on how aggressively to invest in SEO versus other channels. The Market Demand Scan at the bottom of this post pulls that data for your trade and city. Run it before you set a budget.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// The sequence — build it in this order</div>
+    <h2>Sequence matters more than budget. <span class="hi">This is the right order.</span></h2>
+    <p>Most contractor marketing conversations start with "which channel should I add?" That is the wrong starting question. The right question is "what's the first thing I haven't built yet?" Because the channels stack. Each one works better when the ones below it are solid.</p>
+
+    <ul class="checklist">
+      <li><strong>Foundation first — organic and reputation.</strong> GBP fully built and verified by you. Every major service has its own page on your website. NAP consistent across every directory. Review ask process running after every job. This is the slab. Nothing holds without it.</li>
+      <li><strong>Referral system second — make the referrals intentional.</strong> Three-ask touchpoint process in place. Google review link texted to every customer the day of completion. Crew trained on the in-person ask. Past customer email list started. This costs almost nothing and pays continuously.</li>
+      <li><strong>LSAs third — first paid channel for most contractors.</strong> Once organic is building and reviews are accumulating, turn on LSAs. Pay per lead. Keep the budget modest and dispute every bad lead. This is the bridge channel while organic SEO compounds.</li>
+      <li><strong>Google Ads fourth — amplify what's already working.</strong> When your GBP is ranking in the map pack and your organic site is getting traffic, Google Ads push more volume into a system that's already converting. Starting ads before organic works means paying to drive traffic to a site that can't close the visit.</li>
+      <li><strong>Email fifth — monetize the base you've already built.</strong> Your past customer list is an asset most contractors ignore. Quarterly touchpoints keep you visible. One repeat job or referred job per quarter from your list pays for every email you'll ever send.</li>
+    </ul>
+
+    <p>That sequence is not arbitrary. It reflects where the compounding actually happens. Organic SEO and reputation compound over months. Referrals compound over years. Paid ads don't compound. They run when you're paying and stop when you're not. Build the compounding channels first. Use paid to accelerate.</p>
+
+    <div class="inline-cta">
+      <div class="label">Free Tool · Market Demand Scan</div>
+      <h3>Before you set your budget, check what your market is doing.</h3>
+      <p>The Market Demand Scan pulls 24 months of Google search data for your trade in your city. Year-over-year trend line, demand direction, whether your market is growing or contracting. If demand is declining, that changes how aggressively you invest in SEO versus other channels. Know the picture before you commit to the spend. Free. Takes about a minute.</p>
+      <a class="btn" href="../market-scan/">Run my demand scan →</a>
+    </div>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Agency vs DIY vs hire-internal — the real decision</div>
+    <h2>Three paths. Each fits a different stage. <span class="hi">Here's how to tell which one you're in.</span></h2>
+    <p>The agency-versus-DIY question comes up constantly in contractor marketing circles. It is almost always asked too early, before the person asking has defined what they need done. The decision depends on your revenue, your time, and your capacity to manage external partners. It is not a values question about self-reliance versus outsourcing. It is a math question.</p>
+
+    <h3>DIY: best under $500K, before paid channels are running</h3>
+    <p>A basic DIY marketing stack runs $150 to $300 per month. You're handling your own GBP, your own review asks, your own website updates. At this stage, the time investment is the cost. Most owner-operators under $500K are the right person to manage these channels themselves, because the learning curve is real and what you learn matters when you're deciding whether an agency is doing the right things later.</p>
+    <p>The risk with DIY is that it stays there too long. Contractors who are still fully DIY at $1.5M revenue are almost always leaving something on the table. Not because agencies are magic, but because at that revenue level, the owner's time is worth more than it costs to hire competent help.</p>
+
+    <h3>Agency: best from $750K to $3M when you're ready to grow</h3>
+    <p>A mid-tier full-service marketing agency runs $3,000 to $6,000 per month on retainer, plus ad spend. A year with a capable agency is $36K to $72K before you count what you're putting into ads. That is a real number. At $2M revenue, that's 2 to 4% of revenue, which fits within normal benchmarks. At $500K, that's 7 to 14% of revenue on the agency alone before ad spend, which puts you outside the budget math entirely.</p>
+    <p>The agency decision is worth making when two things are true. Your revenue can carry the retainer without squeezing operating cash. And you're ready to invest time managing the relationship. The contractors who get the worst returns from agencies are the ones who hire and disappear. A good agency still needs you to answer questions, approve content, flag when a campaign is sending wrong-quality leads, and review reports. Plan for four to six hours a month minimum. If you don't have that bandwidth, the agency is flying blind half the time.</p>
+    <p class="dim">One thing that differentiates a competent agency from a mediocre one: they should be able to tell you your cost per lead by channel, your map pack ranking positions for your top keywords, and your review recency before you ask. If you have to pull those numbers yourself, you're paying for an agency that isn't actually managing your account.</p>
+
+    <h3>In-house hire: best above $2M when marketing is complex enough to keep someone busy full-time</h3>
+    <p>A marketing hire at $2M to $3M revenue starts to make sense when the scope is wide enough to keep a person genuinely busy. At $2M, you're managing Google Ads, LSAs, organic SEO, a social presence, email, and potentially video content. That's a full job. It's not a full job at $800K.</p>
+    <p>The in-house hire needs a clear mandate and real tools. They need access to the GBP, the ad accounts, the CRM data, and the analytics. A marketing hire who can't see the numbers can't do the job. The other thing they need is accountability. A marketing hire with no KPIs and no reporting cadence is expensive overhead. A marketing hire with weekly call volume targets and monthly reporting is an investment.</p>
+
+    <div class="data-callout">
+      <div class="label">The decision at a glance</div>
+      <h3>Agency vs DIY vs in-house by stage</h3>
+      <ul>
+        <li><strong>Under $500K:</strong> DIY the fundamentals. GBP, reviews, basic website. Spend $150-$300/month on tools, not retainers.</li>
+        <li><strong>$500K to $1.5M:</strong> Consider an agency for local SEO and ad management when you're ready to grow and can carry the retainer. Keep LSAs running yourself until you can verify the agency manages them correctly.</li>
+        <li><strong>$1.5M to $3M:</strong> Full-service agency relationship or a capable in-house hire. The math starts to favor in-house above $2.5M if you have complex enough scope to justify it.</li>
+        <li><strong>Above $3M:</strong> In-house coordinator plus agency specialists, or a full in-house team. The coordination cost of a single agency managing everything gets high at this revenue level. Specialists outperform generalists.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pullquote">
+  <div class="container">
+    <blockquote>Referrals compound. Organic SEO compounds. Paid ads run when you're paying and <span class="hi">stop when you're not.</span> Build the compounding channels first.</blockquote>
+    <cite>The channel sequence that matters</cite>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// What doesn't work for trade businesses under $5M</div>
+    <h2>Stop spending here first.</h2>
+    <p>The marketing tactics being sold to contractors include a lot of things that work for other businesses and don't work for you. Knowing what to stop is as important as knowing what to start.</p>
+
+    <h3>Social media as a lead generation channel</h3>
+    <p>Instagram and Facebook posts do not generate contractor leads at meaningful volume. They build brand familiarity over long time horizons with people who already follow you. The contractor who posts every day and gets no calls is not a failure at social media. They're using the wrong tool for the job they're trying to do.</p>
+    <p>Social works for contractors in exactly two scenarios. Before-and-after content that gets shared by customers into neighbor groups and community feeds. And targeted Facebook and Instagram ads to homeowners in a specific zip code radius with a specific creative. That second one is paid social, not organic social, and it works best for longer-consideration jobs like outdoor living, kitchen remodels, and home additions, not emergency service calls.</p>
+    <p>If you're spending more than an hour a week on organic social posts and not running paid social, redirect that time to your review ask process or your email list. The return is not comparable.</p>
+
+    <h3>Angi, HomeAdvisor, and lead aggregators at scale</h3>
+    <p>Lead aggregators sell the same lead to five contractors. You're competing on price the moment the call comes in. The homeowner has already talked to two other contractors before you pick up. The close rate is low. The cost per closed job is high. And the lead quality is inconsistent in ways you can't control.</p>
+    <p>These services are not worthless. For a new contractor with no organic presence and no referral base, they fill a gap. The mistake is staying dependent on them once organic channels are viable. The contractors who run Google Business Profile well, collect reviews consistently, and have a working website eventually stop needing aggregators. That's the goal. Use them to bridge, not to build the long-term base.</p>
+
+    <h3>SEO packages priced as a one-time setup</h3>
+    <p>One-time SEO engagements are everywhere in contractor marketing. Someone charges $1,500 to $3,000 to "set up your SEO." They claim your GBP, add some keywords to your homepage, and submit to some directories. Then they're done.</p>
+    <p>That is the foundation. Not the building. Map pack rankings require ongoing signals. Review recency builds or decays. Photo freshness matters. Competitors don't stop moving. An SEO setup gives you a starting point. What holds the position is continued execution. If someone is selling you a one-time SEO fix with no ongoing component, they're selling you the first floor and leaving before the house is framed.</p>
+
+    <h3>High-production video content before other fundamentals are in place</h3>
+    <p>Video is a real tool for contractor marketing. YouTube specifically is underused and worth building toward. But I regularly talk to contractors who are spending $800 a month on video production for social media while their GBP has 11 reviews and their website loads in eight seconds on mobile.</p>
+    <p>Video works as an amplifier. It amplifies brand trust for people already considering you. It amplifies review ask results when you send a short crew video with the link. It amplifies referrals when a finished project video gets shared in a neighborhood group. It does not replace the fundamentals. Build the base first. Then video becomes a powerful layer on top of it.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// The mistakes I keep seeing on contractor accounts</div>
+    <h2>These come up on almost every account I look at.</h2>
+    <p>After reviewing enough contractor marketing accounts, the same patterns appear. Not industry-specific or market-specific. They show up in Atlanta and Phoenix and Cleveland. Here's the list.</p>
+
+    <h3>No attribution tracking</h3>
+    <p>The most common mistake in contractor marketing is not knowing where leads come from. The owner is paying for Google Ads, LSAs, a lead service, and an SEO retainer simultaneously and has no real data on which one is producing the closed jobs. They guess. Usually they guess wrong.</p>
+    <p>You do not need sophisticated software to fix this. A simple intake process that asks every new caller "how did you find us?" and records the answer gives you the data you need to cut what isn't working and put more money into what is. Contractors using CRM and analytics platforms achieve 15 to 20% higher marketing ROI on average. That gap is almost entirely explained by attribution. Know what's working before you spend more of it.</p>
+
+    <h3>Spreading budget thin across too many channels</h3>
+    <p>A $4,000 monthly marketing budget spread across Google Ads, Facebook Ads, LSAs, a lead service, and an SEO retainer is five weak campaigns instead of two strong ones. Thin budgets on paid channels mean the algorithms don't have enough data to optimize. Thin budgets on organic channels mean the execution is rushed and shallow. Pick fewer channels and fund them properly. Win one channel before adding the next.</p>
+
+    <h3>Running paid ads before organic is working</h3>
+    <p>Google Ads traffic lands somewhere. If it lands on a slow website with one generic services page, a two-star GBP, and no reviews, the cost per lead from ads goes up and the close rate goes down. The organic and reputation foundation does not just affect organic rankings. It affects how well paid traffic converts. Fix the foundation first. Then pay to drive more traffic into a system that can handle it.</p>
+
+    <h3>Letting reviews go stale</h3>
+    <p>A contractor with 60 reviews, the most recent from seven months ago, is losing ground to a competitor with 35 reviews and three from last week. Google weights recency. Searchers weight recency. "11 months ago" on a review does not inspire confidence in a homeowner trying to decide who shows up next Tuesday.</p>
+    <p>The ask process has to run on every job, every time. It cannot be a campaign that runs once and stops. Assign the in-person ask to the crew lead. Assign the text follow-up to whoever handles job completion paperwork. Automate the email follow-up if you can. Make it impossible to close a job without the ask happening. Review recency is a direct ranking factor and a direct trust signal. Treat it accordingly.</p>
+
+    <h3>Changing direction before the current strategy has time to work</h3>
+    <p>Local SEO takes 90 to 120 days of consistent execution before meaningful ranking movement shows up. Google Ads optimization takes four to six weeks of data before the algorithm learns enough to improve performance. Email to a past customer list takes multiple sends before it becomes a reliable source of repeat jobs.</p>
+    <p>The contractors who get the worst return on marketing are almost never the ones with the wrong strategy. They're the ones who execute for six weeks, see no dramatic results, and switch to a new approach. Rinse, repeat, wonder why nothing works. Pick the right channels for your stage. Execute for at least 90 days without changing direction. Review what the data actually says. Then adjust.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Where to start</div>
+    <h2>The prioritized action list. <span class="hi">Work down from the first gap you find.</span></h2>
+    <p>If you read everything above and are trying to figure out where your biggest gap is, use this list. The first item you can't honestly check off is where you start. Everything below it can wait.</p>
+
+    <ul class="checklist">
+      <li><strong>GBP claimed by you, fully built, actively maintained.</strong> If an agency has owner access and you've parted ways, reclaim it. Give active vendors manager access only. Profile completeness, photo freshness, and post frequency are all ongoing tasks. Not a setup and forget.</li>
+      <li><strong>Review ask process runs after every job without exception.</strong> In-person at completion, text the same day, email follow-up at 72 hours. Every crew, every job. No exceptions. If this isn't happening consistently, every other marketing activity is running uphill.</li>
+      <li><strong>One real page per major service on your website.</strong> Not a bullet on an overview page. A page with a title tag, a service description, your market area, and a clear call to action. If someone searches that service in your city and you have no page for it, you have zero chance of ranking for it.</li>
+      <li><strong>NAP matches across every directory you can see.</strong> Google, Yelp, Angi, BBB, Houzz, Facebook, Apple Maps. Same business name, same format, same phone number. Every mismatch erodes your local authority. Run through the major ones and clean what's wrong.</li>
+      <li><strong>Mobile page speed is above 50 on PageSpeed Insights.</strong> Enter your URL at the free Google tool. Below 50 means your site's technical performance is suppressing rankings before content, category, or review signals even apply. Fix this before you add any paid channels.</li>
+      <li><strong>You know where your leads actually come from.</strong> Ask every new caller how they found you. Record the answer. Review it monthly. If you've been paying for marketing for more than six months and can't answer this question from real data, stop adding channels until you can.</li>
+      <li><strong>Your past customer list gets a quarterly email.</strong> Even a simple note with a project photo and a referral ask. This channel costs almost nothing and the return per closed referral or repeat job is significant. If you don't have a list, start building one today from every job you've completed this year.</li>
+      <li><strong>Paid channels are running on top of working organic, not in place of it.</strong> Google Ads and LSAs belong above a foundation that's producing. If organic isn't working yet, fix it before spending on paid. The paid traffic has nowhere productive to go until the site and reputation support it.</li>
+    </ul>
+
+    <p>That list is the whole game for a trade business under $5M. You do not need 12 channels. You need three or four channels executed properly and consistently. The contractors I've watched grow from $800K to $3M did it with a strong GBP, a working website, a real review process, and eventually a managed ad account on top. No content team. No influencer strategy. No complicated funnel. Just the fundamentals, done well, maintained over time.</p>
+    <p>Before you commit to a spend level or a channel mix, check what search demand looks like in your specific market. A contractor in a growing market can invest aggressively in SEO and paid search and ride the tide. A contractor in a flat or contracting market needs a different allocation. The Market Demand Scan at the bottom of this page gives you that data for free in about a minute.</p>
+  </div>
+</section>
+
+<section class="related-posts">
+  <div class="container">
+    <div class="kicker">// Read next</div>
+    <h2 class="related-h">More from the BCT playbook.</h2>
+    <div class="related-grid">
+      <a class="related-card" href="contractor-seo-2026.html">
+        <div class="cat">Local SEO · Pillar</div>
+        <h3>Contractor SEO in 2026: what actually works, what doesn't</h3>
+        <p>Three phases, in order. Base prep, topical authority, geographic expansion. The full local SEO playbook for trade businesses.</p>
+        <span class="arrow">Read →</span>
+      </a>
+      <a class="related-card" href="google-business-profile-optimization-contractors.html">
+        <div class="cat">GBP · Local SEO · Pillar</div>
+        <h3>The complete guide to Google Business Profile optimization for contractors</h3>
+        <p>Eight priority tiers for fully optimizing the profile that drives your map pack ranking. In the order that moves rankings fastest.</p>
+        <span class="arrow">Read →</span>
+      </a>
+      <a class="related-card" href="market-agency-or-you.html">
+        <div class="cat">Marketing · Diagnosis</div>
+        <h3>When leads dry up, is it the market, the agency, or you?</h3>
+        <p>The three-bucket diagnostic. Know which problem you're actually solving before you change anything.</p>
+        <span class="arrow">Read →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="end-cta">
+  <div class="container">
+    <div class="kicker">Before you build</div>
+    <h2>Check whether your market is growing before you set your budget.</h2>
+    <p>The Market Demand Scan pulls 24 months of Google search data for your trade in your city. Year-over-year trend line. If demand is growing, you know exactly how aggressively to invest. If it's flat or declining, you have the numbers to allocate differently. Free. Takes about a minute.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="../market-scan/">
+        Run my demand scan
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" fill="none"/></svg>
+      </a>
+      <a class="btn btn-secondary" href="contractor-seo-2026.html">Read the SEO pillar</a>
+      <a class="btn btn-secondary" href="../index.html#newsletter">Get the newsletter</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo-mini">
+          <img src="../logos/bct-logo-horizontal.png" alt="Blue Collar Techy logo" loading="lazy" />
+        </div>
+        <p><span class="brand-tag">Practical tech for the trades.</span> AI, local SEO, and real systems. No guru nonsense.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="../resources/">Resources</a></li>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="../work-with-me.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Work</h4>
+        <ul>
+          <li><a href="../work-with-me.html">Get in touch</a></li>
+          <li><a href="https://tektongrowth.com" target="_blank" rel="noopener">Tekton Growth</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="#" target="_blank" rel="noopener">X</a></li>
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Blue Collar Techy · Nick Conley</span>
+      <span>Built for the trades</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/tracking.js"></script>
+<script>
+  (function(){
+    var nav = document.querySelector('nav.site-nav');
+    if (!nav) return;
+    var btn = nav.querySelector('.nav-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('nav-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('nav-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+</body>
+</html>
