@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-24",
+  "as_of": "2026-08-31",
   "sitemap": {
     "submitted": 20,
     "indexed": 0,
@@ -125,13 +125,13 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-08-23T21:45:49Z"
+      "last_crawl": "2026-08-24T23:48:46Z"
     },
     "https://bluecollartechy.com/work-with-me": {
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-08-08T01:39:40Z"
+      "last_crawl": "2026-08-30T20:50:40Z"
     }
   }
 }
