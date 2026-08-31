@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AI tools for contractors: what's worth using, what's a waste (2026) · Blue Collar Techy</title>
-<meta name="description" content="Personal picks from Nick Conley. The AI tools he actually uses at Tekton Growth for voice notes, proposals, review responses, and follow-up drafting. With prices. And the stuff that's not worth a subscription." />
+<title>AI tools for contractors: what's worth using, what's a waste (2026 edition) · Blue Collar Techy</title>
+<meta name="description" content="An honest look at AI tools contractors are actually using in 2026. Voice notes to proposals, review response drafting, follow-up automation, and the ones that are pure hype. Named tools. Real prices." />
 <meta name="author" content="Nick Conley" />
 <meta name="theme-color" content="#0d0d12" />
 
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bluecollartechy.com/blog/ai-tools-for-contractors-2026" />
-<meta property="og:title" content="AI tools for contractors: what's worth using, what's a waste (2026)" />
-<meta property="og:description" content="Personal picks. The tools Nick actually uses at Tekton Growth, the use cases with real payoff, and the stuff that looks good in a demo but doesn't survive a crew." />
+<meta property="og:title" content="AI tools for contractors: what's worth using, what's a waste (2026 edition)" />
+<meta property="og:description" content="The honest list. Tools Nick actually uses. Named. Priced. No sponsorships, no affiliate links, no guru spin." />
 <meta property="og:image" content="https://bluecollartechy.com/og-image.jpg" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="AI tools for contractors: what's worth using, what's a waste (2026)" />
-<meta name="twitter:description" content="Personal picks from a contractor who now works with contractors. Two tools, four use cases, under $30 a month." />
+<meta name="twitter:title" content="AI tools for contractors: what's worth using, what's a waste (2026 edition)" />
+<meta name="twitter:description" content="What AI tools actually work for trade businesses in 2026. Named tools, real prices, honest verdict on each." />
 <meta name="twitter:image" content="https://bluecollartechy.com/og-image.jpg" />
 
 <link rel="canonical" href="https://bluecollartechy.com/blog/ai-tools-for-contractors-2026" />
@@ -36,7 +36,6 @@
     --text-faint: #6b6b78;
     --accent: #ff6a1a;
     --accent-bright: #ff8530;
-    --accent-hover: #47c8f5;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body {
@@ -211,87 +210,52 @@
   }
   .chapter ul li::marker { color: var(--accent); }
 
-  .step {
+  .checklist {
+    list-style: none !important;
+    padding: 32px 0 !important;
+    margin: 32px 0 !important;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .checklist li {
+    position: relative;
+    padding: 14px 0 14px 44px !important;
+    font-size: 18px;
+    color: var(--text);
+  }
+  .checklist li::before {
+    content: '';
+    position: absolute; left: 0; top: 22px;
+    width: 24px; height: 2px;
+    background: var(--accent);
+  }
+  .checklist li strong { color: var(--accent); font-weight: 800; }
+
+  .data-callout {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    padding: 32px 36px;
-    margin: 28px 0;
+    padding: 36px 40px;
+    margin: 40px 0;
     position: relative;
   }
-  .step .tag {
-    display: flex; align-items: center; gap: 14px;
-    margin-bottom: 18px;
-  }
-  .step .tag .time {
+  .data-callout .label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    background: var(--accent);
-    color: #0d0d12;
-    font-weight: 700;
-    padding: 5px 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-  .step .tag .step-no {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--text-faint);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-  }
-  .step h3 {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 24px;
-    letter-spacing: -0.01em;
-    margin-bottom: 14px;
-    color: var(--text);
-    line-height: 1.15;
-  }
-  .step h3 .hi { color: var(--accent); }
-  .step p {
-    font-size: 16px;
-    line-height: 1.65;
-    margin-bottom: 12px;
-    color: var(--text);
-  }
-  .step .look-for {
-    margin: 14px 0;
-    padding-left: 16px;
-    border-left: 2px solid var(--accent);
-  }
-  .step .look-for .h {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
     color: var(--accent);
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    margin-bottom: 6px;
+    margin-bottom: 16px;
   }
-  .step .look-for p {
-    font-size: 15px;
-    color: var(--text-dim);
-    margin-bottom: 0;
-    line-height: 1.6;
+  .data-callout h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: var(--text);
   }
-  .script {
-    background: #0a0a10;
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
-    padding: 18px 22px;
-    margin: 14px 0 8px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    line-height: 1.55;
-    color: var(--text-dim);
-  }
-  .script .label {
-    font-size: 10px;
-    color: var(--text-faint);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    display: block;
-  }
+  .data-callout p { font-size: 16px; line-height: 1.65; margin-bottom: 10px; color: var(--text-dim); }
+  .data-callout ul { padding-left: 22px !important; margin: 12px 0 !important; }
+  .data-callout ul li { font-size: 16px; margin-bottom: 8px; color: var(--text-dim); }
+  .data-callout ul li strong { color: var(--accent); font-weight: 700; }
 
   .pullquote {
     padding: 96px 0;
@@ -316,63 +280,6 @@
     letter-spacing: 0.25em;
     text-transform: uppercase;
     font-style: normal;
-  }
-
-  .checklist {
-    list-style: none !important;
-    padding: 32px 0 !important;
-    margin: 32px 0 !important;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .checklist li {
-    position: relative;
-    padding: 14px 0 14px 44px !important;
-    font-size: 18px;
-    color: var(--text);
-  }
-  .checklist li::before {
-    content: '';
-    position: absolute; left: 0; top: 22px;
-    width: 24px; height: 2px;
-    background: var(--accent);
-  }
-  .checklist li strong { color: var(--accent); font-weight: 800; }
-
-  .stack-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 28px 0;
-    font-size: 16px;
-  }
-  .stack-table th {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--text-faint);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    text-align: left;
-    padding: 12px 16px;
-    border-bottom: 2px solid var(--border);
-  }
-  .stack-table td {
-    padding: 14px 16px;
-    border-bottom: 1px solid var(--border);
-    color: var(--text);
-    vertical-align: top;
-  }
-  .stack-table td:last-child {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    color: var(--accent);
-    font-weight: 700;
-    white-space: nowrap;
-  }
-  .stack-table tr:last-child td { border-bottom: none; }
-  .stack-table .total td {
-    font-weight: 700;
-    border-top: 2px solid var(--border);
-    padding-top: 16px;
   }
 
   .inline-cta {
@@ -490,7 +397,56 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px; color: var(--text-faint); letter-spacing: 0.08em;
   }
-  .brand-tag { color: var(--accent-hover); font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .nav-toggle { display: flex; }
+    .nav-cta { display: none; }
+    .nav-links {
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(13, 13, 18, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 0;
+      font-size: 15px;
+      transform: translateY(-12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .nav-links a {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-links a:last-of-type { border-bottom: none; }
+    .site-nav.nav-open .nav-links {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .site-nav.nav-open .nav-links .nav-cta-mobile {
+      display: block;
+      margin: 12px 24px 16px;
+      background: var(--accent);
+      color: #000;
+      padding: 12px 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      border-radius: 2px;
+      border-bottom: none;
+    }
+    .article-meta-row { flex-direction: column; gap: 8px; }
+    .data-callout { padding: 28px 24px; }
+    .inline-cta { padding: 28px 24px; }
+  }
+  .brand-tag {
+    color: var(--accent-hover, #47c8f5);
+    font-weight: 600;
+  }
 
   .related-posts { padding: 80px 0; border-top: 1px solid var(--border); }
   .related-posts .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
@@ -545,54 +501,6 @@
     letter-spacing: 0.18em; text-transform: uppercase;
     font-weight: 700;
   }
-
-  @media (max-width: 900px) {
-    .foot-top { grid-template-columns: 1fr 1fr; gap: 40px; }
-    .nav-toggle { display: flex; }
-    .nav-cta { display: none; }
-    .nav-links {
-      position: absolute;
-      top: 100%; left: 0; right: 0;
-      flex-direction: column;
-      gap: 0;
-      background: rgba(13, 13, 18, 0.98);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 8px 0;
-      font-size: 15px;
-      transform: translateY(-12px);
-      opacity: 0;
-      pointer-events: none;
-      transition: transform 0.25s ease, opacity 0.25s ease;
-    }
-    .nav-links a {
-      padding: 16px 24px;
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-links a:last-of-type { border-bottom: none; }
-    .site-nav.nav-open .nav-links {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .site-nav.nav-open .nav-links .nav-cta-mobile {
-      display: block;
-      margin: 12px 24px 16px;
-      background: var(--accent);
-      color: #000;
-      padding: 12px 18px;
-      font-weight: 700;
-      text-transform: uppercase;
-      text-align: center;
-      border-radius: 2px;
-      border-bottom: none;
-    }
-    .article-meta-row { flex-direction: column; gap: 8px; }
-    .step { padding: 24px; }
-    .inline-cta { padding: 28px 24px; }
-    .stack-table { font-size: 14px; }
-    .stack-table td, .stack-table th { padding: 10px 12px; }
-  }
   @media (max-width: 700px) { .related-grid { grid-template-columns: 1fr; } }
 </style>
 
@@ -601,7 +509,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "AI tools for contractors: what's worth using, what's a waste (2026 edition)",
-  "description": "Personal picks from Nick Conley. The AI tools he actually uses at Tekton Growth for voice notes, proposals, review responses, and follow-up drafting. With prices. And the stuff that is not worth a subscription.",
+  "description": "An honest look at AI tools contractors are actually using in 2026. Voice notes to proposals, review response drafting, follow-up automation, and the ones that are pure hype. Named tools. Real prices.",
   "author": {
     "@type": "Person",
     "name": "Nick Conley",
@@ -616,8 +524,8 @@
       "url": "https://bluecollartechy.com/logos/bct-logo-horizontal.png"
     }
   },
-  "datePublished": "2026-08-24",
-  "dateModified": "2026-08-24",
+  "datePublished": "2026-08-31",
+  "dateModified": "2026-08-31",
   "mainEntityOfPage": "https://bluecollartechy.com/blog/ai-tools-for-contractors-2026",
   "image": "https://bluecollartechy.com/og-image.jpg",
   "articleSection": "AI + Tech"
@@ -649,212 +557,136 @@
 <div class="article-meta">
   <div class="container">
     <div class="article-meta-row">
-      <span><span class="hl">BLOG</span> / AI + TECH</span>
-      <span>Published &middot; 2026-08-24</span>
-      <span>Read &middot; 9 min</span>
+      <span><span class="hl">BLOG</span> / AI · TECH STACK</span>
+      <span>Published · 2026-08-31</span>
+      <span>Read · 11 min</span>
     </div>
   </div>
 </div>
 
 <section class="hero-post">
   <div class="narrow">
-    <div class="kicker">AI + Tech &middot; 2026</div>
-    <h1 class="post-title">AI tools for contractors: <span class="hi">what's worth using, what's a waste.</span></h1>
-    <p class="hero-sub">Personal picks. Tools I actually use at Tekton Growth for voice notes, proposals, review responses, and follow-up drafting. The use cases that have real payoff. And the stuff that looks good in a demo but doesn't survive a crew.</p>
+    <div class="kicker">2026 Edition</div>
+    <h1 class="post-title">AI tools for contractors: what's worth using, <span class="hi">what's a waste.</span></h1>
+    <p class="hero-sub">No affiliate links. No vendor relationships. Just the tools I actually use and the honest take on each one. Named. Priced. Worth it or not.</p>
     <div class="post-byline">
       <span>BY <span class="v">NICK CONLEY</span></span>
-      <span>FOUNDER &middot; BLUE COLLAR TECHY</span>
+      <span>FOUNDER · BLUE COLLAR TECHY</span>
     </div>
   </div>
 </section>
 
 <section class="chapter">
   <div class="narrow">
-    <div class="chapter-num">// The noise is real</div>
-    <p class="lead">AI for contractors has been the pitch of the year. Every software company has an "AI feature." Every marketing agency is selling an "AI strategy." Every tool newsletter has a list of 40 things a contractor could theoretically use.</p>
-    <p>Most of that content was written by people who have never bid a job, managed a crew, or stared at an unfinished proposal at 9pm after a full day on site.</p>
-    <p>I run Tekton Growth. We work with contractors day to day on marketing, local SEO, and systems. I also ran a hardscape company in Northern California for ten years before that. AI tools are part of my actual workflow now, in specific ways, because they solve real problems I recognize from both sides.</p>
-    <p>This is not a ranked list of 30 tools. This is what I actually use, what I recommend to the contractors we work with, and what I tell people to skip. The goal is not to add subscriptions. It's to save time on the specific things that eat time in a contracting business.</p>
-    <p class="dim">If you want a 47-item AI roundup, there are a hundred of them. This one is shorter and more honest.</p>
+    <div class="chapter-num">// The honest picture</div>
+    <p class="lead">Most contractor AI content right now is written by people who have never run a crew. It's long on buzzwords and short on anything you could actually use on a job site. I've been on both sides. I ran a hardscape company for a decade before building the tech side. This post is what I actually use and what I've watched work for the contractors I work with at Tekton Growth.</p>
+    <p>Here's the real snapshot: only about 25% of residential contractors are actively using AI tools right now. Another 74% say they think it could help them. The gap between "think it could help" and "using it" is almost always a noise problem. Too many options. Too many vendors pitching too many things. Not enough of anyone saying "use this one, not that one, and here's why."</p>
+    <p>That's this post. Tools worth paying for, tools to skip, and the one tool that does most of the real work for $20 a month.</p>
+    <p class="dim">I'm not covering every AI product on the market. I'm covering the ones that come up in actual conversations with contractors or that I've run through myself. If it's not on this list, that's not a verdict. That's just scope.</p>
   </div>
 </section>
 
 <section class="chapter">
   <div class="narrow">
-    <div class="chapter-num">// What AI is actually good for</div>
-    <h2>Start with the <span class="hi">problem, not the tool.</span></h2>
-    <p>Before the tools, start with the use cases. A tool only matters if there's a real problem underneath it.</p>
-    <p>AI writing tools are good at two things most contractors genuinely need. Getting words out faster. And turning rough notes into something readable.</p>
-    <p>Getting words out faster matters when you're writing a proposal at 9pm. It matters when you're responding to a three-star Google review and you can't figure out how to sound like a real person instead of a customer-service department. It matters when you're writing Google Ads headlines and you've written the same sentence six times and none of them feel right.</p>
-    <p>Turning rough notes into something readable matters when you've walked a customer through a $40,000 project and talked for 45 minutes. You know every detail. You explained the drainage plan in exactly the right terms. But by the time you're back at your desk, what's left is fragments. AI tools can take a voice recording of that conversation and turn it into text you can actually use in a proposal.</p>
-    <p>Both of those are real, daily problems in a contracting business. AI solves both of them well, for under $30 a month. Everything else is mostly noise.</p>
+    <div class="chapter-num">// The $20 tool that does most of the work</div>
+    <h2>ChatGPT Plus covers about <span class="hi">80% of what contractors actually need AI for.</span></h2>
+    <p>ChatGPT Plus is $20 a month. That's it. No annual contract, no setup fee, no per-user pricing that balloons when you add your office manager.</p>
+    <p>The use cases where it actually delivers:</p>
+
+    <h3>Voice notes to proposals</h3>
+    <p>This is the one I see make the biggest difference the fastest. You walk a job. You talk through the scope into your phone. You've got a two-minute voice memo that covers materials, square footage, access constraints, and the customer's priorities. In the past, that memo sat in your pocket while you tried to remember all of it when you got back to the truck and wrote up the quote.</p>
+    <p>Now you transcribe it, drop it into ChatGPT with a prompt that matches your proposal format, and you get a structured first draft in about 30 seconds. You clean it up. You adjust the numbers. You send it. The proposal that used to take 25 minutes to write takes 8. Over a busy week that matters.</p>
+    <p>The prompt I use: "I'm a contractor. Here are my job notes from a site visit. Write a professional project proposal draft from these. Use plain language. Include a summary of scope, materials, timeline estimate, and a next steps section. Here are the notes: [paste]." That's the whole thing.</p>
+
+    <h3>Quote follow-up drafts</h3>
+    <p>You sent an estimate three days ago. No response. You need to follow up without sounding desperate or annoying. This is a small but real friction point for most owner-operators. ChatGPT handles it in 30 seconds. Give it the context, ask for a follow-up message that's professional and direct, and edit from there.</p>
+    <p>Same thing works for: estimate rejection responses (where you want to keep the door open), post-job thank-you messages with a review ask built in, and seasonal outreach to past customers.</p>
+
+    <h3>Review response drafting</h3>
+    <p>Responding to every Google review takes time when you're doing it from scratch. ChatGPT reduces the friction. Give it the review text, ask for a response that's personal, short, and doesn't sound like a template. Read it, edit the first name in, post it.</p>
+    <p>The <a href="how-to-get-more-google-reviews.html" style="color:var(--accent);text-decoration:underline;">Google reviews playbook</a> covers the full response strategy. ChatGPT is just the drafting tool. You still need to read what it produces before you post it. Always.</p>
+
+    <h3>Google Ads copy</h3>
+    <p>If you're running Google Ads, AI drafts headlines and descriptions faster than writing from scratch. Give it your service, your city, and two or three things that make your company different. Ask for five headline and description variations in Google Ads format. Pick the ones that sound like you. You'll still need to tweak them, but the blank page problem disappears.</p>
   </div>
 </section>
 
 <section class="chapter">
   <div class="narrow">
-    <div class="chapter-num">// The tools that work</div>
-    <h2>Two tools. <span class="hi">Four use cases.</span></h2>
+    <div class="chapter-num">// Tools worth adding once ChatGPT is working</div>
+    <h2>Two tools with clear, <span class="hi">measurable ROI for smaller shops.</span></h2>
 
-    <div class="step">
-      <div class="tag">
-        <span class="time">Tool 01</span>
-        <span class="step-no">Voice recording &middot; $8/month</span>
-      </div>
-      <h3>Otter.ai: turn the job walk into a proposal starting point.</h3>
-      <p>The problem this solves is specific. Contractors are talkers, not typists. You know the job. You walked it. You explained the drainage issue to the homeowner in exactly the right terms standing in their backyard. Getting those terms from your head to a proposal document is friction, and friction is where the details get lost.</p>
-      <p>Otter.ai records your conversation, transcribes it in real time, and delivers a searchable summary with the key discussion points pulled out. You walk the job site with your phone. You talk through the scope with the customer out loud, same as you always do. By the time you're back in the truck, you have a text document ready to paste into your proposal workflow.</p>
-      <p>No typing on a small screen while standing on someone's patio. No trying to reconstruct a conversation from three jobs ago. No calling the customer back to confirm something you already said you understood.</p>
-      <div class="look-for">
-        <div class="h">The workflow</div>
-        <p>Open Otter at the start of the walkthrough. Talk normally. At the end, you have a transcript. Paste it into your AI writing tool. Ask it to summarize the scope and customer concerns in bullet form. That list is your proposal foundation.</p>
-      </div>
-      <p>Price: $8.33 a month on the annual plan. Honest caveat: audio quality matters. On a loud job site with equipment running, you'll get some garbled sections. Use it for the client conversation before the crew starts, not mid-pour.</p>
-    </div>
+    <h3>Jobber AI Receptionist ($99/mo add-on)</h3>
+    <p>Jobber launched its AI Receptionist in August 2025. It answers calls and texts 24/7, qualifies the lead, and books an estimate on your calendar. The add-on sits on top of a Jobber subscription, so you're paying $99/mo on top of your base plan cost.</p>
+    <p>The case for this one is straightforward. Missed calls are expensive. HVAC contractors lose an estimated $45,600 a year to unanswered calls. For plumbers the number runs higher. If you're a one-truck or two-truck operation and you're on a job when the phone rings, every unanswered call is a potential estimate that went to your competitor instead. The AI Receptionist catches those calls around the clock without you hiring a part-time person to sit at a desk.</p>
+    <p>This only makes sense if you're already on Jobber. If you're on a different platform, check whether your CRM has a comparable feature before paying for a second tool.</p>
 
-    <div class="step">
-      <div class="tag">
-        <span class="time">Tool 02</span>
-        <span class="step-no">AI writing &middot; $20/month</span>
-      </div>
-      <h3>ChatGPT Plus or Claude Pro: <span class="hi">proposals, review responses, follow-up, ads.</span></h3>
-      <p>Contractors who try AI writing tools tend to bounce between four different ones and never get good at any. The ones who get the most out of it pick one and learn to use it properly.</p>
-      <p>My take: ChatGPT Plus or Claude Pro. Both are $20 a month. Both have free tiers that work for light use. If you're sending more than a couple of proposals a week, or responding to reviews regularly, the paid version is better and the time savings cover the cost in the first week. Pick one and stay with it for at least 60 days before deciding it doesn't work for you.</p>
-      <p>Here is what each use case actually looks like in practice.</p>
+    <h3>NiceJob ($75/mo)</h3>
+    <p>NiceJob handles review requests automatically. A job closes in your CRM, a text goes out to the customer with your Google review link, a follow-up goes three days later if no review comes in. That sequence, run consistently after every job, is what the contractors with 200-plus reviews actually did. Most of them did not run a special campaign. They just had a consistent ask process running in the background.</p>
+    <p>NiceJob is the budget option that's month-to-month and doesn't require an annual contract. It also drafts AI responses to reviews, which you review and post. Clean, simple, and does exactly what it says.</p>
+    <p>The bigger reputation platforms (Birdeye at $299/mo, Broadly at $399/mo for the full suite) make sense for multi-location businesses managing review volume across dozens of listings. For a single-trade, single-location contractor, NiceJob is almost always the right fit at a fraction of the cost.</p>
 
-      <h3>Proposals.</h3>
-      <p>You have the job scope in your head, or in an Otter transcript. Open the writing tool and give it context.</p>
-      <div class="script">
-        <span class="label">Sample prompt</span>
-        I'm a landscape contractor. I just did a site walk for a 1,400 sq ft
-        paver patio with a retaining wall, drainage system, and lighting prep.
-        The customer is most concerned about runoff from the slope on the north
-        side. They want to finish before the end of September. Write a clear
-        scope of work paragraph I can include in my proposal.
-      </div>
-      <p>It writes a first draft. You edit it to match your actual numbers and the way you talk. You spend 10 minutes instead of 45. The proposal is better because the language is cleaner, not because you let a machine write the whole thing.</p>
-
-      <h3>Review responses.</h3>
-      <p>You got a three-star review. The customer wasn't happy with how cleanup was handled at the end. You want to respond professionally without sounding defensive or corporate.</p>
-      <div class="script">
-        <span class="label">Sample prompt</span>
-        Here is a negative Google review I need to respond to as the owner of
-        a landscaping company: [paste review text]. Write a response that
-        acknowledges the concern, briefly explains what happened, and invites
-        them to reach out directly. Sound like a real person, not a PR
-        statement.
-      </div>
-      <p>Edit the output before posting. Read it out loud. Cut anything that doesn't sound like how you'd actually say it. Three minutes total and the response is better than most contractors manage.</p>
-
-      <h3>Follow-up messages.</h3>
-      <p>You quoted a $22,000 outdoor living project three weeks ago. You haven't heard back. You need to follow up without sounding like you need the job.</p>
-      <div class="script">
-        <span class="label">Sample prompt</span>
-        Write a short, professional follow-up text to a homeowner I quoted a
-        patio and pergola project for three weeks ago. I want to check in and
-        see if they have questions, not push for a decision. Direct and relaxed
-        tone, not salesy.
-      </div>
-      <p>Edit it so it sounds like how you actually text people. Send it from your own number. Customers respond to this more often than a form email because it feels personal.</p>
-
-      <h3>Google Ads copy.</h3>
-      <p>You need five headline options and two description lines for a new campaign. You don't want to stare at a blank text field for 20 minutes.</p>
-      <div class="script">
-        <span class="label">Sample prompt</span>
-        Write five Google Ads headlines for a hardscape contractor in Sacramento
-        serving homeowners who want patio and outdoor living builds. Selling
-        points: 15-year craftsmanship, licensed and insured, no-deposit payment
-        terms. Each headline must be under 30 characters.
-      </div>
-      <p>You get eight or ten options. Three of them are usable. You pick the best ones and test them. Total time: about four minutes.</p>
-
-      <div class="look-for">
-        <div class="h">The rule that makes all of it work</div>
-        <p>Context in, quality out. The more specific you are about your trade, your location, the customer situation, and the format you need, the better the result. A vague prompt gets a vague output. That is not the tool failing. That is the prompt failing.</p>
-      </div>
-      <div class="look-for">
-        <div class="h">The rule that protects you</div>
-        <p>Read every output before it goes anywhere. AI is the first draft, not the final draft. A proposal that sounds like a corporate press release loses you the job. A review response that doesn't match the situation makes you look worse than no response. Read it, cut what doesn't sound like you, then send it.</p>
-      </div>
-    </div>
-
-    <div class="inline-cta">
-      <div class="label">Newsletter &middot; Free</div>
-      <h3>One tool breakdown per week.</h3>
-      <p>I send one short email a week covering AI, local SEO, and tech for contractors. No roundups of 40 tools. Real use cases from contractors I work with at Tekton Growth. Specific, short, and you can unsubscribe anytime.</p>
-      <a class="btn" href="../index.html#newsletter">Subscribe free &rarr;</a>
+    <div class="data-callout">
+      <div class="label">Quick-reference pricing sheet</div>
+      <h3>What the tools actually cost</h3>
+      <ul>
+        <li><strong>ChatGPT Plus:</strong> $20/mo. Proposals, copy, review response drafting, follow-ups. Start here.</li>
+        <li><strong>Jobber AI Receptionist:</strong> $99/mo add-on (requires Jobber subscription). 24/7 call and text answering, estimate booking. Best fit for operators who miss calls on the job.</li>
+        <li><strong>NiceJob:</strong> $75/mo, month-to-month. Automated review request sequences, AI response drafts. Best fit for contractors who need a consistent review process without a platform commitment.</li>
+        <li><strong>Birdeye:</strong> $299/mo. Multi-location reputation management. Only worth it once you're managing three or more locations.</li>
+        <li><strong>Broadly:</strong> $399/mo full suite, $79/mo for Reputation AI module alone. Similar positioning to Birdeye. Single-location contractors usually overpay here.</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <section class="pullquote">
   <div class="container">
-    <blockquote>AI doesn't replace knowing the job. It helps you say <span class="hi">what you know faster</span>, to the customer who's waiting on the proposal.</blockquote>
-    <cite>The honest use case</cite>
+    <blockquote>The contractors using AI well aren't running a dozen tools. They're running <span class="hi">one or two</span> and actually using them after every job.</blockquote>
+    <cite>What consistent use actually looks like</cite>
   </div>
 </section>
 
 <section class="chapter">
   <div class="narrow">
     <div class="chapter-num">// What to skip</div>
-    <h2>The tools that <span class="hi">aren't worth it.</span></h2>
-    <p>As important as what to use is what to stop paying for, or what to never start.</p>
-    <ul class="checklist">
-      <li><strong>The $99 AI SEO tools.</strong> I bought one and ran it through every feature for a review post on this site. It generated fabricated statistics and a case study for a plumbing company that doesn't exist. No GBP audit, no citation building, no local execution. Just content that looks like local SEO from the outside. <a href="i-tested-the-99-ai-seo-tool.html" style="color:var(--accent);">Read the full test here.</a></li>
-      <li><strong>The all-in-one "AI business suite" at $97/month.</strong> Thirty features, most of which you will never configure. You'll use three of them. Buy the specific tool that solves the specific problem you have today.</li>
-      <li><strong>Automation tools labeled "AI" that aren't.</strong> Scheduling tools, review request pipelines, CRM follow-up sequences. These are good tools. They're not AI tools. The AI label is marketing. Evaluate them on what they actually do, not what the pricing page says they are.</li>
-      <li><strong>Any tool that publishes without your eyes on it.</strong> An AI that auto-publishes blog posts or social content while you're on site will eventually publish something wrong. Your name is on it. Review everything before it goes out.</li>
-      <li><strong>Multiple AI chat tools at the same time.</strong> ChatGPT, Claude, Gemini, Perplexity. Pick one. The marginal difference between them for contractor writing tasks is not worth the cost or the attention split. Get good at prompting one tool and it will do more than four tools used badly.</li>
-    </ul>
+    <h2>Tools that are real but priced wrong for most of you.</h2>
+
+    <h3>Rilla ($4,000+ per user per year)</h3>
+    <p>Rilla is an AI tool that records in-field sales conversations and gives sales reps structured coaching feedback. The idea is sound. The pricing is not built for a three-truck operation. You're looking at $4,000 or more per user per year, a five-user minimum, and a $1,500 to $5,000 setup fee. That's $20,000 or more just to get started.</p>
+    <p>Rilla makes sense for a regional HVAC company running 20-plus service techs who need consistent sales process across a large team. It does not make sense for an owner-operator closing estimates personally. Save the budget.</p>
+
+    <h3>ServiceTitan (pricing is quote-only, typically $3,000 to $10,000/mo total)</h3>
+    <p>ServiceTitan is a serious platform with serious AI features. It's also built for serious-sized companies. Most of the contractors I talk to who signed a ServiceTitan contract at $1 to $3M in revenue describe the same experience: too many features, too steep a learning curve, and a price tag that doesn't fit until you're substantially larger.</p>
+    <p>If you're running a lean crew under $3M, Jobber or Housecall Pro fit better and cost less. The AI features inside ServiceTitan are impressive. So is the monthly bill. Get the foundation right at the right price point for your size first, then scale the platform when the revenue supports it.</p>
+
+    <h3>AI content tools marketed as SEO solutions</h3>
+    <p>I wrote about this directly in a <a href="i-tested-the-99-ai-seo-tool.html" style="color:var(--accent);text-decoration:underline;">separate post</a>. The short version: tools that promise to write your SEO content automatically are producing thin, generic articles that don't reflect your trade, your region, or your actual knowledge. Google has gotten better at identifying that content at scale. A few specific, well-written pages beat a hundred generated ones every time.</p>
+    <p>Use ChatGPT to help you write. Read what it produces. Edit it to sound like you and to reflect what you actually know about your work. The final page should reflect your real knowledge about real work in a real place. If it could be about any contractor in any city, it probably won't rank for yours.</p>
+
+    <div class="inline-cta">
+      <div class="label">Newsletter · BCT Weekly</div>
+      <h3>Get the AI and tech updates that actually matter for trade businesses.</h3>
+      <p>Short. Specific. One or two things per week that are worth your time. No fluff, no pitch. Just what's working right now for contractors who are running the tools, not just reading about them.</p>
+      <a class="btn" href="../index.html#newsletter">Get the newsletter &rarr;</a>
+    </div>
   </div>
 </section>
 
 <section class="chapter">
   <div class="narrow">
-    <div class="chapter-num">// The stack and what it costs</div>
-    <h2>Under $30 a month for <span class="hi">the whole setup.</span></h2>
-    <p>If you built the AI stack I'd recommend for most trade businesses right now, here's what it looks like:</p>
-    <table class="stack-table">
-      <thead>
-        <tr>
-          <th>Tool</th>
-          <th>What it does</th>
-          <th>Cost</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Otter.ai</strong></td>
-          <td>Voice recording, transcription, meeting summary</td>
-          <td>$8/mo</td>
-        </tr>
-        <tr>
-          <td><strong>ChatGPT Plus or Claude Pro</strong></td>
-          <td>Proposals, review responses, follow-up, ad copy</td>
-          <td>$20/mo</td>
-        </tr>
-        <tr class="total">
-          <td><strong>Total</strong></td>
-          <td></td>
-          <td>$28/mo</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>That is less than what most contractors spend on fuel additives. And it is worth more than most of the $97-a-month AI subscriptions being marketed to trade businesses right now.</p>
-    <p>One check before you buy: look at what your current software already includes. If you're in GoHighLevel, CompanyCam, Jobber, or JobNimbus, there's a real chance AI writing features are already in your plan. Some of them handle proposal drafts and follow-up templates natively. Don't buy a separate tool for something your CRM already does.</p>
-    <p class="dim">Start with one use case. Don't buy two tools and run four workflows on day one. Pick the problem that costs you the most time right now. For most contractors, that's proposals or review responses. Build one habit in the first 30 days. Add a second thing after it's running.</p>
-  </div>
-</section>
+    <div class="chapter-num">// What AI can't do for you</div>
+    <h2>The part most AI content skips.</h2>
+    <p class="lead">AI is a drafting tool. It is not a substitute for showing up, doing good work, or asking your customers for reviews when the job is done. That part is still on you.</p>
+    <p>The adoption gap is real. Only 25% of residential contractors are actively using these tools, despite three in four saying they believe AI could help. The ones getting traction are not buying every new tool that launches. They're using one or two things consistently after every job.</p>
+    <p>ChatGPT Plus running after every estimate. NiceJob sending a review request after every closed job. That's it. Not ten tools, not a new app every quarter. Consistency beats novelty every time in this business.</p>
+    <p>The other thing AI doesn't solve: the underlying business. If your close rate on estimates is low, a better proposal template helps at the margin. But the real problem is probably something in the conversation before the proposal. If your review count is low, an automated follow-up helps. But if the job experience was bad, no follow-up fixes that.</p>
+    <p>The <a href="ten-things-no-agency-can-fix.html" style="color:var(--accent);text-decoration:underline;">10 things no marketing agency can fix</a> covers the owner-side fundamentals that no tool, AI or otherwise, can patch. Read that one alongside this one. The tools amplify what's working. They don't create it.</p>
 
-<section class="chapter">
-  <div class="narrow">
-    <div class="chapter-num">// The closer</div>
-    <h2>You don't need to understand <span class="hi">how it works</span> to use it.</h2>
-    <p>Every contractor who's gotten good at estimating learned it by running estimates, not by studying estimating theory. AI tools work the same way. You learn by using them on real jobs, real proposals, and real customer situations.</p>
-    <p>If you've been telling yourself you'll look into AI when things slow down, that's backwards. Slow periods are when every efficiency advantage matters most. Busy periods are when you're most likely to send a sloppy proposal or miss a follow-up that would have closed.</p>
-    <p>The tools are cheap. The use cases are specific. Most contractors aren't using them not because of hype or confusion. It's because nobody's shown them what to actually do.</p>
-    <p>That's what this post was for.</p>
-    <p class="dim">Next step: open one AI tool, describe your business and your trade, and ask it to help you write a follow-up message to a job you quoted in the last 30 days. See what comes back. Edit it. Send it. That's the whole learning curve for the first use case.</p>
+    <h3>Where to start</h3>
+    <p>If you're not using AI at all today, start with ChatGPT Plus at $20 a month. Use it for your next three proposals. See how much time it saves. See whether the output sounds close enough to your voice that editing is fast. That experiment costs you one month's subscription and a few hours. The verdict will be obvious either way.</p>
+    <p>If proposals aren't your pain point, use it for review responses first. Or follow-up emails. The tool is flexible enough to test in whichever area feels most tedious before you commit to a workflow around it.</p>
+    <p>After 30 days of actually using it, you'll have a much clearer picture of where it fits in your specific business than any post on the internet can tell you. Including this one.</p>
   </div>
 </section>
 
@@ -865,20 +697,20 @@
     <div class="related-grid">
       <a class="related-card" href="i-tested-the-99-ai-seo-tool.html">
         <div class="cat">Tool Review &middot; Takedown</div>
-        <h3>I tested the $99 &ldquo;AI SEO&rdquo; tool contractors are being sold</h3>
-        <p>Every feature, run against BCT. What $99 actually gets you, and the five questions to ask before buying any AI SEO tool.</p>
+        <h3>I tested the $99 &ldquo;AI SEO&rdquo; tool contractors are being sold.</h3>
+        <p>Ten buttons, six real tools, one broken, and a fabricated case study. What $99 actually buys.</p>
+        <span class="arrow">Read &rarr;</span>
+      </a>
+      <a class="related-card" href="how-to-get-more-google-reviews.html">
+        <div class="cat">Reviews &middot; How-To</div>
+        <h3>Google reviews for contractors: a 12-month playbook that actually works.</h3>
+        <p>Three-moment ask framework. Scripts. The 2026 Google policy rules. How to respond to bad reviews without making it worse.</p>
         <span class="arrow">Read &rarr;</span>
       </a>
       <a class="related-card" href="contractor-seo-2026.html">
         <div class="cat">Local SEO &middot; Pillar</div>
-        <h3>Contractor SEO in 2026: what actually works, what doesn't</h3>
-        <p>The three-phase framework for getting found on Google without paying per click.</p>
-        <span class="arrow">Read &rarr;</span>
-      </a>
-      <a class="related-card" href="ten-things-no-agency-can-fix.html">
-        <div class="cat">Owner Habits</div>
-        <h3>10 things no marketing agency can fix for you</h3>
-        <p>The owner-side leaks that kill contractor businesses, ranked by damage.</p>
+        <h3>Contractor SEO in 2026: what actually works, what doesn't.</h3>
+        <p>Three phases. Base prep, topical authority, geographic expansion. The local SEO playbook for trade businesses.</p>
         <span class="arrow">Read &rarr;</span>
       </a>
     </div>
@@ -887,16 +719,16 @@
 
 <section class="end-cta">
   <div class="container">
-    <div class="kicker">What's next</div>
-    <h2>Get the practical stuff, before the newsletter roundups do.</h2>
-    <p>One email a week. AI, local SEO, and tech for contractors. No guru vocabulary, no 40-tool lists. Real use cases from real trade businesses. Unsubscribe anytime.</p>
+    <div class="kicker">One more thing</div>
+    <h2>The newsletter covers what changes before most people notice it.</h2>
+    <p>AI tools move fast. What's worth using in August is different from what was worth using in January. The BCT newsletter tracks what's actually landing for contractors in the field, not what's getting written about in tech blogs. One or two updates a week. Free.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="../index.html#newsletter">
         Subscribe free
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" fill="none"/></svg>
       </a>
-      <a class="btn btn-secondary" href="../gbp-check/">Audit my GBP</a>
-      <a class="btn btn-secondary" href="../market-scan/">Run market scan</a>
+      <a class="btn btn-secondary" href="ten-things-no-agency-can-fix.html">10 things no agency can fix</a>
+      <a class="btn btn-secondary" href="i-tested-the-99-ai-seo-tool.html">The $99 AI SEO tool review</a>
     </div>
   </div>
 </section>
