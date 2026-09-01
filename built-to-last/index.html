@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Built to Last Contractor Resources | Blue Collar Techy</title>
+<meta name="description" content="Free Built to Last resources for contractors: build your first AI email agent, copy the exact prompts, test it safely, and put it on a schedule." />
+<meta name="author" content="Nick Conley" />
+<meta name="theme-color" content="#0d0d12" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://bluecollartechy.com/built-to-last/" />
+<meta property="og:title" content="Built to Last Contractor Resources" />
+<meta property="og:description" content="Practical AI resources for contractors, starting with a draft-only customer email agent you can build today." />
+<meta property="og:image" content="https://bluecollartechy.com/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Built to Last Contractor Resources" />
+<meta name="twitter:description" content="Build your first useful AI agent with the exact setup, prompts, tests, and schedule." />
+<meta name="twitter:image" content="https://bluecollartechy.com/og-image.jpg" />
+<link rel="canonical" href="https://bluecollartechy.com/built-to-last/" />
+<link rel="icon" type="image/svg+xml" href="../logos/bct-favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Archivo:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "Built to Last Contractor Resources",
+  "description": "A practical guide for contractors to build a draft-only AI customer email agent.",
+  "url": "https://bluecollartechy.com/built-to-last/",
+  "author": {"@type": "Person", "name": "Nick Conley"},
+  "publisher": {"@type": "Organization", "name": "Blue Collar Techy"},
+  "educationalLevel": "Beginner",
+  "audience": {"@type": "Audience", "audienceType": "Contractors and blue-collar business owners"},
+  "isAccessibleForFree": true
+}
+</script>
+<style>
+  :root {
+    --bg:#0d0d12; --bg-elev:#15151d; --bg-card:#1a1a24; --panel:#20202b;
+    --border:#2b2b37; --text:#f5f5f7; --text-dim:#aaaab5; --text-faint:#747481;
+    --accent:#ff6a1a; --accent-bright:#ff8530; --cyan:#47c8f5; --warn:#ffc61a;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; background:var(--bg); }
+  body { background:var(--bg); color:var(--text); font-family:'Archivo',system-ui,sans-serif; font-size:17px; line-height:1.6; overflow-x:hidden; }
+  a { color:inherit; text-decoration:none; }
+  button, input, textarea { font:inherit; }
+  .container { width:min(1180px, calc(100% - 48px)); margin:0 auto; }
+  .narrow { width:min(820px, 100%); }
+  .mono { font-family:'JetBrains Mono',monospace; }
+  .accent { color:var(--accent); }
+  .skip { position:absolute; left:-9999px; top:10px; background:var(--accent); color:#111; padding:10px 14px; z-index:999; font-weight:800; }
+  .skip:focus { left:10px; }
+
+  .site-nav { position:sticky; top:0; z-index:100; border-bottom:1px solid var(--border); padding:24px 0; background:rgba(13,13,18,.85); backdrop-filter:blur(12px); }
+  .nav-inner { display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .nav-logo svg { display:block; width:auto; height:52px; }
+  .nav-links { display:flex; align-items:center; gap:36px; color:var(--text-dim); font-size:14px; font-weight:600; }
+  .nav-links a:hover, .nav-links a:focus-visible { color:var(--text); }
+  .nav-links a.active { color:var(--accent); }
+  .nav-cta-mobile { display:none; }
+  .nav-cta { background:var(--accent); color:#000; padding:10px 18px; text-transform:uppercase; letter-spacing:.02em; font-size:13px; font-weight:700; border-radius:2px; }
+  .nav-toggle { display:none; width:44px; height:44px; border:1px solid var(--border); border-radius:2px; background:transparent; cursor:pointer; padding:0; align-items:center; justify-content:center; flex-direction:column; gap:5px; }
+  .nav-toggle:hover { border-color:var(--accent); }
+  .nav-toggle span { display:block; width:20px; height:2px; background:var(--text); transition:transform .25s ease,opacity .25s ease; }
+  .site-nav.open .nav-toggle span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .site-nav.open .nav-toggle span:nth-child(2) { opacity:0; }
+  .site-nav.open .nav-toggle span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+  .hero { position:relative; padding:82px 0 72px; overflow:hidden; border-bottom:1px solid var(--border); }
+  .hero::before { content:""; position:absolute; inset:-20% -10% auto 48%; height:620px; background:radial-gradient(circle,rgba(255,106,26,.16),transparent 64%); pointer-events:none; }
+  .hero-grid { display:grid; grid-template-columns:minmax(0,1.08fr) minmax(330px,.72fr); gap:62px; align-items:center; position:relative; }
+  .eyebrow { display:flex; align-items:center; gap:12px; color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; margin-bottom:22px; }
+  .eyebrow::before { content:""; width:30px; height:2px; background:var(--accent); }
+  h1, h2, h3 { font-family:'Archivo Black',sans-serif; letter-spacing:-.025em; }
+  h1 { font-size:clamp(50px,7.5vw,94px); line-height:.92; max-width:850px; }
+  .hero-copy { color:var(--text-dim); font-size:20px; line-height:1.55; margin:28px 0 30px; max-width:710px; }
+  .cta-row { display:flex; gap:14px; flex-wrap:wrap; }
+  .btn { display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:13px 22px; border:1px solid var(--border); text-transform:uppercase; letter-spacing:.06em; font-size:12px; font-weight:900; transition:.18s ease; cursor:pointer; }
+  .btn:hover, .btn:focus-visible { transform:translate(-2px,-2px); border-color:var(--accent); box-shadow:4px 4px 0 rgba(255,106,26,.22); }
+  .btn-primary { background:var(--accent); color:#0d0d12; border-color:var(--accent); }
+  .btn-secondary { color:var(--text); background:transparent; }
+  .hero-note { margin-top:18px; color:var(--text-faint); font-size:13px; }
+  .hero-photo { position:relative; min-height:480px; border:1px solid var(--border); background:var(--bg-card); overflow:hidden; box-shadow:18px 18px 0 rgba(255,106,26,.1); }
+  .hero-photo img { width:100%; height:100%; min-height:480px; object-fit:cover; object-position:55% center; filter:saturate(.78) contrast(1.05); }
+  .photo-stamp { position:absolute; left:0; right:0; bottom:0; padding:20px 22px; background:linear-gradient(180deg,transparent,rgba(13,13,18,.96) 32%); font-family:'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.1em; font-size:11px; color:var(--text-dim); }
+  .photo-stamp strong { color:var(--accent); display:block; margin-bottom:4px; }
+
+  .quick-nav { border-bottom:1px solid var(--border); background:#111117; }
+  .quick-grid { display:grid; grid-template-columns:repeat(4,1fr); }
+  .quick-grid a { padding:23px 18px; border-right:1px solid var(--border); color:var(--text-dim); font-size:13px; font-weight:700; }
+  .quick-grid a:last-child { border-right:0; }
+  .quick-grid span { display:block; color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:10px; margin-bottom:4px; letter-spacing:.12em; }
+  .quick-grid a:hover { background:var(--bg-card); color:var(--text); }
+
+  section { padding:88px 0; }
+  .section-head { margin-bottom:34px; }
+  .section-tag { color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; margin-bottom:12px; }
+  h2 { font-size:clamp(38px,5vw,64px); line-height:.97; }
+  .section-head p { color:var(--text-dim); font-size:18px; max-width:760px; margin-top:17px; }
+  h3 { font-size:26px; line-height:1.08; }
+
+  .outcome-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border); border:1px solid var(--border); }
+  .outcome { background:var(--bg-card); padding:24px 20px; min-height:175px; }
+  .outcome .num { color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:900; margin-bottom:24px; }
+  .outcome h3 { font-size:20px; margin-bottom:9px; }
+  .outcome p { color:var(--text-dim); font-size:14px; line-height:1.5; }
+  .boundary { margin-top:22px; border-left:4px solid var(--warn); background:rgba(255,198,26,.08); padding:22px 24px; color:var(--text-dim); }
+  .boundary strong { color:var(--warn); }
+
+  .install { background:var(--bg-elev); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+  .checklist { counter-reset:steps; display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .check { counter-increment:steps; display:grid; grid-template-columns:44px 1fr; gap:14px; border:1px solid var(--border); background:var(--bg); padding:18px; }
+  .check::before { content:counter(steps,decimal-leading-zero); color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:900; padding-top:2px; }
+  .check p { color:var(--text-dim); font-size:15px; line-height:1.5; }
+  .check strong { color:var(--text); }
+
+  .builder-layout { display:grid; grid-template-columns:.78fr 1.22fr; gap:30px; align-items:start; }
+  .builder-copy { position:sticky; top:108px; }
+  .builder-copy p { color:var(--text-dim); margin-top:16px; }
+  .context-form { border:1px solid var(--border); background:var(--bg-card); padding:28px; }
+  .field-grid { display:grid; grid-template-columns:1fr 1fr; gap:15px; }
+  .field { display:grid; gap:7px; }
+  .field.full { grid-column:1 / -1; }
+  .field label { color:var(--accent); font-family:'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.07em; font-size:10px; font-weight:800; }
+  .field input, .field textarea { width:100%; border:1px solid var(--border); background:#101016; color:var(--text); padding:13px; min-height:48px; }
+  .field textarea { min-height:88px; resize:vertical; }
+  .field input:focus, .field textarea:focus { outline:2px solid var(--accent); outline-offset:1px; }
+  .form-actions { display:flex; align-items:center; gap:14px; margin-top:20px; flex-wrap:wrap; }
+  .copy-status { color:var(--cyan); font-family:'JetBrains Mono',monospace; font-size:11px; min-height:20px; }
+
+  .prompt-section { background:var(--bg-elev); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+  .prompt-shell { border:1px solid var(--border); background:#0a0a0f; }
+  .prompt-head { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:14px 16px; border-bottom:1px solid var(--border); }
+  .prompt-head span { font-family:'JetBrains Mono',monospace; color:var(--text-faint); font-size:10px; letter-spacing:.14em; text-transform:uppercase; }
+  .copy-btn { border:1px solid var(--border); background:var(--bg-card); color:var(--text); padding:8px 12px; cursor:pointer; text-transform:uppercase; font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:800; letter-spacing:.08em; }
+  .copy-btn:hover, .copy-btn:focus-visible { border-color:var(--accent); color:var(--accent); }
+  pre { white-space:pre-wrap; overflow-wrap:anywhere; padding:24px; color:#d8d8df; font:13px/1.58 'JetBrains Mono',monospace; max-height:620px; overflow:auto; }
+  .prompt-note { margin-top:16px; color:var(--text-dim); font-size:14px; }
+
+  .schedule-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .schedule-card { border:1px solid var(--border); background:var(--bg-card); padding:24px; }
+  .schedule-card .label { color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.13em; text-transform:uppercase; margin-bottom:9px; }
+  .schedule-card p { color:var(--text-dim); margin:12px 0 16px; font-size:15px; }
+  .mini-code { border:1px solid var(--border); background:#101016; padding:16px; font:12px/1.55 'JetBrains Mono',monospace; color:#d8d8df; min-height:170px; }
+
+  .test-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .test-card { border:1px solid var(--border); background:var(--bg-card); display:flex; flex-direction:column; }
+  .test-top { background:var(--accent); color:#0d0d12; padding:10px 14px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; font-weight:900; }
+  .test-body { padding:21px; flex:1; }
+  .test-body h3 { font-size:20px; margin-bottom:12px; }
+  .test-body p { color:var(--text-dim); font-size:14px; margin-bottom:14px; }
+  .expected { border-top:1px solid var(--border); padding:14px 21px; color:var(--cyan); font-size:13px; }
+
+  .future { border-top:1px solid var(--border); }
+  .future-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:22px; }
+  .resource-card, .soon-card { border:1px solid var(--border); background:var(--bg-card); padding:30px; min-height:240px; }
+  .resource-card { border-top:4px solid var(--accent); }
+  .soon-card { border-style:dashed; opacity:.72; }
+  .card-label { color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; margin-bottom:14px; }
+  .resource-card p, .soon-card p { color:var(--text-dim); margin-top:14px; }
+
+  .mason { background:linear-gradient(135deg,#121820,#121218 60%,rgba(71,200,245,.12)); border-top:1px solid rgba(71,200,245,.35); border-bottom:1px solid rgba(71,200,245,.35); }
+  .mason-grid { display:grid; grid-template-columns:1fr .92fr; gap:46px; align-items:center; }
+  .mason .section-tag { color:var(--cyan); }
+  .mason-copy > p { color:var(--text-dim); font-size:18px; margin:20px 0; }
+  .mason-list { display:grid; gap:10px; margin:24px 0 30px; }
+  .mason-list li { list-style:none; color:var(--text-dim); padding-left:24px; position:relative; }
+  .mason-list li::before { content:"+"; position:absolute; left:0; color:var(--cyan); font-family:'JetBrains Mono',monospace; font-weight:900; }
+  .mason-panel { border:1px solid rgba(71,200,245,.35); background:rgba(13,13,18,.7); padding:28px; box-shadow:14px 14px 0 rgba(71,200,245,.08); }
+  .mason-panel .mono { color:var(--cyan); text-transform:uppercase; letter-spacing:.12em; font-size:10px; }
+  .mason-panel h3 { font-size:32px; margin:15px 0; }
+  .mason-panel p { color:var(--text-dim); }
+  .mason-panel .btn { margin-top:23px; width:100%; background:var(--cyan); border-color:var(--cyan); color:#071018; }
+
+  footer { padding:60px 0 34px; border-top:1px solid var(--border); }
+  .foot-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:50px; }
+  .foot-brand .logo-mini { margin-bottom:20px; }
+  .foot-brand .logo-mini svg { display:block; width:auto; height:76px; max-width:100%; }
+  .foot-brand p { color:var(--text-dim); max-width:400px; font-size:14px; margin-top:15px; }
+  .foot-col h3 { color:var(--text-faint); font:10px 'JetBrains Mono',monospace; letter-spacing:.16em; text-transform:uppercase; margin-bottom:14px; }
+  .foot-col ul { list-style:none; display:grid; gap:9px; color:var(--text-dim); font-size:14px; }
+  .foot-bottom { border-top:1px solid var(--border); margin-top:42px; padding-top:24px; display:flex; justify-content:space-between; color:var(--text-faint); font:11px 'JetBrains Mono',monospace; }
+
+  @media (max-width:940px) {
+    .nav-cta { display:none; }
+    .nav-links { display:none; position:absolute; left:0; right:0; top:100%; background:#101016; border-bottom:1px solid var(--border); padding:18px 24px; flex-direction:column; align-items:stretch; }
+    .site-nav.open .nav-links { display:flex; }
+    .site-nav.open .nav-links .nav-cta-mobile { display:block; }
+    .nav-toggle { display:flex; }
+    .hero-grid, .builder-layout, .mason-grid, .future-grid { grid-template-columns:1fr; }
+    .hero-photo { min-height:390px; }
+    .hero-photo img { min-height:390px; }
+    .builder-copy { position:static; }
+    .outcome-grid { grid-template-columns:1fr 1fr; }
+    .schedule-grid { grid-template-columns:1fr; }
+    .test-grid { grid-template-columns:1fr; }
+  }
+  @media (max-width:680px) {
+    .container { width:min(100% - 32px,1180px); }
+    .hero { padding:56px 0 52px; }
+    h1 { font-size:46px; }
+    .hero-copy { font-size:18px; }
+    .hero-photo { min-height:330px; }
+    .hero-photo img { min-height:330px; }
+    .quick-grid { grid-template-columns:1fr 1fr; }
+    .quick-grid a:nth-child(2) { border-right:0; }
+    .quick-grid a { border-bottom:1px solid var(--border); }
+    section { padding:64px 0; }
+    .outcome-grid, .checklist, .field-grid, .foot-grid { grid-template-columns:1fr; }
+    .outcome { min-height:auto; }
+    .field.full { grid-column:auto; }
+    .btn { width:100%; }
+    .foot-bottom { flex-direction:column; gap:10px; }
+    pre { font-size:11px; padding:16px; max-height:520px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the resources</a>
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="../index.html" aria-label="Blue Collar Techy">
+      <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Blue Collar Techy">
+        <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
+        <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
+        <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
+        <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
+        <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
+        <text x="290" y="78" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">EST · 2026</text>
+      </svg>
+    </a>
+    <div class="nav-links" id="primary-nav">
+      <a href="../about.html">About</a>
+      <a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a>
+      <a href="../resources/" class="active">Resources</a>
+      <a href="../blog/">Blog</a>
+      <a href="../work-with-me.html">Work with me</a>
+      <a class="nav-cta-mobile" href="../index.html#newsletter">Subscribe</a>
+    </div>
+    <a class="nav-cta" href="../index.html#newsletter">Subscribe</a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main id="main">
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Built to Last contractor challenge</div>
+        <h1>Build something <span class="accent">useful</span> with AI.</h1>
+        <p class="hero-copy">This is the resource page for the Built to Last Contractor Challenge. We are starting with one small job: an AI email agent that finds the work, prepares the reply, and keeps showing up on schedule without taking the final send away from you.</p>
+        <div class="cta-row"><a class="btn btn-primary" href="#email-agent">Build the email agent</a><a class="btn btn-secondary" href="#mason">I want help building it</a></div>
+        <p class="hero-note">No big software project. No 50-tool list. One useful win first.</p>
+      </div>
+      <figure class="hero-photo">
+        <img src="../images/nick-hero.jpg" alt="Nick Conley operating equipment on a contractor job site" />
+        <figcaption class="photo-stamp"><strong>Built from the contractor side of the desk.</strong> The technology has to fit the business, not the other way around.</figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <div class="quick-nav" aria-label="Page sections"><div class="container quick-grid">
+    <a href="#setup"><span>01</span>Set it up</a><a href="#context"><span>02</span>Teach it your business</a><a href="#prompt"><span>03</span>Copy the job</a><a href="#schedule"><span>04</span>Put it on schedule</a>
+  </div></div>
+
+  <section id="email-agent">
+    <div class="container">
+      <div class="section-head narrow"><div class="section-tag">The first build</div><h2>Your customer email draft agent.</h2><p>The whole point is to get past a fancier chat. This agent works inside the inbox, does a narrow job, leaves proof, and stops before the decision that still belongs to a person.</p></div>
+      <div class="outcome-grid">
+        <div class="outcome"><div class="num">01</div><h3>Find</h3><p>Checks new customer and lead messages.</p></div>
+        <div class="outcome"><div class="num">02</div><h3>Read</h3><p>Reads the complete email thread before acting.</p></div>
+        <div class="outcome"><div class="num">03</div><h3>Draft</h3><p>Creates one reply draft for routine messages.</p></div>
+        <div class="outcome"><div class="num">04</div><h3>Label</h3><p>Marks it AI Draft Ready or Owner Review.</p></div>
+        <div class="outcome"><div class="num">05</div><h3>Report</h3><p>Tells you what it found and what it changed.</p></div>
+      </div>
+      <div class="boundary"><strong>The hard boundary:</strong> it never sends. I still want to see the draft before it goes to a customer, and you probably should too.</div>
+    </div>
+  </section>
+
+  <section class="install" id="setup">
+    <div class="container">
+      <div class="section-head narrow"><div class="section-tag">About 10 minutes</div><h2>Set it up in this order.</h2><p>Do not start with the schedule. Make it complete one clean manual run first, then put the working version on repeat.</p></div>
+      <div class="checklist">
+        <div class="check"><p><strong>Open ChatGPT</strong> on the account that should own the scheduled task.</p></div>
+        <div class="check"><p><strong>Connect Gmail</strong> and confirm it can search threads, create drafts, and apply labels.</p></div>
+        <div class="check"><p><strong>Create two Gmail labels:</strong> AI Draft Ready and Owner Review.</p></div>
+        <div class="check"><p><strong>Fill out the context builder</strong> below so it knows your company and boundaries.</p></div>
+        <div class="check"><p><strong>Paste the complete job description</strong> into the same ChatGPT conversation.</p></div>
+        <div class="check"><p><strong>Send yourself a safe test email</strong> and mark it unread.</p></div>
+        <div class="check"><p><strong>Run it once manually.</strong> Verify the Gmail draft, label, and summary.</p></div>
+        <div class="check"><p><strong>Coach one improvement</strong> in the existing draft instead of silently rewriting it.</p></div>
+        <div class="check"><p><strong>Create the recurring schedule</strong> only after the manual test works.</p></div>
+        <div class="check"><p><strong>Watch the first several runs</strong> before you widen the job or permissions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="context">
+    <div class="container builder-layout">
+      <div class="builder-copy"><div class="section-tag">Company context</div><h2>Teach it enough to sound like you.</h2><p>Better prompts help, for sure. But if the AI does not know who you serve, what you sell, or what a good result looks like, it is still guessing.</p><p>Fill this out and the page will turn it into a context card you can paste into ChatGPT. Nothing you type here leaves your browser.</p></div>
+      <form class="context-form" id="context-form">
+        <div class="field-grid">
+          <div class="field"><label for="company">Company name</label><input id="company" name="company" placeholder="Smith Outdoor Living" /></div>
+          <div class="field"><label for="area">Service area</label><input id="area" name="area" placeholder="Boise and the Treasure Valley" /></div>
+          <div class="field full"><label for="services">Services</label><input id="services" name="services" placeholder="Paver patios, retaining walls, outdoor kitchens" /></div>
+          <div class="field full"><label for="customers">Who you serve</label><input id="customers" name="customers" placeholder="Homeowners planning outdoor-living projects" /></div>
+          <div class="field full"><label for="voice">How your emails should sound</label><input id="voice" name="voice" value="Helpful, direct, calm, plainspoken, and never pushy. Use short paragraphs." /></div>
+          <div class="field full"><label for="next-step">Normal next step for a new lead</label><textarea id="next-step" name="next-step" placeholder="Confirm the project location and phone number, then offer a discovery call."></textarea></div>
+          <div class="field full"><label for="never-invent">What it must never invent</label><textarea id="never-invent" name="never-invent">Pricing, availability, project scope, policies, completion dates, or promises.</textarea></div>
+          <div class="field full"><label for="escalate">What always needs owner review</label><textarea id="escalate" name="escalate">Complaints, refunds, cancellations, legal threats, safety concerns, payment disputes, scope changes, discounts, and firm scheduling commitments.</textarea></div>
+          <div class="field full"><label for="signature">Email signature</label><input id="signature" name="signature" placeholder="Name / Company / Phone" /></div>
+        </div>
+        <div class="form-actions"><button class="btn btn-primary" type="submit">Copy my context card</button><span class="copy-status" id="context-status" role="status" aria-live="polite"></span></div>
+      </form>
+    </div>
+  </section>
+
+  <section class="prompt-section" id="prompt">
+    <div class="container">
+      <div class="section-head narrow"><div class="section-tag">Copy + paste</div><h2>Give the agent its job.</h2><p>Paste your context card first. Then paste this job description into the same conversation. Ask it to repeat back what it can do, what it cannot do, and what still needs a human.</p></div>
+      <div class="prompt-shell">
+        <div class="prompt-head"><span>Contractor customer email draft agent</span><button class="copy-btn" type="button" data-copy="agent-prompt">Copy complete prompt</button></div>
+        <pre id="agent-prompt">ROLE
+Act as our Contractor Customer Email Draft Agent.
+
+SCOPE
+Review new or unprocessed customer and lead email only. Ignore spam, newsletters, receipts, vendor promotions, automated alerts, internal notifications, and any message outside this job.
+
+PROCESS
+1. Search the connected Gmail account for eligible messages.
+2. Before acting, check the entire thread, existing drafts, and the labels AI Draft Ready and Owner Review.
+3. Read the complete thread before deciding what the customer needs.
+4. For a routine message, create or update one helpful reply draft in the correct Gmail thread.
+5. Apply the label AI Draft Ready to routine drafts.
+6. For a consequential message, do not make the decision. Apply Owner Review and report what the owner needs to decide.
+7. Finish with a short run summary.
+
+BOUNDARIES
+- Never send an email.
+- Never invent pricing, availability, policies, project scope, completion dates, or promises.
+- Never archive, delete, forward, or modify unrelated messages.
+- Never create a second draft when the thread already has one.
+- Never act on a thread already labeled AI Draft Ready or Owner Review unless I explicitly ask you to update it.
+
+OWNER REVIEW CASES
+Escalate complaints, refunds, cancellations, legal threats, safety concerns, payment disputes, scope changes, discounts, firm scheduling commitments, and any message where the correct answer depends on an owner decision.
+
+RUN SUMMARY
+At the end of every run, report:
+- Number of eligible messages found.
+- Subject of each message processed.
+- Action taken: draft created, draft updated, or owner review requested.
+- Any fact or decision the owner must supply.
+- If nothing qualified, say: No eligible messages found. No changes made.
+
+QUALITY CHECK
+Before finishing, confirm that every draft uses only facts found in the thread or approved business context, has one clear next step, sounds like our company, and was not sent.</pre>
+      </div>
+      <p class="prompt-note">First test command: <strong>Run the email agent once now. Process only the newest unread test message. Create the draft and label it, but do not send anything. Then report exactly what you changed.</strong></p>
+    </div>
+  </section>
+
+  <section id="schedule">
+    <div class="container">
+      <div class="section-head narrow"><div class="section-tag">Put it to work</div><h2>Now give it a schedule.</h2><p>Fixed checkpoints are easier to understand and audit than trying to make everything happen instantly. Start with once a day. Move to three checkpoints if the inbox volume justifies it.</p></div>
+      <div class="schedule-grid">
+        <div class="schedule-card"><div class="label">Once each weekday</div><h3>One morning run</h3><p>A good starting point when the inbox is light or you are still building trust.</p><div class="mini-code" id="schedule-one">Schedule this email-agent workflow to run every weekday at 8:00 AM in my local time zone. Process only new, unprocessed messages. Follow the same draft-only boundaries, avoid duplicate drafts, and return a concise summary in Scheduled. Use the connected Gmail account. Do not send emails.</div><button class="copy-btn" type="button" data-copy="schedule-one">Copy schedule</button></div>
+        <div class="schedule-card"><div class="label">Three checkpoints</div><h3>Morning, noon, and afternoon</h3><p>Use this when leads and customer questions need a few predictable passes each day.</p><div class="mini-code" id="schedule-three">Schedule this email-agent workflow to run every weekday at 8:00 AM, 12:00 PM, and 4:00 PM in my local time zone. Each run should process only new, unprocessed messages, follow the same draft-only boundaries, avoid duplicate drafts, and return a concise summary in Scheduled. Use the connected Gmail account. Do not send emails.</div><button class="copy-btn" type="button" data-copy="schedule-three">Copy schedule</button></div>
+      </div>
+      <div class="boundary"><strong>After you schedule it:</strong> open Scheduled, confirm the task is active, check the time zone, verify the correct Gmail account, and turn on the notification channels offered on your account.</div>
+    </div>
+  </section>
+
+  <section class="install" id="tests">
+    <div class="container">
+      <div class="section-head narrow"><div class="section-tag">Test before trust</div><h2>Use these three inbox tests.</h2><p>One routine message proves the normal path. Two boundary messages prove it knows when not to make the call.</p></div>
+      <div class="test-grid">
+        <article class="test-card"><div class="test-top">Routine lead</div><div class="test-body"><h3>Patio estimate follow-up</h3><p>Thanks for coming out yesterday. We are interested in the paver patio and firepit option. Could you remind me what happens next and what you need from us?</p></div><div class="expected">Expected: create one helpful draft, apply AI Draft Ready, and promise no price or date.</div></article>
+        <article class="test-card"><div class="test-top">Scheduling boundary</div><div class="test-body"><h3>Can you start next Monday?</h3><p>We want to move forward. Can your crew start next Monday and have everything finished before our party on the 18th?</p></div><div class="expected">Expected: apply Owner Review. Do not promise a start or completion date.</div></article>
+        <article class="test-card"><div class="test-top">Complaint boundary</div><div class="test-body"><h3>We need to talk about the wall</h3><p>The wall does not look like what we discussed and I am frustrated that no one called me back yesterday. I need this fixed.</p></div><div class="expected">Expected: apply Owner Review. Summarize the issue without admitting liability or promising a remedy.</div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="future" id="future-resources">
+    <div class="container">
+      <div class="section-head narrow"><div class="section-tag">This page will keep growing</div><h2>Built to Last resource library.</h2><p>The email agent is the first free build. Future webinar notes, templates, recordings, and tools can live here without sending people to another download every time.</p></div>
+      <div class="future-grid">
+        <div class="resource-card"><div class="card-label">Available now</div><h3>AI Email Agent Starter Kit</h3><p>The complete setup, context builder, agent prompt, schedule commands, and test inbox are all on this page. Nothing else to download.</p><div class="cta-row" style="margin-top:22px"><a class="btn btn-primary" href="#setup">Start the build</a></div></div>
+        <div class="soon-card"><div class="card-label">Future drops</div><h3>More practical builds are coming.</h3><p>Training replays, owner briefing agents, follow-up workflows, and whatever else proves useful enough to keep.</p><div class="cta-row" style="margin-top:22px"><a class="btn btn-secondary" href="../index.html#newsletter">Get the next one</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mason" id="mason">
+    <div class="container mason-grid">
+      <div class="mason-copy"><div class="section-tag">When one agent is not enough</div><h2>Want the whole office assistant?</h2><p>You can absolutely build the email agent yourself. But there is a point where the job gets bigger than one prompt: company knowledge, files, CRM data, production systems, permissions, team access, testing, monitoring, and keeping it all working.</p><p>That is what we are building Mason for. Mason is a custom AI office assistant that learns the business, connects to the tools the team already uses, and helps move real office work without pretending every decision should be automated.</p><ul class="mason-list"><li>Built around how your company already works</li><li>Connected to approved business tools and information</li><li>Clear permissions and human approval boundaries</li><li>Ongoing testing, training, and improvement</li></ul><a class="btn btn-primary" href="https://www.tektongrowth.com/ai-ops?utm_source=blue-collar-techy&amp;utm_medium=built-to-last-resource&amp;utm_campaign=mason" target="_blank" rel="noopener">See the AI Ops approach</a></div>
+      <aside class="mason-panel"><div class="mono">DIY vs. done with you</div><h3>Build this agent. Then decide what is worth connecting next.</h3><p>If you want help mapping the office, choosing the first high-value workflows, and building a safer system around them, tell us where the work keeps getting stuck.</p><a class="btn" href="https://www.tektongrowth.com/contact?utm_source=blue-collar-techy&amp;utm_medium=built-to-last-resource&amp;utm_campaign=mason" target="_blank" rel="noopener">Talk to Tekton about Mason</a></aside>
+    </div>
+  </section>
+</main>
+
+<footer><div class="container"><div class="foot-grid">
+  <div class="foot-brand">
+    <div class="logo-mini" role="img" aria-label="Blue Collar Techy">
+      <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+        <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
+        <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
+        <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
+        <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
+        <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
+      </svg>
+    </div>
+    <p>Practical tech for contractors. AI, digital visibility, websites, and real systems built from the contractor side of the desk.</p>
+  </div>
+  <div class="foot-col"><h3>Explore</h3><ul><li><a href="../resources/">Free resources</a></li><li><a href="../blog/">Blog</a></li><li><a href="../about.html">About Nick</a></li></ul></div>
+  <div class="foot-col"><h3>Get help</h3><ul><li><a href="../work-with-me.html">Work with Nick</a></li><li><a href="https://www.tektongrowth.com/ai-ops" target="_blank" rel="noopener">Tekton AI Ops</a></li><li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li></ul></div>
+</div><div class="foot-bottom"><span>© 2026 Blue Collar Techy · Nick Conley</span><span>Built for the trades</span></div></div></footer>
+
+<script src="/js/tracking.js"></script>
+<script>
+  const nav = document.querySelector('.site-nav');
+  const navToggle = document.querySelector('.nav-toggle');
+  navToggle?.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  async function copyText(text, button) {
+    try {
+      await navigator.clipboard.writeText(text.trim());
+      const original = button.textContent;
+      button.textContent = 'Copied';
+      setTimeout(() => { button.textContent = original; }, 1600);
+    } catch (error) {
+      const area = document.createElement('textarea');
+      area.value = text.trim();
+      document.body.appendChild(area);
+      area.select();
+      document.execCommand('copy');
+      area.remove();
+      button.textContent = 'Copied';
+    }
+  }
+
+  document.querySelectorAll('[data-copy]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const source = document.getElementById(button.dataset.copy);
+      if (source) copyText(source.textContent, button);
+    });
+  });
+
+  document.getElementById('context-form')?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const context = `COMPANY CONTEXT\nCompany: ${data.get('company') || '[COMPANY NAME]'}\nService area: ${data.get('area') || '[SERVICE AREA]'}\nServices: ${data.get('services') || '[SERVICES]'}\nCustomers: ${data.get('customers') || 'Homeowners planning contractor projects'}\nVoice: ${data.get('voice')}\nNormal next step: ${data.get('next-step') || '[NORMAL NEXT STEP]'}\nNever invent: ${data.get('never-invent')}\nAlways escalate: ${data.get('escalate')}\nSignature: ${data.get('signature') || '[NAME / COMPANY / PHONE]'}`;
+    const status = document.getElementById('context-status');
+    copyText(context, event.currentTarget.querySelector('button[type="submit"]'));
+    status.textContent = 'Context card copied. Paste it into ChatGPT before the agent prompt.';
+  });
+</script>
+</body>
+</html>
