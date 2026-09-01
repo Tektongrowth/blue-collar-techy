@@ -94,11 +94,25 @@
   .photo-stamp strong { color:var(--accent); display:block; margin-bottom:4px; }
 
   .quick-nav { border-bottom:1px solid var(--border); background:#111117; }
-  .quick-grid { display:grid; grid-template-columns:repeat(4,1fr); }
+  .quick-grid { display:grid; grid-template-columns:repeat(5,1fr); }
   .quick-grid a { padding:23px 18px; border-right:1px solid var(--border); color:var(--text-dim); font-size:13px; font-weight:700; }
   .quick-grid a:last-child { border-right:0; }
   .quick-grid span { display:block; color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:10px; margin-bottom:4px; letter-spacing:.12em; }
   .quick-grid a:hover { background:var(--bg-card); color:var(--text); }
+
+  .replay { background:var(--bg-elev); border-bottom:1px solid var(--border); }
+  .replay-grid { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr); gap:46px; align-items:center; }
+  .video-embed { aspect-ratio:16/9; display:grid; place-items:center; position:relative; overflow:hidden; border:1px solid #6b5220; background:radial-gradient(circle at 50% 35%,rgba(217,151,0,.14),transparent 42%),#09090c; box-shadow:14px 14px 0 rgba(217,151,0,.08); }
+  .video-embed::before { content:""; position:absolute; inset:14px; border:1px solid rgba(217,151,0,.22); pointer-events:none; }
+  .video-placeholder { position:relative; z-index:1; display:grid; justify-items:center; gap:13px; padding:28px; text-align:center; }
+  .play-mark { width:64px; height:64px; display:grid; place-items:center; border:2px solid #d99700; border-radius:50%; }
+  .play-mark::after { content:""; margin-left:5px; border-style:solid; border-width:10px 0 10px 16px; border-color:transparent transparent transparent #d99700; }
+  .video-placeholder strong { font:24px 'Archivo Black',sans-serif; letter-spacing:-.02em; }
+  .video-placeholder span { color:var(--text-dim); font:10px 'JetBrains Mono',monospace; letter-spacing:.14em; text-transform:uppercase; }
+  .replay-copy .section-tag { color:#d99700; }
+  .replay-copy h2 { font-size:clamp(38px,4.5vw,58px); }
+  .replay-copy p { color:var(--text-dim); margin-top:18px; font-size:17px; }
+  .replay-note { margin-top:22px; padding:16px 18px; border-left:3px solid #d99700; background:rgba(217,151,0,.07); color:var(--text); font-size:14px; }
 
   section { padding:88px 0; }
   .section-head { margin-bottom:34px; }
@@ -195,7 +209,7 @@
     .site-nav.open .nav-links { display:flex; }
     .site-nav.open .nav-links .nav-cta-mobile { display:block; }
     .nav-toggle { display:flex; }
-    .hero-grid, .builder-layout, .mason-grid, .future-grid { grid-template-columns:1fr; }
+    .hero-grid, .replay-grid, .builder-layout, .mason-grid, .future-grid { grid-template-columns:1fr; }
     .hero-photo { min-height:390px; }
     .hero-photo img { min-height:390px; }
     .builder-copy { position:static; }
@@ -214,7 +228,8 @@
     .hero-photo { min-height:330px; }
     .hero-photo img { min-height:330px; }
     .quick-grid { grid-template-columns:1fr 1fr; }
-    .quick-grid a:nth-child(2) { border-right:0; }
+    .quick-grid a:nth-child(even) { border-right:0; }
+    .quick-grid a:last-child { grid-column:1 / -1; }
     .quick-grid a { border-bottom:1px solid var(--border); }
     section { padding:64px 0; }
     .outcome-grid, .checklist, .field-grid, .foot-grid { grid-template-columns:1fr; }
@@ -275,8 +290,17 @@
   </header>
 
   <div class="quick-nav" aria-label="Page sections"><div class="container quick-grid">
-    <a href="#setup"><span>01</span>Set it up</a><a href="#context"><span>02</span>Teach it your business</a><a href="#prompt"><span>03</span>Copy the job</a><a href="#schedule"><span>04</span>Put it on schedule</a>
+    <a href="#recording"><span>01</span>Watch the replay</a><a href="#setup"><span>02</span>Set it up</a><a href="#context"><span>03</span>Teach it your business</a><a href="#prompt"><span>04</span>Copy the job</a><a href="#schedule"><span>05</span>Put it on schedule</a>
   </div></div>
+
+  <section class="replay" id="recording">
+    <div class="container replay-grid">
+      <div class="video-embed" data-youtube-embed="pending" aria-label="Built to Last training replay coming soon">
+        <div class="video-placeholder"><div class="play-mark" aria-hidden="true"></div><strong>Training replay coming soon.</strong><span>The YouTube recording will appear here after the live event</span></div>
+      </div>
+      <div class="replay-copy"><div class="section-tag">Built to Last training replay</div><h2>Missed it live? Watch it here.</h2><p>After the webinar, the full training recording will be embedded in this spot so you can watch the build, pause it, and work through the steps at your own pace.</p><div class="replay-note">Bookmark this page. The written setup guide and copy-and-paste materials below will stay here with the recording.</div></div>
+    </div>
+  </section>
 
   <section id="email-agent">
     <div class="container">
