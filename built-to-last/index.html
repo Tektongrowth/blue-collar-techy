@@ -177,6 +177,16 @@
   .card-label { color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; margin-bottom:14px; }
   .resource-card p, .soon-card p { color:var(--text-dim); margin-top:14px; }
 
+  .consult { background:#111117; border-top:1px solid var(--border); }
+  .consult-grid { display:grid; grid-template-columns:.72fr 1.28fr; gap:38px; align-items:start; }
+  .consult-copy { position:sticky; top:108px; }
+  .consult-copy > p { color:var(--text-dim); font-size:18px; margin:20px 0; }
+  .consult-list { display:grid; gap:10px; margin:24px 0 0; }
+  .consult-list li { list-style:none; color:var(--text-dim); padding-left:24px; position:relative; }
+  .consult-list li::before { content:"+"; position:absolute; left:0; color:var(--accent); font-family:'JetBrains Mono',monospace; font-weight:900; }
+  .calendar-shell { border:1px solid var(--border); background:#fff; min-height:760px; overflow:hidden; box-shadow:14px 14px 0 rgba(255,106,26,.1); }
+  .calendar-shell iframe { display:block; width:100%; min-height:760px; border:0; }
+
   .mason { background:linear-gradient(135deg,#121820,#121218 60%,rgba(71,200,245,.12)); border-top:1px solid rgba(71,200,245,.35); border-bottom:1px solid rgba(71,200,245,.35); }
   .mason-grid { display:grid; grid-template-columns:1fr .92fr; gap:46px; align-items:center; }
   .mason .section-tag { color:var(--cyan); }
@@ -205,10 +215,11 @@
     .site-nav.open .nav-links { display:flex; }
     .site-nav.open .nav-links .nav-cta-mobile { display:block; }
     .nav-toggle { display:flex; }
-    .hero-grid, .builder-layout, .mason-grid, .future-grid { grid-template-columns:1fr; }
+    .hero-grid, .builder-layout, .mason-grid, .future-grid, .consult-grid { grid-template-columns:1fr; }
     .hero-photo { min-height:390px; }
     .hero-photo img { min-height:390px; }
     .builder-copy { position:static; }
+    .consult-copy { position:static; }
     .outcome-grid { grid-template-columns:1fr 1fr; }
     .schedule-grid { grid-template-columns:1fr; }
     .test-grid { grid-template-columns:1fr; }
@@ -275,7 +286,7 @@
         <div class="eyebrow">AI for the contractor's office</div>
         <h1>Build something <span class="accent">useful</span> with AI.</h1>
         <p class="hero-copy">This is the resource page for the Built to Last Contractor Challenge. We are starting with one small job: an AI email agent that finds the work, prepares the reply, and keeps showing up on schedule without taking the final send away from you.</p>
-        <div class="cta-row"><a class="btn btn-primary" href="#email-agent">Build the email agent</a><a class="btn btn-secondary" href="#mason">I want help building it</a></div>
+        <div class="cta-row"><a class="btn btn-primary" href="#email-agent">Build the email agent</a><a class="btn btn-secondary" href="#ai-ops-consult">Build one with me</a></div>
         <p class="hero-note">No big software project. No 50-tool list. One useful win first.</p>
       </div>
       <figure class="hero-photo">
@@ -426,10 +437,31 @@ Before finishing, confirm that every draft uses only facts found in the thread o
     </div>
   </section>
 
+  <section class="consult" id="ai-ops-consult">
+    <div class="container consult-grid">
+      <div class="consult-copy">
+        <div class="section-tag">Free one-hour AI Ops consult</div>
+        <h2>Let's build your first workflow together.</h2>
+        <p>If you got through the training and still aren't sure what to build first, book an hour with me. We'll look at the admin work that keeps landing back on your plate, pick one useful workflow, and start mapping how to build it.</p>
+        <p>This is not a generic sales call. Bring the actual process, inbox, spreadsheet, CRM, or handoff that is eating your time.</p>
+        <ul class="consult-list">
+          <li>One hour with me at no charge</li>
+          <li>Choose a useful first workflow</li>
+          <li>Define what AI can handle and where you stay involved</li>
+          <li>Leave knowing the next step to get it working</li>
+        </ul>
+        <div class="cta-row" style="margin-top:26px"><a class="btn btn-primary" href="https://api.leadconnectorhq.com/widget/booking/u6wxrgXlKhsKweYczYgZ" target="_blank" rel="noopener">Open the booking calendar</a></div>
+      </div>
+      <div class="calendar-shell">
+        <iframe src="https://api.leadconnectorhq.com/widget/booking/u6wxrgXlKhsKweYczYgZ" id="ai-ops-consult-calendar" title="Schedule a free one-hour AI Ops consult with Nick Conley" scrolling="no" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
   <section class="mason" id="mason">
     <div class="container mason-grid">
       <div class="mason-copy"><div class="section-tag">When one agent is not enough</div><h2>Want the whole office assistant?</h2><p>You can absolutely build the email agent yourself. But there is a point where the job gets bigger than one prompt: company knowledge, files, CRM data, production systems, permissions, team access, testing, monitoring, and keeping it all working.</p><p>That is what we are building Mason for. Mason is a custom AI office assistant that learns the business, connects to the tools the team already uses, and helps move real office work without pretending every decision should be automated.</p><ul class="mason-list"><li>Built around how your company already works</li><li>Connected to approved business tools and information</li><li>Clear permissions and human approval boundaries</li><li>Ongoing testing, training, and improvement</li></ul><a class="btn btn-primary" href="https://www.tektongrowth.com/ai-ops?utm_source=blue-collar-techy&amp;utm_medium=built-to-last-resource&amp;utm_campaign=mason" target="_blank" rel="noopener">See the AI Ops approach</a></div>
-      <aside class="mason-panel"><div class="mono">DIY vs. done with you</div><h3>Build this agent. Then decide what is worth connecting next.</h3><p>If you want help mapping the office, choosing the first high-value workflows, and building a safer system around them, tell us where the work keeps getting stuck.</p><a class="btn" href="https://www.tektongrowth.com/contact?utm_source=blue-collar-techy&amp;utm_medium=built-to-last-resource&amp;utm_campaign=mason" target="_blank" rel="noopener">Talk to Tekton about Mason</a></aside>
+      <aside class="mason-panel"><div class="mono">DIY vs. done with you</div><h3>Build this agent. Then decide what is worth connecting next.</h3><p>If you want help mapping the office, choosing the first high-value workflows, and building a safer system around them, tell us where the work keeps getting stuck.</p><a class="btn" href="#ai-ops-consult">Schedule an AI Ops consult</a></aside>
     </div>
   </section>
 </main>
@@ -452,6 +484,7 @@ Before finishing, confirm that every draft uses only facts found in the thread o
 </div><div class="foot-bottom"><span>© 2026 Blue Collar Techy · Nick Conley</span><span>Built for the trades</span></div></div></footer>
 
 <script src="/js/tracking.js"></script>
+<script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
 <script>
   const nav = document.querySelector('.site-nav');
   const navToggle = document.querySelector('.nav-toggle');
