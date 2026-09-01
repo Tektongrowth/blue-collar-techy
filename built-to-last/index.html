@@ -72,8 +72,8 @@
   .hero::before { content:""; position:absolute; inset:-20% -10% auto 48%; height:620px; background:radial-gradient(circle,rgba(255,106,26,.16),transparent 64%); pointer-events:none; }
   .hero-grid { display:grid; grid-template-columns:minmax(0,1.08fr) minmax(330px,.72fr); gap:62px; align-items:center; position:relative; }
   .event-lockup { display:flex; align-items:stretch; width:min(650px,100%); margin-bottom:28px; border:1px solid #6b5220; background:linear-gradient(135deg,rgba(217,151,0,.14),rgba(21,21,29,.94) 46%); box-shadow:8px 8px 0 rgba(217,151,0,.08); }
-  .btl-logo { flex:0 0 202px; height:150px; overflow:hidden; position:relative; border-right:1px solid #6b5220; background:#0a0a0c; }
-  .btl-logo img { position:absolute; width:420px; max-width:none; height:auto; left:50%; top:-4px; transform:translateX(-50%); }
+  .btl-logo { flex:0 0 202px; height:150px; display:flex; align-items:center; justify-content:center; padding:8px 24px; border-right:1px solid #6b5220; background:#0a0a0c; }
+  .btl-logo img { display:block; width:auto; height:134px; max-width:100%; object-fit:contain; }
   .event-meta { display:grid; align-content:center; gap:4px; padding:12px 17px; text-transform:uppercase; }
   .event-meta strong { color:var(--text); font:800 11px 'Archivo',sans-serif; letter-spacing:.08em; }
   .event-meta span { color:#c59a3e; font:700 9px 'JetBrains Mono',monospace; letter-spacing:.11em; }
@@ -258,7 +258,7 @@
     <div class="container hero-grid">
       <div>
         <div class="event-lockup" aria-label="Built to Last Contractor Challenge, September 1 and 2, 2026">
-          <div class="btl-logo"><img src="../images/built-to-last-logo-source.jpg" alt="Built to Last Contractor Challenge logo" /></div>
+          <div class="btl-logo"><img src="../images/built-to-last-logo.png" alt="Built to Last Contractor Challenge logo" /></div>
           <div class="event-meta"><strong>Official webinar resource</strong><span>September 1–2, 2026 · Live on Zoom</span><span>Training by Nick Conley · Blue Collar Techy</span></div>
         </div>
         <div class="eyebrow">AI for the contractor's office</div>
