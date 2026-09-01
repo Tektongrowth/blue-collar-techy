@@ -71,6 +71,14 @@
   .hero { position:relative; padding:82px 0 72px; overflow:hidden; border-bottom:1px solid var(--border); }
   .hero::before { content:""; position:absolute; inset:-20% -10% auto 48%; height:620px; background:radial-gradient(circle,rgba(255,106,26,.16),transparent 64%); pointer-events:none; }
   .hero-grid { display:grid; grid-template-columns:minmax(0,1.08fr) minmax(330px,.72fr); gap:62px; align-items:center; position:relative; }
+  .event-lockup { display:flex; align-items:stretch; width:min(620px,100%); margin-bottom:28px; border:1px solid #6b5220; background:linear-gradient(135deg,rgba(217,151,0,.14),rgba(21,21,29,.94) 46%); box-shadow:8px 8px 0 rgba(217,151,0,.08); }
+  .btl-mark { flex:0 0 186px; display:grid; align-content:center; justify-items:center; padding:13px 18px 12px; border-right:1px solid #6b5220; text-transform:uppercase; line-height:.9; transform:skew(-3deg); }
+  .btl-mark span { color:#e9e9eb; font:800 13px 'Archivo',sans-serif; letter-spacing:.13em; }
+  .btl-mark strong { color:#d99700; font:40px 'Archivo Black',sans-serif; letter-spacing:-.05em; }
+  .btl-mark small { color:#e9e9eb; font:700 7px 'JetBrains Mono',monospace; letter-spacing:.11em; white-space:nowrap; }
+  .event-meta { display:grid; align-content:center; gap:4px; padding:12px 17px; text-transform:uppercase; }
+  .event-meta strong { color:var(--text); font:800 11px 'Archivo',sans-serif; letter-spacing:.08em; }
+  .event-meta span { color:#c59a3e; font:700 9px 'JetBrains Mono',monospace; letter-spacing:.11em; }
   .eyebrow { display:flex; align-items:center; gap:12px; color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; margin-bottom:22px; }
   .eyebrow::before { content:""; width:30px; height:2px; background:var(--accent); }
   h1, h2, h3 { font-family:'Archivo Black',sans-serif; letter-spacing:-.025em; }
@@ -199,6 +207,9 @@
   }
   @media (max-width:680px) {
     .container { width:min(100% - 32px,1180px); }
+    .event-lockup { display:grid; }
+    .btl-mark { min-height:88px; border-right:0; border-bottom:1px solid #6b5220; }
+    .event-meta { padding:14px 17px; }
     .hero { padding:56px 0 52px; }
     h1 { font-size:46px; }
     .hero-copy { font-size:18px; }
@@ -248,7 +259,11 @@
   <header class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="eyebrow">Built to Last contractor challenge</div>
+        <div class="event-lockup" aria-label="Built to Last Contractor Challenge, September 1 and 2, 2026">
+          <div class="btl-mark"><span>Built to</span><strong>Last</strong><small>Contractor Challenge</small></div>
+          <div class="event-meta"><strong>Official webinar resource</strong><span>September 1–2, 2026 · Live on Zoom</span><span>Training by Nick Conley · Blue Collar Techy</span></div>
+        </div>
+        <div class="eyebrow">AI for the contractor's office</div>
         <h1>Build something <span class="accent">useful</span> with AI.</h1>
         <p class="hero-copy">This is the resource page for the Built to Last Contractor Challenge. We are starting with one small job: an AI email agent that finds the work, prepares the reply, and keeps showing up on schedule without taking the final send away from you.</p>
         <div class="cta-row"><a class="btn btn-primary" href="#email-agent">Build the email agent</a><a class="btn btn-secondary" href="#mason">I want help building it</a></div>
