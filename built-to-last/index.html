@@ -342,7 +342,7 @@
 
   <section id="context">
     <div class="container builder-layout">
-      <div class="builder-copy"><div class="section-tag">Company context</div><h2>Teach it enough to sound like you.</h2><p>Better prompts help, for sure. But if the AI does not know who you serve, what you sell, or what a good result looks like, it is still guessing.</p><p>Fill this out and the page will turn it into a context card you can paste into ChatGPT. Nothing you type here leaves your browser.</p></div>
+      <div class="builder-copy"><div class="section-tag">Company context</div><h2>Teach it enough to sound like you.</h2><p>Better prompts help, for sure. But if the AI does not know who you serve, what you sell, or what a good result looks like, it is still guessing.</p><p>Fill this out and your answers will be added directly to the complete prompt below. Nothing you type here leaves your browser.</p></div>
       <form class="context-form" id="context-form">
         <div class="field-grid">
           <div class="field"><label for="company">Company name</label><input id="company" name="company" placeholder="Smith Outdoor Living" /></div>
@@ -355,14 +355,14 @@
           <div class="field full"><label for="escalate">What always needs owner review</label><textarea id="escalate" name="escalate">Complaints, refunds, cancellations, legal threats, safety concerns, payment disputes, scope changes, discounts, and firm scheduling commitments.</textarea></div>
           <div class="field full"><label for="signature">Email signature</label><input id="signature" name="signature" placeholder="Name / Company / Phone" /></div>
         </div>
-        <div class="form-actions"><button class="btn btn-primary" type="submit">Copy my context card</button><span class="copy-status" id="context-status" role="status" aria-live="polite"></span></div>
+        <div class="form-actions"><button class="btn btn-primary" type="submit">Update my prompt</button><span class="copy-status" id="context-status" role="status" aria-live="polite"></span></div>
       </form>
     </div>
   </section>
 
   <section class="prompt-section" id="prompt">
     <div class="container">
-      <div class="section-head narrow"><div class="section-tag">Copy + paste</div><h2>Give the agent its job.</h2><p>Paste your context card first. Then paste this job description into the same conversation. Ask it to repeat back what it can do, what it cannot do, and what still needs a human.</p></div>
+      <div class="section-head narrow"><div class="section-tag">Copy + paste</div><h2>Give the agent its job.</h2><p>The company information you entered above is already included here. Copy this complete prompt into ChatGPT, then ask it to repeat back what it can do, what it cannot do, and what still needs a human.</p></div>
       <div class="prompt-shell">
         <div class="prompt-head"><span>Contractor customer email draft agent</span><button class="copy-btn" type="button" data-copy="agent-prompt">Copy complete prompt</button></div>
 <pre id="agent-prompt">ROLE
@@ -531,14 +531,39 @@ Before finishing, confirm that every draft uses only facts found in the thread o
     });
   });
 
-  document.getElementById('context-form')?.addEventListener('submit', (event) => {
+  const contextForm = document.getElementById('context-form');
+  const agentPrompt = document.getElementById('agent-prompt');
+  const baseAgentPrompt = agentPrompt?.textContent.trim() || '';
+
+  function buildCompanyContext() {
+    const data = new FormData(contextForm);
+    return `COMPANY CONTEXT
+Company: ${data.get('company') || '[COMPANY NAME]'}
+Service area: ${data.get('area') || '[SERVICE AREA]'}
+Services: ${data.get('services') || '[SERVICES]'}
+Customers: ${data.get('customers') || 'Homeowners planning contractor projects'}
+Voice: ${data.get('voice') || '[HOW MY EMAILS SHOULD SOUND]'}
+Normal next step: ${data.get('next-step') || '[NORMAL NEXT STEP]'}
+Never invent: ${data.get('never-invent') || '[FACTS OR DECISIONS AI MUST NEVER INVENT]'}
+Always escalate: ${data.get('escalate') || '[MESSAGES THAT ALWAYS NEED MY REVIEW]'}
+Signature: ${data.get('signature') || '[NAME / COMPANY / PHONE]'}`;
+  }
+
+  function updatePersonalizedPrompt() {
+    if (!contextForm || !agentPrompt) return;
+    agentPrompt.textContent = `${buildCompanyContext()}\n\n${baseAgentPrompt}`;
+  }
+
+  contextForm?.addEventListener('input', updatePersonalizedPrompt);
+  contextForm?.addEventListener('submit', (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const context = `COMPANY CONTEXT\nCompany: ${data.get('company') || '[COMPANY NAME]'}\nService area: ${data.get('area') || '[SERVICE AREA]'}\nServices: ${data.get('services') || '[SERVICES]'}\nCustomers: ${data.get('customers') || 'Homeowners planning contractor projects'}\nVoice: ${data.get('voice')}\nNormal next step: ${data.get('next-step') || '[NORMAL NEXT STEP]'}\nNever invent: ${data.get('never-invent')}\nAlways escalate: ${data.get('escalate')}\nSignature: ${data.get('signature') || '[NAME / COMPANY / PHONE]'}`;
+    updatePersonalizedPrompt();
     const status = document.getElementById('context-status');
-    copyText(context, event.currentTarget.querySelector('button[type="submit"]'));
-    status.textContent = 'Context card copied. Paste it into ChatGPT before the agent prompt.';
+    status.textContent = 'Your company information is now included in the complete prompt below.';
+    document.getElementById('prompt')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
+
+  updatePersonalizedPrompt();
 </script>
 </body>
 </html>
