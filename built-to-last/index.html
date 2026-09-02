@@ -11,11 +11,11 @@
 <meta property="og:url" content="https://bluecollartechy.com/built-to-last/" />
 <meta property="og:title" content="Built to Last Contractor Resources" />
 <meta property="og:description" content="Practical AI resources for contractors, starting with a draft-only customer email agent you can build today." />
-<meta property="og:image" content="https://bluecollartechy.com/og-image.jpg" />
+<meta property="og:image" content="https://i.ytimg.com/vi/UUTN0bqVai8/maxresdefault.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Built to Last Contractor Resources" />
 <meta name="twitter:description" content="Build your first useful AI agent with the exact setup, prompts, tests, and schedule." />
-<meta name="twitter:image" content="https://bluecollartechy.com/og-image.jpg" />
+<meta name="twitter:image" content="https://i.ytimg.com/vi/UUTN0bqVai8/maxresdefault.jpg" />
 <link rel="canonical" href="https://bluecollartechy.com/built-to-last/" />
 <link rel="icon" type="image/svg+xml" href="../logos/bct-favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,13 +32,21 @@
   "publisher": {"@type": "Organization", "name": "Blue Collar Techy"},
   "educationalLevel": "Beginner",
   "audience": {"@type": "Audience", "audienceType": "Contractors and blue-collar business owners"},
-  "isAccessibleForFree": true
+  "isAccessibleForFree": true,
+  "hasPart": {
+    "@type": "VideoObject",
+    "name": "I Showed Contractors How to Build Their First AI Assistant",
+    "description": "Built to Last Contractor Challenge training on turning ChatGPT into a practical email assistant for a contractor business.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/UUTN0bqVai8/maxresdefault.jpg",
+    "uploadDate": "2026-09-02",
+    "embedUrl": "https://www.youtube.com/embed/UUTN0bqVai8"
+  }
 }
 </script>
 <style>
   :root {
     --bg:#0d0d12; --bg-elev:#15151d; --bg-card:#1a1a24; --panel:#20202b;
-    --border:#2b2b37; --text:#f5f5f7; --text-dim:#aaaab5; --text-faint:#747481;
+    --border:#2b2b37; --text:#f5f5f7; --text-dim:#aaaab5; --text-faint:#80808d;
     --accent:#ff6a1a; --accent-bright:#ff8530; --cyan:#47c8f5; --warn:#ffc61a;
   }
   * { box-sizing:border-box; margin:0; padding:0; }
@@ -104,12 +112,6 @@
   .replay-grid { display:block; max-width:980px; }
   .video-embed { aspect-ratio:16/9; position:relative; overflow:hidden; border:1px solid #6b5220; background:#09090c; box-shadow:14px 14px 0 rgba(217,151,0,.08); }
   .video-embed iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
-  .video-placeholder { position:relative; z-index:1; display:grid; justify-items:center; gap:13px; padding:28px; text-align:center; }
-  .play-mark { width:64px; height:64px; display:grid; place-items:center; border:2px solid #d99700; border-radius:50%; }
-  .play-mark::after { content:""; margin-left:5px; border-style:solid; border-width:10px 0 10px 16px; border-color:transparent transparent transparent #d99700; }
-  .video-placeholder strong { font:24px 'Archivo Black',sans-serif; letter-spacing:-.02em; }
-  .video-placeholder span { color:var(--text-dim); font:10px 'JetBrains Mono',monospace; letter-spacing:.14em; text-transform:uppercase; }
-
   section { padding:88px 0; }
   .section-head { margin-bottom:34px; }
   .section-tag { color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; margin-bottom:12px; }
@@ -117,7 +119,7 @@
   .section-head p { color:var(--text-dim); font-size:18px; max-width:760px; margin-top:17px; }
   h3 { font-size:26px; line-height:1.08; }
 
-  .outcome-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border); border:1px solid var(--border); }
+  .outcome-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); }
   .outcome { background:var(--bg-card); padding:24px 20px; min-height:175px; }
   .outcome .num { color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:900; margin-bottom:24px; }
   .outcome h3 { font-size:20px; margin-bottom:9px; }
@@ -143,6 +145,10 @@
   .field input, .field textarea { width:100%; border:1px solid var(--border); background:#101016; color:var(--text); padding:13px; min-height:48px; }
   .field textarea { min-height:88px; resize:vertical; }
   .field input:focus, .field textarea:focus { outline:2px solid var(--accent); outline-offset:1px; }
+  .advanced-fields { grid-column:1 / -1; border:1px solid var(--border); background:#14141c; }
+  .advanced-fields summary { cursor:pointer; padding:14px 16px; color:var(--text); font-weight:800; }
+  .advanced-fields summary::marker { color:var(--accent); }
+  .advanced-fields .field-grid { padding:4px 16px 16px; }
   .form-actions { display:flex; align-items:center; gap:14px; margin-top:20px; flex-wrap:wrap; }
   .copy-status { color:var(--cyan); font-family:'JetBrains Mono',monospace; font-size:11px; min-height:20px; }
 
@@ -154,12 +160,24 @@
   .copy-btn:hover, .copy-btn:focus-visible { border-color:var(--accent); color:var(--accent); }
   pre { white-space:pre-wrap; overflow-wrap:anywhere; padding:24px; color:#d8d8df; font:13px/1.58 'JetBrains Mono',monospace; max-height:620px; overflow:auto; }
   .prompt-note { margin-top:16px; color:var(--text-dim); font-size:14px; }
+  .prompt-overview { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-bottom:22px; border:1px solid var(--border); background:var(--border); }
+  .prompt-overview div { background:var(--bg-card); padding:18px; color:var(--text-dim); font-size:14px; }
+  .prompt-overview strong { display:block; color:var(--text); margin-bottom:5px; }
+  .voice-upgrade { margin-top:22px; border:1px solid var(--border); background:var(--bg-card); }
+  .voice-upgrade summary { cursor:pointer; padding:18px 20px; color:var(--text); font-weight:900; }
+  .voice-upgrade summary::marker { color:var(--cyan); }
+  .voice-upgrade-body { padding:0 20px 20px; }
+  .voice-upgrade-body > p { color:var(--text-dim); margin-bottom:16px; }
 
   .schedule-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
   .schedule-card { border:1px solid var(--border); background:var(--bg-card); padding:24px; }
   .schedule-card .label { color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.13em; text-transform:uppercase; margin-bottom:9px; }
   .schedule-card p { color:var(--text-dim); margin:12px 0 16px; font-size:15px; }
   .mini-code { border:1px solid var(--border); background:#101016; padding:16px; font:12px/1.55 'JetBrains Mono',monospace; color:#d8d8df; min-height:170px; }
+  .schedule-option { margin-top:18px; border:1px solid var(--border); background:var(--bg-card); }
+  .schedule-option summary { cursor:pointer; padding:18px 22px; font-weight:900; }
+  .schedule-option summary::marker { color:var(--accent); }
+  .schedule-option .schedule-card { border:0; border-top:1px solid var(--border); }
 
   .test-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
   .test-card { border:1px solid var(--border); background:var(--bg-card); display:flex; flex-direction:column; }
@@ -168,14 +186,6 @@
   .test-body h3 { font-size:20px; margin-bottom:12px; }
   .test-body p { color:var(--text-dim); font-size:14px; margin-bottom:14px; }
   .expected { border-top:1px solid var(--border); padding:14px 21px; color:var(--cyan); font-size:13px; }
-
-  .future { border-top:1px solid var(--border); }
-  .future-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:22px; }
-  .resource-card, .soon-card { border:1px solid var(--border); background:var(--bg-card); padding:30px; min-height:240px; }
-  .resource-card { border-top:4px solid var(--accent); }
-  .soon-card { border-style:dashed; opacity:.72; }
-  .card-label { color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; margin-bottom:14px; }
-  .resource-card p, .soon-card p { color:var(--text-dim); margin-top:14px; }
 
   .consult { background:#111117; border-top:1px solid var(--border); }
   .consult-grid { display:grid; grid-template-columns:.72fr 1.28fr; gap:38px; align-items:start; }
@@ -187,18 +197,11 @@
   .calendar-shell { border:1px solid var(--border); background:#fff; min-height:760px; overflow:hidden; box-shadow:14px 14px 0 rgba(255,106,26,.1); }
   .calendar-shell iframe { display:block; width:100%; min-height:760px; border:0; }
 
-  .mason { background:linear-gradient(135deg,#121820,#121218 60%,rgba(71,200,245,.12)); border-top:1px solid rgba(71,200,245,.35); border-bottom:1px solid rgba(71,200,245,.35); }
-  .mason-grid { display:grid; grid-template-columns:1fr .92fr; gap:46px; align-items:center; }
-  .mason .section-tag { color:var(--cyan); }
-  .mason-copy > p { color:var(--text-dim); font-size:18px; margin:20px 0; }
-  .mason-list { display:grid; gap:10px; margin:24px 0 30px; }
-  .mason-list li { list-style:none; color:var(--text-dim); padding-left:24px; position:relative; }
-  .mason-list li::before { content:"+"; position:absolute; left:0; color:var(--cyan); font-family:'JetBrains Mono',monospace; font-weight:900; }
-  .mason-panel { border:1px solid rgba(71,200,245,.35); background:rgba(13,13,18,.7); padding:28px; box-shadow:14px 14px 0 rgba(71,200,245,.08); }
+  .mason-panel { margin-top:40px; border:1px solid rgba(71,200,245,.35); background:linear-gradient(135deg,#121820,#121218 62%,rgba(71,200,245,.12)); padding:28px; display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center; box-shadow:14px 14px 0 rgba(71,200,245,.08); }
   .mason-panel .mono { color:var(--cyan); text-transform:uppercase; letter-spacing:.12em; font-size:10px; }
-  .mason-panel h3 { font-size:32px; margin:15px 0; }
-  .mason-panel p { color:var(--text-dim); }
-  .mason-panel .btn { margin-top:23px; width:100%; background:var(--cyan); border-color:var(--cyan); color:#071018; }
+  .mason-panel h3 { font-size:30px; margin:10px 0; }
+  .mason-panel p { color:var(--text-dim); max-width:760px; }
+  .mason-panel .btn { background:var(--cyan); border-color:var(--cyan); color:#071018; white-space:nowrap; }
 
   footer { padding:60px 0 34px; border-top:1px solid var(--border); }
   .foot-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:50px; }
@@ -215,7 +218,7 @@
     .site-nav.open .nav-links { display:flex; }
     .site-nav.open .nav-links .nav-cta-mobile { display:block; }
     .nav-toggle { display:flex; }
-    .hero-grid, .builder-layout, .mason-grid, .future-grid, .consult-grid { grid-template-columns:1fr; }
+    .hero-grid, .builder-layout, .consult-grid { grid-template-columns:1fr; }
     .hero-photo { min-height:390px; }
     .hero-photo img { min-height:390px; }
     .builder-copy { position:static; }
@@ -223,6 +226,7 @@
     .outcome-grid { grid-template-columns:1fr 1fr; }
     .schedule-grid { grid-template-columns:1fr; }
     .test-grid { grid-template-columns:1fr; }
+    .mason-panel { grid-template-columns:1fr; }
   }
   @media (max-width:680px) {
     .container { width:min(100% - 32px,1180px); }
@@ -239,7 +243,7 @@
     .quick-grid a:last-child { grid-column:1 / -1; }
     .quick-grid a { border-bottom:1px solid var(--border); }
     section { padding:64px 0; }
-    .outcome-grid, .checklist, .field-grid, .foot-grid { grid-template-columns:1fr; }
+    .outcome-grid, .checklist, .field-grid, .prompt-overview, .foot-grid { grid-template-columns:1fr; }
     .outcome { min-height:auto; }
     .field.full { grid-column:auto; }
     .btn { width:100%; }
@@ -281,12 +285,12 @@
       <div>
         <div class="event-lockup" aria-label="Built to Last Contractor Challenge, September 1 and 2, 2026">
           <div class="btl-logo"><img src="../images/built-to-last-logo.png" alt="Built to Last Contractor Challenge logo" /></div>
-          <div class="event-meta"><strong>Official webinar resource</strong><span>September 1–2, 2026 · Live on Zoom</span><span>Training by Nick Conley · Blue Collar Techy</span></div>
+          <div class="event-meta"><strong>Official workshop resources</strong><span>September 1–2, 2026 · Live training + replay</span><span>Training by Nick Conley · Blue Collar Techy</span></div>
         </div>
         <div class="eyebrow">AI for the contractor's office</div>
         <h1>Build something <span class="accent">useful</span> with AI.</h1>
-        <p class="hero-copy">This is the resource page for the Built to Last Contractor Challenge. We are starting with one small job: an AI email agent that finds the work, prepares the reply, and keeps showing up on schedule without taking the final send away from you.</p>
-        <div class="cta-row"><a class="btn btn-primary" href="#email-agent">Build the email agent</a><a class="btn btn-secondary" href="#ai-ops-consult">Build one with me</a></div>
+        <p class="hero-copy">Watch the training, teach ChatGPT enough about your company to be useful, and put one small email job on a schedule without giving up control of what gets sent.</p>
+        <div class="cta-row"><a class="btn btn-primary" href="#setup" data-track="start_setup">Start the setup</a><a class="btn btn-secondary" href="#recording" data-track="watch_replay">Watch the replay</a></div>
         <p class="hero-note">No big software project. No 50-tool list. One useful win first.</p>
       </div>
       <figure class="hero-photo">
@@ -297,10 +301,10 @@
   </header>
 
   <div class="quick-nav" aria-label="Page sections"><div class="container quick-grid">
-    <a href="#recording"><span>01</span>Watch the replay</a><a href="#setup"><span>02</span>Set it up</a><a href="#context"><span>03</span>Teach it your business</a><a href="#prompt"><span>04</span>Copy the job</a><a href="#schedule"><span>05</span>Put it on schedule</a>
+    <a href="#recording"><span>01</span>Watch the replay</a><a href="#setup"><span>02</span>Check prerequisites</a><a href="#context"><span>03</span>Personalize the prompt</a><a href="#tests"><span>04</span>Test it safely</a><a href="#schedule"><span>05</span>Put it on schedule</a>
   </div></div>
 
-  <section class="replay" id="recording">
+  <section class="replay" id="recording" aria-label="Built to Last training replay">
     <div class="container replay-grid">
       <div class="video-embed">
         <iframe src="https://www.youtube-nocookie.com/embed/UUTN0bqVai8" title="I Showed Contractors How to Build Their First AI Assistant" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -310,50 +314,47 @@
 
   <section id="email-agent">
     <div class="container">
-      <div class="section-head narrow"><div class="section-tag">The first build</div><h2>Your customer email draft agent.</h2><p>The whole point is to get past a fancier chat. This agent works inside the inbox, does a narrow job, leaves proof, and stops before the decision that still belongs to a person.</p></div>
+      <div class="section-head narrow"><div class="section-tag">What you are building</div><h2>A second set of eyes on the inbox.</h2><p>It reads the conversation, prepares the next step when the answer is clear, and brings decisions back to you when it needs help.</p></div>
       <div class="outcome-grid">
-        <div class="outcome"><div class="num">01</div><h3>Find</h3><p>Checks new customer and lead messages.</p></div>
-        <div class="outcome"><div class="num">02</div><h3>Read</h3><p>Reads the complete email thread before acting.</p></div>
-        <div class="outcome"><div class="num">03</div><h3>Draft</h3><p>Creates one reply draft for routine messages.</p></div>
-        <div class="outcome"><div class="num">04</div><h3>Label</h3><p>Marks it AI Draft Ready or Owner Review.</p></div>
-        <div class="outcome"><div class="num">05</div><h3>Report</h3><p>Tells you what it found and what it changed.</p></div>
+        <div class="outcome"><div class="num">01</div><h3>Read</h3><p>Finds new customer emails and reads the full thread for context.</p></div>
+        <div class="outcome"><div class="num">02</div><h3>Prepare</h3><p>Creates a useful draft when the answer is supported by the email and your company information.</p></div>
+        <div class="outcome"><div class="num">03</div><h3>Ask</h3><p>If a decision or missing fact is needed, it shows you the email and asks one clear question instead of guessing.</p></div>
       </div>
-      <div class="boundary"><strong>The hard boundary:</strong> it never sends. I still want to see the draft before it goes to a customer, and you probably should too.</div>
+      <div class="boundary"><strong>The hard boundary:</strong> it never sends. You approve the response before it goes to a customer.</div>
     </div>
   </section>
 
   <section class="install" id="setup">
     <div class="container">
-      <div class="section-head narrow"><div class="section-tag">About 10 minutes</div><h2>Set it up in this order.</h2><p>Do not start with the schedule. Make it complete one clean manual run first, then put the working version on repeat.</p></div>
+      <div class="section-head narrow"><div class="section-tag">Before you start</div><h2>Make sure your account can do the job.</h2><p>Use ChatGPT on the web for this build. What it can do inside Gmail depends on your plan, workspace settings, and the permissions you approve.</p></div>
       <div class="checklist">
-        <div class="check"><p><strong>Open ChatGPT</strong> on the account that should own the scheduled task.</p></div>
-        <div class="check"><p><strong>Connect Gmail</strong> and confirm it can search threads, create drafts, and apply labels.</p></div>
-        <div class="check"><p><strong>Create two Gmail labels:</strong> AI Draft Ready and Owner Review.</p></div>
-        <div class="check"><p><strong>Fill out the context builder</strong> below so it knows your company and boundaries.</p></div>
-        <div class="check"><p><strong>Paste the complete job description</strong> into the same ChatGPT conversation.</p></div>
-        <div class="check"><p><strong>Send yourself a safe test email</strong> and mark it unread.</p></div>
-        <div class="check"><p><strong>Run it once manually.</strong> Verify the Gmail draft, label, and summary.</p></div>
-        <div class="check"><p><strong>Coach one improvement</strong> in the existing draft instead of silently rewriting it.</p></div>
-        <div class="check"><p><strong>Create the recurring schedule</strong> only after the manual test works.</p></div>
-        <div class="check"><p><strong>Watch the first several runs</strong> before you widen the job or permissions.</p></div>
+        <div class="check"><p><strong>Open ChatGPT on the web</strong> using the account that should own the task.</p></div>
+        <div class="check"><p><strong>Connect and authorize Gmail</strong> under Settings → Apps.</p></div>
+        <div class="check"><p><strong>Check the available Gmail actions.</strong> Confirm it can read full threads and whether it can create drafts or labels. If it is read-only, use the fallback output inside ChatGPT.</p></div>
+        <div class="check"><p><strong>Choose one trigger.</strong> Start with a fixed daily schedule. Eligible plans can instead react to new Gmail messages, but one task cannot use both trigger types.</p></div>
+        <div class="check"><p><strong>Use a safe test email first.</strong> Do not start with a real customer conversation, and do not schedule anything until one manual run works.</p></div>
+        <div class="check"><p><strong>Stay in the loop.</strong> Review the first several runs before widening the job, the inbox scope, or its permissions.</p></div>
       </div>
+      <p class="prompt-note">Features vary by plan and can change. <a href="https://learn.chatgpt.com/docs/automations" target="_blank" rel="noopener" style="color:var(--cyan);text-decoration:underline">Check the current ChatGPT scheduling guide</a> if the options on your account look different.</p>
     </div>
   </section>
 
   <section id="context">
     <div class="container builder-layout">
-      <div class="builder-copy"><div class="section-tag">Company context</div><h2>Teach it enough to sound like you.</h2><p>Better prompts help, for sure. But if the AI does not know who you serve, what you sell, or what a good result looks like, it is still guessing.</p><p>Fill this out and your answers will be added directly to the complete prompt below. Nothing you type here leaves your browser.</p></div>
+      <div class="builder-copy"><div class="section-tag">Company context</div><h2>Teach it enough to be useful.</h2><p>If the AI does not know who you serve, what you sell, or what normally happens next, it is still guessing.</p><p>This page does not submit or store your answers. They stay in your browser until you copy the completed prompt.</p></div>
       <form class="context-form" id="context-form">
         <div class="field-grid">
-          <div class="field"><label for="company">Company name</label><input id="company" name="company" placeholder="Smith Outdoor Living" /></div>
-          <div class="field"><label for="area">Service area</label><input id="area" name="area" placeholder="Boise and the Treasure Valley" /></div>
-          <div class="field full"><label for="services">Services</label><input id="services" name="services" placeholder="Paver patios, retaining walls, outdoor kitchens" /></div>
-          <div class="field full"><label for="customers">Who you serve</label><input id="customers" name="customers" placeholder="Homeowners planning outdoor-living projects" /></div>
-          <div class="field full"><label for="voice">How your emails should sound</label><input id="voice" name="voice" value="Helpful, direct, calm, plainspoken, and never pushy. Use short paragraphs." /></div>
-          <div class="field full"><label for="next-step">Normal next step for a new lead</label><textarea id="next-step" name="next-step" placeholder="Confirm the project location and phone number, then offer a discovery call."></textarea></div>
-          <div class="field full"><label for="never-invent">What it must never invent</label><textarea id="never-invent" name="never-invent">Pricing, availability, project scope, policies, completion dates, or promises.</textarea></div>
-          <div class="field full"><label for="escalate">What always needs owner review</label><textarea id="escalate" name="escalate">Complaints, refunds, cancellations, legal threats, safety concerns, payment disputes, scope changes, discounts, and firm scheduling commitments.</textarea></div>
-          <div class="field full"><label for="signature">Email signature</label><input id="signature" name="signature" placeholder="Name / Company / Phone" /></div>
+          <div class="field"><label for="company">Company name · required</label><input id="company" name="company" placeholder="Smith Outdoor Living" required /></div>
+          <div class="field"><label for="area">Service area · required</label><input id="area" name="area" placeholder="Boise and the Treasure Valley" required /></div>
+          <div class="field full"><label for="services">Services · required</label><input id="services" name="services" placeholder="Paver patios, retaining walls, outdoor kitchens" required /></div>
+          <div class="field full"><label for="next-step">Normal next step for a new lead · required</label><textarea id="next-step" name="next-step" placeholder="Confirm the project location and phone number, then offer a discovery call." required></textarea></div>
+          <details class="advanced-fields"><summary>Optional: customize the voice and guardrails</summary><div class="field-grid">
+            <div class="field full"><label for="customers">Who you serve</label><input id="customers" name="customers" placeholder="Homeowners planning outdoor-living projects" /></div>
+            <div class="field full"><label for="voice">How your emails should sound</label><input id="voice" name="voice" value="Helpful, direct, calm, plainspoken, and never pushy. Use short paragraphs." /></div>
+            <div class="field full"><label for="never-invent">What it must never invent</label><textarea id="never-invent" name="never-invent">Pricing, availability, project scope, policies, completion dates, or promises.</textarea></div>
+            <div class="field full"><label for="escalate">What always needs owner review</label><textarea id="escalate" name="escalate">Complaints, refunds, cancellations, legal threats, safety concerns, payment disputes, scope changes, discounts, and firm scheduling commitments.</textarea></div>
+            <div class="field full"><label for="signature">Email signature</label><input id="signature" name="signature" placeholder="Name / Company / Phone" /></div>
+          </div></details>
         </div>
         <div class="form-actions"><button class="btn btn-primary" type="submit">Update my prompt</button><span class="copy-status" id="context-status" role="status" aria-live="polite"></span></div>
       </form>
@@ -362,25 +363,12 @@
 
   <section class="prompt-section" id="prompt">
     <div class="container">
-      <div class="section-head narrow"><div class="section-tag">Copy + paste</div><h2>Give the agent its job.</h2><p>The company information you entered above is already included here. Copy this complete prompt into ChatGPT, then ask it to repeat back what it can do, what it cannot do, and what still needs a human.</p></div>
+      <div class="section-head narrow"><div class="section-tag">Copy + paste</div><h2>Give the agent one clear job.</h2><p>Your company information is already included. Copy the completed prompt into ChatGPT and run it manually before you add a schedule.</p></div>
+      <div class="prompt-overview"><div><strong>When the answer is clear</strong>Create one draft and show it to you.</div><div><strong>When information is missing</strong>Ask one clear question and do not draft.</div><div><strong>Every time</strong>Show the email, preserve context, and never send.</div></div>
       <div class="prompt-shell">
         <div class="prompt-head"><span>Contractor customer email draft agent</span><button class="copy-btn" type="button" data-copy="agent-prompt">Copy complete prompt</button></div>
 <pre id="agent-prompt">ROLE
-Act as our Contractor Customer Email Draft Agent.
-
-ONE-TIME VOICE LEARNING SETUP
-Before the first inbox run, review my sent email replies from the last 180 days so you can learn how I naturally communicate.
-
-Work through my sent replies in manageable batches until you have reviewed the full 180-day period. Focus only on words written by me. Ignore automated messages, marketing broadcasts, quoted thread history, signatures, disclaimers, templates written by someone else, and replies clearly sent by another team member.
-
-Build a MY EMAIL VOICE PROFILE that captures:
-- Typical tone, vocabulary, sentence length, and paragraph length.
-- How I open and close emails.
-- How direct, warm, casual, or detailed I normally am.
-- Common phrases, transitions, and ways I explain next steps.
-- How the style changes for leads, current customers, vendors, complaints, and internal conversations.
-
-Show the voice profile to me for approval before using it. If you cannot access or review the full 180 days, clearly say what you were able to review and what limitation stopped you. Do not treat my old emails as approved facts, pricing, policies, promises, or current business rules. Use them only to learn my communication style. Do not repeat this 180-day review during every scheduled inbox run unless I ask you to refresh the profile.
+Act as my Contractor Customer Email Draft Agent.
 
 SCOPE
 Review new or unprocessed customer and lead email only. Ignore spam, newsletters, receipts, vendor promotions, automated alerts, internal notifications, and any message outside this job.
@@ -389,10 +377,9 @@ PROCESS
 1. Search the connected Gmail account for eligible messages.
 2. Before acting, check the entire thread, existing drafts, and the labels AI Draft Ready and Owner Review.
 3. Read the complete thread before deciding what the customer needs.
-4. For a routine message, create or update one helpful reply draft in the correct Gmail thread.
-5. Apply the label AI Draft Ready to routine drafts.
-6. For a consequential message, do not make the decision. Apply Owner Review and report what the owner needs to decide.
-7. Finish with a short run summary.
+4. If the answer is supported by the thread and my approved company context, create or update one helpful reply draft in the correct Gmail thread and apply AI Draft Ready.
+5. If a fact or owner decision is missing, do not create a draft. Apply Owner Review and ask me one clear question.
+6. If Gmail draft or label actions are unavailable, do not pretend they worked. Return the same email and proposed reply inside ChatGPT and clearly state the limitation.
 
 BOUNDARIES
 - Never send an email.
@@ -404,29 +391,31 @@ BOUNDARIES
 OWNER REVIEW CASES
 Escalate complaints, refunds, cancellations, legal threats, safety concerns, payment disputes, scope changes, discounts, firm scheduling commitments, and any message where the correct answer depends on an owner decision.
 
-RUN SUMMARY
-At the end of every run, report:
-- Number of eligible messages found.
-- Subject of each message processed.
-- Action taken: draft created, draft updated, or owner review requested.
-- Any fact or decision the owner must supply.
-- If nothing qualified, say: No eligible messages found. No changes made.
+OUTPUT
+Keep the output simple. For each email that needs my attention, show:
+- Sender and subject.
+- The full newest email, plus only the earlier thread context needed to understand it.
+- If no input is needed: the reply draft and whether it was created in Gmail or returned only in ChatGPT.
+- If input is needed: one clear question for me. Do not include a draft reply.
+
+If nothing qualified, say: No eligible messages found. No changes made.
 
 QUALITY CHECK
-Before finishing, confirm that every draft uses only facts found in the thread or approved business context, has one clear next step, follows the approved MY EMAIL VOICE PROFILE, sounds like our company, and was not sent.</pre>
+Before finishing, confirm that every draft uses only facts found in the thread or my approved company context, has one clear next step, sounds like me, and was not sent.</pre>
       </div>
-      <p class="prompt-note">First test command: <strong>Run the email agent once now. Process only the newest unread test message. Create the draft and label it, but do not send anything. Then report exactly what you changed.</strong></p>
-    </div>
-  </section>
+      <p class="prompt-note">First test command: <strong>Run the email agent once now. Process only the newest unread test message. Follow the draft-only rules, do not send anything, and show me the result.</strong></p>
+      <details class="voice-upgrade"><summary>Optional Level 2: teach it your voice from sent emails</summary><div class="voice-upgrade-body"><p>Get the basic workflow working first. Then use this separate prompt to build a deeper voice profile from your own sent email.</p><div class="prompt-shell"><div class="prompt-head"><span>180-day voice-learning upgrade</span><button class="copy-btn" type="button" data-copy="voice-prompt">Copy voice prompt</button></div><pre id="voice-prompt">Review my sent email replies from the last 180 days so you can learn how I naturally communicate.
 
-  <section id="schedule">
-    <div class="container">
-      <div class="section-head narrow"><div class="section-tag">Put it to work</div><h2>Now give it a schedule.</h2><p>Fixed checkpoints are easier to understand and audit than trying to make everything happen instantly. Start with once a day. Move to three checkpoints if the inbox volume justifies it.</p></div>
-      <div class="schedule-grid">
-        <div class="schedule-card"><div class="label">Once each weekday</div><h3>One morning run</h3><p>A good starting point when the inbox is light or you are still building trust.</p><div class="mini-code" id="schedule-one">Schedule this email-agent workflow to run every weekday at 8:00 AM in my local time zone. Process only new, unprocessed messages. Follow the same draft-only boundaries, avoid duplicate drafts, and return a concise summary in Scheduled. Use the connected Gmail account. Do not send emails.</div><button class="copy-btn" type="button" data-copy="schedule-one">Copy schedule</button></div>
-        <div class="schedule-card"><div class="label">Three checkpoints</div><h3>Morning, noon, and afternoon</h3><p>Use this when leads and customer questions need a few predictable passes each day.</p><div class="mini-code" id="schedule-three">Schedule this email-agent workflow to run every weekday at 8:00 AM, 12:00 PM, and 4:00 PM in my local time zone. Each run should process only new, unprocessed messages, follow the same draft-only boundaries, avoid duplicate drafts, and return a concise summary in Scheduled. Use the connected Gmail account. Do not send emails.</div><button class="copy-btn" type="button" data-copy="schedule-three">Copy schedule</button></div>
-      </div>
-      <div class="boundary"><strong>After you schedule it:</strong> open Scheduled, confirm the task is active, check the time zone, verify the correct Gmail account, and turn on the notification channels offered on your account.</div>
+Work through my sent replies in manageable batches. Focus only on words written by me. Ignore automated messages, marketing broadcasts, quoted thread history, signatures, disclaimers, templates written by someone else, and replies clearly sent by another team member.
+
+Build a MY EMAIL VOICE PROFILE that captures:
+- My typical tone, vocabulary, sentence length, and paragraph length.
+- How I open and close emails.
+- How direct, warm, casual, or detailed I normally am.
+- Common phrases, transitions, and ways I explain next steps.
+- How my style changes for leads, current customers, vendors, complaints, and internal conversations.
+
+Show the profile to me for approval before using it. If you cannot access the full 180 days, tell me what you reviewed and what stopped you. Use these emails only to learn my communication style. Do not treat old emails as approved facts, current pricing, policies, promises, or business rules. Do not repeat this review during every scheduled inbox run unless I ask you to refresh the profile.</pre></div></div></details>
     </div>
   </section>
 
@@ -441,42 +430,36 @@ Before finishing, confirm that every draft uses only facts found in the thread o
     </div>
   </section>
 
-  <section class="future" id="future-resources">
+  <section id="schedule">
     <div class="container">
-      <div class="section-head narrow"><div class="section-tag">This page will keep growing</div><h2>Built to Last resource library.</h2><p>The email agent is the first free build. Future webinar notes, templates, recordings, and tools can live here without sending people to another download every time.</p></div>
-      <div class="future-grid">
-        <div class="resource-card"><div class="card-label">Available now</div><h3>AI Email Agent Starter Kit</h3><p>The complete setup, context builder, agent prompt, schedule commands, and test inbox are all on this page. Nothing else to download.</p><div class="cta-row" style="margin-top:22px"><a class="btn btn-primary" href="#setup">Start the build</a></div></div>
-        <div class="soon-card"><div class="card-label">Future drops</div><h3>More practical builds are coming.</h3><p>The first replay is now above. Owner briefing agents, follow-up workflows, and whatever else proves useful enough to keep will be added here next.</p><div class="cta-row" style="margin-top:22px"><a class="btn btn-secondary" href="../index.html#newsletter">Get the next one</a></div></div>
-      </div>
+      <div class="section-head narrow"><div class="section-tag">Put the working version on repeat</div><h2>Start with one morning check.</h2><p>Run the prompt manually first. Once the result is right, schedule one weekday check and review the first several runs before increasing the frequency.</p></div>
+      <div class="schedule-card"><div class="label">Recommended starting point</div><h3>One weekday morning run</h3><p>Simple, predictable, and easy to review while you build trust in the workflow.</p><div class="mini-code" id="schedule-one">Schedule this email-agent workflow to run every weekday at 8:00 AM in my local time zone. Process only new, unprocessed messages. Follow the same draft-only boundaries, avoid duplicate drafts, and return the simple email-and-draft output in Scheduled. Use the connected Gmail account. Do not send emails.</div><button class="copy-btn" type="button" data-copy="schedule-one">Copy recommended schedule</button></div>
+      <details class="schedule-option"><summary>Need faster coverage? Add morning, noon, and afternoon checkpoints</summary><div class="schedule-card"><div class="label">Higher-volume inbox</div><h3>Three weekday runs</h3><p>Use this only after the morning workflow is producing dependable results.</p><div class="mini-code" id="schedule-three">Schedule this email-agent workflow to run every weekday at 8:00 AM, 12:00 PM, and 4:00 PM in my local time zone. Each run should process only new, unprocessed messages, follow the same draft-only boundaries, avoid duplicate drafts, and return the simple email-and-draft output in Scheduled. Use the connected Gmail account. Do not send emails.</div><button class="copy-btn" type="button" data-copy="schedule-three">Copy three-checkpoint schedule</button></div></details>
+      <div class="boundary"><strong>After you schedule it:</strong> open Scheduled, confirm the task is active, check the time zone and Gmail account, and turn on the notification options available on your account.</div>
     </div>
   </section>
 
   <section class="consult" id="ai-ops-consult">
-    <div class="container consult-grid">
-      <div class="consult-copy">
-        <div class="section-tag">Free one-hour AI Ops consult</div>
-        <h2>Let's build your first workflow together.</h2>
-        <p>If you got through the training and still aren't sure what to build first, book an hour with me. We'll look at the admin work that keeps landing back on your plate, pick one useful workflow, and start mapping how to build it.</p>
-        <p>This is not a generic sales call. Bring the actual process, inbox, spreadsheet, CRM, or handoff that is eating your time.</p>
-        <ul class="consult-list">
-          <li>One hour with me at no charge</li>
-          <li>Choose a useful first workflow</li>
-          <li>Define what AI can handle and where you stay involved</li>
-          <li>Leave knowing the next step to get it working</li>
-        </ul>
-        <div class="cta-row" style="margin-top:26px"><a class="btn btn-primary" href="https://api.leadconnectorhq.com/widget/booking/u6wxrgXlKhsKweYczYgZ" target="_blank" rel="noopener">Open the booking calendar</a></div>
+    <div class="container">
+      <div class="consult-grid">
+        <div class="consult-copy">
+          <div class="section-tag">Free one-hour AI Ops consult</div>
+          <h2>Let's build your first workflow together.</h2>
+          <p>Bring the admin process, inbox, spreadsheet, CRM, or handoff that keeps landing back on your plate. We'll choose one useful workflow and map the first version together.</p>
+          <ul class="consult-list">
+            <li>One hour with me at no charge</li>
+            <li>Choose a useful first workflow</li>
+            <li>Decide what AI handles and where you stay involved</li>
+            <li>Leave with a clear next step</li>
+          </ul>
+          <div class="cta-row" style="margin-top:26px"><a class="btn btn-primary" href="https://api.leadconnectorhq.com/widget/booking/u6wxrgXlKhsKweYczYgZ" target="_blank" rel="noopener" data-track="open_booking">Open the booking calendar</a></div>
+        </div>
+        <div class="calendar-shell">
+          <iframe src="https://api.leadconnectorhq.com/widget/booking/u6wxrgXlKhsKweYczYgZ" allow="payment" style="width:100%;border:none;overflow:hidden;" scrolling="no" loading="lazy" id="njqa9nVl5cuyohNqkMVC_1788306451439" title="Schedule a free one-hour AI Ops consult with Nick Conley"></iframe>
+          <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+        </div>
       </div>
-      <div class="calendar-shell">
-        <iframe src="https://api.leadconnectorhq.com/widget/booking/u6wxrgXlKhsKweYczYgZ" allow="payment" style="width:100%;border:none;overflow:hidden;" scrolling="no" id="njqa9nVl5cuyohNqkMVC_1788306451439" title="Schedule a free one-hour AI Ops consult with Nick Conley"></iframe>
-        <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
-      </div>
-    </div>
-  </section>
-
-  <section class="mason" id="mason">
-    <div class="container mason-grid">
-      <div class="mason-copy"><div class="section-tag">When one agent is not enough</div><h2>Want the whole office assistant?</h2><p>You can absolutely build the email agent yourself. But there is a point where the job gets bigger than one prompt: company knowledge, files, CRM data, production systems, permissions, team access, testing, monitoring, and keeping it all working.</p><p>That is what we are building Mason for. Mason is a custom AI office assistant that learns the business, connects to the tools the team already uses, and helps move real office work without pretending every decision should be automated.</p><ul class="mason-list"><li>Built around how your company already works</li><li>Connected to approved business tools and information</li><li>Clear permissions and human approval boundaries</li><li>Ongoing testing, training, and improvement</li></ul><a class="btn btn-primary" href="https://www.tektongrowth.com/ai-ops?utm_source=blue-collar-techy&amp;utm_medium=built-to-last-resource&amp;utm_campaign=mason" target="_blank" rel="noopener">See the AI Ops approach</a></div>
-      <aside class="mason-panel"><div class="mono">DIY vs. done with you</div><h3>Build this agent. Then decide what is worth connecting next.</h3><p>If you want help mapping the office, choosing the first high-value workflows, and building a safer system around them, tell us where the work keeps getting stuck.</p><a class="btn" href="#ai-ops-consult">Schedule an AI Ops consult</a></aside>
+      <aside class="mason-panel" id="mason"><div><div class="mono">Need more than one workflow?</div><h3>Meet Mason, the AI office assistant.</h3><p>Mason connects approved company knowledge and tools so more of the office can move without taking important decisions away from your team.</p></div><a class="btn" href="https://www.tektongrowth.com/ai-ops?utm_source=blue-collar-techy&amp;utm_medium=built-to-last-resource&amp;utm_campaign=mason" target="_blank" rel="noopener" data-track="learn_mason">See how Mason works</a></aside>
     </div>
   </section>
 </main>
@@ -528,6 +511,17 @@ Before finishing, confirm that every draft uses only facts found in the thread o
     button.addEventListener('click', () => {
       const source = document.getElementById(button.dataset.copy);
       if (source) copyText(source.textContent, button);
+    });
+  });
+
+  document.querySelectorAll('[data-track]').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'cta_click', {
+          cta_name: link.dataset.track,
+          link_url: link.href || ''
+        });
+      }
     });
   });
 
