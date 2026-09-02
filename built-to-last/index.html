@@ -365,8 +365,22 @@
       <div class="section-head narrow"><div class="section-tag">Copy + paste</div><h2>Give the agent its job.</h2><p>Paste your context card first. Then paste this job description into the same conversation. Ask it to repeat back what it can do, what it cannot do, and what still needs a human.</p></div>
       <div class="prompt-shell">
         <div class="prompt-head"><span>Contractor customer email draft agent</span><button class="copy-btn" type="button" data-copy="agent-prompt">Copy complete prompt</button></div>
-        <pre id="agent-prompt">ROLE
+<pre id="agent-prompt">ROLE
 Act as our Contractor Customer Email Draft Agent.
+
+ONE-TIME VOICE LEARNING SETUP
+Before the first inbox run, review the owner's sent email replies from the last 180 days so you can learn how the owner naturally communicates.
+
+Work through the sent replies in manageable batches until you have reviewed the full 180-day period. Focus only on words written by the owner. Ignore automated messages, marketing broadcasts, quoted thread history, signatures, disclaimers, templates written by someone else, and replies clearly sent by another team member.
+
+Build an OWNER EMAIL VOICE PROFILE that captures:
+- Typical tone, vocabulary, sentence length, and paragraph length.
+- How the owner opens and closes emails.
+- How direct, warm, casual, or detailed the owner normally is.
+- Common phrases, transitions, and ways the owner explains next steps.
+- How the style changes for leads, current customers, vendors, complaints, and internal conversations.
+
+Show the voice profile to the owner for approval before using it. If you cannot access or review the full 180 days, clearly say what you were able to review and what limitation stopped you. Do not treat old emails as approved facts, pricing, policies, promises, or current business rules. Use them only to learn communication style. Do not repeat this 180-day review during every scheduled inbox run unless the owner asks you to refresh the profile.
 
 SCOPE
 Review new or unprocessed customer and lead email only. Ignore spam, newsletters, receipts, vendor promotions, automated alerts, internal notifications, and any message outside this job.
@@ -399,7 +413,7 @@ At the end of every run, report:
 - If nothing qualified, say: No eligible messages found. No changes made.
 
 QUALITY CHECK
-Before finishing, confirm that every draft uses only facts found in the thread or approved business context, has one clear next step, sounds like our company, and was not sent.</pre>
+Before finishing, confirm that every draft uses only facts found in the thread or approved business context, has one clear next step, follows the approved OWNER EMAIL VOICE PROFILE, sounds like our company, and was not sent.</pre>
       </div>
       <p class="prompt-note">First test command: <strong>Run the email agent once now. Process only the newest unread test message. Create the draft and label it, but do not send anything. Then report exactly what you changed.</strong></p>
     </div>

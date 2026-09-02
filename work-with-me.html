@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Need it built? — Blue Collar Techy</title>
-<meta name="description" content="If the breakdowns helped but you need the work built, this page points contractors to the right next step." />
+<title>Work with Nick | Growth Systems for Contractors | Blue Collar Techy</title>
+<meta name="description" content="For $1M-$3M contractors who want Tekton Growth to build and manage practical AI systems, better marketing, stronger digital visibility, and cleaner follow-up." />
 <meta name="theme-color" content="#0d0d12" />
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://bluecollartechy.com/work-with-me" />
-<meta property="og:title" content="Need it built? — Blue Collar Techy" />
-<meta property="og:description" content="If the breakdowns helped but you need the work built, this page points contractors to the right next step." />
+<meta property="og:title" content="Work with Nick | Growth Systems for Contractors" />
+<meta property="og:description" content="Blue Collar Techy teaches the thinking. Tekton Growth builds the systems for contractors who are ready for done-for-you help." />
 <meta property="og:image" content="https://bluecollartechy.com/og-image.jpg" />
 
 <link rel="icon" type="image/png" href="logos/bct-logo-mark.png" />
@@ -171,6 +171,21 @@
     line-height: 1.55;
   }
 
+  .hero-cta {
+    display: inline-flex;
+    margin-top: 34px;
+    background: var(--accent);
+    color: #000;
+    padding: 16px 24px;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .hero-cta:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+
   /* AUDIENCE FORK */
   .audience-fork {
     padding: 64px 0 32px;
@@ -244,7 +259,10 @@
     font-size: 12px; color: var(--accent);
     letter-spacing: 0.15em; text-transform: uppercase;
     font-weight: 700;
+    display: inline-block;
   }
+  .fork-card.primary-card { border-color: rgba(255, 106, 26, 0.45); }
+  .fork-card.muted-card { cursor: default; }
   .fork-fallback {
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px; color: var(--text-faint);
@@ -253,6 +271,73 @@
   }
   .fork-fallback a { color: var(--accent); font-weight: 700; }
   .fork-fallback a:hover { color: var(--accent-bright); }
+
+
+  /* FIT / BUILD */
+  .fit-section,
+  .build-section {
+    padding: 72px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .fit-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 56px;
+    align-items: start;
+  }
+  .fit-list {
+    display: grid;
+    gap: 14px;
+  }
+  .fit-item {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 16px;
+    padding: 20px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+  }
+  .fit-item span {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+  }
+  .fit-item p {
+    color: var(--text-dim);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .build-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .build-card {
+    background: var(--bg-elev);
+    padding: 30px 26px;
+  }
+  .build-card h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+  .build-card p {
+    color: var(--text-dim);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  @media (max-width: 980px) {
+    .fit-grid { grid-template-columns: 1fr; }
+    .build-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 620px) {
+    .build-grid { grid-template-columns: 1fr; }
+    .fit-section, .build-section { padding: 56px 0; }
+  }
 
   /* FORM */
   .form-wrap {
@@ -264,6 +349,25 @@
     padding: 48px;
   }
   @media (max-width: 700px) { .form-panel { padding: 32px 24px; } }
+
+
+  .form-intro {
+    margin-bottom: 28px;
+  }
+  .form-intro h2 {
+    font-family: Archivo Black, sans-serif;
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .form-intro h2 .hi { color: var(--accent); }
+  .form-intro p {
+    color: var(--text-dim);
+    font-size: 17px;
+    line-height: 1.55;
+    max-width: 640px;
+  }
 
   .field { margin-bottom: 32px; }
   .field label {
@@ -425,9 +529,9 @@
 {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "name": "Need it built? — Blue Collar Techy",
+  "name": "Work with Nick | Blue Collar Techy",
   "url": "https://bluecollartechy.com/work-with-me.html",
-  "description": "Contact page for contractors who need help with AI, marketing, local SEO, follow-up, or systems."
+  "description": "Direct contact form to work with Nick Conley on AI, marketing, websites, reviews, follow-up, or systems for contractor businesses."
 }
 </script>
 </head>
@@ -455,56 +559,101 @@
 
 <section class="hero">
   <div class="container">
-    <div class="eyebrow">Need it built?</div>
-    <h1>If the breakdown helped, here is the <span class="hi">next step.</span></h1>
-    <p class="hero-sub">Blue Collar Techy is here to make tech, AI, marketing, and systems easier to understand. If you are a contractor and you want help turning the ideas into the actual setup, that is where Tekton Growth comes in. If you are not sure what you need yet, send the question.</p>
+    <div class="eyebrow">Work with Nick</div>
+    <h1>Ready to quit guessing and get the <span class="hi">business side built right?</span></h1>
+    <p class="hero-sub">Blue Collar Techy is where I teach contractors how AI, marketing, websites, reviews, follow-up, and systems actually fit together. Tekton Growth is where my team builds and manages it for the right contractors.</p>
+    <a class="hero-cta" href="#growth-systems-call">Book a Growth Systems Call</a>
   </div>
 </section>
 
 <section class="audience-fork">
   <div class="narrow">
-    <div class="fork-label">Two simple paths</div>
-    <h2 class="fork-heading">What do you <span class="hi">need next?</span></h2>
+    <div class="fork-label">Two lanes</div>
+    <h2 class="fork-heading">Learn it here. <span class="hi">Build it with Tekton.</span></h2>
 
     <div class="fork-grid">
-      <a class="fork-card" href="https://tektongrowth.com" target="_blank" rel="noopener">
-        <div class="tag">Contractor</div>
-        <h3>I run a contracting business and need the work built.</h3>
-        <div class="sub">Websites, Google visibility, reviews, follow-up, systems, and AI help for contractors who are past the DIY stage. This goes to Tekton Growth, my agency.</div>
-        <div class="arrow">See Tekton Growth →</div>
-      </a>
+      <div class="fork-card muted-card">
+        <div class="tag">Blue Collar Techy</div>
+        <h3>If you are still learning, stay in the content lane.</h3>
+        <div class="sub">Watch the videos, read the breakdowns, steal the frameworks, and get your head around what AI and marketing should actually do inside a contracting business.</div>
+        <a class="arrow" href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">Watch the channel →</a>
+      </div>
 
-      <a class="fork-card" href="#contact-form">
-        <div class="tag">Not sure yet</div>
-        <h3>I am trying to understand what is broken first.</h3>
-        <div class="sub">Send the question. Tell me what feels confusing: AI, your website, Google, reviews, CRM, follow-up, or the office mess behind the lead.</div>
-        <div class="arrow">Send the question →</div>
-      </a>
+      <div class="fork-card primary-card">
+        <div class="tag">Tekton Growth</div>
+        <h3>If you are ready for help, this is the build lane.</h3>
+        <div class="sub">Done-for-you AI systems, contractor marketing, websites, Google visibility, review strategy, content direction, CRM cleanup, and follow-up that a real team manages with you.</div>
+        <a class="arrow" href="#growth-systems-call">Start the call request →</a>
+      </div>
     </div>
 
-    <p class="fork-fallback">// Not ready for Tekton? Use the form. BCT stays useful either way.</p>
+    <p class="fork-fallback">// Simple filter: if you mostly need ideas, stay with Blue Collar Techy. If the business is big enough that bad systems are costing real money, talk to Tekton.</p>
   </div>
 </section>
 
-<section class="form-wrap">
+<section class="fit-section">
+  <div class="container fit-grid">
+    <div>
+      <div class="fork-label">Good fit</div>
+      <h2 class="fork-heading">This is for contractors doing about <span class="hi">$1M-$3M</span> who know the work but feel behind on the office side.</h2>
+    </div>
+    <div class="fit-list">
+      <div class="fit-item"><span>01</span><p>Your website and Google presence do not show the quality of your work.</p></div>
+      <div class="fit-item"><span>02</span><p>You get leads, but follow-up is slower or messier than it should be.</p></div>
+      <div class="fit-item"><span>03</span><p>You have tools, but no clear system tying the website, reviews, CRM, AI, and sales process together.</p></div>
+      <div class="fit-item"><span>04</span><p>You want practical AI that saves time, not another shiny app nobody uses after two weeks.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="build-section">
+  <div class="container">
+    <div class="fork-label">What Tekton helps build</div>
+    <div class="build-grid">
+      <div class="build-card">
+        <h3>Digital visibility</h3>
+        <p>Website, service pages, Google Business Profile, reviews, SEO, and the proof buyers check before they call.</p>
+      </div>
+      <div class="build-card">
+        <h3>AI inside the business</h3>
+        <p>Practical AI workflows for office tasks, content support, customer communication, planning, reporting, and decision support.</p>
+      </div>
+      <div class="build-card">
+        <h3>Follow-up and sales systems</h3>
+        <p>CRM cleanup, missed-call handling, lead routing, reminders, review asks, and a cleaner path from inquiry to booked job.</p>
+      </div>
+      <div class="build-card">
+        <h3>Marketing that makes sense</h3>
+        <p>A plan you can understand, tied to the jobs you want, the areas you serve, and the bottlenecks actually hurting the business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="form-wrap" id="growth-systems-call">
   <div class="narrow">
 
     <div class="info-grid">
       <div class="info">
         <div class="num">01</div>
-        <h3>Fill out the form</h3>
-        <p>Takes about two minutes. The more specific you are, the better I can help.</p>
+        <h3>Tell me what is messy</h3>
+        <p>Website, Google, reviews, follow-up, AI, CRM, estimating support, office handoffs, or all of it.</p>
       </div>
       <div class="info">
         <div class="num">02</div>
-        <h3>I'll read it</h3>
-        <p>Every message comes straight to me. Not a VA. Not a bot. Me.</p>
+        <h3>I will check fit</h3>
+        <p>If Tekton can help, we will set up a Growth Systems Call. If not, I will point you somewhere useful.</p>
       </div>
       <div class="info">
         <div class="num">03</div>
-        <h3>We'll figure it out</h3>
-        <p>If it's a fit, we'll jump on a call. If it's not, I'll point you to someone who can help.</p>
+        <h3>System fix</h3>
+        <p>The goal is to find the bottleneck, then decide what system should be fixed first.</p>
       </div>
+    </div>
+
+    <div class="form-intro">
+      <h2>Request a <span class="hi">Growth Systems Call</span></h2>
+      <p>Give me enough context to see the business clearly. Revenue range, trade, current setup, and the messiest bottleneck matter more than polished answers.</p>
     </div>
 
     <form class="form-panel" id="contact-form" action="#" method="POST">
@@ -531,65 +680,52 @@
         </div>
       </div>
 
-      <div class="field">
-        <label for="trade">What do you do?</label>
-        <select id="trade" name="trade">
-          <option value="">Pick one</option>
-          <option>Landscaping / Lawn Care</option>
-          <option>Hardscape / Outdoor Living</option>
-          <option>Roofing</option>
-          <option>Plumbing</option>
-          <option>HVAC</option>
-          <option>Electrical</option>
-          <option>General Contracting / Remodeling</option>
-          <option>Painting</option>
-          <option>Other Trade</option>
-          <option>Marketing Agency</option>
-          <option>Something Else</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label>What are you looking for help with? <span class="hint">(Check all that apply)</span></label>
-        <div class="checkboxes">
-          <label class="checkbox-item">
-            <input type="checkbox" name="interest" value="AI" />
-            <span>AI tools + implementation</span>
-          </label>
-          <label class="checkbox-item">
-            <input type="checkbox" name="interest" value="Local SEO" />
-            <span>Local SEO + Google Maps</span>
-          </label>
-          <label class="checkbox-item">
-            <input type="checkbox" name="interest" value="Marketing" />
-            <span>Marketing strategy</span>
-          </label>
-          <label class="checkbox-item">
-            <input type="checkbox" name="interest" value="Automations" />
-            <span>Automations + systems</span>
-          </label>
-          <label class="checkbox-item">
-            <input type="checkbox" name="interest" value="Website" />
-            <span>Website / site rebuild</span>
-          </label>
-          <label class="checkbox-item">
-            <input type="checkbox" name="interest" value="CRM" />
-            <span>CRM / follow-up</span>
-          </label>
-          <label class="checkbox-item">
-            <input type="checkbox" name="interest" value="Teardown" />
-            <span>Audit / teardown of my setup</span>
-          </label>
-          <label class="checkbox-item">
-            <input type="checkbox" name="interest" value="Not sure" />
-            <span>Not sure yet</span>
-          </label>
+      <div class="row">
+        <div class="field">
+          <label for="revenue">Rough annual revenue</label>
+          <select id="revenue" name="revenue">
+            <option value="">Pick one</option>
+            <option>Under $750k</option>
+            <option>$750k-$1M</option>
+            <option>$1M-$2M</option>
+            <option>$2M-$3M</option>
+            <option>$3M+</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="trade">What do you do?</label>
+          <select id="trade" name="trade">
+            <option value="">Pick one</option>
+            <option>Landscaping / Lawn Care</option>
+            <option>Hardscape / Outdoor Living</option>
+            <option>Roofing</option>
+            <option>Plumbing</option>
+            <option>HVAC</option>
+            <option>Electrical</option>
+            <option>General Contracting / Remodeling</option>
+            <option>Painting</option>
+            <option>Other Trade</option>
+          </select>
         </div>
       </div>
 
       <div class="field">
-        <label for="message">Tell me about your business and what you're trying to do *</label>
-        <textarea id="message" name="message" required placeholder="What's the business? What's working, what's not? What would success look like for you?"></textarea>
+        <label>What feels broken or underbuilt? <span class="hint">(Check all that apply)</span></label>
+        <div class="checkboxes">
+          <label class="checkbox-item"><input type="checkbox" name="interest" value="AI" /><span>AI workflows</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="interest" value="Visibility" /><span>Website / Google visibility</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="interest" value="Reviews" /><span>Reviews and online trust</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="interest" value="Marketing" /><span>Marketing direction</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="interest" value="Follow-up" /><span>Lead follow-up / CRM</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="interest" value="Office systems" /><span>Office systems</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="interest" value="Audit" /><span>Audit my setup</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="interest" value="Not sure" /><span>Not sure yet</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message">What is costing you time, leads, or clarity right now? *</label>
+        <textarea id="message" name="message" required placeholder="Give me the plain version. What is working? What is chaotic? What would you want cleaned up first?"></textarea>
       </div>
 
       <div class="field">
@@ -598,9 +734,9 @@
       </div>
 
       <div class="submit-row">
-        <div class="note">// I read every message personally.</div>
+        <div class="note">// I read every serious request personally.</div>
         <button type="submit" class="btn-submit">
-          Send it
+          Request a Growth Systems Call
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
         </button>
       </div>
@@ -609,12 +745,11 @@
 
     <div class="success" id="success-msg">
       <h3>Got it. Thanks for sending that.</h3>
-      <p>I'll read it and get back to you within a couple days. In the meantime, check out the YouTube channel or grab the newsletter.</p>
+      <p>I'll read it and get back to you within a couple days. In the meantime, keep learning through Blue Collar Techy.</p>
     </div>
 
   </div>
 </section>
-
 <footer>
   <div class="container">© 2026 Blue Collar Techy · Built by a contractor who went full tech</div>
 </footer>
@@ -627,7 +762,7 @@
     });
   });
 
-  // Placeholder submit handler — swap with GHL form embed or real endpoint when ready
+  // Placeholder submit handler. Swap with GHL form embed or real endpoint when ready
   document.getElementById('contact-form').addEventListener('submit', e => {
     e.preventDefault();
     document.getElementById('contact-form').style.display = 'none';
