@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-31",
+  "as_of": "2026-09-07",
   "sitemap": {
     "submitted": 20,
     "indexed": 0,
@@ -8,10 +8,10 @@
   },
   "inspections": {
     "https://bluecollartechy.com/about": {
-      "verdict": "PASS",
-      "coverage": "Submitted and indexed",
-      "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-08-21T13:48:57Z"
+      "verdict": "NEUTRAL",
+      "coverage": "Excluded by \u2018noindex\u2019 tag",
+      "indexing": "BLOCKED_BY_HTTP_HEADER",
+      "last_crawl": "2026-09-06T00:20:01Z"
     },
     "https://bluecollartechy.com/blog/contractor-seo-2026": {
       "verdict": "PASS",
@@ -44,16 +44,16 @@
       "last_crawl": "2026-06-10T04:39:17Z"
     },
     "https://bluecollartechy.com/blog/i-tested-the-99-ai-seo-tool": {
-      "verdict": "PASS",
-      "coverage": "Submitted and indexed",
-      "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-08-21T23:32:32Z"
+      "verdict": "NEUTRAL",
+      "coverage": "Excluded by \u2018noindex\u2019 tag",
+      "indexing": "BLOCKED_BY_HTTP_HEADER",
+      "last_crawl": "2026-09-07T06:49:24Z"
     },
     "https://bluecollartechy.com/blog/": {
-      "verdict": "PASS",
-      "coverage": "Submitted and indexed",
-      "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-08-08T11:28:13Z"
+      "verdict": "NEUTRAL",
+      "coverage": "Excluded by \u2018noindex\u2019 tag",
+      "indexing": "BLOCKED_BY_HTTP_HEADER",
+      "last_crawl": "2026-09-06T11:54:12Z"
     },
     "https://bluecollartechy.com/blog/market-agency-or-you": {
       "verdict": "PASS",
@@ -85,6 +85,12 @@
       "indexing": "INDEXING_ALLOWED",
       "last_crawl": "2026-08-08T08:57:33Z"
     },
+    "https://bluecollartechy.com/built-to-last/": {
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "last_crawl": "never"
+    },
     "https://bluecollartechy.com/gbp-check/": {
       "verdict": "NEUTRAL",
       "coverage": "Crawled - currently not indexed",
@@ -95,7 +101,7 @@
       "verdict": "PASS",
       "coverage": "Submitted and indexed",
       "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-08-20T09:13:50Z"
+      "last_crawl": "2026-09-02T00:31:51Z"
     },
     "https://bluecollartechy.com/market-scan/": {
       "verdict": "PASS",
@@ -104,10 +110,10 @@
       "last_crawl": "2026-07-06T03:10:10Z"
     },
     "https://bluecollartechy.com/qr-generator/": {
-      "verdict": "PASS",
-      "coverage": "Submitted and indexed",
-      "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-22T12:57:29Z"
+      "verdict": "NEUTRAL",
+      "coverage": "Excluded by \u2018noindex\u2019 tag",
+      "indexing": "BLOCKED_BY_HTTP_HEADER",
+      "last_crawl": "2026-09-06T10:39:12Z"
     },
     "https://bluecollartechy.com/resources/crew-cheat-sheet/": {
       "verdict": "PASS",
@@ -116,22 +122,22 @@
       "last_crawl": "2026-08-19T16:32:13Z"
     },
     "https://bluecollartechy.com/resources/gbp-optimization-checklist/": {
-      "verdict": "PASS",
-      "coverage": "Submitted and indexed",
-      "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-25T21:31:36Z"
+      "verdict": "NEUTRAL",
+      "coverage": "Excluded by \u2018noindex\u2019 tag",
+      "indexing": "BLOCKED_BY_HTTP_HEADER",
+      "last_crawl": "2026-09-06T13:39:15Z"
     },
     "https://bluecollartechy.com/resources/": {
-      "verdict": "PASS",
-      "coverage": "Submitted and indexed",
-      "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-08-24T23:48:46Z"
+      "verdict": "NEUTRAL",
+      "coverage": "Excluded by \u2018noindex\u2019 tag",
+      "indexing": "BLOCKED_BY_HTTP_HEADER",
+      "last_crawl": "2026-09-07T14:19:24Z"
     },
     "https://bluecollartechy.com/work-with-me": {
-      "verdict": "PASS",
-      "coverage": "Submitted and indexed",
-      "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-08-30T20:50:40Z"
+      "verdict": "NEUTRAL",
+      "coverage": "Excluded by \u2018noindex\u2019 tag",
+      "indexing": "BLOCKED_BY_HTTP_HEADER",
+      "last_crawl": "2026-09-06T08:09:08Z"
     }
   }
 }
