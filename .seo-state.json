@@ -1,7 +1,7 @@
 {
-  "as_of": "2026-09-07",
+  "as_of": "2026-09-14",
   "sitemap": {
-    "submitted": 20,
+    "submitted": 22,
     "indexed": 0,
     "errors": 1,
     "warnings": 0
@@ -14,16 +14,16 @@
       "last_crawl": "2026-09-06T00:20:01Z"
     },
     "https://bluecollartechy.com/blog/contractor-seo-2026": {
-      "verdict": "PASS",
-      "coverage": "Submitted and indexed",
-      "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-25T11:31:36Z"
+      "verdict": "NEUTRAL",
+      "coverage": "Excluded by \u2018noindex\u2019 tag",
+      "indexing": "BLOCKED_BY_HTTP_HEADER",
+      "last_crawl": "2026-09-07T17:30:48Z"
     },
     "https://bluecollartechy.com/blog/gbp-audit-15-minutes": {
-      "verdict": "PASS",
-      "coverage": "Submitted and indexed",
-      "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-08-08T06:27:29Z"
+      "verdict": "NEUTRAL",
+      "coverage": "Excluded by \u2018noindex\u2019 tag",
+      "indexing": "BLOCKED_BY_HTTP_HEADER",
+      "last_crawl": "2026-09-10T22:10:15Z"
     },
     "https://bluecollartechy.com/blog/google-ads-vs-facebook-ads-for-contractors": {
       "verdict": "NEUTRAL",
@@ -39,9 +39,9 @@
     },
     "https://bluecollartechy.com/blog/how-to-get-more-google-reviews": {
       "verdict": "NEUTRAL",
-      "coverage": "Crawled - currently not indexed",
-      "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-06-10T04:39:17Z"
+      "coverage": "Excluded by \u2018noindex\u2019 tag",
+      "indexing": "BLOCKED_BY_HTTP_HEADER",
+      "last_crawl": "2026-09-12T09:26:55Z"
     },
     "https://bluecollartechy.com/blog/i-tested-the-99-ai-seo-tool": {
       "verdict": "NEUTRAL",
@@ -56,10 +56,10 @@
       "last_crawl": "2026-09-06T11:54:12Z"
     },
     "https://bluecollartechy.com/blog/market-agency-or-you": {
-      "verdict": "PASS",
-      "coverage": "Submitted and indexed",
-      "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-25T10:16:36Z"
+      "verdict": "NEUTRAL",
+      "coverage": "Excluded by \u2018noindex\u2019 tag",
+      "indexing": "BLOCKED_BY_HTTP_HEADER",
+      "last_crawl": "2026-09-08T15:43:57Z"
     },
     "https://bluecollartechy.com/blog/market-up-sales-down": {
       "verdict": "NEUTRAL",
@@ -68,10 +68,10 @@
       "last_crawl": "2026-06-19T05:10:10Z"
     },
     "https://bluecollartechy.com/blog/small-jobs-are-marketing": {
-      "verdict": "PASS",
-      "coverage": "Submitted and indexed",
-      "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-07-25T16:31:37Z"
+      "verdict": "NEUTRAL",
+      "coverage": "Excluded by \u2018noindex\u2019 tag",
+      "indexing": "BLOCKED_BY_HTTP_HEADER",
+      "last_crawl": "2026-09-07T20:00:48Z"
     },
     "https://bluecollartechy.com/blog/ten-things-no-agency-can-fix": {
       "verdict": "NEUTRAL",
@@ -80,16 +80,16 @@
       "last_crawl": "2026-06-18T06:26:44Z"
     },
     "https://bluecollartechy.com/blog/why-your-business-isnt-showing-up-on-google-maps": {
-      "verdict": "PASS",
-      "coverage": "Submitted and indexed",
-      "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-08-08T08:57:33Z"
+      "verdict": "NEUTRAL",
+      "coverage": "Excluded by \u2018noindex\u2019 tag",
+      "indexing": "BLOCKED_BY_HTTP_HEADER",
+      "last_crawl": "2026-09-07T22:30:48Z"
     },
     "https://bluecollartechy.com/built-to-last/": {
       "verdict": "NEUTRAL",
-      "coverage": "URL is unknown to Google",
-      "indexing": "INDEXING_STATE_UNSPECIFIED",
-      "last_crawl": "never"
+      "coverage": "Excluded by \u2018noindex\u2019 tag",
+      "indexing": "BLOCKED_BY_HTTP_HEADER",
+      "last_crawl": "2026-09-07T19:38:40Z"
     },
     "https://bluecollartechy.com/gbp-check/": {
       "verdict": "NEUTRAL",
@@ -98,10 +98,10 @@
       "last_crawl": "2026-05-22T15:32:56Z"
     },
     "https://bluecollartechy.com/": {
-      "verdict": "PASS",
-      "coverage": "Submitted and indexed",
-      "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-09-02T00:31:51Z"
+      "verdict": "NEUTRAL",
+      "coverage": "Excluded by \u2018noindex\u2019 tag",
+      "indexing": "BLOCKED_BY_HTTP_HEADER",
+      "last_crawl": "2026-09-09T09:13:58Z"
     },
     "https://bluecollartechy.com/market-scan/": {
       "verdict": "PASS",
