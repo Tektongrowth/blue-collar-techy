@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-14",
+  "as_of": "2026-09-21",
   "sitemap": {
     "submitted": 22,
     "indexed": 0,
@@ -11,13 +11,13 @@
       "verdict": "NEUTRAL",
       "coverage": "Excluded by \u2018noindex\u2019 tag",
       "indexing": "BLOCKED_BY_HTTP_HEADER",
-      "last_crawl": "2026-09-06T00:20:01Z"
+      "last_crawl": "2026-09-12T08:11:54Z"
     },
     "https://bluecollartechy.com/blog/contractor-seo-2026": {
       "verdict": "NEUTRAL",
       "coverage": "Excluded by \u2018noindex\u2019 tag",
       "indexing": "BLOCKED_BY_HTTP_HEADER",
-      "last_crawl": "2026-09-07T17:30:48Z"
+      "last_crawl": "2026-09-19T01:39:01Z"
     },
     "https://bluecollartechy.com/blog/gbp-audit-15-minutes": {
       "verdict": "NEUTRAL",
@@ -53,7 +53,7 @@
       "verdict": "NEUTRAL",
       "coverage": "Excluded by \u2018noindex\u2019 tag",
       "indexing": "BLOCKED_BY_HTTP_HEADER",
-      "last_crawl": "2026-09-06T11:54:12Z"
+      "last_crawl": "2026-09-13T13:50:48Z"
     },
     "https://bluecollartechy.com/blog/market-agency-or-you": {
       "verdict": "NEUTRAL",
@@ -93,19 +93,19 @@
     },
     "https://bluecollartechy.com/gbp-check/": {
       "verdict": "NEUTRAL",
-      "coverage": "Crawled - currently not indexed",
-      "indexing": "INDEXING_ALLOWED",
-      "last_crawl": "2026-05-22T15:32:56Z"
+      "coverage": "Excluded by \u2018noindex\u2019 tag",
+      "indexing": "BLOCKED_BY_HTTP_HEADER",
+      "last_crawl": "2026-09-19T06:54:43Z"
     },
     "https://bluecollartechy.com/": {
       "verdict": "NEUTRAL",
       "coverage": "Excluded by \u2018noindex\u2019 tag",
       "indexing": "BLOCKED_BY_HTTP_HEADER",
-      "last_crawl": "2026-09-09T09:13:58Z"
+      "last_crawl": "2026-09-14T18:48:29Z"
     },
     "https://bluecollartechy.com/market-scan/": {
-      "verdict": "PASS",
-      "coverage": "Submitted and indexed",
+      "verdict": "NEUTRAL",
+      "coverage": "Crawled - currently not indexed",
       "indexing": "INDEXING_ALLOWED",
       "last_crawl": "2026-07-06T03:10:10Z"
     },
@@ -131,13 +131,13 @@
       "verdict": "NEUTRAL",
       "coverage": "Excluded by \u2018noindex\u2019 tag",
       "indexing": "BLOCKED_BY_HTTP_HEADER",
-      "last_crawl": "2026-09-07T14:19:24Z"
+      "last_crawl": "2026-09-16T06:42:37Z"
     },
     "https://bluecollartechy.com/work-with-me": {
       "verdict": "NEUTRAL",
       "coverage": "Excluded by \u2018noindex\u2019 tag",
       "indexing": "BLOCKED_BY_HTTP_HEADER",
-      "last_crawl": "2026-09-06T08:09:08Z"
+      "last_crawl": "2026-09-12T01:51:07Z"
     }
   }
 }
