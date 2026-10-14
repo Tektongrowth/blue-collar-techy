@@ -13,7 +13,7 @@
  * Required env vars:
  *   RESEND_API_KEY, RESEND_AUDIENCE_ID
  * Optional:
- *   RESEND_FROM_EMAIL (default 'Nick Conley <nick@bluecollartechy.com>')
+ *   RESEND_FROM_EMAIL (default 'Nick at Blue Collar Techy <nick@tektongrowth.com>'; bluecollartechy.com is not verified in Resend)
  *   GHL_API_KEY, GHL_LOCATION_ID — mirror subscribers into GHL as contacts
  *   GA4_MEASUREMENT_ID, GA4_MP_SECRET — server-side lead conversion tracking
  */
@@ -124,10 +124,11 @@ async function sendLeadMagnetEmail(email, magnet, env) {
     console.error('[subscribe] PDF fetch failed:', err.message);
   }
 
-  const from = env.RESEND_FROM_EMAIL || 'Nick Conley <nick@bluecollartechy.com>';
+  const from = env.RESEND_FROM_EMAIL || 'Nick at Blue Collar Techy <nick@tektongrowth.com>';
   const payload = {
     from,
     to: [email],
+    reply_to: 'nick@tektongrowth.com',
     subject: magnet.subject,
     html: magnet.html,
     text: magnet.text,
@@ -197,9 +198,10 @@ function formNameFromSource(source) {
 }
 
 async function sendGa4Event({ env, clientId, eventName, params }) {
-  if (!env.GA4_MEASUREMENT_ID || !env.GA4_MP_SECRET) return;
+  const measurementId = env.GA4_MEASUREMENT_ID || env.A4_MEASUREMENT_ID; // A4_ = typo'd name in CF env
+  if (!measurementId || !env.GA4_MP_SECRET) return;
   const url = 'https://www.google-analytics.com/mp/collect'
-    + '?measurement_id=' + encodeURIComponent(env.GA4_MEASUREMENT_ID)
+    + '?measurement_id=' + encodeURIComponent(measurementId)
     + '&api_secret=' + encodeURIComponent(env.GA4_MP_SECRET);
   const cid = clientId || (Math.floor(Math.random() * 1e10) + '.' + Math.floor(Date.now() / 1000));
   const body = {
@@ -265,6 +267,7 @@ async function pushToGhl(email, attribution, source, env) {
 
 export async function onRequestPost(context) {
   const { request, env } = context;
+  const bg = (p) => (context.waitUntil ? context.waitUntil(p) : p);
 
   let body;
   try {
@@ -302,7 +305,10 @@ export async function onRequestPost(context) {
     }
 
     // Fire-and-forget GHL push
-    pushToGhl(email, attribution, source, env).catch(() => {});
+    bg(pushToGhl(email, attribution, source, env).catch(() => {}));
+    if (!result.already_subscribed) {
+      bg(notifyLead(env, `${source || 'newsletter'} signup: ${email}`, { Email: email, Source: source || 'newsletter', Page: attribution.submission_page, 'UTM source': attribution.utm_source, Referrer: attribution.referrer }));
+    }
 
     // Fire-and-forget server-side GA4 lead event.
     // Skip for already-subscribed to avoid double-counting repeat submitters.
@@ -341,4 +347,29 @@ function json(data, status = 200) {
     status,
     headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' },
   });
+}
+
+// Internal new-lead alert (Resend). Recipient: LEAD_NOTIFY_EMAIL || SCAN_NOTIFY_EMAIL || nick@tektongrowth.com
+async function notifyLead(env, subject, fields) {
+  if (!env.RESEND_API_KEY) return;
+  const to = env.LEAD_NOTIFY_EMAIL || env.SCAN_NOTIFY_EMAIL || 'nick@tektongrowth.com';
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+  const rows = Object.entries(fields).filter(([, v]) => v !== undefined && v !== null && v !== '');
+  try {
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from: env.LEAD_NOTIFY_FROM || 'BCT Leads <leads@tektongrowth.com>', // bluecollartechy.com has no Resend DKIM; tektongrowth.com does
+        to: [to],
+        reply_to: fields.Email || undefined,
+        subject: `[BCT lead] ${subject}`,
+        html: '<table>' + rows.map(([k, v]) => `<tr><td><b>${esc(k)}</b></td><td style="white-space:pre-wrap">${esc(v)}</td></tr>`).join('') + '</table>',
+        text: rows.map(([k, v]) => `${k}: ${v}`).join('\n'),
+      }),
+    });
+    if (!res.ok) console.error('[notify]', res.status, (await res.text()).slice(0, 200));
+  } catch (e) {
+    console.error('[notify]', e.message);
+  }
 }

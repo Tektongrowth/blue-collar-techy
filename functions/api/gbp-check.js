@@ -607,7 +607,9 @@ async function pushToGHL(env, input, report) {
 // HANDLER
 // ============================================================================
 
-export async function onRequestPost({ request, env }) {
+export async function onRequestPost(context) {
+  const { request, env } = context;
+  const bg = (p) => (context.waitUntil ? context.waitUntil(p) : p);
   const respond = (obj, status = 200) =>
     new Response(JSON.stringify(obj), {
       status,
@@ -684,7 +686,8 @@ export async function onRequestPost({ request, env }) {
 
   // Push to GHL (non-blocking)
   const input = { name, email, business_name, city };
-  pushToGHL(env, input, report).catch(() => {});
+  bg(pushToGHL(env, input, report).catch(() => {}));
+  bg(notifyLead(env, `GBP Check: ${business_name} (${report.overall_score})`, { Name: name, Email: email, Business: business_name, City: city, Score: report.overall_score, Verdict: report.verdict_label }));
 
   return respond({
     ok: true,
@@ -692,4 +695,29 @@ export async function onRequestPost({ request, env }) {
     score: report.overall_score,
     verdict: report.verdict_label,
   });
+}
+
+// Internal new-lead alert (Resend). Recipient: LEAD_NOTIFY_EMAIL || SCAN_NOTIFY_EMAIL || nick@tektongrowth.com
+async function notifyLead(env, subject, fields) {
+  if (!env.RESEND_API_KEY) return;
+  const to = env.LEAD_NOTIFY_EMAIL || env.SCAN_NOTIFY_EMAIL || 'nick@tektongrowth.com';
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+  const rows = Object.entries(fields).filter(([, v]) => v !== undefined && v !== null && v !== '');
+  try {
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from: env.LEAD_NOTIFY_FROM || 'BCT Leads <leads@tektongrowth.com>', // bluecollartechy.com has no Resend DKIM; tektongrowth.com does
+        to: [to],
+        reply_to: fields.Email || undefined,
+        subject: `[BCT lead] ${subject}`,
+        html: '<table>' + rows.map(([k, v]) => `<tr><td><b>${esc(k)}</b></td><td style="white-space:pre-wrap">${esc(v)}</td></tr>`).join('') + '</table>',
+        text: rows.map(([k, v]) => `${k}: ${v}`).join('\n'),
+      }),
+    });
+    if (!res.ok) console.error('[notify]', res.status, (await res.text()).slice(0, 200));
+  } catch (e) {
+    console.error('[notify]', e.message);
+  }
 }

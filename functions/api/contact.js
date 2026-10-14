@@ -13,7 +13,9 @@ function json(data, status = 200) {
   });
 }
 
-export async function onRequestPost({ request, env }) {
+export async function onRequestPost(context) {
+  const { request, env } = context;
+  const bg = (p) => (context.waitUntil ? context.waitUntil(p) : p);
   let body;
   try {
     body = await request.json();
@@ -88,5 +90,31 @@ export async function onRequestPost({ request, env }) {
     }).catch((e) => console.error('[contact] note', e.message));
   }
 
+  bg(notifyLead(env, `Work With Me: ${name}${body.business ? ' / ' + body.business : ''}`, { Name: name, Email: email, Phone: body.phone, Business: body.business, Revenue: body.revenue, Trade: body.trade, Interests: interests.join(', '), Website: website, Message: message, GHL: contactId ? `https://app.gohighlevel.com/v2/location/${env.GHL_LOCATION_ID}/contacts/detail/${contactId}` : '' }));
   return json({ ok: true });
+}
+
+// Internal new-lead alert (Resend). Recipient: LEAD_NOTIFY_EMAIL || SCAN_NOTIFY_EMAIL || nick@tektongrowth.com
+async function notifyLead(env, subject, fields) {
+  if (!env.RESEND_API_KEY) return;
+  const to = env.LEAD_NOTIFY_EMAIL || env.SCAN_NOTIFY_EMAIL || 'nick@tektongrowth.com';
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+  const rows = Object.entries(fields).filter(([, v]) => v !== undefined && v !== null && v !== '');
+  try {
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from: env.LEAD_NOTIFY_FROM || 'BCT Leads <leads@tektongrowth.com>', // bluecollartechy.com has no Resend DKIM; tektongrowth.com does
+        to: [to],
+        reply_to: fields.Email || undefined,
+        subject: `[BCT lead] ${subject}`,
+        html: '<table>' + rows.map(([k, v]) => `<tr><td><b>${esc(k)}</b></td><td style="white-space:pre-wrap">${esc(v)}</td></tr>`).join('') + '</table>',
+        text: rows.map(([k, v]) => `${k}: ${v}`).join('\n'),
+      }),
+    });
+    if (!res.ok) console.error('[notify]', res.status, (await res.text()).slice(0, 200));
+  } catch (e) {
+    console.error('[notify]', e.message);
+  }
 }
