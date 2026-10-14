@@ -32,13 +32,23 @@ jobs:
             echo "is_preview=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Collect the site files
+        # Only the site ships. Notes, plans, scripts and settings in this repo (Markdown, Python, dotfiles,
+        # content-ops/, youtube-scripts/) stay off the web; functions/ deploys as Pages Functions from the repo root.
+        run: |
+          mkdir site
+          git ls-files -z | grep -zvE '(^|/)[.]|[.]md$|[.]py$|^(content-ops|youtube-scripts|functions|site)/' \
+            | tar --null -T - -cf - | tar -xf - -C site
+          test -f site/index.html
+          ! find site -name '*.md' | grep -q .
+
       - name: Deploy
         id: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name=blue-collar-techy --branch=${{ steps.branch.outputs.cf_branch }} --commit-dirty=true
+          command: pages deploy site --project-name=blue-collar-techy --branch=${{ steps.branch.outputs.cf_branch }} --commit-dirty=true
 
       - name: Fetch CF Pages alias URL
         if: steps.branch.outputs.is_preview == 'true'

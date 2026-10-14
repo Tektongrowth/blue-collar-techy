@@ -21,8 +21,8 @@ In Cloudflare Pages dashboard → your project → **Settings → Environment va
 
 | Name | Value | Source |
 |------|-------|--------|
-| `DATAFORSEO_LOGIN` | `nick@tektongrowth.com` | existing account |
-| `DATAFORSEO_PASSWORD` | `af230e7ad009b991` | existing account |
+| `DATAFORSEO_LOGIN` | your DataForSEO login | existing account |
+| `DATAFORSEO_PASSWORD` | your DataForSEO API password | existing account |
 
 ### Required for the newsletter (`/api/subscribe`)
 
@@ -78,8 +78,8 @@ npm install -g wrangler
 Create `.dev.vars` in the project root (gitignored):
 
 ```
-DATAFORSEO_LOGIN=nick@tektongrowth.com
-DATAFORSEO_PASSWORD=af230e7ad009b991
+DATAFORSEO_LOGIN=your-dataforseo-login
+DATAFORSEO_PASSWORD=your-dataforseo-api-password
 RESEND_API_KEY=re_xxx
 RESEND_AUDIENCE_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
