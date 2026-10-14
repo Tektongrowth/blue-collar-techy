@@ -1,2 +1,6 @@
-/*
-  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet
+# Sitewide noindex removed 2026-10-13 (approved by Nick). Only non-content/admin paths stay out of search.
+# (*.pages.dev hosts are noindexed by functions/_middleware.js.)
+/utm/*
+  X-Robots-Tag: noindex, nofollow
+/under-construction*
+  X-Robots-Tag: noindex, nofollow
