@@ -13,7 +13,7 @@
  * Required env vars:
  *   RESEND_API_KEY, RESEND_AUDIENCE_ID
  * Optional:
- *   RESEND_FROM_EMAIL (default 'Nick Conley <nick@bluecollartechy.com>')
+ *   RESEND_FROM_EMAIL (default 'Nick at Blue Collar Techy <nick@tektongrowth.com>'; bluecollartechy.com is not verified in Resend)
  *   GHL_API_KEY, GHL_LOCATION_ID — mirror subscribers into GHL as contacts
  *   GA4_MEASUREMENT_ID, GA4_MP_SECRET — server-side lead conversion tracking
  */
@@ -124,10 +124,11 @@ async function sendLeadMagnetEmail(email, magnet, env) {
     console.error('[subscribe] PDF fetch failed:', err.message);
   }
 
-  const from = env.RESEND_FROM_EMAIL || 'Nick Conley <nick@bluecollartechy.com>';
+  const from = env.RESEND_FROM_EMAIL || 'Nick at Blue Collar Techy <nick@tektongrowth.com>';
   const payload = {
     from,
     to: [email],
+    reply_to: 'nick@tektongrowth.com',
     subject: magnet.subject,
     html: magnet.html,
     text: magnet.text,
