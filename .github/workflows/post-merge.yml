@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Determine if a new post was added
@@ -58,6 +58,11 @@ jobs:
           import pathlib, datetime, re
           root = pathlib.Path(".")
           today = datetime.date.today().isoformat()
+          import subprocess
+          def lastmod(p):
+              # Real per-page lastmod: date of the last commit that touched the file.
+              d = subprocess.run(["git", "log", "-1", "--format=%cs", "--", str(p)], capture_output=True, text=True).stdout.strip()
+              return d or today
 
           SKIP = {
               "under-construction.html",
@@ -78,14 +83,14 @@ jobs:
                   continue
               m = re.search(r'rel="canonical"\s+href="([^"]+)"', text)
               if m:
-                  urls.append((m.group(1), today))
+                  urls.append((m.group(1), lastmod(path)))
                   continue
               # Fallback: derive from filename
               if path.name == "index.html":
                   loc = "https://bluecollartechy.com/" if rel == "index.html" else f"https://bluecollartechy.com/{rel[:-len('index.html')]}"
               else:
                   loc = f"https://bluecollartechy.com/{rel}"
-              urls.append((loc, today))
+              urls.append((loc, lastmod(path)))
 
           # Dedupe
           seen = set(); uniq = []
