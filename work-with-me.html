@@ -656,7 +656,8 @@
       <p>Give me enough context to see the business clearly. Revenue range, trade, current setup, and the messiest bottleneck matter more than polished answers.</p>
     </div>
 
-    <form class="form-panel" id="contact-form" action="#" method="POST">
+    <form class="form-panel" id="contact-form" action="/api/contact" method="POST">
+      <input type="text" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;" />
 
       <div class="row">
         <div class="field">
@@ -762,13 +763,30 @@
     });
   });
 
-  // Placeholder submit handler. Swap with GHL form embed or real endpoint when ready
-  document.getElementById('contact-form').addEventListener('submit', e => {
+  // Submit to /api/contact (Cloudflare Pages Function -> GHL contact + note)
+  document.getElementById('contact-form').addEventListener('submit', async e => {
     e.preventDefault();
-    document.getElementById('contact-form').style.display = 'none';
-    document.getElementById('success-msg').classList.add('on');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    // TODO: wire to GHL form handler or fetch('<endpoint>', { method: 'POST', body: new FormData(e.target) })
+    const form = e.target;
+    const btn = form.querySelector('.btn-submit');
+    const fd = new FormData(form);
+    const payload = Object.fromEntries(fd.entries());
+    payload.interest = fd.getAll('interest');
+    btn.disabled = true;
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      form.style.display = 'none';
+      document.getElementById('success-msg').classList.add('on');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (window.gtag) window.gtag('event', 'generate_lead', { form: 'work-with-me' });
+    } catch (err) {
+      btn.disabled = false;
+      alert('Sorry, that did not go through. Please try again, or book directly at https://tektongrowth.com.');
+    }
   });
 </script>
 
