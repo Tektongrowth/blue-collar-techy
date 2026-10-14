@@ -826,6 +826,7 @@ async function pushGhlContact(payload, env) {
 
 export async function onRequestPost(context) {
   const { request, env } = context;
+  const bg = (p) => (context.waitUntil ? context.waitUntil(p) : p);
 
   let body;
   try {
@@ -872,7 +873,8 @@ export async function onRequestPost(context) {
 
     // 3. Push lead to GHL (non-blocking — scan still succeeds if GHL hiccups)
     const attribution = (body && body.attribution) || {};
-    pushGhlContact({ name, email, industry, city, attribution }, env).catch(() => {});
+    bg(pushGhlContact({ name, email, industry, city, attribution }, env).catch(() => {}));
+    bg(notifyLead(env, `Market Scan: ${name} (${industry}, ${city})`, { Name: name, Email: email, Industry: industry, City: city, 'UTM source': attribution.utm_source, Referrer: attribution.referrer }));
 
     // 4. Return structured report to the browser
     return json({
@@ -905,4 +907,29 @@ function json(data, status = 200) {
     status,
     headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' },
   });
+}
+
+// Internal new-lead alert (Resend). Recipient: LEAD_NOTIFY_EMAIL || SCAN_NOTIFY_EMAIL || nick@tektongrowth.com
+async function notifyLead(env, subject, fields) {
+  if (!env.RESEND_API_KEY) return;
+  const to = env.LEAD_NOTIFY_EMAIL || env.SCAN_NOTIFY_EMAIL || 'nick@tektongrowth.com';
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+  const rows = Object.entries(fields).filter(([, v]) => v !== undefined && v !== null && v !== '');
+  try {
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from: env.RESEND_FROM_EMAIL || 'Blue Collar Techy <nick@bluecollartechy.com>',
+        to: [to],
+        reply_to: fields.Email || undefined,
+        subject: `[BCT lead] ${subject}`,
+        html: '<table>' + rows.map(([k, v]) => `<tr><td><b>${esc(k)}</b></td><td style="white-space:pre-wrap">${esc(v)}</td></tr>`).join('') + '</table>',
+        text: rows.map(([k, v]) => `${k}: ${v}`).join('\n'),
+      }),
+    });
+    if (!res.ok) console.error('[notify]', res.status, (await res.text()).slice(0, 200));
+  } catch (e) {
+    console.error('[notify]', e.message);
+  }
 }
