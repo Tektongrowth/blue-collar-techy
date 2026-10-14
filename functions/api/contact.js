@@ -105,7 +105,7 @@ async function notifyLead(env, subject, fields) {
       method: 'POST',
       headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        from: env.RESEND_FROM_EMAIL || 'Blue Collar Techy <nick@bluecollartechy.com>',
+        from: env.LEAD_NOTIFY_FROM || 'BCT Leads <leads@tektongrowth.com>', // bluecollartechy.com has no Resend DKIM; tektongrowth.com does
         to: [to],
         reply_to: fields.Email || undefined,
         subject: `[BCT lead] ${subject}`,
