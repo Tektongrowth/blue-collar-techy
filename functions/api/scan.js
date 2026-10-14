@@ -729,11 +729,11 @@ function escapeHtml(s) {
 
 async function sendEmail(to, name, subject, html, env) {
   const body = {
-    from: env.RESEND_FROM_EMAIL || 'Blue Collar Techy <nick@bluecollartechy.com>',
+    from: env.RESEND_FROM_EMAIL || 'Nick at Blue Collar Techy <nick@tektongrowth.com>',
     to: [to],
     subject,
     html,
-    reply_to: 'nick@bluecollartechy.com',
+    reply_to: 'nick@tektongrowth.com',
   };
   if (env.SCAN_NOTIFY_EMAIL) body.bcc = [env.SCAN_NOTIFY_EMAIL];
 
@@ -856,7 +856,7 @@ export async function onRequestPost(context) {
     return json({ error: `Unknown industry: ${industry}` }, 400);
   }
   if (!env.DATAFORSEO_LOGIN || !env.DATAFORSEO_PASSWORD) {
-    return json({ error: 'Scan service is not configured. Please email nick@bluecollartechy.com.' }, 500);
+    return json({ error: 'Scan service is not configured. Please email nick@tektongrowth.com.' }, 500);
   }
 
   const locationName = normalizeLocation(city);
