@@ -729,7 +729,7 @@ function escapeHtml(s) {
 
 async function sendEmail(to, name, subject, html, env) {
   const body = {
-    from: env.RESEND_FROM_EMAIL || 'Nick at Blue Collar Techy <nick@tektongrowth.com>',
+    from: env.RESEND_FROM_EMAIL || 'Nick at Blue Collar Techy <nick@bluecollartechy.com>',
     to: [to],
     subject,
     html,
@@ -920,7 +920,7 @@ async function notifyLead(env, subject, fields) {
       method: 'POST',
       headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        from: env.LEAD_NOTIFY_FROM || 'BCT Leads <leads@tektongrowth.com>', // bluecollartechy.com has no Resend DKIM; tektongrowth.com does
+        from: env.LEAD_NOTIFY_FROM || 'BCT Leads <leads@bluecollartechy.com>',
         to: [to],
         reply_to: fields.Email || undefined,
         subject: `[BCT lead] ${subject}`,
