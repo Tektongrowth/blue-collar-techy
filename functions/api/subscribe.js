@@ -299,9 +299,9 @@ export async function onRequestPost(context) {
 
     // Fire lead magnet delivery email if source matches a catalog entry
     if (magnet) {
-      sendLeadMagnetEmail(email, magnet, env).catch(err => {
+      bg(sendLeadMagnetEmail(email, magnet, env).catch(err => {
         console.error('[subscribe] lead magnet send failed:', err.message);
-      });
+      }));
     }
 
     // Fire-and-forget GHL push
