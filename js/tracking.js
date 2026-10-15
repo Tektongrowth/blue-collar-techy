@@ -28,6 +28,7 @@
   const KEY = 'bct_attr';
   const TTL_MS = 90 * 24 * 60 * 60 * 1000; // 90 days
   const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  const CLICK_KEYS = ['gclid', 'fbclid'];
 
   function readStored() {
     try {
@@ -50,12 +51,14 @@
   const params = new URLSearchParams(location.search);
   let updated = false;
 
-  // First-touch UTM capture — only set if we don't already have a source
-  if (!stored.utm_source && !stored.utm_campaign) {
-    UTM_KEYS.forEach(function (k) {
+  // First-touch capture of campaign data. UTMs and click IDs (gclid/fbclid) are only
+  // stored if we don't already have a campaign source, so an earlier plain visit can still
+  // be upgraded by a later tagged/paid click but never overwritten by a later one.
+  if (!stored.utm_source && !stored.utm_campaign && !stored.gclid && !stored.fbclid) {
+    UTM_KEYS.concat(CLICK_KEYS).forEach(function (k) {
       const val = params.get(k);
       if (val) {
-        stored[k] = String(val).slice(0, 120);
+        stored[k] = String(val).slice(0, k.indexOf('utm_') === 0 ? 120 : 200);
         updated = true;
       }
     });
@@ -64,7 +67,9 @@
   // Landing page + referrer captured once per window
   if (!stored.landing_page) {
     stored.landing_page = location.pathname;
+    stored.landing_url = location.origin + location.pathname + location.search;
     stored.landing_referrer = document.referrer || '';
+    stored.first_seen = new Date().toISOString();
     updated = true;
   }
 
@@ -78,8 +83,12 @@
       utm_campaign: s.utm_campaign || '',
       utm_content: s.utm_content || '',
       utm_term: s.utm_term || '',
+      gclid: s.gclid || '',
+      fbclid: s.fbclid || '',
       referrer: s.landing_referrer || document.referrer || '',
       landing_page: s.landing_page || location.pathname,
+      landing_url: s.landing_url || (location.origin + location.pathname + location.search),
+      first_seen: s.first_seen || '',
       submission_page: location.pathname,
     };
   };
