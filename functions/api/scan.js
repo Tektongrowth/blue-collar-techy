@@ -763,6 +763,8 @@ function slugTag(prefix, value) {
   return slug ? `${prefix}-${slug}` : null;
 }
 
+import { sanitizeAttribution, applyAttributionToContact, addAttributionNote, attributionNoteLines, attributionEmailFields } from '../_lib/attribution.js';
+
 function buildAttributionTags(a) {
   if (!a || typeof a !== 'object') return [];
   const tags = [];
@@ -789,6 +791,7 @@ async function pushGhlContact(payload, env) {
   const source = (payload.attribution && payload.attribution.utm_source)
     ? `BCT Market Scan · ${payload.attribution.utm_source}`
     : 'Blue Collar Techy · Market Scan';
+  const attr = sanitizeAttribution(payload.attribution);
   const body = {
     locationId: env.GHL_LOCATION_ID,
     firstName: payload.name.split(' ')[0] || payload.name,
@@ -799,7 +802,7 @@ async function pushGhlContact(payload, env) {
     customFields: [],
   };
   try {
-    const res = await fetch('https://services.leadconnectorhq.com/contacts/', {
+    const res = await fetch('https://services.leadconnectorhq.com/contacts/upsert', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${env.GHL_API_KEY}`,
@@ -807,13 +810,15 @@ async function pushGhlContact(payload, env) {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
       },
-      body: JSON.stringify(body),
+      body: JSON.stringify(applyAttributionToContact(body, attr)),
     });
     if (!res.ok) {
       console.error('[ghl]', res.status, (await res.text()).slice(0, 200));
       return null;
     }
-    return await res.json();
+    const data = await res.json();
+    await addAttributionNote(env, data && data.contact && data.contact.id, attr, [`Market Scan: ${payload.industry}, ${payload.city}`]);
+    return data;
   } catch (e) {
     console.error('[ghl]', e.message);
     return null;
@@ -874,7 +879,7 @@ export async function onRequestPost(context) {
     // 3. Push lead to GHL (non-blocking — scan still succeeds if GHL hiccups)
     const attribution = (body && body.attribution) || {};
     bg(pushGhlContact({ name, email, industry, city, attribution }, env).catch(() => {}));
-    bg(notifyLead(env, `Market Scan: ${name} (${industry}, ${city})`, { Name: name, Email: email, Industry: industry, City: city, 'UTM source': attribution.utm_source, Referrer: attribution.referrer }));
+    bg(notifyLead(env, `Market Scan: ${name} (${industry}, ${city})`, { Name: name, Email: email, Industry: industry, City: city, 'UTM source': attribution.utm_source, Referrer: attribution.referrer, ...attributionEmailFields(sanitizeAttribution(attribution)) }));
 
     // 4. Return structured report to the browser
     return json({

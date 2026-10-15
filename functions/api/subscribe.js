@@ -18,6 +18,8 @@
  *   GA4_MEASUREMENT_ID, GA4_MP_SECRET — server-side lead conversion tracking
  */
 
+import { sanitizeAttribution, applyAttributionToContact, addAttributionNote, attributionNoteLines, attributionEmailFields } from '../_lib/attribution.js';
+
 // Lead magnet catalog. Add new entries here to enable PDF delivery for a new resource.
 const LEAD_MAGNETS = {
   'gbp-optimization-checklist': {
@@ -239,7 +241,8 @@ async function pushToGhl(email, attribution, source, env) {
       ? `BCT Newsletter · ${attribution.utm_source}`
       : 'Blue Collar Techy · Newsletter';
   try {
-    const res = await fetch('https://services.leadconnectorhq.com/contacts/', {
+    const attr = sanitizeAttribution(attribution);
+    const res = await fetch('https://services.leadconnectorhq.com/contacts/upsert', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${env.GHL_API_KEY}`,
@@ -247,18 +250,20 @@ async function pushToGhl(email, attribution, source, env) {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
       },
-      body: JSON.stringify({
+      body: JSON.stringify(applyAttributionToContact({
         locationId: env.GHL_LOCATION_ID,
         email,
         tags,
         source: sourceLabel,
-      }),
+      }, attr)),
     });
     if (!res.ok) {
       console.error('[ghl]', res.status, (await res.text()).slice(0, 200));
       return null;
     }
-    return await res.json();
+    const data = await res.json();
+    await addAttributionNote(env, data && data.contact && data.contact.id, attr, [`Signup: ${sourceLabel}`]);
+    return data;
   } catch (e) {
     console.error('[ghl]', e.message);
     return null;
@@ -307,7 +312,7 @@ export async function onRequestPost(context) {
     // Fire-and-forget GHL push
     bg(pushToGhl(email, attribution, source, env).catch(() => {}));
     if (!result.already_subscribed) {
-      bg(notifyLead(env, `${source || 'newsletter'} signup: ${email}`, { Email: email, Source: source || 'newsletter', Page: attribution.submission_page, 'UTM source': attribution.utm_source, Referrer: attribution.referrer }));
+      bg(notifyLead(env, `${source || 'newsletter'} signup: ${email}`, { Email: email, Source: source || 'newsletter', Page: attribution.submission_page, 'UTM source': attribution.utm_source, Referrer: attribution.referrer, ...attributionEmailFields(sanitizeAttribution(attribution)) }));
     }
 
     // Fire-and-forget server-side GA4 lead event.

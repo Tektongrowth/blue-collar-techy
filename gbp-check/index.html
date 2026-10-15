@@ -649,6 +649,7 @@
     show('scanning');
 
     const data = Object.fromEntries(new FormData(form));
+    data.attribution = window.bctGetAttribution ? window.bctGetAttribution() : {};
 
     try {
       const r = await fetch('/api/gbp-check', {

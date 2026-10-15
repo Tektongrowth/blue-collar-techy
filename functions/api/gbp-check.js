@@ -565,15 +565,17 @@ function renderReportHtml(report, input) {
   `;
 }
 
+import { sanitizeAttribution, applyAttributionToContact, addAttributionNote, attributionNoteLines, attributionEmailFields } from '../_lib/attribution.js';
+
 // ============================================================================
 // GHL PUSH (optional, non-blocking)
 // ============================================================================
 
-async function pushToGHL(env, input, report) {
+async function pushToGHL(env, input, report, attr = {}) {
   if (!env.GHL_API_KEY || !env.GHL_LOCATION_ID) return { skipped: true };
   const [firstName, ...rest] = input.name.split(' ');
   const lastName = rest.join(' ');
-  const payload = {
+  const payload = applyAttributionToContact({
     firstName: firstName || input.name,
     lastName: lastName || '',
     email: input.email,
@@ -585,9 +587,9 @@ async function pushToGHL(env, input, report) {
       { key: 'gbp_city', field_value: input.city },
       { key: 'gbp_score', field_value: String(report.overall_score) },
     ],
-  };
+  }, attr);
   try {
-    const r = await fetch('https://services.leadconnectorhq.com/contacts/', {
+    const r = await fetch('https://services.leadconnectorhq.com/contacts/upsert', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${env.GHL_API_KEY}`,
@@ -597,6 +599,8 @@ async function pushToGHL(env, input, report) {
       body: JSON.stringify(payload),
     });
     if (!r.ok) return { ok: false, error: await r.text().catch(() => '') };
+    const data = await r.json().catch(() => null);
+    await addAttributionNote(env, data && data.contact && data.contact.id, attr, [`GBP Check: ${input.business_name} (${input.city}), score ${report.overall_score}`]);
     return { ok: true };
   } catch (e) {
     return { ok: false, error: e.message };
@@ -686,8 +690,9 @@ export async function onRequestPost(context) {
 
   // Push to GHL (non-blocking)
   const input = { name, email, business_name, city };
-  bg(pushToGHL(env, input, report).catch(() => {}));
-  bg(notifyLead(env, `GBP Check: ${business_name} (${report.overall_score})`, { Name: name, Email: email, Business: business_name, City: city, Score: report.overall_score, Verdict: report.verdict_label }));
+  const attr = sanitizeAttribution(body.attribution);
+  bg(pushToGHL(env, input, report, attr).catch(() => {}));
+  bg(notifyLead(env, `GBP Check: ${business_name} (${report.overall_score})`, { Name: name, Email: email, Business: business_name, City: city, Score: report.overall_score, Verdict: report.verdict_label, ...attributionEmailFields(attr) }));
 
   return respond({
     ok: true,

@@ -333,7 +333,7 @@ form.addEventListener('submit', async (e) => {
     const res = await fetch('/api/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, website, source: 'gbp-optimization-checklist' }),
+      body: JSON.stringify({ email, website, source: 'gbp-optimization-checklist', attribution: window.bctGetAttribution ? window.bctGetAttribution() : {} }),
     });
     const data = await res.json().catch(() => ({}));
     if (res.ok && data.ok) {
@@ -350,5 +350,6 @@ form.addEventListener('submit', async (e) => {
   }
 });
 </script>
+<script src="/js/tracking.js"></script>
 </body>
 </html>
