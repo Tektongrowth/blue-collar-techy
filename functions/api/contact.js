@@ -6,6 +6,8 @@
  * functions use), tags it `bct-work-with-me`, and attaches the full request as a note.
  * Returns 502 if GHL rejects it so the page can show a fallback instead of a fake success.
  */
+import { sanitizeAttribution, applyAttributionToContact, addAttributionNote, attributionNoteLines, attributionEmailFields } from '../_lib/attribution.js';
+
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
@@ -41,6 +43,7 @@ export async function onRequestPost(context) {
   const interests = Array.isArray(body.interest) ? body.interest.map(String).slice(0, 10) : [];
   const website = String(body.website || '').trim().slice(0, 300);
   const [firstName, ...rest] = name.split(/\s+/);
+  const attr = sanitizeAttribution(body.attribution);
   const headers = {
     Authorization: `Bearer ${env.GHL_API_KEY}`,
     Version: '2021-07-28',
@@ -51,7 +54,7 @@ export async function onRequestPost(context) {
   const res = await fetch('https://services.leadconnectorhq.com/contacts/upsert', {
     method: 'POST',
     headers,
-    body: JSON.stringify({
+    body: JSON.stringify(applyAttributionToContact({
       locationId: env.GHL_LOCATION_ID,
       firstName,
       lastName: rest.join(' '),
@@ -61,7 +64,7 @@ export async function onRequestPost(context) {
       website: /^https?:\/\//i.test(website) ? website : '',
       source: 'Blue Collar Techy · Work With Me',
       tags: ['bct-work-with-me', 'bct-growth-systems-call'],
-    }),
+    }, attr)),
   });
 
   if (!res.ok) {
@@ -82,6 +85,8 @@ export async function onRequestPost(context) {
       `Website/GBP: ${website || '-'}`,
       '',
       message,
+      '',
+      ...attributionNoteLines(attr),
     ].join('\n');
     await fetch(`https://services.leadconnectorhq.com/contacts/${contactId}/notes`, {
       method: 'POST',
@@ -90,7 +95,7 @@ export async function onRequestPost(context) {
     }).catch((e) => console.error('[contact] note', e.message));
   }
 
-  bg(notifyLead(env, `Work With Me: ${name}${body.business ? ' / ' + body.business : ''}`, { Name: name, Email: email, Phone: body.phone, Business: body.business, Revenue: body.revenue, Trade: body.trade, Interests: interests.join(', '), Website: website, Message: message, GHL: contactId ? `https://app.gohighlevel.com/v2/location/${env.GHL_LOCATION_ID}/contacts/detail/${contactId}` : '' }));
+  bg(notifyLead(env, `Work With Me: ${name}${body.business ? ' / ' + body.business : ''}`, { Name: name, Email: email, Phone: body.phone, Business: body.business, Revenue: body.revenue, Trade: body.trade, Interests: interests.join(', '), Website: website, Message: message, ...attributionEmailFields(attr), GHL: contactId ? `https://app.gohighlevel.com/v2/location/${env.GHL_LOCATION_ID}/contacts/detail/${contactId}` : '' }));
   return json({ ok: true });
 }
 
