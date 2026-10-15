@@ -13,7 +13,7 @@
  * Required env vars:
  *   RESEND_API_KEY, RESEND_AUDIENCE_ID
  * Optional:
- *   RESEND_FROM_EMAIL (default 'Nick at Blue Collar Techy <nick@tektongrowth.com>'; bluecollartechy.com is not verified in Resend)
+ *   RESEND_FROM_EMAIL (default 'Nick at Blue Collar Techy <nick@bluecollartechy.com>'; domain verified in Resend)
  *   GHL_API_KEY, GHL_LOCATION_ID — mirror subscribers into GHL as contacts
  *   GA4_MEASUREMENT_ID, GA4_MP_SECRET — server-side lead conversion tracking
  */
@@ -124,7 +124,7 @@ async function sendLeadMagnetEmail(email, magnet, env) {
     console.error('[subscribe] PDF fetch failed:', err.message);
   }
 
-  const from = env.RESEND_FROM_EMAIL || 'Nick at Blue Collar Techy <nick@tektongrowth.com>';
+  const from = env.RESEND_FROM_EMAIL || 'Nick at Blue Collar Techy <nick@bluecollartechy.com>';
   const payload = {
     from,
     to: [email],
@@ -360,7 +360,7 @@ async function notifyLead(env, subject, fields) {
       method: 'POST',
       headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        from: env.LEAD_NOTIFY_FROM || 'BCT Leads <leads@tektongrowth.com>', // bluecollartechy.com has no Resend DKIM; tektongrowth.com does
+        from: env.LEAD_NOTIFY_FROM || 'BCT Leads <leads@bluecollartechy.com>',
         to: [to],
         reply_to: fields.Email || undefined,
         subject: `[BCT lead] ${subject}`,
