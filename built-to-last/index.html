@@ -17,7 +17,7 @@
 <meta name="twitter:description" content="Build your first useful AI agent with the exact setup, prompts, tests, and schedule." />
 <meta name="twitter:image" content="https://i.ytimg.com/vi/UUTN0bqVai8/maxresdefault.jpg" />
 <link rel="canonical" href="https://bluecollartechy.com/built-to-last/" />
-<link rel="icon" type="image/svg+xml" href="../logos/bct-favicon.svg" />
+<link rel="icon" type="image/png" href="../logos/bct-logo-mark.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Archivo:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet" />
@@ -63,7 +63,7 @@
 
   .site-nav { position:sticky; top:0; z-index:100; border-bottom:1px solid var(--border); padding:24px 0; background:rgba(13,13,18,.85); backdrop-filter:blur(12px); }
   .nav-inner { display:flex; align-items:center; justify-content:space-between; gap:24px; }
-  .nav-logo svg { display:block; width:auto; height:52px; }
+  .nav-logo svg, .nav-logo img { display:block; width:auto; height:52px; object-fit:contain; }
   .nav-links { display:flex; align-items:center; gap:36px; color:var(--text-dim); font-size:14px; font-weight:600; }
   .nav-links a:hover, .nav-links a:focus-visible { color:var(--text); }
   .nav-links a.active { color:var(--accent); }
@@ -206,7 +206,7 @@
   footer { padding:60px 0 34px; border-top:1px solid var(--border); }
   .foot-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:50px; }
   .foot-brand .logo-mini { margin-bottom:20px; }
-  .foot-brand .logo-mini svg { display:block; width:auto; height:76px; max-width:100%; }
+  .foot-brand .logo-mini svg, .foot-brand .logo-mini img { display:block; width:auto; height:76px; max-width:100%; object-fit:contain; }
   .foot-brand p { color:var(--text-dim); max-width:400px; font-size:14px; margin-top:15px; }
   .foot-col h3 { color:var(--text-faint); font:10px 'JetBrains Mono',monospace; letter-spacing:.16em; text-transform:uppercase; margin-bottom:14px; }
   .foot-col ul { list-style:none; display:grid; gap:9px; color:var(--text-dim); font-size:14px; }
@@ -257,14 +257,7 @@
 <nav class="site-nav" aria-label="Primary navigation">
   <div class="container nav-inner">
     <a class="nav-logo" href="../index.html" aria-label="Blue Collar Techy">
-      <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Blue Collar Techy">
-        <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
-        <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
-        <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
-        <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
-        <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
-        <text x="290" y="78" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" fill="#ff6a1a" letter-spacing="2">EST · 2026</text>
-      </svg>
+      <img src="../logos/bct-logo-horizontal.png" alt="Blue Collar Techy logo" loading="eager" />
     </a>
     <div class="nav-links" id="primary-nav">
       <a href="../about.html">About</a>
@@ -466,14 +459,8 @@ Show the profile to me for approval before using it. If you cannot access the fu
 
 <footer><div class="container"><div class="foot-grid">
   <div class="foot-brand">
-    <div class="logo-mini" role="img" aria-label="Blue Collar Techy">
-      <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
-        <rect x="14" y="20" width="292" height="80" fill="none" stroke="#f5f5f7" stroke-width="4"/>
-        <rect x="30" y="36" width="48" height="48" fill="#ff6a1a"/>
-        <text x="54" y="70" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="22" fill="#0d0d12" letter-spacing="-1">BCT</text>
-        <text x="96" y="56" font-family="Archivo Black, sans-serif" font-size="16" fill="#f5f5f7" letter-spacing="0.5">BLUE COLLAR</text>
-        <text x="96" y="80" font-family="Archivo Black, sans-serif" font-size="22" fill="#f5f5f7" letter-spacing="-0.5">TECHY</text>
-      </svg>
+    <div class="logo-mini">
+      <img src="../logos/bct-logo-horizontal.png" alt="Blue Collar Techy logo" loading="lazy" />
     </div>
     <p>Practical tech for contractors. AI, digital visibility, websites, and real systems built from the contractor side of the desk.</p>
   </div>
