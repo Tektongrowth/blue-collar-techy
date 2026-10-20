@@ -4,3 +4,5 @@
   X-Robots-Tag: noindex, nofollow
 /under-construction*
   X-Robots-Tag: noindex, nofollow
+/brand/*
+  X-Robots-Tag: noindex, nofollow
