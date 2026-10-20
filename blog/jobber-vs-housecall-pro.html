@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jobber vs Housecall Pro: Which One Fits Your Crew? (2026)</title>
+<meta name="description" content="Jobber vs Housecall Pro for a 3 to 15 person crew: real pricing by crew size, day-to-day features, where ServiceTitan fits, and how to test first." />
+<meta name="author" content="Nick Conley" />
+<meta name="theme-color" content="#0d0d12" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bluecollartechy.com/blog/jobber-vs-housecall-pro" />
+<meta property="og:title" content="Jobber vs Housecall Pro: which one fits a 3 to 15 person crew, and what it really costs." />
+<meta property="og:description" content="Current Jobber and Housecall Pro pricing at your crew size, what each does day to day, what a design-build landscaper might use instead, and how to test first." />
+<meta property="og:image" content="https://bluecollartechy.com/og-image.jpg" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Jobber vs Housecall Pro: which one fits a 3 to 15 person crew, and what it really costs." />
+<meta name="twitter:description" content="Current Jobber and Housecall Pro pricing at your crew size, what each does day to day, what a design-build landscaper might use instead, and how to test first." />
+<meta name="twitter:image" content="https://bluecollartechy.com/og-image.jpg" />
+
+<link rel="canonical" href="https://bluecollartechy.com/blog/jobber-vs-housecall-pro" />
+<link rel="icon" type="image/png" href="../logos/bct-logo-mark.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0d0d12;
+    --bg-elev: #15151d;
+    --bg-card: #1a1a24;
+    --border: #272733;
+    --text: #f5f5f7;
+    --text-dim: #a0a0ab;
+    --text-faint: #6b6b78;
+    --accent: #ff6a1a;
+    --accent-bright: #ff8530;
+    --accent-hover: #47c8f5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .narrow { max-width: 780px; margin: 0 auto; padding: 0 32px; }
+  a { color: inherit; text-decoration: none; }
+  .accent { color: var(--accent); }
+
+  nav.site-nav {
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(13, 13, 18, 0.85);
+  }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo svg, .nav-logo img { height: 52px; width: auto; display: block; }
+  .nav-logo img { object-fit: contain; }
+  .nav-cta-mobile { display: none; }
+  .nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    width: 44px; height: 44px;
+    cursor: pointer;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    transition: all 0.25s ease;
+  }
+  .nav-toggle:hover { border-color: var(--accent); }
+  .nav-toggle span {
+    display: block;
+    width: 20px; height: 2px;
+    background: var(--text);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .site-nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .site-nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  .site-nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-links { display: flex; gap: 36px; font-size: 14px; font-weight: 600; }
+  .nav-links a { color: var(--text-dim); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-links a.active { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: #000;
+    padding: 10px 18px; font-weight: 700; font-size: 13px;
+    letter-spacing: 0.02em; border-radius: 2px; text-transform: uppercase;
+  }
+
+  .article-meta {
+    padding: 40px 0 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .article-meta-row {
+    display: flex; justify-content: space-between; gap: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .article-meta-row span.hl { color: var(--accent); }
+
+  .hero-post { padding: 80px 0 80px; }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .kicker::before {
+    content: ''; width: 28px; height: 2px; background: var(--accent);
+  }
+  h1.post-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(40px, 5.6vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin-bottom: 36px;
+    max-width: 960px;
+  }
+  h1.post-title .hi { color: var(--accent); }
+  .hero-sub {
+    font-size: 22px;
+    color: var(--text-dim);
+    max-width: 680px;
+    line-height: 1.5;
+  }
+  .post-byline {
+    margin-top: 40px;
+    display: flex; gap: 24px; flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .post-byline span.v { color: var(--text); }
+
+  .chapter {
+    padding: 48px 0;
+    border-top: 1px solid var(--border);
+  }
+  .chapter-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .chapter h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(30px, 3.5vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    max-width: 760px;
+  }
+  .chapter h2 .hi { color: var(--accent); }
+  .chapter h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin: 32px 0 14px;
+    color: var(--text);
+  }
+  .chapter p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+  .chapter p.lead {
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+  .chapter p.dim {
+    color: #ffb089;
+    font-style: italic;
+    border-left: 3px solid var(--accent);
+    padding: 6px 0 6px 20px;
+    margin: 28px 0 26px;
+  }
+  .chapter p strong { color: var(--text); font-weight: 700; }
+  .chapter ul, .chapter ol {
+    margin: 14px 0 28px;
+    padding-left: 28px;
+  }
+  .chapter ul li, .chapter ol li {
+    font-size: 18px;
+    line-height: 1.65;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .chapter ul li::marker { color: var(--accent); }
+
+  .script {
+    background: #0a0a10;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    margin: 18px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-dim);
+  }
+  .script .label {
+    display: block;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .tool-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0 28px;
+    font-size: 15px;
+  }
+  .tool-table th, .tool-table td {
+    border-bottom: 1px solid var(--border);
+    padding: 12px 14px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .tool-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .tool-table td.bad { color: var(--accent); }
+  .tool-table td.ok { color: var(--text); }
+  .tool-table td.dup { color: #ffb089; font-style: italic; }
+
+  .pullquote {
+    padding: 96px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--bg) 0%, #0a0a10 100%);
+    text-align: center;
+  }
+  .pullquote blockquote {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 3.6vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    max-width: 900px;
+    margin: 0 auto 24px;
+  }
+  .pullquote blockquote .hi { color: var(--accent); }
+  .pullquote cite {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  .checklist {
+    list-style: none !important;
+    padding: 32px 0 !important;
+    margin: 32px 0 !important;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .checklist li {
+    position: relative;
+    padding: 14px 0 14px 44px !important;
+    font-size: 18px;
+    color: var(--text);
+  }
+  .checklist li::before {
+    content: '';
+    position: absolute; left: 0; top: 22px;
+    width: 24px; height: 2px;
+    background: var(--accent);
+  }
+  .checklist li strong { color: var(--accent); font-weight: 800; }
+
+  .inline-cta {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 40px;
+    margin: 48px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .inline-cta::before {
+    content: '';
+    position: absolute; top: 0; left: 0; bottom: 0;
+    width: 4px; background: var(--accent);
+  }
+  .inline-cta .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .inline-cta h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 26px;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+  .inline-cta p {
+    color: var(--text-dim);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .inline-cta a.btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #000;
+    padding: 14px 26px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 13px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .inline-cta a.btn:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+
+  .end-cta {
+    padding: 120px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .end-cta .kicker { margin-bottom: 24px; }
+  .end-cta h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    max-width: 820px; margin-left: auto; margin-right: auto;
+  }
+  .end-cta p {
+    color: var(--text-dim);
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 640px;
+    margin-left: auto; margin-right: auto;
+  }
+  .cta-row {
+    display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 18px 32px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 14px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    border: 2px solid transparent; border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: var(--accent); color: #000; }
+  .btn-primary:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+  .btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
+  .btn-secondary:hover { border-color: var(--text); }
+
+  .waitlist {
+    padding: 120px 0;
+    border-top: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--bg) 0%, #0a0a10 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .waitlist::before {
+    content: '// COMING SOON';
+    position: absolute; top: 40px; left: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent-hover);
+    letter-spacing: 0.1em;
+  }
+  .waitlist::after {
+    content: ''; position: absolute;
+    top: 50%; right: -100px; transform: translateY(-50%);
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255, 106, 26, 0.12), transparent 70%);
+    pointer-events: none;
+  }
+  .wl-inner {
+    max-width: 720px;
+    position: relative; z-index: 2;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .wl-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .wl-inner h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    max-width: 720px;
+  }
+  .wl-inner h2 .hi { color: var(--accent); }
+  .wl-inner p.intro {
+    font-size: 18px;
+    color: var(--text-dim);
+    margin-bottom: 28px;
+    max-width: 640px;
+  }
+  .wl-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 24px;
+    margin: 0 0 36px;
+    padding: 0;
+    list-style: none;
+    max-width: 640px;
+  }
+  .wl-list li {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text);
+    padding-left: 18px;
+    position: relative;
+    letter-spacing: 0.04em;
+    line-height: 1.8;
+  }
+  .wl-list li::before {
+    content: '✓';
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  form.wl-form {
+    display: flex; gap: 0;
+    border: 2px solid var(--border);
+    background: var(--bg-card);
+    max-width: 540px;
+    transition: border-color 0.2s;
+    margin-bottom: 14px;
+  }
+  form.wl-form:focus-within { border-color: var(--accent); }
+  form.wl-form input[type="email"] {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 18px 20px;
+    color: var(--text);
+    font-family: 'Archivo', sans-serif;
+    font-size: 15px;
+  }
+  form.wl-form input::placeholder { color: var(--text-faint); }
+  form.wl-form input.hp-wl {
+    position: absolute; left: -9999px; top: -9999px;
+    width: 1px; height: 1px; opacity: 0;
+  }
+  form.wl-form button {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 0 28px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  form.wl-form button:hover { background: var(--accent-bright); }
+  form.wl-form button:disabled { opacity: 0.6; cursor: wait; }
+  .wl-msg {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    margin: 8px 0 12px;
+    min-height: 20px;
+    letter-spacing: 0.02em;
+  }
+  .wl-msg.ok { color: var(--accent-hover); }
+  .wl-msg.err { color: var(--accent); }
+  .wl-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+  .wl-meanwhile {
+    margin-top: 56px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border);
+    max-width: 640px;
+  }
+  .wl-meanwhile .h {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .wl-meanwhile p {
+    color: var(--text-dim);
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+  .wl-meanwhile .links {
+    display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .wl-meanwhile .links a {
+    font-family: 'Archivo', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 10px 18px;
+    border-radius: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .wl-meanwhile .links a:hover { border-color: var(--accent); color: var(--accent); }
+
+  footer {
+    padding: 80px 0 40px;
+    background: #0a0a10;
+    border-top: 1px solid var(--border);
+  }
+  .foot-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--border);
+  }
+  .foot-brand .logo-mini { margin-bottom: 20px; }
+  .foot-brand .logo-mini svg, .foot-brand .logo-mini img { height: 76px; width: auto; display: block; }
+  .foot-brand .logo-mini img { object-fit: contain; }
+  .foot-brand p { color: var(--text-dim); font-size: 14px; max-width: 300px; line-height: 1.6; }
+  .foot-col h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a { color: var(--text-dim); font-size: 14px; transition: color 0.2s; }
+  .foot-col a:hover { color: var(--accent); }
+  .foot-bottom {
+    padding-top: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--text-faint); letter-spacing: 0.08em;
+  }
+  .brand-tag {
+    color: var(--accent-hover);
+    font-weight: 600;
+  }
+
+  @media (max-width: 900px) {
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .nav-toggle { display: flex; }
+    .nav-cta { display: none; }
+    .nav-links {
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(13, 13, 18, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 0;
+      font-size: 15px;
+      transform: translateY(-12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .nav-links a {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-links a:last-of-type { border-bottom: none; }
+    .site-nav.nav-open .nav-links {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .site-nav.nav-open .nav-links .nav-cta-mobile {
+      display: block;
+      margin: 12px 24px 16px;
+      background: var(--accent);
+      color: #000;
+      padding: 12px 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      border-radius: 2px;
+      border-bottom: none;
+    }
+    .article-meta-row { flex-direction: column; gap: 8px; }
+    .inline-cta { padding: 28px 24px; }
+    .tool-table { font-size: 13px; }
+    .tool-table th, .tool-table td { padding: 10px 8px; }
+    .wl-list { grid-template-columns: 1fr; }
+    form.wl-form { flex-direction: column; }
+    form.wl-form button { padding: 16px; }
+  }
+
+  .related-posts { padding: 80px 0; border-top: 1px solid var(--border); }
+  .related-posts .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .related-posts .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .related-posts h2.related-h {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin-bottom: 36px; max-width: 760px;
+  }
+  .related-grid {
+    display: grid; gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .related-card {
+    display: block;
+    background: var(--bg-card, #1a1a24);
+    border: 1px solid var(--border);
+    padding: 28px 28px 24px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .related-card:hover {
+    border-color: var(--accent);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.18);
+  }
+  .related-card .cat {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--accent);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-card h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 19px; line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px; color: var(--text);
+  }
+  .related-card p {
+    color: var(--text-dim);
+    font-size: 14px; line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .related-card .arrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--accent);
+    letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 700;
+  }
+  @media (max-width: 700px) { .related-grid { grid-template-columns: 1fr; } }
+
+  .prompt { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 18px 22px; margin: 14px 0 26px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.6; color: var(--text); white-space: pre-wrap; }
+  .prompt-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-top: 28px; }
+  .chapter ul, .chapter ol { margin: 0 0 20px 22px; font-size: 18px; line-height: 1.7; }
+  .chapter li { margin-bottom: 8px; }
+  .sources li { font-size: 15px; color: var(--text-dim); }
+  .sources a { text-decoration: underline; }
+.nick-note { margin: 24px 0; padding: 16px 18px; border: 2px dashed var(--accent); background: rgba(255,200,0,0.08); font-size: 16px; }
+.nick-note strong { display: block; margin-bottom: 6px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.08em; }
+  .tbl-wrap { overflow-x: auto; margin: 24px 0; }
+  .tbl-wrap table { width: 100%; border-collapse: collapse; font-size: 16px; line-height: 1.5; }
+  .tbl-wrap th, .tbl-wrap td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
+  .tbl-wrap th { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  details.faq { border: 1px solid var(--border); padding: 14px 18px; margin: 12px 0; }
+  details.faq summary { cursor: pointer; font-weight: 700; font-size: 18px; }
+  details.faq p { margin: 12px 0 0; }
+  ol.checklist li { margin-bottom: 12px; }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Jobber vs Housecall Pro: Which One Fits Your Crew? (2026)",
+  "description": "Jobber vs Housecall Pro for a 3 to 15 person crew: real pricing by crew size, day-to-day features, where ServiceTitan fits, and how to test first.",
+  "author": {
+    "@type": "Person",
+    "name": "Nick Conley",
+    "url": "https://bluecollartechy.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Blue Collar Techy",
+    "url": "https://bluecollartechy.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bluecollartechy.com/logos/bct-logo-horizontal.png"
+    }
+  },
+  "datePublished": "2026-10-19",
+  "dateModified": "2026-10-19",
+  "mainEntityOfPage": "https://bluecollartechy.com/blog/jobber-vs-housecall-pro",
+  "image": "https://bluecollartechy.com/og-image.jpg",
+  "articleSection": "Tools"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Housecall Pro or Jobber cheaper?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your crew size and plan. On October 19, 2026, a one-user Housecall Pro Basic plan listed at $59 a month billed annually, and Jobber's one-user Core plan at $29. For a five-person crew, Jobber Connect and Housecall Pro Essentials both listed at $149 a month billed annually. Check both pricing pages for your exact user count, and add card processing fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best CRM for contractors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The one your crew will use every day that fits how you sell. Service-call trades often lean toward tools with a strong price book and dispatch, like Housecall Pro. Crews that quote a lot of residential work often look at Jobber. Design-build landscape companies should look at SynkedUP for estimating and job costing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do Jobber and Housecall Pro have free trials?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Both offer 14 days free with no credit card required. Jobber's trial uses the Grow plan, and Housecall Pro's uses the MAX plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I switch from Jobber to Housecall Pro, or the other way, later?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but it takes work. Both let admins export your customer list as a CSV file, and Housecall Pro has an import tool for customer and job data. Test an export during your trial so you know what comes out."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ServiceTitan vs Housecall Pro: which is better for a small crew?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most 3 to 15 person crews, Housecall Pro or Jobber is the simpler starting point because both publish prices and offer free trials. ServiceTitan does not publish prices and is built for larger service operations."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="../index.html" aria-label="Blue Collar Techy">
+      <img src="../logos/bct-logo-horizontal.png" alt="Blue Collar Techy logo" loading="eager" />
+    </a>
+    <div class="nav-links" id="primary-nav">
+      <a href="../about.html">About</a>
+      <a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a>
+      <a href="../resources/">Resources</a>
+      <a href="index.html" class="active">Blog</a>
+      <a href="../work-with-me.html">Need it built?</a>
+      <a class="nav-cta-mobile" href="../index.html#newsletter">Subscribe</a>
+    </div>
+    <a class="nav-cta" href="../index.html#newsletter">Subscribe</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="article-meta">
+  <div class="container">
+    <div class="article-meta-row">
+      <span><span class="hl">BLOG</span> / TOOLS · COMPARISON</span>
+      <span>Published · 2026-10-19</span>
+      <span>Read · 10 min</span>
+    </div>
+  </div>
+</div>
+
+<section class="hero-post">
+  <div class="narrow">
+    <div class="kicker">Field Software 2026</div>
+    <h1 class="post-title">Jobber vs Housecall Pro: which one fits a 3 to 15 person crew, <span class="hi">and what it really costs.</span></h1>
+    <p class="hero-sub">Pricing pulled from each vendor on October 19, 2026, by crew size. Plus what I actually ran my landscape company on, and how to test before you pay.</p>
+    <div class="post-byline">
+      <span>BY <span class="v">NICK CONLEY</span></span>
+      <span>FOUNDER · BLUE COLLAR TECHY</span>
+    </div>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// The whiteboard stage</div>
+    <p class="lead">Quotes in your texts, the schedule on a whiteboard, invoices in QuickBooks, and job notes in your head. That works for a while. Then you add a crew, and things start slipping through the cracks.</p>
+    <p>Jobber vs Housecall Pro is the comparison most small crews land on when they are ready to fix that. This post lays out what each one costs at your crew size, what each does day to day, which trades each fits, where ServiceTitan comes in, and how to test one before you pay.</p>
+    <p>Straight up: I have never used Jobber or Housecall Pro myself. My company ran on SynkedUP, which is landscaping software, and I cover it below. The Jobber and Housecall Pro details come from each company's own pricing pages and help docs, checked on October 19, 2026. There are no affiliate links in this post, and nobody paid to be in it.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// The short answer</div>
+    <h2>Jobber vs Housecall Pro: pick this if.</h2>
+    <p>Both tools handle the basics: scheduling, quotes, invoices, and payments, with a mobile app for your techs. The differences show up in how they package features and price users.</p>
+    <ul>
+      <li><strong>Pick Jobber if</strong> you want to start small and grow into it. A solo plan starts at $29 a month billed annually, the user tiers step up by team size, and quote features like optional line items and job costing sit on the Grow plan.</li>
+      <li><strong>Pick Housecall Pro if</strong> you run service calls and want a price book, flat-rate pricing, and recurring service plans in one place. Housecall Pro says it does not require long-term contracts.</li>
+      <li><strong>Look at SynkedUP if</strong> you run a landscape company, especially a design-build one. It is built around estimating and job costing for landscapers. More on that below.</li>
+      <li><strong>Look at ServiceTitan if</strong> you have a larger service team and want enterprise-level reporting, and you are fine getting a quote from sales.</li>
+    </ul>
+    <p>Answer three questions first: How many people need the app? Is your work mostly recurring visits, one-off installs, or service calls? Who runs the office, and how much time do they have to learn new software?</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Price at your crew size</div>
+    <h2>What each one costs at 3 to 15 people.</h2>
+    <p>Both companies charge by plan and by user, so your crew size decides the price. Jobber defines a user as anyone who accesses your account at the office or in the field to view or manage the schedule, so count every tech who will have the app. Prices below are list prices from each pricing page on October 19, 2026, shown as billed annually / billed monthly. Jobber was running a promotion that ends October 30, 2026, which is left out.</p>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Users</th><th>Jobber Connect</th><th>Jobber Grow</th><th>Housecall Pro</th></tr></thead>
+      <tbody>
+        <tr><td>1 (just you)</td><td>$99 / $139</td><td>$149 / $199</td><td>Basic: $59 / $79</td></tr>
+        <tr><td>3 to 5</td><td>$149 / $199</td><td>$229 / $299</td><td>Essentials (5 users): $149 / $189</td></tr>
+        <tr><td>8</td><td>$229 / $299</td><td>$299 / $399</td><td>MAX (8 users): $299 / $329</td></tr>
+        <tr><td>10</td><td>$229 / $299</td><td>$299 / $399</td><td>MAX + 2 users: about $369 / $399</td></tr>
+        <tr><td>15</td><td>$299 / $399</td><td>$399 / $499</td><td>MAX + 7 users: about $544 / $574</td></tr>
+      </tbody>
+    </table></div>
+    <p>How to read the table:</p>
+    <ul>
+      <li><strong>Jobber</strong> also has a Core plan at $29 a month billed annually for one user, and a Plus plan from $399 a month billed annually for five users. Extra users on Jobber are $29 a month each.</li>
+      <li><strong>Housecall Pro</strong> lists five users on Essentials and eight on MAX, with additional users on MAX at $35 a month each. The 10 and 15 person rows add that fee to MAX. Confirm the exact quote with Housecall Pro before you sign.</li>
+      <li><strong>Card fees are extra on both.</strong> Jobber lists 2.9% + 30¢ for online card payments, 2.7% + 30¢ for Tap to Pay, and 1% for bank payments. Housecall Pro lists card rates starting at 2.59% and a 1% fee on bank payments.</li>
+      <li><strong>Read the commitment terms.</strong> Jobber's monthly no-commitment plan can be canceled anytime. Its one-year commitment bills through the full term, and annual prepaid is non-refundable. All Jobber plans renew automatically unless you set them not to.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Day to day</div>
+    <h2>Quoting, scheduling, invoicing, and payments.</h2>
+    <p>This section comes from each vendor's pricing page and feature list, not from hands-on use. Use it to build your trial checklist.</p>
+    <ul>
+      <li><strong>Quoting.</strong> Jobber's Grow plan adds quotes with visuals and reviews, optional line items for upsells, and job costing. Connect adds automated quote and invoice follow-ups. Housecall Pro's Basic plan includes estimates, a price book, and job costing. Essentials adds flat-rate pricing, and MAX adds a sales proposal tool.</li>
+      <li><strong>Scheduling and dispatch.</strong> Both include scheduling and a mobile app. Housecall Pro's Essentials plan adds routes and employee GPS tracking, and MAX adds route optimization based on drive time and traffic. Jobber lists routing and GPS tracking among its features, so check which plan includes them, and crew scheduling is listed on Plus.</li>
+      <li><strong>Invoicing and payments.</strong> Both handle invoices, online card payments, and bank payments. Jobber's Connect plan adds automatic payments for recurring work and QuickBooks Online sync. Housecall Pro lists QuickBooks Online sync on Essentials and consumer financing on every plan.</li>
+      <li><strong>Learning curve.</strong> Both offer a Spanish-language mobile app. Housecall Pro includes live phone and chat support on every plan. Jobber lists live chat, phone, and email support, with more onboarding sessions on higher plans.</li>
+    </ul>
+    <p>The best software is the one your crew actually opens. If your techs will not clock in or take photos in the app, no feature list fixes that. Try the field side as hard as the office side.</p>
+  </div>
+</section>
+
+<section class="pullquote">
+  <div class="container">
+    <blockquote>Pick the app your crew will open. <span class="hi">Then make it the only one.</span></blockquote>
+    <cite>Software only works if it gets used</cite>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Which trades each fits</div>
+    <h2>Which trades each fits, and what I actually used.</h2>
+    <p>Housecall Pro says it is built for home service businesses like HVAC, plumbing, electrical, cleaning, and landscaping. Its price book, flat-rate pricing, and recurring service plans lean toward service-call trades where you sell the same repairs and tune-ups over and over. Jobber serves a wide range of home service businesses too, and its plans are built around quoting, follow-ups, and job costing, which suits crews that send a lot of residential quotes.</p>
+    <p>Here is what I actually used. My company was a design-build landscape company, and we ran on <a href="https://synkedup.com/" target="_blank" rel="noopener">SynkedUP</a>. I recommend it for most landscape companies, especially design-build focused ones like we were, because of how it has worked AI into the estimating process.</p>
+    <p>Here is what SynkedUP says that looks like. In September 2026 it released AI estimating in its mobile app. You record a walkthrough of the property with video, photos, and the homeowner conversation, and it turns that into work areas, measurements, and line items built from your own templates. SynkedUP says the pricing stays on your numbers, meaning your hourly rate, overhead recovery, production rates, and margin, and the AI does not make up prices. It is new, and SynkedUP calls it early, so test it on a few real jobs before you trust it.</p>
+    <p>On price, SynkedUP's pricing page lists Starter at $179 a month billed annually ($199 monthly), Standard at $359 ($399 monthly), and PRO at $539 ($599 monthly). Monthly Standard and PRO plans list a one-time $1,000 activation fee, and there is no free trial. SynkedUP is built for landscapers, so an HVAC or plumbing shop should stick with the two tools above.</p>
+    <p>Whatever you pick, the software should fit how you actually sell. If most of your work starts with a site visit and a design, estimating matters more than dispatch. If most of your work is service calls, dispatch and a price book matter more. For a gut check on which small jobs are worth chasing in the first place, read <a href="small-jobs-are-marketing.html">why small jobs are marketing</a>.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// ServiceTitan</div>
+    <h2>Where ServiceTitan fits, and when it is overkill.</h2>
+    <p>ServiceTitan vs Housecall Pro, or Jobber vs ServiceTitan, comes up once a shop gets bigger. ServiceTitan's pricing page lists three plans, Starter, Essentials, and The Works, and each one says "Request Pricing." It does not publish dollar amounts, and other ServiceTitan pages say pricing depends on the size of your business, the number of users, and the features you need.</p>
+    <p>That tells you who it is built for. If you need a sales call, a demo, and an implementation plan just to learn the price, you are buying for a bigger operation. For a 3 to 15 person crew, start with the tools that publish their prices, and look at ServiceTitan when you have outgrown them and have someone in the office who can own the setup.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Test before you pay</div>
+    <h2>How to test before you pay.</h2>
+    <p>Both Jobber and Housecall Pro offer a 14-day free trial with no credit card required. Jobber's trial runs on the Grow plan, and Housecall Pro's runs on MAX. SynkedUP does not offer a free trial, but you can book a walkthrough call and pay monthly.</p>
+    <ol>
+      <li><strong>Run one real week.</strong> Put your actual jobs in it, not demo data. Quote, schedule, invoice, and collect at least one payment.</li>
+      <li><strong>Hand it to your crew.</strong> Have two techs clock in, add photos, and close out a job from their phones. Ask them what was annoying.</li>
+      <li><strong>Have your office person run it for a day.</strong> They will use it more than you will.</li>
+      <li><strong>Test the exit.</strong> Both tools let admins export the customer list to a CSV file. Jobber notes that client exporting is available on select plans, so check yours. Make sure you can get your data out before you put years of it in.</li>
+      <li><strong>Price the plan you will actually need.</strong> Trials run on the top plans. Write down which features you used, then check that the plan you can afford includes them.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Quick answers</div>
+    <h2>Questions contractors ask.</h2>
+    <details class="faq"><summary>Is Housecall Pro or Jobber cheaper?</summary><p>It depends on your crew size and plan. On October 19, 2026, a one-user Housecall Pro Basic plan listed at $59 a month billed annually, and Jobber's one-user Core plan at $29. For a five-person crew, Jobber Connect and Housecall Pro Essentials both listed at $149 a month billed annually. Check both pricing pages for your exact user count, and add card processing fees.</p></details>
+    <details class="faq"><summary>What is the best CRM for contractors?</summary><p>The one your crew will use every day that fits how you sell. Service-call trades often lean toward tools with a strong price book and dispatch, like Housecall Pro. Crews that quote a lot of residential work often look at Jobber. Design-build landscape companies should look at SynkedUP for estimating and job costing.</p></details>
+    <details class="faq"><summary>Do Jobber and Housecall Pro have free trials?</summary><p>Yes. Both offer 14 days free with no credit card required. Jobber's trial uses the Grow plan, and Housecall Pro's uses the MAX plan.</p></details>
+    <details class="faq"><summary>Can I switch from Jobber to Housecall Pro, or the other way, later?</summary><p>Yes, but it takes work. Both let admins export your customer list as a CSV file, and Housecall Pro has an import tool for customer and job data. Test an export during your trial so you know what comes out.</p></details>
+    <details class="faq"><summary>ServiceTitan vs Housecall Pro: which is better for a small crew?</summary><p>For most 3 to 15 person crews, Housecall Pro or Jobber is the simpler starting point because both publish prices and offer free trials. ServiceTitan does not publish prices and is built for larger service operations.</p></details>
+  </div>
+</section>
+
+<section class="chapter sources">
+  <div class="narrow">
+    <div class="chapter-num">// Sources</div>
+    <ul>
+      <li><a href="https://www.getjobber.com/pricing/" target="_blank" rel="noopener">Jobber: Pricing</a> (plans, user tiers, payment fees, commitment terms, 14-day trial; checked October 19, 2026)</li>
+      <li><a href="https://www.housecallpro.com/pricing/" target="_blank" rel="noopener">Housecall Pro: Pricing</a> (Basic, Essentials, MAX, users included, $35 per additional MAX user, card and bank fees, no long-term contracts, 14-day trial; checked October 19, 2026)</li>
+      <li><a href="https://help.getjobber.com/en/articles/export-client-information/" target="_blank" rel="noopener">Jobber Help: Export Client Information</a> and <a href="https://help.housecallpro.com/en/articles/6797101-how-to-import-export-jobs-and-customers" target="_blank" rel="noopener">Housecall Pro Help: How to Import and Export Jobs and Customers</a></li>
+      <li><a href="https://www.servicetitan.com/pricing" target="_blank" rel="noopener">ServiceTitan: Pricing</a> (three plans, Request Pricing, no published prices; checked October 19, 2026)</li>
+      <li><a href="https://synkedup.com/product-updates/" target="_blank" rel="noopener">SynkedUP: Product updates</a> (AI estimating released September 2026) and <a href="https://synkedup.com/pricing/" target="_blank" rel="noopener">SynkedUP: Pricing</a> (plans, activation fee, no free trial; checked October 19, 2026)</li>
+    </ul>
+  </div>
+</section>
+
+<section class="waitlist">
+  <div class="wl-inner">
+    <div class="wl-eyebrow">The BCT Newsletter</div>
+    <h2>Get the next one in your inbox.</h2>
+    <p class="intro">One practical post a week on AI, local SEO, and follow-up for contractors. Written by a former hardscape contractor. Plain English.</p>
+    <form id="wl-form" class="wl-form" novalidate>
+      <input type="email" id="wl-email" name="email" placeholder="your@email.com" required autocomplete="email" />
+      <input type="text" name="website" class="hp-wl" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <button type="submit" id="wl-btn">Subscribe</button>
+    </form>
+    <div id="wl-msg" class="wl-msg" role="status" aria-live="polite"></div>
+    <div class="wl-note">// Plain-English tech for the trades. No spam. Unsubscribe anytime.</div>
+    <div class="wl-meanwhile">
+      <div class="h">// Meanwhile</div>
+      <p>Free tools that already work.</p>
+      <div class="links">
+        <a href="../market-scan/">Market Demand Scan</a>
+        <a href="../gbp-check/">GBP Health Check</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  const form = document.getElementById('wl-form');
+  if (!form) return;
+  const emailInput = document.getElementById('wl-email');
+  const btn = document.getElementById('wl-btn');
+  const msg = document.getElementById('wl-msg');
+  function setMsg(text, cls) { msg.textContent = text; msg.className = 'wl-msg' + (cls ? ' ' + cls : ''); }
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const email = (emailInput.value || '').trim();
+    const website = form.website.value;
+    if (!email) return;
+    btn.disabled = true; btn.textContent = 'Subscribing…'; setMsg('');
+    try {
+      const attribution = window.bctGetAttribution ? window.bctGetAttribution() : {};
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, website: website, source: 'jobber-vs-housecall-pro', attribution: attribution }),
+      });
+      const data = await res.json().catch(function () { return {}; });
+      if (!res.ok) { setMsg(data.error || 'Something went wrong. Try again in a minute.', 'err'); btn.disabled = false; btn.textContent = 'Subscribe'; return; }
+      if (data.already_subscribed) { setMsg('You are already subscribed.', 'ok'); }
+      else { setMsg('You are in. Watch your inbox.', 'ok'); if (window.bctTrackLead) { window.bctTrackLead('newsletter'); } }
+      emailInput.value = ''; btn.textContent = 'Subscribed ✓';
+    } catch (err) { setMsg('Network error. Try again in a minute.', 'err'); btn.disabled = false; btn.textContent = 'Subscribe'; }
+  });
+})();
+</script>
+
+<section class="related-posts">
+  <div class="container">
+    <div class="kicker">// Read next</div>
+    <h2 class="related-h">More from the BCT playbook.</h2>
+    <div class="related-grid">
+      <a class="related-card" href="small-jobs-are-marketing.html">
+        <div class="cat">Strategy</div>
+        <h3>The small jobs are marketing.</h3>
+        <p>Most contractors don't see it that way.</p>
+        <span class="arrow">Read →</span>
+      </a>
+      <a class="related-card" href="market-agency-or-you.html">
+        <div class="cat">Diagnosis</div>
+        <h3>When leads dry up: is it the market, the agency, or you?</h3>
+        <p>The three-bucket diagnostic that saves the most money.</p>
+        <span class="arrow">Read →</span>
+      </a>
+      <a class="related-card" href="ten-things-no-agency-can-fix.html">
+        <div class="cat">Diagnosis</div>
+        <h3>10 things no marketing agency can fix for you.</h3>
+        <p>The parts of your lead flow only the owner can own.</p>
+        <span class="arrow">Read →</span>
+      </a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo-mini">
+          <img src="../logos/bct-logo-horizontal.png" alt="Blue Collar Techy logo" loading="lazy" />
+        </div>
+        <p><span class="brand-tag">Practical tech for the trades.</span> AI, local SEO, and real systems. Plain English.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="../resources/">Resources</a></li>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="../work-with-me.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Work</h4>
+        <ul>
+          <li><a href="../work-with-me.html">Get in touch</a></li>
+          <li><a href="https://tektongrowth.com" target="_blank" rel="noopener">Tekton Growth</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="#" target="_blank" rel="noopener">X</a></li>
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Blue Collar Techy · Nick Conley</span>
+      <span>Built for the trades</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/tracking.js"></script>
+<script>
+  (function(){
+    var nav = document.querySelector('nav.site-nav');
+    if (!nav) return;
+    var btn = nav.querySelector('.nav-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('nav-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Close drawer when a link is tapped
+    nav.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('nav-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+</body>
+</html>
