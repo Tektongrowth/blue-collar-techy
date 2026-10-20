@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Angi vs Thumbtack for Contractors: Are the Leads Worth It? (2026)</title>
+<meta name="description" content="Angi vs Thumbtack for contractors: how each charges, whether leads are shared, credits for bad leads, what users report, and the cost-per-job math." />
+<meta name="author" content="Nick Conley" />
+<meta name="theme-color" content="#0d0d12" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bluecollartechy.com/blog/angi-vs-thumbtack" />
+<meta property="og:title" content="Angi vs Thumbtack: are the leads worth paying for, and which one fits your trade?" />
+<meta property="og:description" content="How Angi and Thumbtack charge contractors, what counts as a lead, what users report, and how to work out your real cost per signed job." />
+<meta property="og:image" content="https://bluecollartechy.com/og-image.jpg" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Angi vs Thumbtack: are the leads worth paying for, and which one fits your trade?" />
+<meta name="twitter:description" content="How Angi and Thumbtack charge contractors, what counts as a lead, what users report, and how to work out your real cost per signed job." />
+<meta name="twitter:image" content="https://bluecollartechy.com/og-image.jpg" />
+
+<link rel="canonical" href="https://bluecollartechy.com/blog/angi-vs-thumbtack" />
+<link rel="icon" type="image/png" href="../logos/bct-logo-mark.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0d0d12;
+    --bg-elev: #15151d;
+    --bg-card: #1a1a24;
+    --border: #272733;
+    --text: #f5f5f7;
+    --text-dim: #a0a0ab;
+    --text-faint: #6b6b78;
+    --accent: #ff6a1a;
+    --accent-bright: #ff8530;
+    --accent-hover: #47c8f5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .narrow { max-width: 780px; margin: 0 auto; padding: 0 32px; }
+  a { color: inherit; text-decoration: none; }
+  .accent { color: var(--accent); }
+
+  nav.site-nav {
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(13, 13, 18, 0.85);
+  }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo svg, .nav-logo img { height: 52px; width: auto; display: block; }
+  .nav-logo img { object-fit: contain; }
+  .nav-cta-mobile { display: none; }
+  .nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    width: 44px; height: 44px;
+    cursor: pointer;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    transition: all 0.25s ease;
+  }
+  .nav-toggle:hover { border-color: var(--accent); }
+  .nav-toggle span {
+    display: block;
+    width: 20px; height: 2px;
+    background: var(--text);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .site-nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .site-nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  .site-nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-links { display: flex; gap: 36px; font-size: 14px; font-weight: 600; }
+  .nav-links a { color: var(--text-dim); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-links a.active { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: #000;
+    padding: 10px 18px; font-weight: 700; font-size: 13px;
+    letter-spacing: 0.02em; border-radius: 2px; text-transform: uppercase;
+  }
+
+  .article-meta {
+    padding: 40px 0 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .article-meta-row {
+    display: flex; justify-content: space-between; gap: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .article-meta-row span.hl { color: var(--accent); }
+
+  .hero-post { padding: 80px 0 80px; }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .kicker::before {
+    content: ''; width: 28px; height: 2px; background: var(--accent);
+  }
+  h1.post-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(40px, 5.6vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin-bottom: 36px;
+    max-width: 960px;
+  }
+  h1.post-title .hi { color: var(--accent); }
+  .hero-sub {
+    font-size: 22px;
+    color: var(--text-dim);
+    max-width: 680px;
+    line-height: 1.5;
+  }
+  .post-byline {
+    margin-top: 40px;
+    display: flex; gap: 24px; flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .post-byline span.v { color: var(--text); }
+
+  .chapter {
+    padding: 48px 0;
+    border-top: 1px solid var(--border);
+  }
+  .chapter-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .chapter h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(30px, 3.5vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    max-width: 760px;
+  }
+  .chapter h2 .hi { color: var(--accent); }
+  .chapter h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin: 32px 0 14px;
+    color: var(--text);
+  }
+  .chapter p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+  .chapter p.lead {
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+  .chapter p.dim {
+    color: #ffb089;
+    font-style: italic;
+    border-left: 3px solid var(--accent);
+    padding: 6px 0 6px 20px;
+    margin: 28px 0 26px;
+  }
+  .chapter p strong { color: var(--text); font-weight: 700; }
+  .chapter ul, .chapter ol {
+    margin: 14px 0 28px;
+    padding-left: 28px;
+  }
+  .chapter ul li, .chapter ol li {
+    font-size: 18px;
+    line-height: 1.65;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .chapter ul li::marker { color: var(--accent); }
+
+  .script {
+    background: #0a0a10;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    margin: 18px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-dim);
+  }
+  .script .label {
+    display: block;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .tool-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0 28px;
+    font-size: 15px;
+  }
+  .tool-table th, .tool-table td {
+    border-bottom: 1px solid var(--border);
+    padding: 12px 14px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .tool-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .tool-table td.bad { color: var(--accent); }
+  .tool-table td.ok { color: var(--text); }
+  .tool-table td.dup { color: #ffb089; font-style: italic; }
+
+  .pullquote {
+    padding: 96px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--bg) 0%, #0a0a10 100%);
+    text-align: center;
+  }
+  .pullquote blockquote {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 3.6vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    max-width: 900px;
+    margin: 0 auto 24px;
+  }
+  .pullquote blockquote .hi { color: var(--accent); }
+  .pullquote cite {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  .checklist {
+    list-style: none !important;
+    padding: 32px 0 !important;
+    margin: 32px 0 !important;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .checklist li {
+    position: relative;
+    padding: 14px 0 14px 44px !important;
+    font-size: 18px;
+    color: var(--text);
+  }
+  .checklist li::before {
+    content: '';
+    position: absolute; left: 0; top: 22px;
+    width: 24px; height: 2px;
+    background: var(--accent);
+  }
+  .checklist li strong { color: var(--accent); font-weight: 800; }
+
+  .inline-cta {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 40px;
+    margin: 48px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .inline-cta::before {
+    content: '';
+    position: absolute; top: 0; left: 0; bottom: 0;
+    width: 4px; background: var(--accent);
+  }
+  .inline-cta .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .inline-cta h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 26px;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+  .inline-cta p {
+    color: var(--text-dim);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .inline-cta a.btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #000;
+    padding: 14px 26px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 13px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .inline-cta a.btn:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+
+  .end-cta {
+    padding: 120px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .end-cta .kicker { margin-bottom: 24px; }
+  .end-cta h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    max-width: 820px; margin-left: auto; margin-right: auto;
+  }
+  .end-cta p {
+    color: var(--text-dim);
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 640px;
+    margin-left: auto; margin-right: auto;
+  }
+  .cta-row {
+    display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 18px 32px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700; font-size: 14px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    border: 2px solid transparent; border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: var(--accent); color: #000; }
+  .btn-primary:hover { background: var(--accent-bright); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.25); }
+  .btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
+  .btn-secondary:hover { border-color: var(--text); }
+
+  .waitlist {
+    padding: 120px 0;
+    border-top: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--bg) 0%, #0a0a10 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .waitlist::before {
+    content: '// COMING SOON';
+    position: absolute; top: 40px; left: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent-hover);
+    letter-spacing: 0.1em;
+  }
+  .waitlist::after {
+    content: ''; position: absolute;
+    top: 50%; right: -100px; transform: translateY(-50%);
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255, 106, 26, 0.12), transparent 70%);
+    pointer-events: none;
+  }
+  .wl-inner {
+    max-width: 720px;
+    position: relative; z-index: 2;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .wl-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .wl-inner h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    max-width: 720px;
+  }
+  .wl-inner h2 .hi { color: var(--accent); }
+  .wl-inner p.intro {
+    font-size: 18px;
+    color: var(--text-dim);
+    margin-bottom: 28px;
+    max-width: 640px;
+  }
+  .wl-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 24px;
+    margin: 0 0 36px;
+    padding: 0;
+    list-style: none;
+    max-width: 640px;
+  }
+  .wl-list li {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text);
+    padding-left: 18px;
+    position: relative;
+    letter-spacing: 0.04em;
+    line-height: 1.8;
+  }
+  .wl-list li::before {
+    content: '✓';
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  form.wl-form {
+    display: flex; gap: 0;
+    border: 2px solid var(--border);
+    background: var(--bg-card);
+    max-width: 540px;
+    transition: border-color 0.2s;
+    margin-bottom: 14px;
+  }
+  form.wl-form:focus-within { border-color: var(--accent); }
+  form.wl-form input[type="email"] {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 18px 20px;
+    color: var(--text);
+    font-family: 'Archivo', sans-serif;
+    font-size: 15px;
+  }
+  form.wl-form input::placeholder { color: var(--text-faint); }
+  form.wl-form input.hp-wl {
+    position: absolute; left: -9999px; top: -9999px;
+    width: 1px; height: 1px; opacity: 0;
+  }
+  form.wl-form button {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 0 28px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  form.wl-form button:hover { background: var(--accent-bright); }
+  form.wl-form button:disabled { opacity: 0.6; cursor: wait; }
+  .wl-msg {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    margin: 8px 0 12px;
+    min-height: 20px;
+    letter-spacing: 0.02em;
+  }
+  .wl-msg.ok { color: var(--accent-hover); }
+  .wl-msg.err { color: var(--accent); }
+  .wl-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+  .wl-meanwhile {
+    margin-top: 56px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border);
+    max-width: 640px;
+  }
+  .wl-meanwhile .h {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .wl-meanwhile p {
+    color: var(--text-dim);
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+  .wl-meanwhile .links {
+    display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .wl-meanwhile .links a {
+    font-family: 'Archivo', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 10px 18px;
+    border-radius: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .wl-meanwhile .links a:hover { border-color: var(--accent); color: var(--accent); }
+
+  footer {
+    padding: 80px 0 40px;
+    background: #0a0a10;
+    border-top: 1px solid var(--border);
+  }
+  .foot-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--border);
+  }
+  .foot-brand .logo-mini { margin-bottom: 20px; }
+  .foot-brand .logo-mini svg, .foot-brand .logo-mini img { height: 76px; width: auto; display: block; }
+  .foot-brand .logo-mini img { object-fit: contain; }
+  .foot-brand p { color: var(--text-dim); font-size: 14px; max-width: 300px; line-height: 1.6; }
+  .foot-col h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a { color: var(--text-dim); font-size: 14px; transition: color 0.2s; }
+  .foot-col a:hover { color: var(--accent); }
+  .foot-bottom {
+    padding-top: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: var(--text-faint); letter-spacing: 0.08em;
+  }
+  .brand-tag {
+    color: var(--accent-hover);
+    font-weight: 600;
+  }
+
+  @media (max-width: 900px) {
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .nav-toggle { display: flex; }
+    .nav-cta { display: none; }
+    .nav-links {
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(13, 13, 18, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 0;
+      font-size: 15px;
+      transform: translateY(-12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .nav-links a {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-links a:last-of-type { border-bottom: none; }
+    .site-nav.nav-open .nav-links {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .site-nav.nav-open .nav-links .nav-cta-mobile {
+      display: block;
+      margin: 12px 24px 16px;
+      background: var(--accent);
+      color: #000;
+      padding: 12px 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      border-radius: 2px;
+      border-bottom: none;
+    }
+    .article-meta-row { flex-direction: column; gap: 8px; }
+    .inline-cta { padding: 28px 24px; }
+    .tool-table { font-size: 13px; }
+    .tool-table th, .tool-table td { padding: 10px 8px; }
+    .wl-list { grid-template-columns: 1fr; }
+    form.wl-form { flex-direction: column; }
+    form.wl-form button { padding: 16px; }
+  }
+
+  .related-posts { padding: 80px 0; border-top: 1px solid var(--border); }
+  .related-posts .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .related-posts .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-faint);
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .related-posts h2.related-h {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin-bottom: 36px; max-width: 760px;
+  }
+  .related-grid {
+    display: grid; gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .related-card {
+    display: block;
+    background: var(--bg-card, #1a1a24);
+    border: 1px solid var(--border);
+    padding: 28px 28px 24px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .related-card:hover {
+    border-color: var(--accent);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 rgba(255, 106, 26, 0.18);
+  }
+  .related-card .cat {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--accent);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .related-card h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 19px; line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px; color: var(--text);
+  }
+  .related-card p {
+    color: var(--text-dim);
+    font-size: 14px; line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .related-card .arrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--accent);
+    letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 700;
+  }
+  @media (max-width: 700px) { .related-grid { grid-template-columns: 1fr; } }
+
+  .prompt { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 18px 22px; margin: 14px 0 26px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.6; color: var(--text); white-space: pre-wrap; }
+  .prompt-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-top: 28px; }
+  .chapter ul, .chapter ol { margin: 0 0 20px 22px; font-size: 18px; line-height: 1.7; }
+  .chapter li { margin-bottom: 8px; }
+  .sources li { font-size: 15px; color: var(--text-dim); }
+  .sources a { text-decoration: underline; }
+.nick-note { margin: 24px 0; padding: 16px 18px; border: 2px dashed var(--accent); background: rgba(255,200,0,0.08); font-size: 16px; }
+.nick-note strong { display: block; margin-bottom: 6px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.08em; }
+  .tbl-wrap { overflow-x: auto; margin: 24px 0; }
+  .tbl-wrap table { width: 100%; border-collapse: collapse; font-size: 16px; line-height: 1.5; }
+  .tbl-wrap th, .tbl-wrap td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
+  .tbl-wrap th { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  details.faq { border: 1px solid var(--border); padding: 14px 18px; margin: 12px 0; }
+  details.faq summary { cursor: pointer; font-weight: 700; font-size: 18px; }
+  details.faq p { margin: 12px 0 0; }
+  ol.checklist li { margin-bottom: 12px; }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Angi vs Thumbtack for Contractors: Are the Leads Worth It? (2026)",
+  "description": "Angi vs Thumbtack for contractors: how each charges, whether leads are shared, credits for bad leads, what users report, and the cost-per-job math.",
+  "author": {
+    "@type": "Person",
+    "name": "Nick Conley",
+    "url": "https://bluecollartechy.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Blue Collar Techy",
+    "url": "https://bluecollartechy.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bluecollartechy.com/logos/bct-logo-horizontal.png"
+    }
+  },
+  "datePublished": "2026-10-19",
+  "dateModified": "2026-10-19",
+  "mainEntityOfPage": "https://bluecollartechy.com/blog/angi-vs-thumbtack",
+  "image": "https://bluecollartechy.com/og-image.jpg",
+  "articleSection": "Lead Generation"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are Angi leads worth it for contractors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your cost per signed job. Divide what you spent on Angi leads by the jobs you signed from them, then compare that to your gross profit per job and your other lead sources. Some contractors make it work, especially on higher-profit jobs with fast callbacks. Others report paying for leads that never answer. Track it for 60 to 90 days and decide on the numbers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do Angi leads cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Angi does not publish a single price. Its help center says lead fees change based on the task, the homeowner's location, and demand for the work. Third parties such as Jobber and PostcardMania have reported roughly $15 to $85 per lead in many trades, higher in some, plus about $300 a year in membership. Check the fee shown on each Opportunity in your own account."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Thumbtack cheaper than Angi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sometimes. Thumbtack lets you set your own pricing and budget for leads with no sign-up or membership fee, which can keep costs lower while you test. Angi can deliver more volume in some markets. The cheaper one is whichever gives you the lower cost per signed job in your trade and town."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are Angi and Thumbtack leads shared with other contractors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Angi says it matches each homeowner request with no more than five pros. Thumbtack says customers choose pros directly and describes competition per lead as limited. On either platform, assume the homeowner is talking to someone else and call back fast."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get a refund for a bad Angi or Thumbtack lead?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Angi offers lead credits for reasons like invalid contact information or duplicates, within time limits, and annual subscribers are not eligible. Thumbtack reviews credit requests through its help center. Read the current rules on both before you count on getting money back."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="../index.html" aria-label="Blue Collar Techy">
+      <img src="../logos/bct-logo-horizontal.png" alt="Blue Collar Techy logo" loading="eager" />
+    </a>
+    <div class="nav-links" id="primary-nav">
+      <a href="../about.html">About</a>
+      <a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a>
+      <a href="../resources/">Resources</a>
+      <a href="index.html" class="active">Blog</a>
+      <a href="../work-with-me.html">Need it built?</a>
+      <a class="nav-cta-mobile" href="../index.html#newsletter">Subscribe</a>
+    </div>
+    <a class="nav-cta" href="../index.html#newsletter">Subscribe</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="article-meta">
+  <div class="container">
+    <div class="article-meta-row">
+      <span><span class="hl">BLOG</span> / LEAD GENERATION</span>
+      <span>Published · 2026-10-19</span>
+      <span>Read · 10 min</span>
+    </div>
+  </div>
+</div>
+
+<section class="hero-post">
+  <div class="narrow">
+    <div class="kicker">Angi vs Thumbtack 2026</div>
+    <h1 class="post-title">Angi vs Thumbtack: are the leads worth paying for, <span class="hi">and which one fits your trade?</span></h1>
+    <p class="hero-sub">Both sell you a shot at a homeowner. Neither sells you a job. Here is how each one charges, what contractors report, and the math that tells you if either pays.</p>
+    <div class="post-byline">
+      <span>BY <span class="v">NICK CONLEY</span></span>
+      <span>FOUNDER · BLUE COLLAR TECHY</span>
+    </div>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// The quiet phone</div>
+    <p class="lead">The phone has been quiet for two weeks, and a sales rep says Angi or Thumbtack can fix that by Friday. Maybe they can. The real question is what a signed job costs you once you add up every lead that never called back.</p>
+    <p>This post compares Angi vs Thumbtack the way a contractor should: how each one charges, what counts as a lead, whether the lead goes to other contractors too, what people who used them report, and the simple math that tells you if either one pays for your trade.</p>
+    <p>First, what I know firsthand and what I do not. I never used Angi or HomeAdvisor. Everything about Angi below comes from Angi's own help pages, the FTC, and contractors who wrote about it publicly. I did use Thumbtack early on, before it was a pay-per-lead situation. If I remember right, I paid somewhere around $50 to $150 when I made contact with a client, I believe to send them an estimate or quote. I got some decent leads out of it. I had the budget for it, so I used it. My view is the same today: if you have the budget, it is worth trying something. Just measure it.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// The short answer</div>
+    <h2>Angi vs Thumbtack, side by side.</h2>
+    <p>Both platforms sell you a chance to talk to a homeowner. Neither sells you a job. Here is how they compare on the points that decide your cost, from each company's own pages, checked on October 19, 2026.</p>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th></th><th>Angi</th><th>Thumbtack</th></tr></thead>
+      <tbody>
+        <tr><td>How you pay</td><td>Per lead. Angi says lead fees change based on the task, the homeowner's location, and demand for the work.</td><td>Per lead. Thumbtack says you control your pricing and budget for leads, which decides how many you get.</td></tr>
+        <tr><td>Sign-up and membership</td><td>Angi's help pages do not list a membership fee. Third parties have reported about $300 a year (see sources).</td><td>No charge to join, no annual fees, and no membership fees, per Thumbtack's pro page.</td></tr>
+        <tr><td>Contracts</td><td>A monthly budget you set and can adjust, or a subscription where the monthly budget is set annually per your contract.</td><td>"No hidden fees or contracts," per Thumbtack's pro page.</td></tr>
+        <tr><td>How many pros per request</td><td>Angi says it matches each homeowner request with no more than five pros.</td><td>Thumbtack says "limited competition per lead" and that customers choose pros directly. It does not publish a number on that page.</td></tr>
+        <tr><td>When you get charged</td><td>When both you and the homeowner show interest. You are charged whether or not you open or respond to the lead.</td><td>Thumbtack's pro page does not spell out the moment you are charged. Check the terms in your account.</td></tr>
+        <tr><td>Credits for bad leads</td><td>Credit requests for reasons like invalid contact info or duplicates, with time limits. Annual subscribers are not eligible.</td><td>Reviewed through Thumbtack's help center. Check the current rules before you count on one.</td></tr>
+      </tbody>
+    </table></div>
+    <p>If you want the short version: Thumbtack gives you more control over price and budget up front with no contract. Angi can feed you volume faster, but read every line of a subscription before you sign. Which one is cheaper for you depends on your trade, your town, and how fast you call back.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Angi</div>
+    <h2>How Angi charges, and what counts as a lead.</h2>
+    <p>Angi splits homeowner requests into two buckets, and the difference matters for your bill.</p>
+    <ul>
+      <li><strong>Opportunities</strong> are requests that match your services and area, or sit just outside it. You can review the project and the lead fee before you show interest.</li>
+      <li><strong>Leads</strong> happen when you and the homeowner have both shown interest. That is when Angi charges the lead fee and gives you the homeowner's name, location, project details, and contact info.</li>
+    </ul>
+    <p>Three details from Angi's help pages are worth reading twice:</p>
+    <ol>
+      <li><strong>Automatic leads count toward your monthly budget. Opportunities you accept do not.</strong> If you accept Opportunities, those fees are charged on top of your budget or subscription.</li>
+      <li><strong>You pay for leads whether or not you open or respond to them.</strong> A lead that sits in the app over a busy weekend still costs you.</li>
+      <li><strong>Leads are not guaranteed jobs.</strong> Angi says so directly and tells pros to follow up quickly.</li>
+    </ol>
+    <p>On credits, Angi's help center lists reasons such as invalid contact information or a duplicate lead for the same homeowner within 45 days. The lead has to be under 45 days old, you need to have called within 24 hours, and your account cannot have an overdue balance. Annual subscribers can report a concern but are not eligible for lead credits. If you sign a 12-month deal, you give up the credit option, so weigh that before a rep talks you into the discount.</p>
+    <p>Some history matters here. In April 2023 the FTC approved a final order against HomeAdvisor, requiring it to pay up to $7.2 million over how it marketed its leads to home improvement businesses. HomeAdvisor's leads business is now part of Angi. That order is about past marketing claims and does not tell you how good your leads will be today. It is a good reason to read the terms yourself and track every dollar.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Thumbtack</div>
+    <h2>How Thumbtack charges contractors.</h2>
+    <p>Thumbtack for contractors works on a set-your-price model. According to its pro page, there is no charge to join and no annual or membership fee. You set your pricing and your budget for leads, and that setting decides how many leads you receive. Customers choose pros directly, and Thumbtack says competition per lead is limited.</p>
+    <p>Thumbtack does not publish a standard lead price for each trade on that page. Third-party figures float around. An ad agency called Minyona reported $10 to $50 per contact in its 2026 landscaping guide. That is a vendor estimate we have not verified, and your trade could land well outside it.</p>
+    <p>A few practical points:</p>
+    <ul>
+      <li><strong>Your profile is your sales pitch.</strong> If the customer picks the pro, your photos, reviews, and response time are what get you picked. Fill it out completely before you spend a dollar.</li>
+      <li><strong>Set a weekly budget you can afford to lose while you learn.</strong> It is easier to raise a budget after a good month than to recover from a bad one.</li>
+      <li><strong>Pricing changes.</strong> What I paid years ago tells you nothing about today. Check the current price for your trade and town in your own account.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Run the math</div>
+    <h2>Are Angi leads worth it? Run the math.</h2>
+    <p>The price of a lead tells you very little. The number that matters is what you paid for each job you actually signed. One formula covers it:</p>
+    <div class="prompt">Cost per signed job = cost per lead ÷ close rate</div>
+    <p>Here is an example with made-up round numbers, so you can follow the math. Do not read it as a benchmark. Say a lead costs you $60 and you close one in eight, or 12.5%. Your cost per signed job is $60 ÷ 0.125 = $480. If your average job leaves $2,000 in gross profit, that can work. If your average job is a $400 repair, it does not.</p>
+    <p>Now change one thing. Say faster callbacks lift your close rate to one in five, or 20%. Same $60 lead, and your cost per signed job drops to $300. Speed changes the answer more than the platform does.</p>
+    <p>To run it on your own books:</p>
+    <ol>
+      <li>Pull every lead you paid for in the last 60 to 90 days, from each platform separately.</li>
+      <li>Count how many became signed jobs. Signed, with a deposit, counts. A site visit does not.</li>
+      <li>Divide what you spent by the signed jobs. That is your real cost per job for that platform.</li>
+      <li>Compare it to your gross profit per job, and to your other lead sources.</li>
+    </ol>
+    <p>Tekton Growth, my agency, built a free <a href="https://tektongrowth.com/lead-cost-calculator" target="_blank" rel="noopener">cost per lead calculator</a> that does this math for you. For how marketplaces compare with Local Services Ads, Google Ads, Meta, and SEO, read <a href="https://tektongrowth.com/blog/best-lead-generation-for-contractors" target="_blank" rel="noopener">best lead generation for contractors: what each source costs per job</a>.</p>
+  </div>
+</section>
+
+<section class="pullquote">
+  <div class="container">
+    <blockquote>The price of the lead is the sticker. <span class="hi">The signed job is the bill.</span></blockquote>
+    <cite>Do the division before you renew</cite>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// What contractors report</div>
+    <h2>What contractors report about Angi and Thumbtack.</h2>
+    <p>These are individual stories, posted publicly, and linked so you can read them in full. People with bad experiences post more often than people with good ones, so treat this as a list of things to watch for, and no verdict.</p>
+    <ul>
+      <li><strong>Angi, July 2025.</strong> A contractor on Reddit's r/Contractor wrote that over about eight months on a $300 a month budget, he did three jobs from Angi, spent $2,533, and brought in $1,240. He also described leads that never answered, and an early cancellation fee on his 12-month contract.</li>
+      <li><strong>Angi, August 2026.</strong> A business owner on r/smallbusiness wrote that 31 leads between late May and early August turned into two small jobs, with each lead costing roughly $56 to $64.</li>
+      <li><strong>Thumbtack, August 2025.</strong> In an r/Contractor thread, a commenter said that if you use a lead service at all, Thumbtack was his pick. He reported paying $10 to $30 a lead, said the customer picks you, and said that when he was the only pro picked, he usually got the job.</li>
+    </ul>
+    <p>The pattern across these stories is the same one the math shows. Leads that go unanswered, or that several contractors chase, drive the cost per job up fast. Contracts make it harder to stop when the numbers go bad.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Depend on them less</div>
+    <h2>Spend less on shared leads over time.</h2>
+    <p>Marketplaces can be a fine bridge while your own marketing warms up. The goal is to make sure they never become the only source you have, because you do not own them and the price can change.</p>
+    <ol>
+      <li><strong>Set a stop-loss before you start.</strong> Write down the highest cost per signed job you will accept. Review it every 30 days and cap or drop the platform if it goes over.</li>
+      <li><strong>Answer fast, every time.</strong> Angi tells pros to follow up quickly. Turn on notifications, and decide who calls back when you are on a job.</li>
+      <li><strong>Read the contract before the discount.</strong> Ask about term length, auto-renewal, cancellation fees, and credit eligibility in writing.</li>
+      <li><strong>Build leads you own on the side.</strong> Your Google Business Profile and reviews send calls that only go to you. Start with <a href="how-to-get-more-google-reviews.html">how to get more Google reviews as a contractor</a>.</li>
+      <li><strong>Track every source in one place.</strong> A shared spreadsheet with lead source, date, called back, and signed is enough to start.</li>
+    </ol>
+    <p>If you want to know whether there is enough demand in your area to make your own marketing worth it, run the free <a href="../market-scan/">Market Demand Scan</a>. It shows what local search demand and competition look like before you spend more on leads.</p>
+  </div>
+</section>
+
+<section class="chapter">
+  <div class="narrow">
+    <div class="chapter-num">// Quick answers</div>
+    <h2>Questions contractors ask.</h2>
+    <details class="faq"><summary>Are Angi leads worth it for contractors?</summary><p>It depends on your cost per signed job. Divide what you spent on Angi leads by the jobs you signed from them, then compare that to your gross profit per job and your other lead sources. Some contractors make it work, especially on higher-profit jobs with fast callbacks. Others report paying for leads that never answer. Track it for 60 to 90 days and decide on the numbers.</p></details>
+    <details class="faq"><summary>How much do Angi leads cost?</summary><p>Angi does not publish a single price. Its help center says lead fees change based on the task, the homeowner's location, and demand for the work. Third parties such as Jobber and PostcardMania have reported roughly $15 to $85 per lead in many trades, higher in some, plus about $300 a year in membership. Check the fee shown on each Opportunity in your own account.</p></details>
+    <details class="faq"><summary>Is Thumbtack cheaper than Angi?</summary><p>Sometimes. Thumbtack lets you set your own pricing and budget for leads with no sign-up or membership fee, which can keep costs lower while you test. Angi can deliver more volume in some markets. The cheaper one is whichever gives you the lower cost per signed job in your trade and town.</p></details>
+    <details class="faq"><summary>Are Angi and Thumbtack leads shared with other contractors?</summary><p>Angi says it matches each homeowner request with no more than five pros. Thumbtack says customers choose pros directly and describes competition per lead as limited. On either platform, assume the homeowner is talking to someone else and call back fast.</p></details>
+    <details class="faq"><summary>Can I get a refund for a bad Angi or Thumbtack lead?</summary><p>Angi offers lead credits for reasons like invalid contact information or duplicates, within time limits, and annual subscribers are not eligible. Thumbtack reviews credit requests through its help center. Read the current rules on both before you count on getting money back.</p></details>
+  </div>
+</section>
+
+<section class="chapter sources">
+  <div class="narrow">
+    <div class="chapter-num">// Sources</div>
+    <ul>
+      <li><a href="https://intercom.help/angi/en/articles/6221483-opportunities-and-leads-frequently-asked-questions" target="_blank" rel="noopener">Angi Help Center: Opportunities and Leads, Frequently Asked Questions</a> (lead fees, monthly budgets, up to five pros per request, charged whether or not you respond; checked October 19, 2026)</li>
+      <li><a href="https://intercom.help/angi/en/articles/6229338-leads-and-opportunities" target="_blank" rel="noopener">Angi Help Center: Leads and Opportunities (August 14, 2026)</a> (Opportunities charged in addition to your budget)</li>
+      <li><a href="https://intercom.help/angi/en/articles/11403440-how-to-request-a-lead-credit" target="_blank" rel="noopener">Angi Help Center: How to Request a Lead Credit</a> (credit reasons, 45-day and 24-hour rules, annual subscribers not eligible; checked October 19, 2026)</li>
+      <li><a href="https://www.thumbtack.com/pro" target="_blank" rel="noopener">Thumbtack: Pros</a> (no charge to join, no annual or membership fees, you control pricing and budget, customers choose pros; checked October 19, 2026)</li>
+      <li><a href="https://help.thumbtack.com/" target="_blank" rel="noopener">Thumbtack Help Center</a> (current lead credit rules)</li>
+      <li><a href="https://www.ftc.gov/news-events/news/press-releases/2023/04/ftc-approves-final-order-against-homeadvisor-inc-deceptively-marketing-its-leads-home-improvement" target="_blank" rel="noopener">FTC: Final order against HomeAdvisor (April 2023)</a> (up to $7.2 million)</li>
+      <li><a href="https://www.getjobber.com/academy/homeadvisor-vs-angi/" target="_blank" rel="noopener">Jobber: Angi vs. HomeAdvisor</a> and <a href="https://www.postcardmania.com/blog/angi-leads-worth-it-home-services/" target="_blank" rel="noopener">PostcardMania: Is Angi Leads worth it?</a> (third-party lead price ranges and the reported membership fee)</li>
+      <li><a href="https://minyona.com/blog/landscaping-lead-generation-guide" target="_blank" rel="noopener">Minyona: Landscaping Lead Generation, The 2026 Contractor Guide</a> (vendor-reported Thumbtack cost per contact; the vendor sells exclusive Meta leads)</li>
+      <li>Contractor reports on Reddit: <a href="https://www.reddit.com/r/Contractor/comments/1lu43z0/angi_adsleads_my_experience_negative_roi_ghost/" target="_blank" rel="noopener">r/Contractor, July 7, 2025</a>; <a href="https://www.reddit.com/r/smallbusiness/comments/1vr6986/beware_do_not_put_your_money_into_angis_list/" target="_blank" rel="noopener">r/smallbusiness, August 17, 2026</a>; <a href="https://www.reddit.com/r/Contractor/comments/1mrppxb/angie_scam/" target="_blank" rel="noopener">r/Contractor thread, August 16, 2025</a> (Thumbtack comment). Individual experiences, not verified by us.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="waitlist">
+  <div class="wl-inner">
+    <div class="wl-eyebrow">The BCT Newsletter</div>
+    <h2>Get the next one in your inbox.</h2>
+    <p class="intro">One practical post a week on AI, local SEO, and follow-up for contractors. Written by a former hardscape contractor. Plain English.</p>
+    <form id="wl-form" class="wl-form" novalidate>
+      <input type="email" id="wl-email" name="email" placeholder="your@email.com" required autocomplete="email" />
+      <input type="text" name="website" class="hp-wl" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <button type="submit" id="wl-btn">Subscribe</button>
+    </form>
+    <div id="wl-msg" class="wl-msg" role="status" aria-live="polite"></div>
+    <div class="wl-note">// Plain-English tech for the trades. No spam. Unsubscribe anytime.</div>
+    <div class="wl-meanwhile">
+      <div class="h">// Meanwhile</div>
+      <p>Free tools that already work.</p>
+      <div class="links">
+        <a href="../market-scan/">Market Demand Scan</a>
+        <a href="../gbp-check/">GBP Health Check</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  const form = document.getElementById('wl-form');
+  if (!form) return;
+  const emailInput = document.getElementById('wl-email');
+  const btn = document.getElementById('wl-btn');
+  const msg = document.getElementById('wl-msg');
+  function setMsg(text, cls) { msg.textContent = text; msg.className = 'wl-msg' + (cls ? ' ' + cls : ''); }
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const email = (emailInput.value || '').trim();
+    const website = form.website.value;
+    if (!email) return;
+    btn.disabled = true; btn.textContent = 'Subscribing…'; setMsg('');
+    try {
+      const attribution = window.bctGetAttribution ? window.bctGetAttribution() : {};
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, website: website, attribution: attribution }),
+      });
+      const data = await res.json().catch(function () { return {}; });
+      if (!res.ok) { setMsg(data.error || 'Something went wrong. Try again in a minute.', 'err'); btn.disabled = false; btn.textContent = 'Subscribe'; return; }
+      if (data.already_subscribed) { setMsg('You are already subscribed.', 'ok'); }
+      else { setMsg('You are in. Watch your inbox.', 'ok'); if (window.bctTrackLead) { window.bctTrackLead('newsletter'); } }
+      emailInput.value = ''; btn.textContent = 'Subscribed ✓';
+    } catch (err) { setMsg('Network error. Try again in a minute.', 'err'); btn.disabled = false; btn.textContent = 'Subscribe'; }
+  });
+})();
+</script>
+
+<section class="related-posts">
+  <div class="container">
+    <div class="kicker">// Read next</div>
+    <h2 class="related-h">More from the BCT playbook.</h2>
+    <div class="related-grid">
+      <a class="related-card" href="how-to-get-more-google-reviews.html">
+        <div class="cat">Reviews · How-To</div>
+        <h3>How to get more Google reviews as a contractor</h3>
+        <p>Three asks, three places, scripts that do not feel desperate.</p>
+        <span class="arrow">Read →</span>
+      </a>
+      <a class="related-card" href="market-agency-or-you.html">
+        <div class="cat">Diagnosis</div>
+        <h3>When leads dry up: is it the market, the agency, or you?</h3>
+        <p>The three-bucket diagnostic that saves the most money.</p>
+        <span class="arrow">Read →</span>
+      </a>
+      <a class="related-card" href="gbp-audit-15-minutes.html">
+        <div class="cat">Local SEO · How-To</div>
+        <h3>Audit your Google Business Profile in 15 minutes</h3>
+        <p>Seven checks any contractor can run on their own profile.</p>
+        <span class="arrow">Read →</span>
+      </a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo-mini">
+          <img src="../logos/bct-logo-horizontal.png" alt="Blue Collar Techy logo" loading="lazy" />
+        </div>
+        <p><span class="brand-tag">Practical tech for the trades.</span> AI, local SEO, and real systems. Plain English.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="../resources/">Resources</a></li>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="../work-with-me.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Work</h4>
+        <ul>
+          <li><a href="../work-with-me.html">Get in touch</a></li>
+          <li><a href="https://tektongrowth.com" target="_blank" rel="noopener">Tekton Growth</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@nicklausconley" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="#" target="_blank" rel="noopener">X</a></li>
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Blue Collar Techy · Nick Conley</span>
+      <span>Built for the trades</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/tracking.js"></script>
+<script>
+  (function(){
+    var nav = document.querySelector('nav.site-nav');
+    if (!nav) return;
+    var btn = nav.querySelector('.nav-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('nav-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Close drawer when a link is tapped
+    nav.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('nav-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+</body>
+</html>
